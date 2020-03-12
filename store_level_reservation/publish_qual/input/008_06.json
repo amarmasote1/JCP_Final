@@ -1,0 +1,29 @@
+[
+{
+"skuIds": [
+"87945674526","87945674527"
+],
+"transactionID": "2018-06-08T21:40:30.027",
+"priceList": [
+{
+"activationDate": "2018-06-02T10:00:00.000",
+"deActivationDate": "2018-06-14T23:59:59.999",
+"price": 13.99,
+"priceType": "ORIGINAL"
+},
+{
+"activationDate": "2018-06-15T00:00:00.000",
+"deActivationDate": "2018-06-20T23:59:59.999",
+"price": 19,
+"priceType": "NOW"
+},
+{
+"activationDate": "2018-06-21T00:00:00.000",
+"deActivationDate": "2019-11-25T23:59:59.999",
+"price": 17,
+"priceType": "CLEARANCE"
+}
+]
+}
+]
+

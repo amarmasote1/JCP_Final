@@ -1,0 +1,38 @@
+{
+    "body": [
+        {
+            "warnings": [],
+            "message": null,
+            "nodeType": null,
+            "body": null,
+            "key": "JCP|87945674522|EACH",
+            "status": 0
+        },
+        {
+            "warnings": [],
+            "message": null,
+            "nodeType": null,
+            "body": null,
+            "key": "JCP|87945674523|EACH",
+            "status": 0
+        },
+        {
+            "warnings": [],
+            "message": null,
+            "nodeType": null,
+            "body": null,
+            "key": "JCP|87945674524|EACH",
+            "status": 0
+        },
+        {
+            "warnings": [],
+            "message": null,
+            "nodeType": null,
+            "body": null,
+            "key": "JCP|87945674525|EACH",
+            "status": 0
+        }
+    ],
+    "message": "Successful",
+    "status": 221
+}

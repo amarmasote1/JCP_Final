@@ -1,0 +1,22 @@
+{
+    "body": [
+        {
+            "warnings": null,
+            "message": "Data Write Successful",
+            "nodeType": null,
+            "body": null,
+            "key": "8021000|802|ALL",
+            "status": 212
+        },
+        {
+            "warnings": null,
+            "message": "Data Write Successful",
+            "nodeType": null,
+            "body": null,
+            "key": "8021000|802|ALL",
+            "status": 212
+        }
+    ],
+    "message": "Successful",
+    "status": 221
+}

@@ -1,0 +1,26 @@
+[  
+   {
+      "gtin" : "",
+      "uom" : "EACH",
+      "itemID" : "17212345118",
+      "bopus" : "true",
+      "lotNumber" : "1721234",
+      "shippable" : "true",
+      "productLine" : "172",
+      "purchaseType" : "Fashion767676",
+      "isSubstitutionAllowed" : "N",
+      "itemProcessingTime" : "10"
+   },
+   {
+      "gtin" : "",
+      "uom" : "EACH",
+      "itemID" : "17212345119",
+      "bopus" : "true",
+      "lotNumber" : "1721234",
+      "shippable" : "true",
+      "productLine" : "172",
+      "purchaseType" : "Fashion",
+      "isSubstitutionAllowed" : "N",
+      "itemProcessingTime" : "10"
+   }
+]

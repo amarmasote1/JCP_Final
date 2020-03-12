@@ -1,0 +1,21 @@
+[     {
+  
+      "storeId":"1310",
+      "shutdownIndi":"S",     
+      "storeShutdown":"N",     
+     "startDate":"2019-06-06 00:25:00.0391 CST",    
+      "endDate":"2019-06-06 23:25:00.0391 CST",
+      "userId":"gv"
+  
+},
+{
+  
+      "storeId":"1310",
+      "shutdownIndi":"P",     
+      "storeShutdown":"N",     
+      "startDate":"2019-06-06 00:25:00.0391 CST",    
+      "endDate":"2019-06-06 23:25:00.0391 CST",
+      "userId":"gv"
+  
+}
+]

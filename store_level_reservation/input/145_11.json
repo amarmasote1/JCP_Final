@@ -1,0 +1,7 @@
+[
+    {  "storeID" :"1935",
+	   "standardCapacity" : "5",
+	   "capacityUnitOfMeasure" : "RELEASE", 
+	   "date" : "<$today>"
+    }
+]

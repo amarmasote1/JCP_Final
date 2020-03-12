@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify    
+			1. reservation from dirty store 
+			   stores : store1,store2,store3.   store1-is dirty , 
+ -->
+		 
+<!-- expected  
+	1. reservation at store1 should fail.
+	2. consume demand also sould fail: storelevel reservation not found
+-->
+<testsuite description="Verify reservation and consume demand when store is dirty" name="001">
+
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details same- item across all the store"
+        expectedJsonFile="expected\001_01.json"
+        inputJsonFile="input\001_01.json" name="01" outputJsonFile="output\001_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/0514/" description="Insert node 1"
+        expectedJsonFile="expected\001_02.json"
+        inputJsonFile="input\001_02.json" name="02" outputJsonFile="output\001_02.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/0528/" description="Insert node"
+        expectedJsonFile="expected\001_03.json"
+        inputJsonFile="input\001_03.json" name="03" outputJsonFile="output\001_03.json"/>
+
+    
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/0529/" description="Insert node 3"
+        expectedJsonFile="expected\001_04.json"
+        inputJsonFile="input\001_04.json" name="04" outputJsonFile="output\001_04.json"/>
+
+    <test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory - in all the stores. qty=100 in all stores."
+        expectedJsonFile="expected\001_05.json"
+        inputJsonFile="input\001_05.json" name="05" outputJsonFile="output\001_05.json"/>
+		
+	
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity: set valid capacity"
+        expectedJsonFile="expected\001_07.json"
+        inputJsonFile="input\001_07.json" name="07" outputJsonFile="output\001_07.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread: verify capacity and qty"
+        expectedJsonFile="expected\001_08.json"
+        inputJsonFile="input\001_08.json" name="08" outputJsonFile="output\001_08.json"/>
+		
+		
+		
+		
+	        <test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+				description="item_inventory"
+				expectedJsonFile="expected\001_81.json"
+				inputJsonFile="input\001_81.json" name="81" outputJsonFile="output\001_81.json"/>
+
+			<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/"
+				description="location inventory"
+				expectedJsonFile="expected\001_82.json"
+				inputJsonFile="input\001_82.json" name="82" outputJsonFile="output\001_82.json"/>
+				
+			<test apiMethod="POST" apiUrl="/master/mapValue/jcp_reservation_map/"
+				description="reservation map"
+				expectedJsonFile="expected\001_83.json"
+				inputJsonFile="input\001_83.json" name="83" outputJsonFile="output\001_83.json"/>
+				
+			<test apiMethod="POST" apiUrl="/master/mapValue/jcp_dirty_keys/"
+				description="dirty keys"
+				expectedJsonFile="expected\001_84.json"
+				inputJsonFile="input\001_84.json" name="84" outputJsonFile="output\001_84.json"/>
+		
+		
+		
+		
+		
+		
+		
+		
+	<test apiMethod="POST" apiUrl="/master/nodeControl/JCP/"
+        description="Node control for store1"
+        expectedJsonFile="expected\001_09.json"
+        inputJsonFile="input\001_09.json" name="09" outputJsonFile="output\001_09.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Reservation at store1: qty=50"
+        expectedJsonFile="expected\001_10.json"
+        inputJsonFile="input\001_10.json" name="10" outputJsonFile="output\001_10.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/20170614051626367029086/consumedemand/Y/"
+        description="CosumeDemand: should fail"
+        expectedJsonFile="expected\001_11.json"
+        inputJsonFile="input\001_11.json" name="11" outputJsonFile="output\001_11.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread: store1 stp=0, store2 and store3 atp = 100"
+        expectedJsonFile="expected\001_12.json"
+        inputJsonFile="input\001_12.json" name="12" outputJsonFile="output\001_12.json"/>
+		
+		
+			<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+				description="item_inventory"
+				expectedJsonFile="expected\001_91.json"
+				inputJsonFile="input\001_91.json" name="91" outputJsonFile="output\001_91.json"/>
+
+			<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/"
+				description="location inventory"
+				expectedJsonFile="expected\001_92.json"
+				inputJsonFile="input\001_92.json" name="92" outputJsonFile="output\001_92.json"/>
+				
+			<test apiMethod="POST" apiUrl="/master/mapValue/jcp_reservation_map/"
+				description="reservation map"
+				expectedJsonFile="expected\001_93.json"
+				inputJsonFile="input\001_93.json" name="93" outputJsonFile="output\001_93.json"/>
+				
+			<test apiMethod="POST" apiUrl="/master/mapValue/jcp_dirty_keys/"
+				description="dirty keys"
+				expectedJsonFile="expected\001_94.json"
+				inputJsonFile="input\001_94.json" name="94" outputJsonFile="output\001_94.json"/>
+    
+</testsuite>

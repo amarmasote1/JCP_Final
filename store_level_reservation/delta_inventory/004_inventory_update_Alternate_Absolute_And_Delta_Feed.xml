@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify  inventory when inventory is updated with delta feed initially and later with absolute feed
+
+		inventory insert with Absolute qty = 100.           ATP = 100
+		inventory insert with delta qty = 34.     			ATP = 134
+		inventory insert with Absolute qty = 15				ATP = 15
+ -->
+		
+<testsuite description="Verify  inventory when inventory is updated with delta feed initially and later with absolute feed" name="004">
+
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details same- item across all the store"
+        expectedJsonFile="expected\004_01.json"
+        inputJsonFile="input\004_01.json" name="01" outputJsonFile="output\004_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/2805/" description="Insert node 1"
+        expectedJsonFile="expected\004_02.json"
+        inputJsonFile="input\004_02.json" name="02" outputJsonFile="output\004_02.json"/>
+
+	
+	<test apiMethod="POST" apiUrl="/master/itemMapping"
+        description="map itemID to retailID"
+        expectedJsonFile="expected\004_05.json"
+        inputJsonFile="input\004_05.json" name="05" outputJsonFile="output\004_05.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory qty = 100"
+        expectedJsonFile="expected\004_03.json"
+        inputJsonFile="input\004_03.json" name="03" outputJsonFile="output\004_03.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="multiread ATP : 100 "
+        expectedJsonFile="expected\004_04.json"
+        inputJsonFile="input\004_04.json" name="04" outputJsonFile="output\004_04.json"/>
+		
+	
+
+<test apiMethod="delay" delay="400" description="Delay : 400 ms" name="13"/>		
+	
+	<test apiMethod="POST" apiUrl="/inventory/JCP/delta/"
+        description="update inventory qty = 34"
+        expectedJsonFile="expected\004_07.json"
+        inputJsonFile="input\004_07.json" name="07" outputJsonFile="output\004_07.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="multiread ATP : 134"
+        expectedJsonFile="expected\004_08.json"
+        inputJsonFile="input\004_08.json" name="08" outputJsonFile="output\004_08.json"/>
+	
+<test apiMethod="delay" delay="400" description="Delay : 400 ms" name="15"/>		
+	
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="update inventory qty = 15"
+        expectedJsonFile="expected\004_09.json"
+        inputJsonFile="input\004_09.json" name="09" outputJsonFile="output\004_09.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="multiread ATP : 15"
+        expectedJsonFile="expected\004_10.json"
+        inputJsonFile="input\004_10.json" name="10" outputJsonFile="output\004_10.json"/>
+	
+</testsuite>

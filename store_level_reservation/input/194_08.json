@@ -1,0 +1,8 @@
+ [
+  {
+     "purchaseType" : "FashionSFS1",
+     "onhandSafetyFactorQuantity" : "5",
+     "onhandPickSafetyFactorQuantity" : "10",
+     "storeSub" : "171"
+  }
+]

@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify Capacity 
+Make reservation 10 times with bopus as true for 4 reservations and shippable true for remaining 6 reservations.
+Ensure avl capacity is 4.
+Cancel 4 bopus reservations.
+Ensure avl capacity is 4.
+Cancel 6 shippable reservations.
+Ensure avl capacity is 4.
+	
+-->
+
+<!-- expected  
+		1. Multiread Before Reservation : ATP (ship and bopus) = 100, Available Capacity = 10, reservedDemand=0 in all 4 stores
+		2. Multiread After 1st bopus reservation (Qty=10) : ATP (ship and bopus) = 90, Available Capacity = 10, reservedDemand=10,store1071
+		3. Multiread After 4th bopus reservation (Qty=10): ATP (ship and bopus) = 60, Available Capacity = 10, reservedDemand=40, store 0779
+		4. Multiread After 1st ship reservation (Qty=10): ATP (ship and bopus) = 50, Available Capacity = 9, reservedDemand=50,   store 0779
+		5. Multiread After 6th ship reservation (Qty=10): ATP (ship and bopus) = 0, Available Capacity = 4, reservedDemand=100,   store 0779
+		6. Multiread After cancelling 4bopus reservations: ATP (ship and bopus) = 40, Available Capacity = 4, reservedDemand=60,  store 0779
+		7. Multiread After cancelling 6 ship reservations: ATP (ship and bopus) = 100, Available Capacity = 4, reservedDemand=0,  store 0779
+		
+		Each time qty =10 is reserved
+-->
+
+
+
+<testsuite description="Verify capacity when reservation and cancel reservations are there for bopus and shippable." name="043">
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details"
+        expectedJsonFile="expected\043_01.json"
+        inputJsonFile="input\043_01.json" name="01" outputJsonFile="output\043_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/0779/" description="Insert node"
+        expectedJsonFile="expected\043_02.json"
+        inputJsonFile="input\043_02.json" name="02" outputJsonFile="output\043_02.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/0780/" description="Insert node"
+        expectedJsonFile="expected\043_03.json"
+        inputJsonFile="input\043_03.json" name="03" outputJsonFile="output\043_03.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/0781/" description="Insert node"
+        expectedJsonFile="expected\043_04.json"
+        inputJsonFile="input\043_04.json" name="04" outputJsonFile="output\043_04.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/0786/" description="Insert node"
+        expectedJsonFile="expected\043_05.json"
+        inputJsonFile="input\043_05.json" name="05" outputJsonFile="output\043_05.json"/>
+
+
+    <test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory - in all store "
+        expectedJsonFile="expected\043_06.json"
+        inputJsonFile="input\043_06.json" name="06" outputJsonFile="output\043_06.json"/>
+		
+	
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity"
+        expectedJsonFile="expected\043_08.json"
+        inputJsonFile="input\043_08.json" name="08" outputJsonFile="output\043_08.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\043_09.json"
+        inputJsonFile="input\043_09.json" name="09" outputJsonFile="output\043_09.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Bopus Reservation1 "
+        expectedJsonFile="expected\043_10.json"
+        inputJsonFile="input\043_10.json" name="10" outputJsonFile="output\043_10.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread after reservation1"
+        expectedJsonFile="expected\043_11.json"
+        inputJsonFile="input\043_11.json" name="11" outputJsonFile="output\043_11.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Bopus Reservation2"
+        expectedJsonFile="expected\043_12.json"
+        inputJsonFile="input\043_12.json" name="12" outputJsonFile="output\043_12.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread after reservation2"
+        expectedJsonFile="expected\043_13.json"
+        inputJsonFile="input\043_13.json" name="13" outputJsonFile="output\043_13.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Bopus Reservation3"
+        expectedJsonFile="expected\043_14.json"
+        inputJsonFile="input\043_14.json" name="14" outputJsonFile="output\043_14.json"/>
+	
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread after reservation3"
+        expectedJsonFile="expected\043_15.json"
+        inputJsonFile="input\043_15.json" name="15" outputJsonFile="output\043_15.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="BOPUS Reservation4"
+        expectedJsonFile="expected\043_16.json"
+        inputJsonFile="input\043_16.json" name="16" outputJsonFile="output\043_16.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread after reservation 4"
+        expectedJsonFile="expected\043_17.json"
+        inputJsonFile="input\043_17.json" name="17" outputJsonFile="output\043_17.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Ship Reservation1"
+        expectedJsonFile="expected\043_18.json"
+        inputJsonFile="input\043_18.json" name="18" outputJsonFile="output\043_18.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="multiread after 1st ship reservation"
+        expectedJsonFile="expected\043_19.json"
+        inputJsonFile="input\043_19.json" name="19" outputJsonFile="output\043_19.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Ship Reservation2"
+        expectedJsonFile="expected\043_20.json"
+        inputJsonFile="input\043_20.json" name="20" outputJsonFile="output\043_20.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="multiread after 2nd ship reservation"
+        expectedJsonFile="expected\043_21.json"
+        inputJsonFile="input\043_21.json" name="21" outputJsonFile="output\043_21.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Ship Reservation3"
+        expectedJsonFile="expected\043_22.json"
+        inputJsonFile="input\043_22.json" name="22" outputJsonFile="output\043_22.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="multiread after 3rd ship reservation"
+        expectedJsonFile="expected\043_23.json"
+        inputJsonFile="input\043_23.json" name="23" outputJsonFile="output\043_23.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Ship Reservation4"
+        expectedJsonFile="expected\043_24.json"
+        inputJsonFile="input\043_24.json" name="24" outputJsonFile="output\043_24.json"/>
+	
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="multiread after 4th ship reservation"
+        expectedJsonFile="expected\043_25.json"
+        inputJsonFile="input\043_25.json" name="25" outputJsonFile="output\043_25.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Ship Reservation5"
+        expectedJsonFile="expected\043_26.json"
+        inputJsonFile="input\043_26.json" name="26" outputJsonFile="output\043_26.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="multiread after 5th ship reservation"
+        expectedJsonFile="expected\043_27.json"
+        inputJsonFile="input\043_27.json" name="27" outputJsonFile="output\043_27.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Ship Reservation6"
+        expectedJsonFile="expected\043_28.json"
+        inputJsonFile="input\043_28.json" name="28" outputJsonFile="output\043_28.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="multiread after 6th ship reservation"
+        expectedJsonFile="expected\043_29.json"
+        inputJsonFile="input\043_29.json" name="29" outputJsonFile="output\043_29.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Cancel Reservation1"
+        expectedJsonFile="expected\043_30.json"
+        inputJsonFile="input\043_30.json" name="30" outputJsonFile="output\043_30.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\043_31.json"
+        inputJsonFile="input\043_31.json" name="31" outputJsonFile="output\043_31.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Cancel Reservation2"
+        expectedJsonFile="expected\043_32.json"
+        inputJsonFile="input\043_32.json" name="22" outputJsonFile="output\043_32.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\043_33.json"
+        inputJsonFile="input\043_33.json" name="33" outputJsonFile="output\043_33.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Cancel Reservation3"
+        expectedJsonFile="expected\043_34.json"
+        inputJsonFile="input\043_34.json" name="34" outputJsonFile="output\043_34.json"/>
+	
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\043_35.json"
+        inputJsonFile="input\043_35.json" name="35" outputJsonFile="output\043_35.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Cancel Reservation4"
+        expectedJsonFile="expected\043_36.json"
+        inputJsonFile="input\043_36.json" name="36" outputJsonFile="output\043_36.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Reservation"
+        expectedJsonFile="expected\043_37.json"
+        inputJsonFile="input\043_37.json" name="37" outputJsonFile="output\043_37.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Cancel Reservation5"
+        expectedJsonFile="expected\043_38.json"
+        inputJsonFile="input\043_38.json" name="38" outputJsonFile="output\043_38.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Reservation"
+        expectedJsonFile="expected\043_39.json"
+        inputJsonFile="input\043_39.json" name="39" outputJsonFile="output\043_39.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Cancel Reservation6"
+        expectedJsonFile="expected\043_40.json"
+        inputJsonFile="input\043_40.json" name="40" outputJsonFile="output\043_40.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\043_41.json"
+        inputJsonFile="input\043_41.json" name="41" outputJsonFile="output\043_41.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Reservation"
+        expectedJsonFile="expected\043_42.json"
+        inputJsonFile="input\043_42.json" name="42" outputJsonFile="output\043_42.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\043_43.json"
+        inputJsonFile="input\043_33.json" name="43" outputJsonFile="output\043_43.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Reservation"
+        expectedJsonFile="expected\043_44.json"
+        inputJsonFile="input\043_44.json" name="44" outputJsonFile="output\043_44.json"/>
+	
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\043_45.json"
+        inputJsonFile="input\043_45.json" name="45" outputJsonFile="output\043_45.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Reservation"
+        expectedJsonFile="expected\043_46.json"
+        inputJsonFile="input\043_46.json" name="46" outputJsonFile="output\043_46.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Reservation @0778"
+        expectedJsonFile="expected\043_47.json"
+        inputJsonFile="input\043_47.json" name="47" outputJsonFile="output\043_47.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Reservation @0778"
+        expectedJsonFile="expected\043_48.json"
+        inputJsonFile="input\043_48.json" name="48" outputJsonFile="output\043_48.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Reservation"
+        expectedJsonFile="expected\043_49.json"
+        inputJsonFile="input\043_49.json" name="49" outputJsonFile="output\043_49.json"/>
+		
+    
+</testsuite>

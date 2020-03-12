@@ -1,0 +1,66 @@
+{
+    "message": "Success",
+    "body": [
+        {
+            "itemID": "15345672027",
+            "uom": "EACH",
+            "demandData": {
+                "reserveddemand": 0
+            },
+            "markDown": {
+                "active": false
+            },
+            "storeID": "1308",
+            "supplyData": {
+                "onhandsupply": 100
+            },
+            "timestamp": "2020-03-03 11:53:34.0000 IST"
+        },
+        {
+            "itemID": "15345672028",
+            "uom": "EACH",
+            "demandData": {
+                "reserveddemand": 0
+            },
+            "markDown": {
+                "active": false
+            },
+            "storeID": "1313",
+            "supplyData": {
+                "onhandsupply": 100
+            },
+            "timestamp": "2020-03-03 11:53:34.0000 IST"
+        },
+        {
+            "itemID": "50012342029",
+            "uom": "EACH",
+            "demandData": {
+                "reserveddemand": 0
+            },
+            "markDown": {
+                "active": false
+            },
+            "storeID": "1315",
+            "supplyData": {
+                "onhandsupply": 100
+            },
+            "timestamp": "2020-03-03 11:53:34.0000 IST"
+        },
+        {
+            "itemID": "15345672030",
+            "uom": "EACH",
+            "demandData": {
+                "reserveddemand": 0
+            },
+            "markDown": {
+                "active": false
+            },
+            "storeID": "1319",
+            "supplyData": {
+                "onhandsupply": 100
+            },
+            "timestamp": "2020-03-03 11:53:34.0000 IST"
+        }
+    ],
+    "status": 200
+}

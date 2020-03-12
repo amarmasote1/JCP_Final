@@ -1,0 +1,14 @@
+{
+    "body": [
+        {
+            "warnings": null,
+            "message": "Mandatory parameter retail itemID is missing",
+            "nodeType": null,
+            "body": null,
+            "key": null,
+            "status": 400
+        }
+    ],
+    "message": "Failure",
+    "status": 514
+}

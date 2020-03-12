@@ -1,0 +1,15 @@
+[
+  {
+    "storeID": "2241",
+    "itemID": "17112343037",
+    "uom": "EACH",
+    "supplyData": {
+      "onhandsupply":40
+    },
+    "demandData": {
+        "reserveddemand": 0
+      },
+    "timestamp": "2019-12-12 16:02:56.0650 IST"
+    
+  }
+]

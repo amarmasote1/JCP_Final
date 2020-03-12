@@ -1,0 +1,96 @@
+{
+    "message": "Success",
+    "body": [
+        {
+            "itemID": "15345672211",
+            "uom": "EACH",
+            "demandData": {
+                "reserveddemand": 0
+            },
+            "markDown": {
+                "active": false
+            },
+            "storeID": "2051",
+            "supplyData": {
+                "onhandsupply": 1
+            },
+            "timestamp": "2020-03-03 11:53:34.0000 IST"
+        },
+        {
+            "itemID": "15345672211",
+            "uom": "EACH",
+            "demandData": {
+                "reserveddemand": 0
+            },
+            "markDown": {
+                "active": false
+            },
+            "storeID": "2052",
+            "supplyData": {
+                "onhandsupply": 1
+            },
+            "timestamp": "2020-03-03 11:53:34.0000 IST"
+        },
+        {
+            "itemID": "15345672211",
+            "uom": "EACH",
+            "demandData": {
+                "reserveddemand": 0
+            },
+            "markDown": {
+                "active": false
+            },
+            "storeID": "2055",
+            "supplyData": {
+                "onhandsupply": 10
+            },
+            "timestamp": "2020-03-03 11:53:34.0000 IST"
+        },
+        {
+            "itemID": "15345672212",
+            "uom": "EACH",
+            "demandData": {
+                "reserveddemand": 0
+            },
+            "markDown": {
+                "active": false
+            },
+            "storeID": "2044",
+            "supplyData": {
+                "onhandsupply": 0
+            },
+            "timestamp": "2020-03-03 11:53:34.0000 IST"
+        },
+        {
+            "itemID": "15345672212",
+            "uom": "EACH",
+            "demandData": {
+                "reserveddemand": 0
+            },
+            "markDown": {
+                "active": false
+            },
+            "storeID": "2047",
+            "supplyData": {
+                "onhandsupply": 0
+            },
+            "timestamp": "2020-03-03 11:53:34.0000 IST"
+        },
+        {
+            "itemID": "15345672212",
+            "uom": "EACH",
+            "demandData": {
+                "reserveddemand": 0
+            },
+            "markDown": {
+                "active": false
+            },
+            "storeID": "2048",
+            "supplyData": {
+                "onhandsupply": 0
+            },
+            "timestamp": "2020-03-03 11:53:34.0000 IST"
+        }
+    ],
+    "status": 200
+}

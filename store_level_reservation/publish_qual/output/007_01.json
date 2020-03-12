@@ -1,0 +1,38 @@
+{
+    "body": [
+        {
+            "warnings": null,
+            "message": "Hazelcast Entry Successful",
+            "nodeType": null,
+            "body": null,
+            "key": null,
+            "status": 211
+        },
+        {
+            "warnings": null,
+            "message": "Hazelcast Entry Successful",
+            "nodeType": null,
+            "body": null,
+            "key": null,
+            "status": 211
+        },
+        {
+            "warnings": null,
+            "message": "Hazelcast Entry Successful",
+            "nodeType": null,
+            "body": null,
+            "key": null,
+            "status": 211
+        },
+        {
+            "warnings": null,
+            "message": "Hazelcast Entry Successful",
+            "nodeType": null,
+            "body": null,
+            "key": null,
+            "status": 211
+        }
+    ],
+    "message": "Hazelcast Entry Successful",
+    "status": 211
+}

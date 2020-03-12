@@ -1,0 +1,16 @@
+publish qual status : Basically shows qual status of an item. 
+--------------------
+
+
+URL : /master/publishQS/87945674501/NW/Y/
+1. Qual status shown in output will be either network qual status or non-store qual status depending on flag passed in URl.
+
+2. router flag can take 2 values :  i).  NW - n/w qual status will be shown in output.
+                                    ii). WH - non-store qual status will be shown in output.
+						
+3. clearance falg can also take 2 values : i).  Y - clearance effect will be included
+                                                N - clearance effect will not be included
+												
+4. When Router is WH, clearance flag has no effect on qual status. (clearance flag Y/N,  same output)
+5. When Router is NW, clearance flag has effect on output.
+                                                

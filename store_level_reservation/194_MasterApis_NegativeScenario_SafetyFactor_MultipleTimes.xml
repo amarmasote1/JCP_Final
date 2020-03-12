@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- verify insertion of safetyFactor multiple times
+pre requisite : items, stores and condiotions as below
+Scenario1 : safetyFactor for non existing sub and purchaseType
+Scenario2 : Insert multiple times
+Scenario3 : insert, update ship qty, update bopus qty
+Scenario4 : multiLine : same line multiple times
+Scenario5 : MultiLine : all new + 1 already existing line
+-->
+
+<!-- expected  
+		1. Scenario1 : Success (No validations added )
+		2. Scenario2 : Success
+		3. Scenario3 : Success
+		4. Scenario4 : Success
+		5. Scenario4 : Success
+-->
+
+
+<testsuite description="verify insertion of safetyFactor multiple times
+Scenario1 : safetyFactor for non existing sub and purchaseType
+Scenario2 : Insert multiple times
+Scenario3 : insert, update ship qty, update bopus qty
+Scenario4 : multiLine : same line multiple times
+Scenario5 : MultiLine : all new + 1 already existing line" name="194">
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/2184/"
+        description="store 1"
+        expectedJsonFile="expected\194_01.json"
+        inputJsonFile="input\194_01.json" name="01" outputJsonFile="output\194_01.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2185/"
+        description="store 2"
+        expectedJsonFile="expected\194_02.json"
+        inputJsonFile="input\194_02.json" name="02" outputJsonFile="output\194_02.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2188/"
+        description="store 3"
+        expectedJsonFile="expected\194_03.json"
+        inputJsonFile="input\194_03.json" name="03" outputJsonFile="output\194_03.json"/>
+		
+	
+
+	
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="item1"
+        expectedJsonFile="expected\194_13.json"
+        inputJsonFile="input\194_13.json" name="13" outputJsonFile="output\194_13.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="item2"
+        expectedJsonFile="expected\194_14.json"
+        inputJsonFile="input\194_14.json" name="14" outputJsonFile="output\194_14.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="item3"
+        expectedJsonFile="expected\194_15.json"
+        inputJsonFile="input\194_15.json" name="15" outputJsonFile="output\194_15.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="item4"
+        expectedJsonFile="expected\194_16.json"
+        inputJsonFile="input\194_16.json" name="16" outputJsonFile="output\194_16.json"/>
+
+	
+
+	<test apiMethod="POST" apiUrl="/master/sfsInsert/"
+        description="Scenario1 : safetyFactor for non existing sub and purchaseType"
+        expectedJsonFile="expected\194_04.json"
+        inputJsonFile="input\194_04.json" name="04" outputJsonFile="output\194_04.json"/>
+		
+		
+		
+	<test apiMethod="POST" apiUrl="/master/sfsInsert/"
+        description="Scenario2 : multiple times 1"
+        expectedJsonFile="expected\194_05.json"
+        inputJsonFile="input\194_05.json" name="05" outputJsonFile="output\194_05.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/sfsInsert/"
+        description="Scenario2 : multiple times 2"
+        expectedJsonFile="expected\194_06.json"
+        inputJsonFile="input\194_06.json" name="06" outputJsonFile="output\194_06.json"/>
+		
+		
+		
+	<test apiMethod="POST" apiUrl="/master/sfsInsert/"
+        description="Scenario3 : insert safetyFactor"
+        expectedJsonFile="expected\194_07.json"
+        inputJsonFile="input\194_07.json" name="07" outputJsonFile="output\194_07.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/sfsInsert/"
+        description="Scenario3 : update ship factor qty"
+        expectedJsonFile="expected\194_08.json"
+        inputJsonFile="input\194_08.json" name="08" outputJsonFile="output\194_08.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/sfsInsert/"
+        description="Scenario3 : update bopus factor qty "
+        expectedJsonFile="expected\194_09.json"
+        inputJsonFile="input\194_09.json" name="09" outputJsonFile="output\194_09.json"/>
+		
+		
+		
+	
+	<test apiMethod="POST" apiUrl="/master/sfsInsert/"
+        description="Scenario4 :  same line multiple times in single call"
+        expectedJsonFile="expected\194_10.json"
+        inputJsonFile="input\194_10.json" name="10" outputJsonFile="output\194_10.json"/>
+		
+		
+		
+		
+	<test apiMethod="POST" apiUrl="/master/sfsInsert/"
+        description="Scenario5 : 1 new line + one already existing line"
+        expectedJsonFile="expected\194_11.json"
+        inputJsonFile="input\194_11.json" name="11" outputJsonFile="output\194_11.json"/>
+		
+		
+		
+</testsuite>

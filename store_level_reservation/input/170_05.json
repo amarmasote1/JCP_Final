@@ -1,0 +1,80 @@
+[
+  {
+    "storeID": "2044",
+    "itemID": "15345672209",
+    "uom": "EACH",
+    "supplyData": {
+      "onhandsupply": 1
+    },
+    "demandData": {
+        "reserveddemand": 0
+      },
+    "timestamp": "<$currentTime>"
+    
+  },
+  {
+    "storeID": "2047",
+    "itemID": "15345672209",
+    "uom": "EACH",
+    "supplyData": {
+      "onhandsupply": 1
+    },
+    "demandData": {
+        "reserveddemand": 0
+      },
+    "timestamp": "<$currentTime>"
+    
+  },
+  {
+    "storeID": "2048",
+    "itemID": "15345672209",
+    "uom": "EACH",
+    "supplyData": {
+      "onhandsupply": 10
+    },
+    "demandData": {
+        "reserveddemand": 0
+      },
+    "timestamp": "<$currentTime>"
+    
+  },
+  {
+    "storeID": "2044",
+    "itemID": "15345672210",
+    "uom": "EACH",
+    "supplyData": {
+      "onhandsupply": 0
+    },
+    "demandData": {
+        "reserveddemand": 0
+      },
+    "timestamp": "<$currentTime>"
+    
+  },
+  {
+    "storeID": "2047",
+    "itemID": "15345672210",
+    "uom": "EACH",
+    "supplyData": {
+      "onhandsupply": 0
+    },
+    "demandData": {
+        "reserveddemand": 0
+      },
+    "timestamp": "<$currentTime>"
+    
+  },
+  {
+    "storeID": "2048",
+    "itemID": "15345672210",
+    "uom": "EACH",
+    "supplyData": {
+      "onhandsupply": 0
+    },
+    "demandData": {
+        "reserveddemand": 0
+      },
+    "timestamp": "<$currentTime>"
+    
+  }
+]

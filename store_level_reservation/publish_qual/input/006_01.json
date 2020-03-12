@@ -1,0 +1,46 @@
+[
+  {
+    "itemId": "87945674518",
+    "qualitativeStatus": "NA",
+    "firstFutureAvailableDate": "2018-10-31T00:00:00-04:00",
+    "onHandAvlQty": 110,
+    "futureAvlQty": 0,
+    "factoryShipLeadTimeQty": 0,
+    "factoryShipLeadTimeUOM": "",
+    "factoryShipInventoryIndicator": "N",
+    "whseClass": "A"
+  },
+  {
+    "itemId": "87945674519",
+    "qualitativeStatus": "AL",
+    "firstFutureAvailableDate": "2018-10-31T00:00:00-04:00",
+    "onHandAvlQty": 110,
+    "futureAvlQty": 0,
+    "factoryShipLeadTimeQty": 0,
+    "factoryShipLeadTimeUOM": "",
+    "factoryShipInventoryIndicator": "N",
+    "whseClass": "A"
+  },
+  {
+    "itemId": "87945674520",
+    "qualitativeStatus": "AH",
+    "firstFutureAvailableDate": "2018-10-31T00:00:00-04:00",
+    "onHandAvlQty": 110,
+    "futureAvlQty": 0,
+    "factoryShipLeadTimeQty": 0,
+    "factoryShipLeadTimeUOM": "",
+    "factoryShipInventoryIndicator": "N",
+    "whseClass": "A"
+  },
+  {
+    "itemId": "87945674521",
+    "qualitativeStatus": "BO",
+    "firstFutureAvailableDate": "2018-08-31T00:00:00-04:00",
+    "onHandAvlQty": 110,
+    "futureAvlQty": 0,
+    "factoryShipLeadTimeQty": 0,
+    "factoryShipLeadTimeUOM": "",
+    "factoryShipInventoryIndicator": "N",
+    "whseClass": "A"
+  }
+]

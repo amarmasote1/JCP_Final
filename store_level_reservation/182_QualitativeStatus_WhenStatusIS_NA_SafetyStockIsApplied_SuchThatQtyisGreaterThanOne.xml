@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify combined qualitative status, when qualitative status is NA, safetyStock is applied such that Available quantity Greater than One
+	pre requisite : 1 item, 3 stores and safety factor.
+-->
+
+
+<!-- expected  
+		1. Get Qualitative-status should be AL . ( network qual status will be AL for Qty greater than 0)
+-->
+
+<testsuite description="Verify combined qualitative status, when qualitative status is NA, safetyStock is applied such that Available quantity becomes more than One" name="182">
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details"
+        expectedJsonFile="expected\182_01.json"
+        inputJsonFile="input\182_01.json" name="01" outputJsonFile="output\182_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/2122/" 
+		description="Insert node 1"
+        expectedJsonFile="expected\182_02.json"
+        inputJsonFile="input\182_02.json" name="02" outputJsonFile="output\182_02.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2123/" 
+		description="Insert node 2"
+        expectedJsonFile="expected\182_03.json"
+        inputJsonFile="input\182_03.json" name="03" outputJsonFile="output\182_03.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2130/" 
+		description="Insert node 3"
+        expectedJsonFile="expected\182_04.json"
+        inputJsonFile="input\182_04.json" name="04" outputJsonFile="output\182_04.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="Insert capacity for all stores"
+        expectedJsonFile="expected\182_04_1.json"
+        inputJsonFile="input\182_04_1.json" name="04_1" outputJsonFile="output\182_04_1.json"/>
+		
+	 
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory "
+        expectedJsonFile="expected\182_05.json"
+        inputJsonFile="input\182_05.json" name="05" outputJsonFile="output\182_05.json"/>
+		
+	
+	
+	<test apiMethod="POST" apiUrl="/master/sfsInsert/"
+        description="safetyStock Applied "
+        expectedJsonFile="expected\182_08.json"
+        inputJsonFile="input\182_08.json" name="08" outputJsonFile="output\182_08.json"/>
+	
+	
+	<test apiMethod="GET" apiUrl="/refreshActiveStores/"
+       description="Refresh active stores: "
+        expectedJsonFile="expected\182_08_5.json"
+        name="08_05" outputJsonFile="output\182_08_5.json"/>	
+	
+	
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread with update mode"
+        expectedJsonFile="expected\182_08_1.json"
+        inputJsonFile="input\182_08_1.json" name="08_1" outputJsonFile="output\182_08_1.json"/>		
+	
+	
+		
+	
+	
+	<test apiMethod="POST" apiUrl="/master/qualitativeStatus/"
+        description="Qualtitatve status : NA"
+        expectedJsonFile="expected\182_06.json"
+        inputJsonFile="input\182_06.json" name="06" outputJsonFile="output\182_06.json"/>
+		
+		   <!--
+	<test apiMethod="GET" apiUrl="/refreshActiveStores/"
+       description="Refresh active stores: "
+        expectedJsonFile="expected\182_08_5.json"
+        name="08_05" outputJsonFile="output\182_08_5.json"/>	-->
+		            <!--
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread with update mode"
+        expectedJsonFile="expected\182_08_2.json"
+        inputJsonFile="input\182_08_2.json" name="08_2" outputJsonFile="output\182_08_2.json"/>		-->
+		
+<test apiMethod="delay" delay="15000" description="delay : 10000 ms" name="100"/>		
+		
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="Get Qualitative status"
+        expectedJsonFile="expected\182_07.json"
+        inputJsonFile="input\182_07.json" name="07" outputJsonFile="output\182_07.json"/>
+		
+	
+	
+    
+</testsuite>

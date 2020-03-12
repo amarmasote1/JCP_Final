@@ -1,0 +1,17 @@
+
+[
+   {
+      "storeId" : "1823",
+      "exclusionIndi" : "P",
+      "productLine" : "153",
+      "removeExclusion" : "N",
+      "lotNumber" : "1534567"
+   },
+   {
+      "storeId" : "1831",
+      "exclusionIndi" : "S",
+      "productLine" : "153",
+      "removeExclusion" : "N",
+      "lotNumber" : "1534567"
+   }
+]

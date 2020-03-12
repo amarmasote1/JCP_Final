@@ -1,0 +1,81 @@
+{
+    "message": "Success",
+    "body": [
+        {
+            "itemID": "1200040006014",
+            "uom": "EACH",
+            "demandData": {
+                "reserveddemand": 0
+            },
+            "markDown": {
+                "active": false
+            },
+            "storeID": "2815",
+            "supplyData": {
+                "onhandsupply": 5
+            },
+            "timestamp": "2020-03-03 12:53:34.0000 IST"
+        },
+        {
+            "itemID": "1200040006014",
+            "uom": "EACH",
+            "demandData": {
+                "reserveddemand": 0
+            },
+            "markDown": {
+                "active": false
+            },
+            "storeID": "2816",
+            "supplyData": {
+                "onhandsupply": 5
+            },
+            "timestamp": "2020-03-03 12:53:34.0000 IST"
+        },
+        {
+            "itemID": "1200040006014",
+            "uom": "EACH",
+            "demandData": {
+                "reserveddemand": 0
+            },
+            "markDown": {
+                "active": false
+            },
+            "storeID": "2820",
+            "supplyData": {
+                "onhandsupply": 5
+            },
+            "timestamp": "2020-03-03 12:53:34.0000 IST"
+        },
+        {
+            "itemID": "1200040006014",
+            "uom": "EACH",
+            "demandData": {
+                "reserveddemand": 0
+            },
+            "markDown": {
+                "active": false
+            },
+            "storeID": "2821",
+            "supplyData": {
+                "onhandsupply": 5
+            },
+            "timestamp": "2020-03-03 12:53:34.0000 IST"
+        },
+        {
+            "itemID": "1200040006014",
+            "uom": "EACH",
+            "demandData": {
+                "reserveddemand": 0
+            },
+            "markDown": {
+                "active": false
+            },
+            "storeID": "2822",
+            "supplyData": {
+                "onhandsupply": 5
+            },
+            "timestamp": "2020-03-03 12:53:34.0000 IST"
+        }
+    ],
+    "status": 200
+}

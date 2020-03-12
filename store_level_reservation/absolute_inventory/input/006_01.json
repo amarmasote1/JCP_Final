@@ -1,0 +1,14 @@
+[
+   {
+      "gtin" : "",
+      "uom" : "EACH",
+      "itemID" : "35145678012",
+      "bopus" : "true",
+      "lotNumber" : "3514567",
+      "shippable" : "true",
+      "productLine" : "351",
+      "purchaseType" : "ababa",
+      "isSubstitutionAllowed" : "N",
+      "itemProcessingTime" : "10"
+   }
+]

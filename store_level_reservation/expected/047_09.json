@@ -1,0 +1,1 @@
+{"body":[{"status":200,"message":"Success","key":"JCP|0814|11345672000|EACH","body":{"invall":{"shipATP":90,"Available_capacity":10,"bopusSafetyFactor":10,"shipSafetyFactor":10,"bopusATP":90,"reserveddemand":0,"bopus_active":1,"onhandsupply":100,"ship_active":1}},"warnings":null}],"status":221,"message":"Successful"}

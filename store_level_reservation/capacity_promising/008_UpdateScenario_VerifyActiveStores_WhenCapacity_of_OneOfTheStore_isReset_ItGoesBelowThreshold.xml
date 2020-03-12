@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>		 
+<!-- Verify
+	Update Scenario : Verify active stores, when capacity of one of the stores goes below threshold
+	pre requisite :  2 stores, all of them have inventory , all of them have capacity above threshold and now reset capacity of 2nd store  
+					 such that it is now below threshold
+
+stores         inventory                  capacity
+store1           >0                        >threshold
+store2           >0                        >threshold
+
+now  reset  2nd store capacity such that it is now below threshold
+-->
+<!--Expected
+	1. 1st store should be active and 2nd store should be inactive
+	2. Check Active store ATP for them. ATP = 40 for all of them.
+-->
+
+<testsuite description="Update Scenario : Verify active stores, when capacity of one of the stores is reset such that it goes below threshold" name="008">
+
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details : only 1 item"
+        expectedJsonFile="expected\008_01.json"
+        inputJsonFile="input\008_01.json" name="01" outputJsonFile="output\008_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/0135/" 
+		description="Insert node 1"
+        expectedJsonFile="expected\008_02.json"
+        inputJsonFile="input\008_02.json" name="02" outputJsonFile="output\008_02.json"/>
+
+  <test apiMethod="POST" apiUrl="/master/node/JCP/0141/" 
+		description="Insert node 2"
+        expectedJsonFile="expected\008_03.json"
+        inputJsonFile="input\008_03.json" name="03" outputJsonFile="output\008_03.json"/>
+
+
+    <test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory : As per above condition "
+        expectedJsonFile="expected\008_05.json"
+        inputJsonFile="input\008_05.json" name="05" outputJsonFile="output\008_05.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity : As per above condition "
+        expectedJsonFile="expected\008_06.json"
+        inputJsonFile="input\008_06.json" name="06" outputJsonFile="output\008_06.json"/>
+
+
+	<test apiMethod="delay" delay="15000" description="Delay to get map updated : 15000 ms" name="100"/>
+
+		
+	<test apiMethod="GET" apiUrl="/master/getActiveStores/"
+        description="Get active stores : both stores should be active "
+        expectedJsonFile="expected\008_07.json"
+        name="07" outputJsonFile="output\008_07.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity : reset 2nd store capacity to 0 "
+        expectedJsonFile="expected\008_08.json"
+        inputJsonFile="input\008_08.json" name="08" outputJsonFile="output\008_08.json"/>
+	
+
+	<test apiMethod="delay" delay="15000" description="Delay to get map updated : 15000 ms" name="100"/>
+	
+	<test apiMethod="GET" apiUrl="/master/getActiveStores/"
+        description="Get active stores : 1st store should be active and 2nd store should be inactive"
+        expectedJsonFile="expected\008_09.json"
+        name="09" outputJsonFile="output\008_09.json"/>
+		
+
+ 
+</testsuite>

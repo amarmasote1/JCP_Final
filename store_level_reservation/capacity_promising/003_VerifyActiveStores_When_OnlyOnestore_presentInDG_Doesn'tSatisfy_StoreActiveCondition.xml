@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>		 
+<!-- Verify
+	 Active stores, when 1 store in DG(out of 3 stores) doesn't satisfy store active condition
+	 pre requisite : 3 stores, 1 store has capacity below threshold , 2 stores have inventory > 0 and 1 store inventory = 0
+-->
+<!--Expected
+	1. 2 store should be active stores 
+	2. Check Active store ATP for them. ATP = 40 in 2 stores and 0 in another store
+-->
+
+<testsuite description="Active stores, when 1 store in DG(out of 3 stores) doesn't satisfy store active condition" name="003">
+
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details : only 1 item"
+        expectedJsonFile="expected\003_01.json"
+        inputJsonFile="input\003_01.json" name="01" outputJsonFile="output\003_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/0043/" 
+		description="Insert node 1"
+        expectedJsonFile="expected\003_02.json"
+        inputJsonFile="input\003_02.json" name="02" outputJsonFile="output\003_02.json"/>
+
+  <test apiMethod="POST" apiUrl="/master/node/JCP/0055/" 
+		description="Insert node 2"
+        expectedJsonFile="expected\003_03.json"
+        inputJsonFile="input\003_03.json" name="03" outputJsonFile="output\003_03.json"/>
+
+   <test apiMethod="POST" apiUrl="/master/node/JCP/0058/" 
+		description="Insert node 3"
+        expectedJsonFile="expected\003_04.json"
+        inputJsonFile="input\003_04.json" name="04" outputJsonFile="output\003_04.json"/>
+	
+	
+
+    <test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory : qty = 40 in 2 stores and = 0 in 1 store"
+        expectedJsonFile="expected\003_05.json"
+        inputJsonFile="input\003_05.json" name="05" outputJsonFile="output\003_05.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity : 1 store has capacity below threshold"
+        expectedJsonFile="expected\003_06.json"
+        inputJsonFile="input\003_06.json" name="06" outputJsonFile="output\003_06.json"/>
+	
+
+	<test apiMethod="delay" delay="15000" description="Delay to get map updated : 15000 ms" name="100"/>
+
+	
+	<test apiMethod="GET" apiUrl="/master/getActiveStores/"
+        description="Get active stores : 2 stores should be active"
+        expectedJsonFile="expected\003_07.json"
+        name="07" outputJsonFile="output\003_07.json"/>
+		
+
+ 
+</testsuite>

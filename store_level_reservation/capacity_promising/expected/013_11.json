@@ -1,0 +1,18 @@
+{
+	"body": [{
+		"status": 221,
+		"message": "Data delete success",
+		"key": "0183|P",
+		"body": null,
+		"warnings": null
+	},
+	{
+		"status": 221,
+		"message": "Data delete success",
+		"key": "0183|S",
+		"body": null,
+		"warnings": null
+	}],
+	"status": 221,
+	"message": "Successful"
+}

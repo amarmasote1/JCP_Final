@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- verify insertion of Node control multiple times
+
+pre requisite : items,  stores and condition as below
+Scenario1 : Node control Without Store Insertion (Non Existing Store)
+Scenario2 : Insert multiple times for same store - item
+Scenario3 : Insert multiple times with end date, UOM and itemID change
+-->
+
+<!-- expected  
+		1. Scenario1 : Success   (No Validation as such added for the time being)
+		2. Scenario2 : Success
+		3. Scenario3 : Success and see the respected changes made in map
+-->
+
+<testsuite description="verify insertion of Node control multiple times
+Scenario1 : Node control Without Store and item Insertion (Non Existing Store - item combinaion)
+Scenario2 : Insert multiple times for same store - item
+Scenario3 : Insert multiple times with end date, UOM and itemID change" name="190">
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/2163/"
+        description="store 1"
+        expectedJsonFile="expected\190_01.json"
+        inputJsonFile="input\190_01.json" name="01" outputJsonFile="output\190_01.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2165/"
+        description="store 2"
+        expectedJsonFile="expected\190_02.json"
+        inputJsonFile="input\190_02.json" name="02" outputJsonFile="output\190_02.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2166/"
+        description="store 3"
+        expectedJsonFile="expected\190_03.json"
+        inputJsonFile="input\190_03.json" name="03" outputJsonFile="output\190_03.json"/>	
+
+	
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="item1"
+        expectedJsonFile="expected\190_13.json"
+        inputJsonFile="input\190_13.json" name="13" outputJsonFile="output\190_13.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="item2"
+        expectedJsonFile="expected\190_14.json"
+        inputJsonFile="input\190_14.json" name="14" outputJsonFile="output\190_14.json"/>
+
+	
+	<test apiMethod="POST" apiUrl="/master/nodeControl/JCP/"
+        description="Scenario1 : Node control for non existing store - item combination"
+        expectedJsonFile="expected\190_04.json"
+        inputJsonFile="input\190_04.json" name="04" outputJsonFile="output\190_04.json"/>
+	
+	
+		
+	<test apiMethod="POST" apiUrl="/master/nodeControl/JCP/"
+        description="Scenario2 : multiple times to same store : store 2"
+        expectedJsonFile="expected\190_05.json"
+        inputJsonFile="input\190_05.json" name="05" outputJsonFile="output\190_05.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/nodeControl/JCP/"
+        description="Scenario2 : multiple times to same store : store 2"
+        expectedJsonFile="expected\190_06.json"
+        inputJsonFile="input\190_06.json" name="06" outputJsonFile="output\190_06.json"/>
+		
+		
+		
+	<test apiMethod="POST" apiUrl="/master/nodeControl/JCP/"
+        description="Scenario3 : multiple times : store 3"
+        expectedJsonFile="expected\190_07.json"
+        inputJsonFile="input\190_07.json" name="07" outputJsonFile="output\190_07.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/nodeControl/JCP/"
+        description="Scenario3 : change end date : store 3"
+        expectedJsonFile="expected\190_08.json"
+        inputJsonFile="input\190_08.json" name="08" outputJsonFile="output\190_08.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/nodeControl/JCP/"
+        description="Scenario3 : again call - change end date : store 3"
+        expectedJsonFile="expected\190_09.json"
+        inputJsonFile="input\190_09.json" name="09" outputJsonFile="output\190_09.json"/>
+	
+	<test apiMethod="POST" apiUrl="/master/nodeControl/JCP/"
+        description="Scenario3 : Change uom : store 3"
+        expectedJsonFile="expected\190_10.json"
+        inputJsonFile="input\190_10.json" name="10" outputJsonFile="output\190_10.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/nodeControl/JCP/"
+        description="Scenario3 : again call- Change uom : store 3"
+        expectedJsonFile="expected\190_11.json"
+        inputJsonFile="input\190_11.json" name="11" outputJsonFile="output\190_11.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/nodeControl/JCP/"
+        description="Scenario3 : Change itemID : store 3"
+        expectedJsonFile="expected\190_12.json"
+        inputJsonFile="input\190_12.json" name="12" outputJsonFile="output\190_12.json"/>
+		
+		
+</testsuite>

@@ -1,0 +1,49 @@
+[
+   {
+      "gtin" : "",
+      "uom" : "EACH",
+      "itemID" : "35145678004",
+      "bopus" : "true",
+      "lotNumber" : "3514567",
+      "shippable" : "true",
+      "productLine" : "351",
+      "purchaseType" : "ababa",
+      "isSubstitutionAllowed" : "N",
+      "itemProcessingTime" : "10"
+   },
+   {
+      "gtin" : "",
+      "uom" : "EACH",
+      "itemID" : "35145678005",
+      "bopus" : "true",
+      "lotNumber" : "3514567",
+      "shippable" : "true",
+      "productLine" : "351",
+      "purchaseType" : "ababa",
+      "isSubstitutionAllowed" : "N",
+      "itemProcessingTime" : "10"
+   },
+   {
+      "gtin" : "",
+      "uom" : "EACH",
+      "itemID" : "35145678006",
+      "bopus" : "true",
+      "lotNumber" : "3514567",
+      "shippable" : "true",
+      "productLine" : "351",
+      "purchaseType" : "ababa",
+      "isSubstitutionAllowed" : "N",
+      "itemProcessingTime" : "10"
+   },{
+      "gtin" : "",
+      "uom" : "EACH",
+      "itemID" : "35145678007",
+      "bopus" : "true",
+      "lotNumber" : "3514567",
+      "shippable" : "true",
+      "productLine" : "351",
+      "purchaseType" : "ababa",
+      "isSubstitutionAllowed" : "N",
+      "itemProcessingTime" : "10"
+   }
+]

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify    
+			store shouldnot become active after capacity increase
+			
+			Steps : 1-store, 1-item, capacity=1   : Active store
+					capacity = 0				  : Inactive store   (Reservation)
+					shutdown store                : Inactive store
+					Capacity = 1                  : Inactive store 
+				Refresh Actice Store			  : Store Should be Inactive    (Bug here)
+					Remove shutdown               : Active store
+					
+ -->
+		 
+
+<testsuite description="Verify store doesnt become active after capacity insert" name="005">
+
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details"
+        expectedJsonFile="expected\005_01.json"
+        inputJsonFile="input\005_01.json" name="01" outputJsonFile="output\005_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/2915/" description="Insert node 1"
+        expectedJsonFile="expected\005_02.json"
+        inputJsonFile="input\005_02.json" name="02" outputJsonFile="output\005_02.json"/>
+
+  
+
+    <test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory"
+        expectedJsonFile="expected\005_03.json"
+        inputJsonFile="input\005_03.json" name="03" outputJsonFile="output\005_03.json"/>
+		
+	
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity: set valid capacity"
+        expectedJsonFile="expected\005_04.json"
+        inputJsonFile="input\005_04.json" name="04" outputJsonFile="output\005_04.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread: verify capacity and qty"
+        expectedJsonFile="expected\005_05.json"
+        inputJsonFile="input\005_05.json" name="05" outputJsonFile="output\005_05json"/>
+		
+<test apiMethod="delay" delay="15000" description="delay : 15000 ms" name="100"/>
+		
+	<test apiMethod="GET" apiUrl="/master/getActiveStores/"
+        description="Check for store active : Active"
+        expectedJsonFile="expected\005_06.json"
+         name="06" outputJsonFile="output\005_06.json"/>
+		
+	
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Reservation decreases capacity to 0"
+        expectedJsonFile="expected\005_07.json"
+        inputJsonFile="input\005_07.json" name="07" outputJsonFile="output\005_07.json"/>
+		
+<test apiMethod="delay" delay="15000" description="delay : 15000 ms" name="100"/>
+
+		
+	
+	<test apiMethod="GET" apiUrl="/master/getActiveStores/"
+        description="check for store inactive : InActive"
+        expectedJsonFile="expected\005_08.json"
+         name="08" outputJsonFile="output\005_08.json"/>
+		
+	
+		<test apiMethod="POST" apiUrl="/master/storeShutdown/"
+        description="apply shutdown"
+        expectedJsonFile="expected\005_09.json"
+        inputJsonFile="input\005_09.json" name="09" outputJsonFile="output\005_09.json"/>
+		
+		
+<test apiMethod="delay" delay="15000" description="delay : 15000 ms" name="100"/>		
+		
+	<test apiMethod="GET" apiUrl="/master/getActiveStores/"
+        description="check for for store inactive : InActive"
+        expectedJsonFile="expected\005_10.json"
+         name="10" outputJsonFile="output\005_10.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Increase Capacity = 1"
+        expectedJsonFile="expected\005_11.json"
+        inputJsonFile="input\005_11.json" name="11" outputJsonFile="output\005_11.json"/>
+		
+		
+<test apiMethod="delay" delay="15000" description="delay : 15000 ms" name="100"/>		
+		
+		
+	<test apiMethod="GET" apiUrl="/refreshActiveStores/"
+        description="check for store Inactive : InActive"
+        expectedJsonFile="expected\005_25.json"
+         name="25" outputJsonFile="output\005_25.json"/>
+		
+	<test apiMethod="GET" apiUrl="/master/getActiveStores/"
+        description="check for for store Inactive : InActive"
+        expectedJsonFile="expected\005_12.json"
+         name="12" outputJsonFile="output\005_12.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/storeShutdown/"
+        description="Remove shutdown"
+        expectedJsonFile="expected\005_13.json"
+        inputJsonFile="input\005_13.json" name="13" outputJsonFile="output\005_13.json"/>
+		
+
+<test apiMethod="delay" delay="10000" description="delay : 8000 ms" name="100"/>		
+		
+		
+		
+	<test apiMethod="GET" apiUrl="/master/getActiveStores/"
+        description="check for store active : InActive"
+        expectedJsonFile="expected\005_14.json"
+         name="14" outputJsonFile="output\005_14.json"/>
+		 
+	
+    
+</testsuite>

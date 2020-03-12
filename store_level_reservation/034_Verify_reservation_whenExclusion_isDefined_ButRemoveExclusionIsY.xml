@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify reservation when Exclusion is defined for store. Exclusion is defined for both ship and pick. but Removexclusion flag is kept as Y. : Exclusion step should say Data Write failed as we are trying to remove non existing Exclsuion
+-->
+
+
+
+<!-- expected  
+		1. Multiread Before Reservation : ATP (ship and bopus) = 100, reservedDemand=0, onHandSupply=100
+		2. Multiread after Exclusion (remove exclusion as Y): ATP (ship and bopus) = 100, reservedDemand=0, onHandSupply=100 
+		3. Multiread After Reservation(Qty = 40) : ATP (ship and bopus) = 60, reservedDemand=40, onHandSupply=100 
+		4. Multiread after Consume demand  (Qty = 20): ATP (ship and bopus) = 60, reservedDemand=20, onHandSupply=100 
+		
+		Exclsuion : Data Write Failed.
+		Reservation : Success
+		Consume demand : Success
+		
+-->
+
+
+
+<testsuite description="Verify reservation when Exclusion is defined for store." name="034">
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details : 1 item"
+        expectedJsonFile="expected\034_01.json"
+        inputJsonFile="input\034_01.json" name="01" outputJsonFile="output\034_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/0709/" 
+		description="Insert node"
+        expectedJsonFile="expected\034_02.json"
+        inputJsonFile="input\034_02.json" name="02" outputJsonFile="output\034_02.json"/>
+
+
+    <test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory : Qty = 100"
+        expectedJsonFile="expected\034_03.json"
+        inputJsonFile="input\034_03.json" name="03" outputJsonFile="output\034_03.json"/>
+		
+	
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity  : Available Capacity = 80"
+        expectedJsonFile="expected\034_05.json"
+        inputJsonFile="input\034_05.json" name="05" outputJsonFile="output\034_05.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread : ATP = 100 and Available capacity = 80 "
+        expectedJsonFile="expected\034_06.json"
+        inputJsonFile="input\034_06.json" name="06" outputJsonFile="output\034_06.json"/>
+		
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+					description="item_inventory for item"
+					expectedJsonFile="expected\034_71.json"
+					inputJsonFile="input\034_71.json" name="71" outputJsonFile="output\034_71.json"/>
+
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/"
+					description="location inventory for item-store1"
+					expectedJsonFile="expected\034_72.json"
+					inputJsonFile="input\034_72.json" name="72" outputJsonFile="output\034_72.json"/>
+					
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_reservation_map/"
+					description="reservation map"
+					expectedJsonFile="expected\034_75.json"
+					inputJsonFile="input\034_75.json" name="75" outputJsonFile="output\034_75.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/itemExclusion/"
+        description="Exclusion :  Data Write failed as we are trying to remove non existing Exclsuion"
+        expectedJsonFile="expected\034_07.json"
+        inputJsonFile="input\034_07.json" name="07" outputJsonFile="output\034_07.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Reservation store : Qty = 40"
+        expectedJsonFile="expected\034_08.json"
+        inputJsonFile="input\034_08.json" name="08" outputJsonFile="output\034_08.json"/>
+		
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+					description="item_inventory for item"
+					expectedJsonFile="expected\034_81.json"
+					inputJsonFile="input\034_81.json" name="81" outputJsonFile="output\034_81.json"/>
+
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/"
+					description="location inventory for item-store1"
+					expectedJsonFile="expected\034_82.json"
+					inputJsonFile="input\034_82.json" name="82" outputJsonFile="output\034_82.json"/>
+					
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_reservation_map/"
+					description="reservation map"
+					expectedJsonFile="expected\034_85.json"
+					inputJsonFile="input\034_85.json" name="85" outputJsonFile="output\034_85.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread : ATP = 60 and Available capacity = 79 "
+        expectedJsonFile="expected\034_09.json"
+        inputJsonFile="input\034_09.json" name="09" outputJsonFile="output\034_09.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/20170613221817100250/consumedemand/Y/"
+        description="CosumeDemand : qty = 20"
+        expectedJsonFile="expected\034_10.json"
+        inputJsonFile="input\034_10.json" name="10" outputJsonFile="output\034_10.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread : ATP = 60 and Available capacity = 79 "
+        expectedJsonFile="expected\034_11.json"
+        inputJsonFile="input\034_11.json" name="11" outputJsonFile="output\034_11.json"/>
+		
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+					description="item_inventory for item"
+					expectedJsonFile="expected\034_91.json"
+					inputJsonFile="input\034_91.json" name="91" outputJsonFile="output\034_91.json"/>
+
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/"
+					description="location inventory for item-store1"
+					expectedJsonFile="expected\034_92.json"
+					inputJsonFile="input\034_92.json" name="92" outputJsonFile="output\034_92.json"/>
+					
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_reservation_map/"
+					description="reservation map"
+					expectedJsonFile="expected\034_95.json"
+					inputJsonFile="input\034_95.json" name="95" outputJsonFile="output\034_95.json"/>
+    
+</testsuite>

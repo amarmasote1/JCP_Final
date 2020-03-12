@@ -1,0 +1,24 @@
+[
+  {
+     "itemID" : "15345672209",
+     "qualitativeStatus" : "NA",
+     
+     "onHandAvlQty": 0,
+     "futureAvlQty": 0,
+	 "factoryShipLeadTimeQty":0,
+    "factoryShipLeadTimeUOM":"1",
+    "factoryShipInventoryIndicator":"N",
+    "whseClass":"2"
+  },
+  {
+     "itemID" : "15345672210",
+     "qualitativeStatus" : "NA",
+     
+     "onHandAvlQty": 0,
+     "futureAvlQty": 0,
+	 "factoryShipLeadTimeQty":0,
+    "factoryShipLeadTimeUOM":"1",
+    "factoryShipInventoryIndicator":"N",
+    "whseClass":"1"
+  }
+]

@@ -1,0 +1,31 @@
+
+[
+   {
+      "storeId" : "1811",
+      "exclusionIndi" : "S",
+      "productLine" : "153",
+      "removeExclusion" : "N",
+      "lotNumber" : "1534567"
+   },
+   {
+      "storeId" : "1811",
+      "exclusionIndi" : "P",
+      "productLine" : "153",
+      "removeExclusion" : "N",
+      "lotNumber" : "1534567"
+   },
+   {
+      "storeId" : "1816",
+      "exclusionIndi" : "S",
+      "productLine" : "153",
+      "removeExclusion" : "N",
+      "lotNumber" : "1534567"
+   },
+   {
+      "storeId" : "1816",
+      "exclusionIndi" : "P",
+      "productLine" : "153",
+      "removeExclusion" : "N",
+      "lotNumber" : "1534567"
+   }
+]

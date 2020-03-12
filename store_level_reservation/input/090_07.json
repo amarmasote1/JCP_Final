@@ -1,0 +1,12 @@
+{"reservation":[
+ {
+"storeID" : "1514",
+
+"procurementAllowed" : "false",
+"bopus" : "true",
+"uom" : "EACH",
+"itemID" : "1534567-2081",
+"lineID" : "1",
+"qty" : "10"
+ }
+]}

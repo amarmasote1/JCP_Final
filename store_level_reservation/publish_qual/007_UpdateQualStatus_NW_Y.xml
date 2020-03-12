@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>		 
+<!-- Verify publish qual when non-store qual status is updated : NW, Y
+                      
+       1. item1 -  NA  to  AL
+       2. item2 -  AL  to  AH
+       3. item3 -  AH  to  BO
+       4. item4 -  BO  to  NA
+-->
+
+<testsuite description="Verify publish qual when non-store qual status is updated : NW, Y
+                      
+       1. item1 -  NA  to  AL
+       2. item2 -  AL  to  AH
+       3. item3 -  AH  to  BO
+       4. item4 -  BO  to  NA"
+	   name="007">
+	   
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item insert : 1 item"
+        expectedJsonFile="expected\007_001.json"
+        inputJsonFile="input\007_001.json" name="001" outputJsonFile="output\007_001.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/qualitativeStatus/"
+        description="Qual status : NA, AL, AH, BO"
+        expectedJsonFile="expected\007_01.json"
+        inputJsonFile="input\007_01.json" name="01" outputJsonFile="output\007_01.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/publishQS/87945674522/NW/Y"
+        description="item1 : 0"
+        expectedJsonFile="expected\007_02.json"
+        inputJsonFile="input\007_02.json" name="02" outputJsonFile="output\007_02.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/publishQS/87945674523/NW/Y"
+        description="item2 : 1"
+        expectedJsonFile="expected\007_03.json"
+        inputJsonFile="input\007_03.json" name="03" outputJsonFile="output\007_03.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/publishQS/87945674524/NW/Y"
+        description="item3 : 2"
+        expectedJsonFile="expected\007_04.json"
+        inputJsonFile="input\007_04.json" name="04" outputJsonFile="output\007_04.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/publishQS/87945674525/NW/Y"
+        description="item4 : 3"
+        expectedJsonFile="expected\007_05.json"
+        inputJsonFile="input\007_05.json" name="05" outputJsonFile="output\007_05.json"/>
+		
+		
+	
+	<test apiMethod="POST" apiUrl="/master/qualitativeStatus/"
+        description="Update Qual status :  AL, AH, BO, NA"
+        expectedJsonFile="expected\007_06.json"
+        inputJsonFile="input\007_06.json" name="06" outputJsonFile="output\007_06.json"/>
+		
+		
+		
+    <test apiMethod="POST" apiUrl="/master/publishQS/87945674522/NW/Y"
+        description="item1 : 1"
+        expectedJsonFile="expected\007_07.json"
+        inputJsonFile="input\007_07.json" name="07" outputJsonFile="output\007_07.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/publishQS/87945674523/NW/Y"
+        description="item2 : 2"
+        expectedJsonFile="expected\007_08.json"
+        inputJsonFile="input\007_08.json" name="08" outputJsonFile="output\007_08.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/publishQS/87945674524/NW/Y"
+        description="item3 : 3"
+        expectedJsonFile="expected\007_09.json"
+        inputJsonFile="input\007_09.json" name="09" outputJsonFile="output\007_09.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/publishQS/87945674525/NW/Y"
+        description="item4 : 0"
+        expectedJsonFile="expected\007_10.json"
+        inputJsonFile="input\007_10.json" name="10" outputJsonFile="output\007_10.json"/>
+
+</testsuite>

@@ -1,0 +1,34 @@
+{
+	"status": 200,
+	"message": "Success",
+	"key": "ItemInventoryKey(itemID=35145678002)",
+	"body": {
+		"itemID": "35145678002",
+		"onhandsupply": 0,
+		"shipATP": 0,
+		"bopusATP": 0,
+		"reservedDemand": 0,
+		"unconfirmedDemand": 0,
+		"nonStoreQualStatus": 0,
+		"networkQualStatus": 1,
+		"nonStoreOnhandQty": 0,
+		"futureAvlQty": 0,
+		"firstFutureAvailableDate": 0,
+		"shipActive": 1,
+		"bopusActive": 1,
+		"purifyATPDone": false,
+		"factoryShipLeadTimeQty": 0,
+		"factoryShipLeadTimeUOM": 0,
+		"factoryShipInventoryIndicator": false,
+		"whseClass": 3,
+		"moq": null,
+		"atpBlob": null,
+		"activeStoresATP": null,
+		"storeMarkDownIndicator": null,
+		"markDownStatus": null,
+		"markDownStoreMap": {
+			
+		}
+	},
+	"warnings": null
+}

@@ -1,0 +1,21 @@
+{
+	"status": 200,
+	"message": "Success",
+	"key": "JCP|1832|15345672124|EACH",
+	"body": {
+		
+		"shipSafetyFactor": 0,
+		"bopusSafetyFactor": 0,
+		"shipSafetyFactorSource": 0,
+		"pickSafetyFactorSource": 0,
+
+		
+		
+		
+		"reservedDemand": 0,
+		"unconfirmedDemand": 0,
+		
+		"dirty": false
+	},
+	"warnings": null
+}

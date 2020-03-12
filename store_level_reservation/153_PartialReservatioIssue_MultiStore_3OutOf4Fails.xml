@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify Partial Reservation and capacity for muti store : 1. insufficient qty  2. insufficient capacity  3. Dirty Node  4. Succeeds
+pre requisite : 
+	item 4 stores dirty node and reservation
+-->
+
+<!-- expected  
+		1. Multiread before reservation : ATP (Ship and bopus) = 100, Available capacity = 10, reserved demand = 0 for both items
+		2. Multiread after reservation (1 out of 4 will succeed): ATP (Ship and bopus) = 100, Available capacity = 10, reserved demand = 0, 
+			ATP (Ship and bopus) = 100, Available capacity = 10, reserved demand = 0, ATP (Ship and bopus) = 0, Available capacity = 10 and ATP (Ship and bopus) = 25, Available capacity = 9, reserved demand = 75
+				
+				2 reservations should fail stating : No_Availability and 1 will fail due to insufficient capacity
+-->
+
+
+
+<testsuite description="Verify Partial Reservation and capacity for muti store : 1. insufficient qty  2. insufficient capacity  3. Dirty Node  4. Succeeds" name="153">
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details"
+        expectedJsonFile="expected\153_01.json"
+        inputJsonFile="input\153_01.json" name="01" outputJsonFile="output\153_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/1959/" 
+		description="Insert node 1"
+        expectedJsonFile="expected\153_02.json"
+        inputJsonFile="input\153_02.json" name="02" outputJsonFile="output\153_02.json"/>
+		
+	 <test apiMethod="POST" apiUrl="/master/node/JCP/1960/" 
+		description="Insert node 2"
+        expectedJsonFile="expected\153_10.json"
+        inputJsonFile="input\153_10.json" name="10" outputJsonFile="output\153_10.json"/>
+		
+	 <test apiMethod="POST" apiUrl="/master/node/JCP/1961/" 
+		description="Insert node 3"
+        expectedJsonFile="expected\153_11.json"
+        inputJsonFile="input\153_11.json" name="11" outputJsonFile="output\153_11.json"/>
+		
+	 <test apiMethod="POST" apiUrl="/master/node/JCP/1962/" 
+		description="Insert node 4"
+        expectedJsonFile="expected\153_12.json"
+        inputJsonFile="input\153_12.json" name="12" outputJsonFile="output\153_12.json"/>
+		
+	 
+		
+
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory - in store 1959,1960,1961,1962"
+        expectedJsonFile="expected\153_03.json"
+        inputJsonFile="input\153_03.json" name="03" outputJsonFile="output\153_03.json"/>
+		
+	
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity"
+        expectedJsonFile="expected\153_05.json"
+        inputJsonFile="input\153_05.json" name="05" outputJsonFile="output\153_05.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\153_06.json"
+        inputJsonFile="input\153_06.json" name="06" outputJsonFile="output\153_06.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/nodeControl/JCP/"
+        description="Node control "
+        expectedJsonFile="expected\153_09.json"
+        inputJsonFile="input\153_09.json" name="09" outputJsonFile="output\153_09.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread after Node control "
+        expectedJsonFile="expected\153_13.json"
+        inputJsonFile="input\153_13.json" name="13" outputJsonFile="output\153_13.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="3 reservations fail : 1. insufficient qty  2. insufficient capacity  3. Dirty Node  4. Succeeds"
+        expectedJsonFile="expected\153_07.json"
+        inputJsonFile="input\153_07.json" name="07" outputJsonFile="output\153_07.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread after reservation "
+        expectedJsonFile="expected\153_08.json"
+        inputJsonFile="input\153_08.json" name="08" outputJsonFile="output\153_08.json"/>
+	
+
+	
+		
+	
+    
+</testsuite>

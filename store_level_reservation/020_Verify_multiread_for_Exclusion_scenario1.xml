@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify 
+			1. Multiread after exclusion, when storeId=All and LOT#=All in exclusion body.
+-->
+
+<!-- expected  
+	1. Before Exclusion: atp=100
+	2. After Exclusion: atp=0
+-->
+
+<testsuite description="Verify multiread after exclusion, when storeId=All and LOT#=All in exclusion body" name="020">
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details: only 1 item"
+        expectedJsonFile="expected\020_01.json"
+        inputJsonFile="input\020_01.json" name="01" outputJsonFile="output\020_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/0656/" 
+		description="Insert node 1"
+        expectedJsonFile="expected\020_02.json"
+        inputJsonFile="input\020_02.json" name="02" outputJsonFile="output\020_02.json"/>
+
+
+    <test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory qty=100"
+        expectedJsonFile="expected\020_03.json"
+        inputJsonFile="input\020_03.json" name="03" outputJsonFile="output\020_03.json"/>
+		
+	
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity: avaCapacity=100"
+        expectedJsonFile="expected\020_05.json"
+        inputJsonFile="input\020_05.json" name="05" outputJsonFile="output\020_05.json"/>
+		
+		
+		
+	
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread: atp=100"
+        expectedJsonFile="expected\020_06.json"
+        inputJsonFile="input\020_06.json" name="06" outputJsonFile="output\020_06.json"/>
+		
+		
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+					description="item_inventory for item"
+					expectedJsonFile="expected\020_81.json"
+					inputJsonFile="input\020_81.json" name="81" outputJsonFile="output\020_81.json"/>
+
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/"
+					description="location inventory for item-store1"
+					expectedJsonFile="expected\020_82.json"
+					inputJsonFile="input\020_82.json" name="82" outputJsonFile="output\020_82.json"/>
+					
+	
+	
+	<test apiMethod="POST" apiUrl="/master/itemExclusion/"
+        description="Exclusion"
+        expectedJsonFile="expected\020_07.json"
+        inputJsonFile="input\020_07.json" name="07" outputJsonFile="output\020_07.json"/>
+	
+<test apiMethod="delay" delay="5000" description="Delay after Exclusion : 5000 ms" name="11"/>
+	
+	
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread: atp=0"
+        expectedJsonFile="expected\020_08.json"
+        inputJsonFile="input\020_08.json" name="08" outputJsonFile="output\020_08.json"/>
+		
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+					description="item_inventory for item"
+					expectedJsonFile="expected\020_91.json"
+					inputJsonFile="input\020_91.json" name="91" outputJsonFile="output\020_91.json"/>
+
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/"
+					description="location inventory for item-store1"
+					expectedJsonFile="expected\020_92.json"
+					inputJsonFile="input\020_92.json" name="92" outputJsonFile="output\020_92.json"/>
+					
+				
+    
+</testsuite>

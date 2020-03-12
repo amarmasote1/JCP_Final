@@ -1,0 +1,70 @@
+{
+    "body": [
+        {
+            "warnings": null,
+            "message": "Successful",
+            "body": {
+                "nonStoreonHandQty": 2,
+                "itemID": "15345672225",
+                "futureAvlQty": 0,
+                "shipAtp": 2,
+                "firstFutureAvailableDate": null,
+                "qualitativeStatus": "AL",
+                "nonStoreQualitativeStatus": "AL",
+                "moq": null
+            },
+            "key": null,
+            "status": 221
+        },
+        {
+            "warnings": null,
+            "message": "Successful",
+            "body": {
+                "nonStoreonHandQty": 2,
+                "itemID": "15345672226",
+                "futureAvlQty": 0,
+                "shipAtp": 2,
+                "firstFutureAvailableDate": null,
+                "qualitativeStatus": "AL",
+                "nonStoreQualitativeStatus": "AL",
+                "moq": null
+            },
+            "key": null,
+            "status": 221
+        },
+        {
+            "warnings": null,
+            "message": "Successful",
+            "body": {
+                "nonStoreonHandQty": 2,
+                "itemID": "15345672227",
+                "futureAvlQty": 0,
+                "shipAtp": 2,
+                "firstFutureAvailableDate": null,
+                "qualitativeStatus": "AL",
+                "nonStoreQualitativeStatus": "AL",
+                "moq": null
+            },
+            "key": null,
+            "status": 221
+        },
+        {
+            "warnings": null,
+            "message": "Successful",
+            "body": {
+                "nonStoreonHandQty": 2,
+                "itemID": "17145672228",
+                "futureAvlQty": 0,
+                "shipAtp": 2,
+                "firstFutureAvailableDate": null,
+                "qualitativeStatus": "AL",
+                "nonStoreQualitativeStatus": "AL",
+                "moq": null
+            },
+            "key": null,
+            "status": 221
+        }
+    ],
+    "message": "Successful",
+    "status": 200
+}

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>		 
+<!-- Verify
+	Update Scenario : Verify active stores, when capacity of one of the stores decreases due to reservation
+	pre requisite :  2 stores, all of them have inventory , all of them have capacity above threshold and now call reservation 
+						so that capacity goes below threshold
+stores         inventory                  capacity
+store1           >0                        >threshold = 4
+store2           >0                        >threshold = 3
+
+now  reservation 2 times
+-->
+<!--Expected
+	1. store1 should be active and store 2 should be inactive
+	2. Check Active store ATP for them. 
+		
+-->
+
+<testsuite description="Update Scenario : Verify active stores, when capacity of one of the stores decreases due to reservation" name="009">
+
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details : only 1 item"
+        expectedJsonFile="expected\009_01.json"
+        inputJsonFile="input\009_01.json" name="01" outputJsonFile="output\009_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/0157/" 
+		description="Insert node 1"
+        expectedJsonFile="expected\009_02.json"
+        inputJsonFile="input\009_02.json" name="02" outputJsonFile="output\009_02.json"/>
+
+  <test apiMethod="POST" apiUrl="/master/node/JCP/0161/" 
+		description="Insert node 2"
+        expectedJsonFile="expected\009_03.json"
+        inputJsonFile="input\009_03.json" name="03" outputJsonFile="output\009_03.json"/>
+
+
+    <test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory : As per above condition "
+        expectedJsonFile="expected\009_05.json"
+        inputJsonFile="input\009_05.json" name="05" outputJsonFile="output\009_05.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity : As per above condition "
+        expectedJsonFile="expected\009_06.json"
+        inputJsonFile="input\009_06.json" name="06" outputJsonFile="output\009_06.json"/>
+
+
+	<test apiMethod="delay" delay="15000" description="Delay to get map updated : 15000 ms" name="100"/>
+
+		
+	<test apiMethod="GET" apiUrl="/master/getActiveStores/"
+        description="Get active stores : both stores should be active "
+        expectedJsonFile="expected\009_07.json"
+        name="07" outputJsonFile="output\009_07.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Reservation at store2: qty=10"
+        expectedJsonFile="expected\009_08.json"
+        inputJsonFile="input\009_08.json" name="08" outputJsonFile="output\009_08.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="again Reservation at store2: qty=10 :  succeeds"
+        expectedJsonFile="expected\009_09.json"
+        inputJsonFile="input\009_09.json" name="09" outputJsonFile="output\009_09.json"/>
+	
+
+	<test apiMethod="delay" delay="15000" description="Delay to get map updated : 15000 ms" name="100"/>
+	
+	<test apiMethod="GET" apiUrl="/master/getActiveStores/"
+        description="Get active stores : store1 should be active and store 2 should be inactive"
+        expectedJsonFile="expected\009_10.json"
+        name="10" outputJsonFile="output\009_10.json"/>
+		
+
+ 
+</testsuite>

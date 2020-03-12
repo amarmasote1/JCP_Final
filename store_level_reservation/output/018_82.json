@@ -1,0 +1,18 @@
+{
+    "warnings": null,
+    "message": "Success",
+    "nodeType": null,
+    "body": {
+        "dirty": false,
+        "inventoryTimestamp": 1583216614000,
+        "shipSafetyFactorSource": 0,
+        "bopusSafetyFactor": 0,
+        "shipSafetyFactor": 0,
+        "onhandSupply": 100,
+        "reservedDemand": 50,
+        "pickSafetyFactorSource": 0,
+        "unconfirmedDemand": 0
+    },
+    "key": "JCP|0651|12345678018|EACH",
+    "status": 200
+}

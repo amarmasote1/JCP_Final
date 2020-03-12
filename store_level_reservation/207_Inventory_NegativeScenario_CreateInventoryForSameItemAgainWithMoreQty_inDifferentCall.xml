@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- verify create inventory : when it is called multiple times for same item with more qty than previous call qty : CAll Again 
+Pre requisite : Item and store
+-->
+
+<!-- expected  
+		1. 1st time inventory creation(qty = 40) : Successful
+		2. 2nd time inventory creation(qty = 60) : Failure
+		3. Multiread after inventory creation : ATP (Ship and Bopus) = 40
+	
+-->
+
+<testsuite description="verify create inventory : when it is called multiple times for same item with more qty than previous call qty : CAll Again : in next call" name="207">
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/2244/"
+        description="store 1"
+        expectedJsonFile="expected\207_01.json"
+        inputJsonFile="input\207_01.json" name="01" outputJsonFile="output\207_01.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2246/"
+        description="store 2"
+        expectedJsonFile="expected\207_02.json"
+        inputJsonFile="input\207_02.json" name="02" outputJsonFile="output\207_02.json"/>
+
+	
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="item1"
+        expectedJsonFile="expected\207_03.json"
+        inputJsonFile="input\207_03.json" name="03" outputJsonFile="output\207_03.json"/>
+
+	
+
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory"
+        expectedJsonFile="expected\207_04.json"
+        inputJsonFile="input\207_04.json" name="04" outputJsonFile="output\207_04.json"/>
+		
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+					description="item_inventory for item"
+					expectedJsonFile="expected\207_41.json"
+					inputJsonFile="input\207_41.json" name="41" outputJsonFile="output\207_41.json"/>
+
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/"
+					description="location inventory for item-store1"
+					expectedJsonFile="expected\207_42.json"
+					inputJsonFile="input\207_42.json" name="42" outputJsonFile="output\207_42.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory : again with same input"
+        expectedJsonFile="expected\207_05.json"
+        inputJsonFile="input\207_05.json" name="05" outputJsonFile="output\207_05.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\207_06.json"
+        inputJsonFile="input\207_06.json" name="06" outputJsonFile="output\207_06.json"/>	
+		
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+					description="item_inventory for item"
+					expectedJsonFile="expected\207_51.json"
+					inputJsonFile="input\207_51.json" name="51" outputJsonFile="output\207_51.json"/>
+
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/"
+					description="location inventory for item-store1"
+					expectedJsonFile="expected\207_52.json"
+					inputJsonFile="input\207_52.json" name="52" outputJsonFile="output\207_52.json"/>
+	
+</testsuite>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>		 
+<!-- Verify
+	Update Scenario : Verify active stores, when Node control is applied and removed
+	pre requisite :  2 stores, all of them have inventory , all of them have capacity above threshold 
+	
+stores         inventory                  capacity
+store1           >0                        >threshold 
+store2           >0                        >threshold 
+
+now  : Apply exclusion to first store
+	   Remove exclusion
+-->
+<!--Expected
+	After Node control/ dirty node
+	1. Both stores should be active
+	2. Check Active store ATP for them. ATP = 0 in store1 and 40 in store2
+When node control is removed
+	1. both the stores should be active
+	2. Check Active store ATP for them. ATP = 40 in both stores
+		
+-->
+
+<testsuite description="Update Scenario : Verify active stores, When Node conrtol is applied and removed" name="015">
+
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details : only 1 item"
+        expectedJsonFile="expected\015_01.json"
+        inputJsonFile="input\015_01.json" name="01" outputJsonFile="output\015_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/0194/" 
+		description="Insert node 1"
+        expectedJsonFile="expected\015_02.json"
+        inputJsonFile="input\015_02.json" name="02" outputJsonFile="output\015_02.json"/>
+
+  <test apiMethod="POST" apiUrl="/master/node/JCP/0195/" 
+		description="Insert node 2"
+        expectedJsonFile="expected\015_03.json"
+        inputJsonFile="input\015_03.json" name="03" outputJsonFile="output\015_03.json"/>
+
+
+    <test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory : As per above condition "
+        expectedJsonFile="expected\015_05.json"
+        inputJsonFile="input\015_05.json" name="05" outputJsonFile="output\015_05.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity : As per above condition "
+        expectedJsonFile="expected\015_06.json"
+        inputJsonFile="input\015_06.json" name="06" outputJsonFile="output\015_06.json"/>
+	
+<test apiMethod="delay" delay="15000" description="Delay to get map updated : 15000 ms" name="100"/>
+	
+	<test apiMethod="GET" apiUrl="/master/getActiveStores/"
+        description="Get active stores : both stores should be active "
+        expectedJsonFile="expected\015_07.json"
+        name="07" outputJsonFile="output\015_07.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/nodeControl/JCP/"
+        description="exclude  store1 "
+        expectedJsonFile="expected\015_08.json"
+        inputJsonFile="input\015_08.json" name="08" outputJsonFile="output\015_08.json"/>
+		
+<test apiMethod="delay" delay="15000" description="Delay to get map updated : 15000 ms" name="100"/>
+		
+	<test apiMethod="GET" apiUrl="/master/getActiveStores/"
+        description="Get active stores : Both stores should be active"
+        expectedJsonFile="expected\015_10.json"
+        name="10" outputJsonFile="output\015_10.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/nodeControl/JCP/"
+        description="remove Node control from store1 "
+        expectedJsonFile="expected\015_11.json"
+        inputJsonFile="input\015_11.json" name="11" outputJsonFile="output\015_11.json"/>
+
+		
+<test apiMethod="delay" delay="15000" description="Delay to get map updated : 15000 ms" name="100"/>
+		
+	<test apiMethod="GET" apiUrl="/master/getActiveStores/"
+        description="Get active stores : both the stores should be active"
+        expectedJsonFile="expected\015_12.json"
+        name="12" outputJsonFile="output\015_12.json"/>
+	
+</testsuite>

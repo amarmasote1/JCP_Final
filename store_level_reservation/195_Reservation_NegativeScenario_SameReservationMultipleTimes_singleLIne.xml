@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- verify reservation and ATP when same reservation is called multiple times : single line
+pre requisite : item, store and reservation
+-->
+
+<!-- expected  
+		1.  Multitread before reservation : ATP (ship and bopus) = 40 for item1
+		2.  Multiread after 1st time reservation(qty = 2) : ATP (ship and bopus) = 38 for item1
+		3.  Multiread after 2nd time same reservation (qty = 2) : ATP (ship and bopus) = 38 for item1 (This reservation should fail)
+-->
+
+<testsuite description="verify reservation and ATP when same reservation is called multiple times : single line" name="195">
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/2190/"
+        description="store 1"
+        expectedJsonFile="expected\195_01.json"
+        inputJsonFile="input\195_01.json" name="01" outputJsonFile="output\195_01.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2196/"
+        description="store 2"
+        expectedJsonFile="expected\195_02.json"
+        inputJsonFile="input\195_02.json" name="02" outputJsonFile="output\195_02.json"/>
+
+	
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="item1"
+        expectedJsonFile="expected\195_03.json"
+        inputJsonFile="input\195_03.json" name="03" outputJsonFile="output\195_03.json"/>
+
+	
+
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory"
+        expectedJsonFile="expected\195_04.json"
+        inputJsonFile="input\195_04.json" name="04" outputJsonFile="output\195_04.json"/>
+
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity"
+        expectedJsonFile="expected\195_06.json"
+        inputJsonFile="input\195_06.json" name="06" outputJsonFile="output\195_06.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread before reservation"
+        expectedJsonFile="expected\195_07.json"
+        inputJsonFile="input\195_07.json" name="07" outputJsonFile="output\195_07.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Reservation first time"
+        expectedJsonFile="expected\195_08.json"
+        inputJsonFile="input\195_08.json" name="08" outputJsonFile="output\195_08.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread after first time reservation"
+        expectedJsonFile="expected\195_11.json"
+        inputJsonFile="input\195_11.json" name="11" outputJsonFile="output\195_11.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Reservation second time"
+        expectedJsonFile="expected\195_09.json"
+        inputJsonFile="input\195_09.json" name="09" outputJsonFile="output\195_09.json"/>
+		
+		
+		
+	
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread after second time reservation"
+        expectedJsonFile="expected\195_10.json"
+        inputJsonFile="input\195_10.json" name="10" outputJsonFile="output\195_10.json"/>
+		
+</testsuite>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify Multiread and Reservation when DG has different owner key.
+pre requisiste : item, store
+-->
+
+<!-- expected  
+		1. Multiread before reservation : ATP (Ship and bopus) = 40, Available capacity = 4, reserved demand = 0
+		2. Multiread after reservation (qty = 10) : ATP ( Ship and bopus) = 30, Available capacity = 3, reserved demand = 10 
+		
+			Reservation should succeed.
+		
+		In JCP : There is no validation on distributionrule . so this test case passes..!
+-->
+
+<testsuite description="Verify Multiread and Reservation when DG has different owner key" name="078">
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details"
+        expectedJsonFile="expected\078_01.json"
+        inputJsonFile="input\078_01.json" name="01" outputJsonFile="output\078_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/1389/" description="Insert node"
+        expectedJsonFile="expected\078_02.json"
+        inputJsonFile="input\078_02.json" name="02" outputJsonFile="output\078_02.json"/>
+		
+	
+
+
+    <test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory - in store 1389"
+        expectedJsonFile="expected\078_03.json"
+        inputJsonFile="input\078_03.json" name="03" outputJsonFile="output\078_03.json"/>
+		
+	
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity"
+        expectedJsonFile="expected\078_05.json"
+        inputJsonFile="input\078_05.json" name="05" outputJsonFile="output\078_05.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\078_06.json"
+        inputJsonFile="input\078_06.json" name="06" outputJsonFile="output\078_06.json"/>
+		
+		
+	
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description=" Reservation "
+        expectedJsonFile="expected\078_09.json"
+        inputJsonFile="input\078_09.json" name="09" outputJsonFile="output\078_09.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\078_10.json"
+        inputJsonFile="input\078_10.json" name="10" outputJsonFile="output\078_10.json"/>
+		
+	
+    
+</testsuite>

@@ -1,0 +1,23 @@
+{
+  "reservation": [{
+    "storeID": "1052",
+    "reservationID": "6df7f9dc-60b3-4f15-bd99-cb8498d23450",
+    "procurementAllowed": "false",
+    "shippable": "true",
+    "uom": "EACH",
+    "itemID": "80310002008",
+    "lineID": "1",
+    "qty": "10"
+  },
+  {
+    "storeID": "1052",
+    "reservationID": "6df7f9dc-60b3-4f15-bd99-cb8498d23451",
+    "procurementAllowed": "false",
+    "shippable": "true",
+    "uom": "EACH",
+    "itemID": "80310002009",
+    "lineID": "2",
+    "qty": "10"
+  }
+  ]
+}

@@ -1,0 +1,1 @@
+{"status":200,"message":"Success","body":[{"itemID":"17212345122","uom":"EACH","storeID":"0217","supplyData":{"onhandsupply":40},"demandData":{"reserveddemand":0}},{"itemID":"17212345122","uom":"EACH","storeID":"0218","supplyData":{"onhandsupply":40},"demandData":{"reserveddemand":0}}]}

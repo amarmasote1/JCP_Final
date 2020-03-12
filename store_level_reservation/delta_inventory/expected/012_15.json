@@ -1,0 +1,136 @@
+{
+	"body": [{
+			"status": 200,
+			"message": "Success",
+			"key": "JCP|2827|34010002015|EACH",
+			"body": {
+				"invall": {
+					
+					"shipATP": 500,
+					
+					"unconfirmeddemand": 0,
+					"standard_capacity": 0,
+					
+					"ship_active": 1,
+					
+					"Available_capacity": 0,
+					
+					"isDirty": 0,
+					"bopusSafetyFactor": 0,
+					"bopusATP": 500,
+					"shipSafetyFactor": 0,
+					"reserveddemand": 0,
+					"bopus_active": 1,
+					"onhandsupply": 500
+				}
+			},
+			"warnings": null
+		}, {
+			"status": 200,
+			"message": "Success",
+			"key": "JCP|2826|34010002015|EACH",
+			"body": {
+				"invall": {
+					
+					"shipATP": 401,
+					
+					"unconfirmeddemand": 0,
+					"standard_capacity": 0,
+					
+					"ship_active": 1,
+					
+					"Available_capacity": 0,
+					
+					"isDirty": 0,
+					"bopusSafetyFactor": 0,
+					"bopusATP": 401,
+					"shipSafetyFactor": 0,
+					"reserveddemand": 0,
+					"bopus_active": 1,
+					"onhandsupply": 401
+				}
+			},
+			"warnings": null
+		}, {
+			"status": 200,
+			"message": "Success",
+			"key": "JCP|2825|34010002015|EACH",
+			"body": {
+				"invall": {
+					
+					"shipATP": 302,
+					
+					"unconfirmeddemand": 0,
+					"standard_capacity": 0,
+					
+					"ship_active": 1,
+					
+					"Available_capacity": 0,
+					
+					"isDirty": 0,
+					"bopusSafetyFactor": 0,
+					"bopusATP": 302,
+					"shipSafetyFactor": 0,
+					"reserveddemand": 0,
+					"bopus_active": 1,
+					"onhandsupply": 302
+				}
+			},
+			"warnings": null
+		}, {
+			"status": 200,
+			"message": "Success",
+			"key": "JCP|2824|34010002015|EACH",
+			"body": {
+				"invall": {
+					
+					"shipATP": 203,
+					
+					"unconfirmeddemand": 0,
+					"standard_capacity": 0,
+					
+					"ship_active": 1,
+					
+					"Available_capacity": 0,
+					
+					"isDirty": 0,
+					"bopusSafetyFactor": 0,
+					"bopusATP": 203,
+					"shipSafetyFactor": 0,
+					"reserveddemand": 0,
+					"bopus_active": 1,
+					"onhandsupply": 203
+				}
+			},
+			"warnings": null
+		}, {
+			"status": 200,
+			"message": "Success",
+			"key": "JCP|2823|34010002015|EACH",
+			"body": {
+				"invall": {
+					
+					"shipATP": 94,
+					
+					"unconfirmeddemand": 0,
+					"standard_capacity": 0,
+					
+					"ship_active": 1,
+					
+					"Available_capacity": 0,
+					
+					"isDirty": 0,
+					"bopusSafetyFactor": 0,
+					"bopusATP": 94,
+					"shipSafetyFactor": 0,
+					"reserveddemand": 0,
+					"bopus_active": 1,
+					"onhandsupply": 94
+				}
+			},
+			"warnings": null
+		}
+	],
+	"status": 221,
+	"message": "Successful"
+}

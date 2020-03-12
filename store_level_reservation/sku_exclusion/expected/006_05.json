@@ -1,0 +1,26 @@
+{
+	"status": 200,
+	"message": "Success",
+	"body": [{
+		"itemID": "80310002008",
+		"uom": "EACH",
+		"storeID": "1052",
+		"supplyData": {
+			"onhandsupply": 40
+		},
+		"demandData": {
+			"reserveddemand": 0
+		}
+	},
+	{
+		"itemID": "80310002009",
+		"uom": "EACH",
+		"storeID": "1052",
+		"supplyData": {
+			"onhandsupply": 40
+		},
+		"demandData": {
+			"reserveddemand": 0
+		}
+	}]
+}

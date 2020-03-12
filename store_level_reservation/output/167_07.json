@@ -1,0 +1,63 @@
+{
+    "body": [
+        {
+            "warnings": null,
+            "message": "Successful",
+            "nodeType": null,
+            "body": {
+                "nonStoreonHandQty": 5,
+                "itemID": "15345672204",
+                "futureAvlQty": 0,
+                "shipAtp": 5,
+                "firstFutureAvailableDate": null,
+                "qualitativeStatus": "AH",
+                "nonStoreQualitativeStatus": "AH",
+                "moq": {
+                    "value": 0
+                }
+            },
+            "key": null,
+            "status": 221
+        },
+        {
+            "warnings": null,
+            "message": "Successful",
+            "nodeType": null,
+            "body": {
+                "nonStoreonHandQty": 5,
+                "itemID": "15345672205",
+                "futureAvlQty": 0,
+                "shipAtp": 5,
+                "firstFutureAvailableDate": null,
+                "qualitativeStatus": "AH",
+                "nonStoreQualitativeStatus": "AH",
+                "moq": {
+                    "value": 0
+                }
+            },
+            "key": null,
+            "status": 221
+        },
+        {
+            "warnings": null,
+            "message": "Successful",
+            "nodeType": null,
+            "body": {
+                "nonStoreonHandQty": 5,
+                "itemID": "15345672206",
+                "futureAvlQty": 0,
+                "shipAtp": 5,
+                "firstFutureAvailableDate": null,
+                "qualitativeStatus": "AH",
+                "nonStoreQualitativeStatus": "AH",
+                "moq": {
+                    "value": 0
+                }
+            },
+            "key": null,
+            "status": 221
+        }
+    ],
+    "message": "Successful",
+    "status": 200
+}

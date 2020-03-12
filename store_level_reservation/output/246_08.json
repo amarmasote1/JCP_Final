@@ -1,0 +1,16 @@
+{
+    "body": [
+        {
+            "warnings": null,
+            "message": "Record not found",
+            "nodeType": "Store",
+            "body": {
+                "invall": {}
+            },
+            "key": "JCP|2704|17112343093|EACH",
+            "status": 404
+        }
+    ],
+    "message": "Partially Successful",
+    "status": 321
+}

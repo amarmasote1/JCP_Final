@@ -1,0 +1,26 @@
+[
+    {  "storeID" :"1959",
+	   "standardCapacity" : "10",
+	   "capacityUnitOfMeasure" : "RELEASE", 
+	   "date" : "<$today>",
+	   "availableCapacity" :"10"
+    },
+	{  "storeID" :"1960",
+	   "standardCapacity" : "0",
+	   "capacityUnitOfMeasure" : "RELEASE", 
+	   "date" : "<$today>",
+	   "availableCapacity" :"0"
+    },
+	{  "storeID" :"1961",
+	   "standardCapacity" : "10",
+	   "capacityUnitOfMeasure" : "RELEASE", 
+	   "date" : "<$today>",
+	   "availableCapacity" :"10"
+    },
+	{  "storeID" :"1962",
+	   "standardCapacity" : "10",
+	   "capacityUnitOfMeasure" : "RELEASE", 
+	   "date" : "<$today>",
+	   "availableCapacity" :"10"
+    }
+]

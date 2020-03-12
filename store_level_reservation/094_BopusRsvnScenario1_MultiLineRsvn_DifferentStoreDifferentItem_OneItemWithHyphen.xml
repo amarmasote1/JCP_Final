@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify reservation for bopus scenario 1 one item with hyphen: Multiline Reservation, 2 store, 2 items
+pre requisite : 
+2 items , 2 stores and 2 reservations (one with hyphen in itemID)
+-->
+
+
+<!-- expected  
+		1. Multiread before reservation : ATP (Ship and bopus) = 50, Available capacity = 8, reserved demand = 0 for both store-item combo
+		2. Multiread after reservation multiLine (Qty = 10 and 20)  : ATP ( Ship and bopus) = 40, Available capacity = 8, reserved demand = 10 for store1-item1 and ATP ( Ship and bopus) = 30, Available capacity = 8, reserved demand = 20 for store2-item2
+		
+		As it is bopus reservation capacity should not decrease
+-->
+
+
+<testsuite description="Verify rsvn for bopus scenario1: 1 item with hyphen: Multiline Reservation, 2 store, 2 items" name="094">
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details"
+        expectedJsonFile="expected\094_01.json"
+        inputJsonFile="input\094_01.json" name="01" outputJsonFile="output\094_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/1572/" description="Insert node"
+        expectedJsonFile="expected\094_02.json"
+        inputJsonFile="input\094_02.json" name="02" outputJsonFile="output\094_02.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/1580/" description="Insert node"
+        expectedJsonFile="expected\094_09.json"
+        inputJsonFile="input\094_09.json" name="09" outputJsonFile="output\094_09.json"/>
+
+
+    <test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory - in store 1572 and 1580"
+        expectedJsonFile="expected\094_03.json"
+        inputJsonFile="input\094_03.json" name="03" outputJsonFile="output\094_03.json"/>
+		
+	
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity"
+        expectedJsonFile="expected\094_05.json"
+        inputJsonFile="input\094_05.json" name="05" outputJsonFile="output\094_05.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\094_06.json"
+        inputJsonFile="input\094_06.json" name="06" outputJsonFile="output\094_06.json"/>
+		
+		
+		
+		
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Reservation "
+        expectedJsonFile="expected\094_07.json"
+        inputJsonFile="input\094_07.json" name="07" outputJsonFile="output\094_07.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\094_08.json"
+        inputJsonFile="input\094_08.json" name="08" outputJsonFile="output\094_08.json"/>	
+		
+	
+    
+</testsuite>

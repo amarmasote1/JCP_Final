@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify ATP when Absolute inventory is 10 and delta inventory is -15
+				Absolute inventory qty = 10;     			ATP = 10
+				Delta feed 		   qty = -15;				ATP = 0
+							
+ -->
+		
+<testsuite description=" Verify ATP when Absolute inventory is 10 and delta inventory is -15" name="015">
+
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details "
+        expectedJsonFile="expected\015_01.json"
+        inputJsonFile="input\015_01.json" name="01" outputJsonFile="output\015_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/2833" description="Insert node 1"
+        expectedJsonFile="expected\015_02.json"
+        inputJsonFile="input\015_02.json" name="02" outputJsonFile="output\015_02.json"/>
+		
+		
+
+		
+	<test apiMethod="POST" apiUrl="/master/itemMapping"
+        description="map itemID to retailID : retailID 1"
+        expectedJsonFile="expected\015_03.json"
+        inputJsonFile="input\015_03.json" name="03" outputJsonFile="output\015_03.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory Absolute feed : Qty = 10"
+        expectedJsonFile="expected\015_04.json"
+        inputJsonFile="input\015_04.json" name="04" outputJsonFile="output\015_04.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="ATP = 10"
+        expectedJsonFile="expected\015_05.json"
+        inputJsonFile="input\015_05.json" name="05" outputJsonFile="output\015_05.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+        description="Get Enterprise level inventory"
+        expectedJsonFile="expected\015_07.json"
+        inputJsonFile="input\015_07.json" name="07" outputJsonFile="output\015_07.json"/>
+
+		
+<test apiMethod="delay" delay="400" description="Delay : 400 ms" name="19"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/JCP/delta/"
+        description="insert inventory delta feed : Qty = -15"
+        expectedJsonFile="expected\015_08.json"
+        inputJsonFile="input\015_08.json" name="08" outputJsonFile="output\015_08.json"/>
+	
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="ATP = 0"
+        expectedJsonFile="expected\015_09.json"
+        inputJsonFile="input\015_09.json" name="09" outputJsonFile="output\015_09.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+        description="Enterprise inventory"
+        expectedJsonFile="expected\015_10.json"
+        inputJsonFile="input\015_10.json" name="10" outputJsonFile="output\015_10.json"/>
+
+		
+		
+
+</testsuite>

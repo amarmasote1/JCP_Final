@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- verify create inventory : when it is called multiple times for same item and same body : single line
+pre requisite : item and store
+-->
+
+<!-- expected  
+		1. Multiple time inevntory creation in single step : one line should pass and remaining lines should fail : OutOf Sequence
+		2. Multiread after inventory creation (qty = 40 , 40) : ATP (Ship and Bopus) = 40
+	
+-->
+
+<testsuite description="verify create inventory : when it is called multiple times for same item and same body : single line" name="205">
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/2239/"
+        description="store 1"
+        expectedJsonFile="expected\205_01.json"
+        inputJsonFile="input\205_01.json" name="01" outputJsonFile="output\205_01.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2240/"
+        description="store 2"
+        expectedJsonFile="expected\205_02.json"
+        inputJsonFile="input\205_02.json" name="02" outputJsonFile="output\205_02.json"/>
+
+	
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="item1"
+        expectedJsonFile="expected\205_03.json"
+        inputJsonFile="input\205_03.json" name="03" outputJsonFile="output\205_03.json"/>
+
+	
+
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory"
+        expectedJsonFile="expected\205_04.json"
+        inputJsonFile="input\205_04.json" name="04" outputJsonFile="output\205_04.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\205_05.json"
+        inputJsonFile="input\205_05.json" name="05" outputJsonFile="output\205_05.json"/>
+		
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+					description="item_inventory for item"
+					expectedJsonFile="expected\205_41.json"
+					inputJsonFile="input\205_41.json" name="41" outputJsonFile="output\205_41.json"/>
+
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/"
+					description="location inventory for item-store1"
+					expectedJsonFile="expected\205_42.json"
+					inputJsonFile="input\205_42.json" name="42" outputJsonFile="output\205_42.json"/>
+		
+	
+</testsuite>

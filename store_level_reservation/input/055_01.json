@@ -1,0 +1,50 @@
+[
+   {
+      "gtin" : "",
+      "uom" : "EACH",
+      "itemID" : "15345672008",
+      "bopus" : "true",
+      "lotNumber" : "1534567",
+      "shippable" : "true",
+      "productLine" : "153",
+      "purchaseType" : "Basic",
+      "isSubstitutionAllowed" : "N",
+      "itemProcessingTime" : "10"
+   },
+   {
+      "gtin" : "",
+      "uom" : "EACH",
+      "itemID" : "15345672009",
+      "bopus" : "true",
+      "lotNumber" : "1534567",
+      "shippable" : "true",
+      "productLine" : "153",
+      "purchaseType" : "Basic",
+      "isSubstitutionAllowed" : "N",
+      "itemProcessingTime" : "10"
+   },
+   {
+      "gtin" : "",
+      "uom" : "EACH",
+      "itemID" : "15345672010",
+      "bopus" : "true",
+      "lotNumber" : "1534567",
+      "shippable" : "true",
+      "productLine" : "153",
+      "purchaseType" : "Basic",
+      "isSubstitutionAllowed" : "N",
+      "itemProcessingTime" : "10"
+   },
+   {
+      "gtin" : "",
+      "uom" : "EACH",
+      "itemID" : "15345672011",
+      "bopus" : "true",
+      "lotNumber" : "1534567",
+      "shippable" : "true",
+      "productLine" : "153",
+      "purchaseType" : "Basic",
+      "isSubstitutionAllowed" : "N",
+      "itemProcessingTime" : "10"
+   }
+]

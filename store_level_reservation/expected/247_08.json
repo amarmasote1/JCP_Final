@@ -1,0 +1,15 @@
+{
+    "body": [
+        {
+            "warnings": null,
+            "message": "Record not found",
+            "body": {
+                "invall": {}
+            },
+            "key": "JCP|2705|17112343094|EACH",
+            "status": 404
+        }
+    ],
+    "message": "Partially Successful",
+    "status": 321
+}

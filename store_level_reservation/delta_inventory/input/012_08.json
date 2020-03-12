@@ -1,0 +1,68 @@
+
+[
+  {
+    "storeID": "2823",
+    "itemID": "34010002015",
+    "uom": "EACH",
+    "supplyData": {
+      "onhandsupply": 100
+    },
+    "demandData": {
+        "reserveddemand": 0
+      },
+    "timestamp": "<$nextSecond>"
+    
+  },
+  {
+    "storeID": "2824",
+    "itemID": "34010002015",
+    "uom": "EACH",
+    "supplyData": {
+      "onhandsupply": 200
+    },
+    "demandData": {
+        "reserveddemand": 0
+      },
+    "timestamp": "<$nextSecond>"
+    
+  },
+  {
+    "storeID": "2825",
+    "itemID": "34010002015",
+    "uom": "EACH",
+    "supplyData": {
+      "onhandsupply": 300
+    },
+    "demandData": {
+        "reserveddemand": 0
+      },
+    "timestamp": "<$nextSecond>"
+    
+  },
+  {
+    "storeID": "2826",
+    "itemID": "34010002015",
+    "uom": "EACH",
+    "supplyData": {
+      "onhandsupply": 400
+    },
+    "demandData": {
+        "reserveddemand": 0
+      },
+    "timestamp": "<$nextSecond>"
+    
+  },
+  {
+    "storeID": "2827",
+    "itemID": "34010002015",
+    "uom": "EACH",
+    "supplyData": {
+      "onhandsupply": 500
+    },
+    "demandData": {
+        "reserveddemand": 0
+      },
+    "timestamp": "<$nextSecond>"
+    
+  }
+]

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify Capacity Reset issue : Set standard capacity such that Available capacity becomes zero for UNCONFIRMED RESERVATION
+pre requisite : 
+	item, store and initial capacity
+-->
+
+<!-- expected  
+		1. Multiread before reservation : ATP (Ship and bopus) = 100, Available capacity = 10, UNCONFIRMED demand = 0
+		2. Multiread after 1st  reservation(Qty = 35) : ATP(Ship and bopus) = 65, Available capacity = 9, UNCONFIRMED demand = 35 
+		3. Multiread after 2nd  reservation(Qty = 15) : ATP(Ship and bopus) = 15, Available capacity = 8, UNCONFIRMED demand = 50 
+		4. Adjsut Standard Capacity such that Available capacity = less than zero(standard capacity = 2)
+		5. Multiread after 3rd  reservation(Qty = 5) : ATP(Ship and bopus) = 50, Available capacity = 0, UNCONFIRMED demand = 50
+		
+		 3rd reservation should fail : Insufficient node capacity.
+-->
+
+
+<testsuite description="Verify Capacity Reset issue : Set standard capacity such that Available capacity becomes zero for UNCONFIRMED RESERVATION" name="144">
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details"
+        expectedJsonFile="expected\144_01.json"
+        inputJsonFile="input\144_01.json" name="01" outputJsonFile="output\144_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/1934/" description="Insert node"
+        expectedJsonFile="expected\144_02.json"
+        inputJsonFile="input\144_02.json" name="02" outputJsonFile="output\144_02.json"/>
+		
+
+
+    <test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory - in store 1934"
+        expectedJsonFile="expected\144_03.json"
+        inputJsonFile="input\144_03.json" name="03" outputJsonFile="output\144_03.json"/>
+		
+	
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity"
+        expectedJsonFile="expected\144_05.json"
+        inputJsonFile="input\144_05.json" name="05" outputJsonFile="output\144_05.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\144_06.json"
+        inputJsonFile="input\144_06.json" name="06" outputJsonFile="output\144_06.json"/>
+		
+		
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/1/N/"
+        description="UNCONFIRMED Reservation"
+        expectedJsonFile="expected\144_07.json"
+        inputJsonFile="input\144_07.json" name="07" outputJsonFile="output\144_07.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread after reservation"
+        expectedJsonFile="expected\144_08.json"
+        inputJsonFile="input\144_08.json" name="08" outputJsonFile="output\144_08.json"/>
+	
+
+	
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/1/N/"
+        description="2nd UNCONFIRMED reservation"
+        expectedJsonFile="expected\144_09.json"
+        inputJsonFile="input\144_09.json" name="09" outputJsonFile="output\144_09.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread after 2nd time reservation"
+        expectedJsonFile="expected\144_10.json"
+        inputJsonFile="input\144_10.json" name="10" outputJsonFile="output\144_10.json"/>
+		
+		
+	
+	
+	
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Reset Standard Capacity such that Available capacity becomes zero"
+        expectedJsonFile="expected\144_11.json"
+        inputJsonFile="input\144_11.json" name="11" outputJsonFile="output\144_11.json"/>
+	
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread after Capacity reset"
+        expectedJsonFile="expected\144_12.json"
+        inputJsonFile="input\144_12.json" name="12" outputJsonFile="output\144_12.json"/>
+		
+		
+		
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/1/N/"
+        description="Reservation after capacity reset"
+        expectedJsonFile="expected\144_13.json"
+        inputJsonFile="input\144_13.json" name="13" outputJsonFile="output\144_13.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread after capacity reset and reservation"
+        expectedJsonFile="expected\144_14.json"
+        inputJsonFile="input\144_14.json" name="14" outputJsonFile="output\144_14.json"/>
+		
+		
+	
+    
+</testsuite>

@@ -1,0 +1,34 @@
+{
+    "body": [
+        {
+            "warnings": [],
+            "message": null,
+            "body": null,
+            "key": "JCP|15345672225|EACH",
+            "status": 0
+        },
+        {
+            "warnings": [],
+            "message": null,
+            "body": null,
+            "key": "JCP|15345672226|EACH",
+            "status": 0
+        },
+        {
+            "warnings": [],
+            "message": null,
+            "body": null,
+            "key": "JCP|15345672227|EACH",
+            "status": 0
+        },
+        {
+            "warnings": [],
+            "message": null,
+            "body": null,
+            "key": "JCP|17145672228|EACH",
+            "status": 0
+        }
+    ],
+    "message": "Successful",
+    "status": 221
+}

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>		 
+<!-- Verify
+	Update Scenario : Verify active stores, when SafetyStock is applied and removed
+	pre requisite :  2 stores, all of them have inventory , all of them have capacity above threshold 
+	
+stores         inventory                  capacity
+store1           >0                        >threshold 
+store2           >0                        >threshold 
+
+now  : Apply exclusion to first store
+	   Remove exclusion
+-->
+<!--Expected
+	After safetystock , safetyFactor  = ATP
+	1. Both stores should be active
+	2. Check Active store ATP for them. ATP = 0 in store1 and 40 in store2
+When safetystock , safetyFactor  = 0
+	1. both the stores should be active
+	2. Check Active store ATP for them. ATP = 40 in both stores
+		
+-->
+
+<testsuite description="Update Scenario : Verify active stores, When SafetyStock is applied and removed" name="016">
+
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details : 2 items"
+        expectedJsonFile="expected\016_01.json"
+        inputJsonFile="input\016_01.json" name="01" outputJsonFile="output\016_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/0197/" 
+		description="Insert node 1"
+        expectedJsonFile="expected\016_02.json"
+        inputJsonFile="input\016_02.json" name="02" outputJsonFile="output\016_02.json"/>
+
+  <test apiMethod="POST" apiUrl="/master/node/JCP/0199/" 
+		description="Insert node 2"
+        expectedJsonFile="expected\016_03.json"
+        inputJsonFile="input\016_03.json" name="03" outputJsonFile="output\016_03.json"/>
+
+
+    <test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory : As per above condition "
+        expectedJsonFile="expected\016_05.json"
+        inputJsonFile="input\016_05.json" name="05" outputJsonFile="output\016_05.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity : As per above condition "
+        expectedJsonFile="expected\016_06.json"
+        inputJsonFile="input\016_06.json" name="06" outputJsonFile="output\016_06.json"/>
+
+<test apiMethod="delay" delay="15000" description="Delay to get map updated : 15000 ms" name="100"/>
+		
+	<test apiMethod="GET" apiUrl="/master/getActiveStores/"
+        description="Get active stores : both stores should be active "
+        expectedJsonFile="expected\016_07.json"
+        name="07" outputJsonFile="output\016_07.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/sfsInsert/"
+        description="SafetyStock = ATP "
+        expectedJsonFile="expected\016_08.json"
+        inputJsonFile="input\016_08.json" name="08" outputJsonFile="output\016_08.json"/>
+		
+<test apiMethod="delay" delay="15000" description="Delay to get map updated : 15000 ms" name="100"/>
+	
+		
+	<test apiMethod="GET" apiUrl="/master/getActiveStores/"
+        description="Get active stores : Both stores should be active"
+        expectedJsonFile="expected\016_10.json"
+        name="10" outputJsonFile="output\016_10.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/sfsInsert/"
+        description="SafetyStcok = 0"
+        expectedJsonFile="expected\016_11.json"
+        inputJsonFile="input\016_11.json" name="11" outputJsonFile="output\016_11.json"/>
+		
+<test apiMethod="delay" delay="15000" description="Delay to get map updated : 15000 ms" name="100"/>
+
+		
+	<test apiMethod="GET" apiUrl="/master/getActiveStores/"
+        description="Get active stores : both the stores should be active"
+        expectedJsonFile="expected\016_12.json"
+        name="12" outputJsonFile="output\016_12.json"/>
+	
+</testsuite>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify IncreaseCapacity when Cancel reservation is  Multilines.
+pre requisite : 1 item, 1 store and 4 reservations
+	All Reservations - shippable 
+	
+	Said by Gautham : cancel reservation step should have only 1 line in this case (same store and itemID in all lines ).
+-->
+
+<!-- expected  
+		1. Multiread before reservation : ATP (Ship and bopus) = 100, Available capacity = 8, reserved demand = 0
+		2. Multiread after reservation multiline(Qty = 10,10,10,10) : ATP ( Ship and bopus) = 60, Available capacity = 7,reserved demand =40.
+		3. Multiread after rsvn cancel : ATP (Ship and bopus) = 100, Available capacity = 8, reserved demand = 0
+		
+		Cancel reservation is called with increase capacity.
+		
+		Said by Gautham : cancel reservation step should have only 1 line in this case (same store and same itemID in all lines ).
+-->
+<!--
+
+<testsuite description="Verify IncreaseCapacity when Cancel reservation is  Multilines: all reservations : shippable" name="105">
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details"
+        expectedJsonFile="expected\105_01.json"
+        inputJsonFile="input\105_01.json" name="01" outputJsonFile="output\105_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/1722/" description="Insert node"
+        expectedJsonFile="expected\105_02.json"
+        inputJsonFile="input\105_02.json" name="02" outputJsonFile="output\105_02.json"/>
+		
+	
+		
+
+
+    <test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory - in store 1722"
+        expectedJsonFile="expected\105_03.json"
+        inputJsonFile="input\105_03.json" name="03" outputJsonFile="output\105_03.json"/>
+		
+
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity"
+        expectedJsonFile="expected\105_05.json"
+        inputJsonFile="input\105_05.json" name="05" outputJsonFile="output\105_05.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\105_06.json"
+        inputJsonFile="input\105_06.json" name="06" outputJsonFile="output\105_06.json"/>
+		
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+					description="item_inventory for item"
+					expectedJsonFile="expected\105_51.json"
+					inputJsonFile="input\105_51.json" name="51" outputJsonFile="output\105_51.json"/>
+
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/"
+					description="location inventory for item-store1"
+					expectedJsonFile="expected\105_52.json"
+					inputJsonFile="input\105_52.json" name="52" outputJsonFile="output\105_52.json"/>
+					
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_reservation_map/"
+					description="reservation map"
+					expectedJsonFile="expected\105_55.json"
+					inputJsonFile="input\105_55.json" name="55" outputJsonFile="output\105_55.json"/>
+					
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Multiline Reservation "
+        expectedJsonFile="expected\105_07.json"
+        inputJsonFile="input\105_07.json" name="07" outputJsonFile="output\105_07.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\105_08.json"
+        inputJsonFile="input\105_08.json" name="08" outputJsonFile="output\105_08.json"/>	
+		
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+					description="item_inventory for item"
+					expectedJsonFile="expected\105_61.json"
+					inputJsonFile="input\105_61.json" name="61" outputJsonFile="output\105_61.json"/>
+
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/"
+					description="location inventory for item-store1"
+					expectedJsonFile="expected\105_62.json"
+					inputJsonFile="input\105_62.json" name="62" outputJsonFile="output\105_62.json"/>
+					
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_reservation_map/"
+					description="reservation map"
+					expectedJsonFile="expected\105_65.json"
+					inputJsonFile="input\105_65.json" name="65" outputJsonFile="output\105_65.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Cancel Multiline Reservation with increaseCapacity=true"
+        expectedJsonFile="expected\105_09.json"
+        inputJsonFile="input\105_09.json" name="09" outputJsonFile="output\105_09.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\105_10.json"
+        inputJsonFile="input\105_10.json" name="10" outputJsonFile="output\105_10.json"/>
+
+
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+					description="item_inventory for item"
+					expectedJsonFile="expected\105_71.json"
+					inputJsonFile="input\105_71.json" name="61" outputJsonFile="output\105_71.json"/>
+
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/"
+					description="location inventory for item-store1"
+					expectedJsonFile="expected\105_72.json"
+					inputJsonFile="input\105_72.json" name="62" outputJsonFile="output\105_72.json"/>
+					
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_reservation_map/"
+					description="reservation map"
+					expectedJsonFile="expected\105_75.json"
+					inputJsonFile="input\105_75.json" name="65" outputJsonFile="output\105_75.json"/>
+		
+
+    
+</testsuite>  -->

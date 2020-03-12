@@ -1,0 +1,31 @@
+{
+	"status": 200,
+	"message": "Success",
+	"body": [{
+		"itemID": "35145678008",
+		"uom": "EACH",
+		"storeID": "1052",
+		"supplyData": {
+			"onhandsupply": 10
+		},
+		"demandData": null
+	},
+	{
+		"itemID": "35145678009",
+		"uom": "EACH",
+		"storeID": "1052",
+		"supplyData": {
+			"onhandsupply": 10
+		},
+		"demandData": null
+	},
+	{
+		"itemID": "35145678010",
+		"uom": "EACH",
+		"storeID": "1052",
+		"supplyData": {
+			"onhandsupply": 10
+		},
+		"demandData": null
+	}]
+}

@@ -1,0 +1,15 @@
+{
+  "DistributionRule": {
+    "Description": "R6 Distribution Group",
+    "DistributionRuleId": "SFS-DG",
+    "ItemGroupCode": "PROD",
+    "OwnerKey": "JCP",
+    "ItemShipNodes": {
+      "ItemShipNode": 
+    [
+    	
+ {"DistributionRuleId": "SFS-DG","EffectiveEndDate": "2500-01-01","EffectiveStartDate": "1900-01-01","ItemId": "ALL","ItemType": "ALL","OwnerKey": "JCP","Priority": "1","ShipnodeKey":"1262"}
+    ]
+    }
+  }
+}

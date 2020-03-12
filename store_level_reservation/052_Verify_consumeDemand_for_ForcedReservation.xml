@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify consumeDemand for Forced reservation
+ Pre requisite : item, store
+-->
+
+
+<!-- expected  
+		1. Multiread before reservation : ATP ( Ship and bopus = 10), Available capacity = 10
+		2. Multiread After forced bopus reservation (Qty = 45) : ATP ( Ship and bopus = 10), Available capacity = 10, reserved Demand = 0
+		3. Multiread After consume demand (Qty = 45) = ATP ( Ship and bopus = 10), Available capacity = 10, reserved Demand = 0
+		
+		Forced reservation should fail as JCP doesn't support it. Consume demand should also fail			
+-->
+
+
+<testsuite description="Verify consumeDemand for ForcedReservation" name="052">
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details"
+        expectedJsonFile="expected\052_01.json"
+        inputJsonFile="input\052_01.json" name="01" outputJsonFile="output\052_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/0838/" description="Insert node"
+        expectedJsonFile="expected\052_02.json"
+        inputJsonFile="input\052_02.json" name="02" outputJsonFile="output\052_02.json"/>
+
+
+    <test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory - in store1"
+        expectedJsonFile="expected\052_03.json"
+        inputJsonFile="input\052_03.json" name="03" outputJsonFile="output\052_03.json"/>
+		
+
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity"
+        expectedJsonFile="expected\052_05.json"
+        inputJsonFile="input\052_05.json" name="05" outputJsonFile="output\052_05.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\052_06.json"
+        inputJsonFile="input\052_06.json" name="06" outputJsonFile="output\052_06.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/Y/"
+        description=" reservation for ForcedReservation"
+        expectedJsonFile="expected\052_07.json"
+        inputJsonFile="input\052_07.json" name="07" outputJsonFile="output\052_07.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\052_10.json"
+        inputJsonFile="input\052_10.json" name="10" outputJsonFile="output\052_10.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/201706232218171002005/consumedemand/N/"
+        description="ConsumeDemand"
+        expectedJsonFile="expected\052_08.json"
+        inputJsonFile="input\052_08.json" name="08" outputJsonFile="output\052_08.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\052_09.json"
+        inputJsonFile="input\052_09.json" name="09" outputJsonFile="output\052_09.json"/>
+		
+	
+    
+</testsuite>

@@ -1,0 +1,12 @@
+{"reservation":[
+ {
+"storeID" : "1749",
+"reservationID":"211706142218171002209",
+"procurementAllowed" : "false",
+"bopus" : "true",
+"uom" : "EACH",
+"itemID" : "Jcpeeny11",
+"lineID" : "1",
+"qty" : "10"
+ }
+]}

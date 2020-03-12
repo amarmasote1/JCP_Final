@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- verify insertion of Exclusion multiple times
+Scenario1 : Exclusion Without Store Insertion (Non Existing Store)
+Scenario2 : Insert multiple times for ship
+Scenario3 : Insert multiple times for bopus
+Scenario4 : Insert multiple times for ship and bopus
+-->
+
+<!-- expected  
+		1. Scenario1 : Success   (No Validation as such added for the time being)
+		2. Scenario2 : 1st time Success after that should fail
+		3. Scenario3 : 1st time Success after that should fail
+		4. Scenario4 : 1st time Success after that should fail 
+-->
+
+<testsuite description="verify insertion of Exclusion multiple times
+Scenario1 : Exclusion Without Store Insertion (Non Existing Store)
+Scenario2 : Insert multiple times for ship
+Scenario3 : Insert multiple times for bopus
+Scenario4 : Insert multiple times for ship and bopus and remove multiple times" name="191">
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/2168/"
+        description="store 1"
+        expectedJsonFile="expected\191_01.json"
+        inputJsonFile="input\191_01.json" name="01" outputJsonFile="output\191_01.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2169/"
+        description="store 2"
+        expectedJsonFile="expected\191_02.json"
+        inputJsonFile="input\191_02.json" name="02" outputJsonFile="output\191_02.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2171/"
+        description="store 3"
+        expectedJsonFile="expected\191_03.json"
+        inputJsonFile="input\191_03.json" name="03" outputJsonFile="output\191_03.json"/>
+		
+	
+
+	
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="item1"
+        expectedJsonFile="expected\191_13.json"
+        inputJsonFile="input\191_13.json" name="13" outputJsonFile="output\191_13.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="item2"
+        expectedJsonFile="expected\191_14.json"
+        inputJsonFile="input\191_14.json" name="14" outputJsonFile="output\191_14.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="item3"
+        expectedJsonFile="expected\191_15.json"
+        inputJsonFile="input\191_15.json" name="15" outputJsonFile="output\191_15.json"/>
+
+
+
+	
+		
+		
+
+	<test apiMethod="POST" apiUrl="/master/itemExclusion/"
+        description="Scenario1 : Exclusion for non existing store - item combination"
+        expectedJsonFile="expected\191_04.json"
+        inputJsonFile="input\191_04.json" name="04" outputJsonFile="output\191_04.json"/>
+		
+		
+		
+	
+		
+	<test apiMethod="POST" apiUrl="/master/itemExclusion/"
+        description="Scenario2 : multiple times for ship : store 2"
+        expectedJsonFile="expected\191_05.json"
+        inputJsonFile="input\191_05.json" name="05" outputJsonFile="output\191_05.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/itemExclusion/"
+        description="Scenario2 : multiple times for ship : store 2"
+        expectedJsonFile="expected\191_06.json"
+        inputJsonFile="input\191_06.json" name="06" outputJsonFile="output\191_06.json"/>
+		
+		
+		
+		
+		
+	<test apiMethod="POST" apiUrl="/master/itemExclusion/"
+        description="Scenario3 : multiple times for bopus : store 3"
+        expectedJsonFile="expected\191_07.json"
+        inputJsonFile="input\191_07.json" name="07" outputJsonFile="output\191_07.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/itemExclusion/"
+        description="Scenario3 : multiple times for bopus : store 3"
+        expectedJsonFile="expected\191_08.json"
+        inputJsonFile="input\191_08.json" name="08" outputJsonFile="output\191_08.json"/>
+		
+		
+		
+		
+		
+	<test apiMethod="POST" apiUrl="/master/itemExclusion/"
+        description="Scenario4 : multiple times insert for ship and bopus : store 3 "
+        expectedJsonFile="expected\191_09.json"
+        inputJsonFile="input\191_09.json" name="09" outputJsonFile="output\191_09.json"/>
+	
+	<test apiMethod="POST" apiUrl="/master/itemExclusion/"
+        description="Scenario4 :  multiple times insert for ship and bopus : store 3"
+        expectedJsonFile="expected\191_10.json"
+        inputJsonFile="input\191_10.json" name="10" outputJsonFile="output\191_10.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/itemExclusion/"
+        description="Scenario4 : update the remove exlusion flag to Y : store 3"
+        expectedJsonFile="expected\191_11.json"
+        inputJsonFile="input\191_11.json" name="11" outputJsonFile="output\191_11.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/itemExclusion/"
+        description="Scenario4 : update the remove exlusion flag to Y : store 3"
+        expectedJsonFile="expected\191_12.json"
+        inputJsonFile="input\191_12.json" name="12" outputJsonFile="output\191_12.json"/>
+		
+		
+</testsuite>

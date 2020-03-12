@@ -1,0 +1,38 @@
+[  
+   {
+      "gtin" : "",
+      "uom" : "EACH",
+      "itemID" : "17212345106",
+      "bopus" : "true",
+      "lotNumber" : "1721234",
+      "shippable" : "true",
+      "productLine" : "172",
+      "purchaseType" : "Fashion",
+      "isSubstitutionAllowed" : "N",
+      "itemProcessingTime" : "10"
+   },
+   {
+      "gtin" : "",
+      "uom" : "EACH",
+      "itemID" : "17212345107",
+      "bopus" : "true",
+      "lotNumber" : "1721234",
+      "shippable" : "true",
+      "productLine" : "172",
+      "purchaseType" : "Fashion",
+      "isSubstitutionAllowed" : "N",
+      "itemProcessingTime" : "10"
+   },
+   {
+      "gtin" : "",
+      "uom" : "EACH",
+      "itemID" : "17212345108",
+      "bopus" : "true",
+      "lotNumber" : "1721234",
+      "shippable" : "true",
+      "productLine" : "172",
+      "purchaseType" : "Fashion",
+      "isSubstitutionAllowed" : "N",
+      "itemProcessingTime" : "10"
+   }
+]

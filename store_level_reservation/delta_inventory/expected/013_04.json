@@ -1,0 +1,36 @@
+{
+	"status": 200,
+	"message": "Success",
+	"body": [{
+			"itemID": "34010002016",
+			"uom": "EACH",
+			"storeID": "2828",
+			"supplyData": {
+				"onhandsupply": 10
+			},
+			"demandData": {
+				"reserveddemand": 0
+			}
+		}, {
+			"itemID": "34010002016",
+			"uom": "EACH",
+			"storeID": "2829",
+			"supplyData": {
+				"onhandsupply": 10
+			},
+			"demandData": {
+				"reserveddemand": 0
+			}
+		}, {
+			"itemID": "34010002016",
+			"uom": "EACH",
+			"storeID": "2830",
+			"supplyData": {
+				"onhandsupply": 10
+			},
+			"demandData": {
+				"reserveddemand": 0
+			}
+		}
+	]
+}

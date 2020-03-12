@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify    
+			for no null pointer when, when absolute is inserted with same or lower time stamp
+ -->
+		 
+<testsuite description="Vfor no null pointer when, when absolute is inserted with same or lower time stamp" name="013">
+
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details"
+        expectedJsonFile="expected\013_01.json"
+        inputJsonFile="input\013_01.json" name="01" outputJsonFile="output\013_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/2918/" description="Insert node 1"
+        expectedJsonFile="expected\013_02.json"
+        inputJsonFile="input\013_02.json" name="02" outputJsonFile="output\013_02.json"/>
+
+    <test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory"
+        expectedJsonFile="expected\013_03.json"
+        inputJsonFile="input\013_03.json" name="03" outputJsonFile="output\013_03.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/nodeControl/JCP/"
+        description="Node Control"
+        expectedJsonFile="expected\013_04.json"
+        inputJsonFile="input\013_04.json" name="04" outputJsonFile="output\013_04.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory : with same timestamp"
+        expectedJsonFile="expected\013_05.json"
+        inputJsonFile="input\013_05.json" name="05" outputJsonFile="output\013_05.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory : with lower timestamp"
+        expectedJsonFile="expected\013_06.json"
+        inputJsonFile="input\013_06.json" name="06" outputJsonFile="output\013_06.json"/>
+		
+		
+
+    
+</testsuite>

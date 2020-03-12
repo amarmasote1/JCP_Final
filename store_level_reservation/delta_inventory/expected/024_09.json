@@ -1,0 +1,40 @@
+{
+	"body": [{
+			"status": 200,
+			"message": "Success",
+			"key": "JCP|2845|34010002029|EACH",
+			"body": {
+				"invall": {
+					
+					"shipATP": 12,
+					
+					"unconfirmeddemand": 0,
+					"standard_capacity": 0,
+					
+					"ship_active": 1,
+					
+					"Available_capacity": 0,
+					
+					"isDirty": 0,
+					"bopusSafetyFactor": 0,
+					"bopusATP": 12,
+					"shipSafetyFactor": 0,
+					"reserveddemand": 0,
+					"bopus_active": 1,
+					"onhandsupply": 12
+				}
+			},
+			"warnings": null
+		}, {
+			"status": 404,
+			"message": "Record not found",
+			"key": "JCP|2846|34010002029|EACH",
+			"body": {
+				"invall": {}
+			},
+			"warnings": null
+		}
+	],
+	"status": 321,
+	"message": "Partially Successful"
+}

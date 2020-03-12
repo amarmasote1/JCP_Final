@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify ATP when inventory is inserted after applying safety stock
+-->
+
+<!-- expected  
+	1. ATP should be zero 
+	
+	
+-->
+
+<testsuite description="Verify ATP when inventory is inserted after applying safety stock" name="242">
+		
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="items: 1 "
+        expectedJsonFile="expected\242_01.json"
+        inputJsonFile="input\242_01.json" name="01" outputJsonFile="output\242_01.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2358/"
+        description="store 1"
+        expectedJsonFile="expected\242_02.json"
+        inputJsonFile="input\242_02.json" name="02" outputJsonFile="output\242_02.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory : Create inventory"
+        expectedJsonFile="expected\242_03.json"
+        inputJsonFile="input\242_03.json" name="03" outputJsonFile="output\242_03.json"/>
+	
+	
+		
+	
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity: Available Capacity = 10"
+        expectedJsonFile="expected\242_05.json"
+        inputJsonFile="input\242_05.json" name="05" outputJsonFile="output\242_05.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread: shipAtp=12, bopusAtp=12 "
+        expectedJsonFile="expected\242_06.json"
+        inputJsonFile="input\242_06.json" name="06" outputJsonFile="output\242_06.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/sfsInsert/"
+        description="safety stock"
+         expectedJsonFile="expected\242_07.json"
+        inputJsonFile="input\242_07.json" name="07" outputJsonFile="output\242_07.json"/>
+	
+	
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread: "
+        expectedJsonFile="expected\242_08.json"
+        inputJsonFile="input\242_08.json" name="08" outputJsonFile="output\242_08.json"/>
+		
+	
+	<test apiMethod="delay" delay="0814" description="Delay to increase create inventory step time stamp : 0814 ms" name="100"/>
+	
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="Create inventory : for same item,same store and different item at same store "
+        expectedJsonFile="expected\242_09.json"
+        inputJsonFile="input\242_09.json" name="09" outputJsonFile="output\242_09.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread: "
+        expectedJsonFile="expected\242_10.json"
+        inputJsonFile="input\242_10.json" name="10" outputJsonFile="output\242_10.json"/>
+	
+</testsuite>

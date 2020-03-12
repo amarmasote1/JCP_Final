@@ -1,0 +1,29 @@
+{
+	"body": [{
+		"status": 200,
+		"message": "Success",
+		"key": "JCP|0566|12345678006|EACH",
+		"body": {
+			"invall": {
+				
+				"shipATP": 0,
+				
+				"unconfirmeddemand": 0,
+				
+				
+				"ship_active": 1,
+				"Available_capacity": 80,
+				
+				"bopusSafetyFactor": 0,
+				"bopusATP": 0,
+				"shipSafetyFactor": 0,
+				"reserveddemand": 0,
+				"bopus_active": 1,
+				"onhandsupply": 0
+			}
+		},
+		"warnings": null
+	}],
+	"status": 221,
+	"message": "Successful"
+}

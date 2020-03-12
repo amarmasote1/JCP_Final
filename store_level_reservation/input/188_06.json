@@ -1,0 +1,8 @@
+[{
+	"storeID": "2147",
+	"standardCapacity": "30",
+	"capacityUnitOfMeasure": "RELEASE",
+	"availableCapacity" :"30",
+	"date": "<$currentTime>"
+}
+]

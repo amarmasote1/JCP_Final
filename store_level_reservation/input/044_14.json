@@ -1,0 +1,55 @@
+
+
+{"reservation":[
+ {
+"storeID" : "0794",
+"reservationID" : "20170613221817100281",
+"procurementAllowed" : "false",
+"bopus" : "true",
+"uom" : "EACH",
+"itemID" : "12345678081",
+"lineID" : "1",
+"qty" : "0"
+ },
+ {
+"storeID" : "0794",
+"reservationID" : "20170613221817100282",
+"procurementAllowed" : "false",
+"bopus" : "true",
+"uom" : "EACH",
+"itemID" : "12345678081",
+"lineID" : "1",
+"qty" : "0"
+ },
+ {
+"storeID" : "0794",
+"reservationID" : "20170613221817100283",
+"procurementAllowed" : "false",
+"bopus" : "true",
+"uom" : "EACH",
+"itemID" : "12345678081",
+"lineID" : "1",
+"qty" : "0"
+ },
+ {
+"storeID" : "0794",
+"reservationID" : "20170613221817100284",
+"procurementAllowed" : "false",
+"bopus" : "true",
+"uom" : "EACH",
+"itemID" : "12345678081",
+"lineID" : "1",
+"qty" : "0"
+ },
+ {
+"storeID" : "0794",
+"reservationID" : "20170613221817100285",
+"procurementAllowed" : "false",
+"bopus" : "true",
+"uom" : "EACH",
+"itemID" : "12345678081",
+"lineID" : "1",
+"qty" : "0"
+ }
+
+]}

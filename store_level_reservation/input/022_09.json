@@ -1,0 +1,17 @@
+
+[
+   {
+      "storeId" : "0671",
+      "exclusionIndi" : "S",
+      "productLine" : "902",
+      "removeExclusion" : "N",
+      "lotNumber" : "9024567"
+   },
+   {
+      "storeId" : "0671",
+      "exclusionIndi" : "P",
+      "productLine" : "902",
+      "removeExclusion" : "N",
+      "lotNumber" : "9024567"
+   }
+]

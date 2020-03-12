@@ -1,0 +1,7 @@
+{
+      "startDate" : "<$yesterday>",
+      "storeID" : "0226",
+      "uom" : "EACH",
+      "endDate" : "<$nextWeek>",
+      "itemID" : "17212345125"
+}

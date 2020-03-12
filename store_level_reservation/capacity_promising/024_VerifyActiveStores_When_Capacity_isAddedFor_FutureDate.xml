@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>		 
+<!-- Verify
+    Verify active stores, When Capacity is added for future date
+	pre requisite :  2 stores, all of them have inventory and capacity as given below
+	
+stores   			inventory                   capacity
+store1        		  >0                         >threshold for today
+store2        		  >0                         >threshold for tomorrow
+store3    	  		  >0                         >threshold for day after tomorrow
+
+now  : Apply node control to store 1 
+-->
+<!--Expected
+	
+	1. store1 should be active and store2, store3 should be Inactive
+	2. Check Active store ATP for them.
+		
+-->
+
+<testsuite description="Update Scenario : Verify active stores, When Capacity is added for future date" name="024">
+
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details : 2 items"
+        expectedJsonFile="expected\024_01.json"
+        inputJsonFile="input\024_01.json" name="01" outputJsonFile="output\024_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/0237/" 
+		description="Insert node 1"
+        expectedJsonFile="expected\024_02.json"
+        inputJsonFile="input\024_02.json" name="02" outputJsonFile="output\024_02.json"/>
+
+  <test apiMethod="POST" apiUrl="/master/node/JCP/0241/" 
+		description="Insert node 2"
+        expectedJsonFile="expected\024_03.json"
+        inputJsonFile="input\024_03.json" name="03" outputJsonFile="output\024_03.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/0246/" 
+		description="Insert node 3"
+        expectedJsonFile="expected\024_04.json"
+        inputJsonFile="input\024_04.json" name="04" outputJsonFile="output\024_04.json"/>
+
+
+    <test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory : As per above condition "
+        expectedJsonFile="expected\024_05.json"
+        inputJsonFile="input\024_05.json" name="05" outputJsonFile="output\024_05.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity : As per above condition "
+        expectedJsonFile="expected\024_06.json"
+        inputJsonFile="input\024_06.json" name="06" outputJsonFile="output\024_06.json"/>
+
+<test apiMethod="delay" delay="15000" description="Delay to get map updated : 15000 ms" name="100"/>
+		
+	<test apiMethod="GET" apiUrl="/master/getActiveStores/"
+        description="Get active stores : store1 should be active and store2, store3 should be Inactive"
+        expectedJsonFile="expected\024_07.json"
+        name="07" outputJsonFile="output\024_07.json"/>
+		
+	
+		
+	
+</testsuite>

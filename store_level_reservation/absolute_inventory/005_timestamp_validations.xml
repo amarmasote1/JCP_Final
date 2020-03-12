@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify    
+			item_inventory, jcp_location_inventory_pojo, multiread  
+			1. before previous time stamp
+			2. equal previous time stamp
+			3. after previous time stamp
+			
+ -->
+		 
+<!-- expected  
+
+-->
+<testsuite description="item_inventory, jcp_location_inventory_pojo, multiread  
+			1. before previous time stamp
+			2. equal previous time stamp
+			3. after previous time stamp
+			" name="005">
+
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details same- item across all the store"
+        expectedJsonFile="expected\005_01.json"
+        inputJsonFile="input\005_01.json" name="01" outputJsonFile="output\005_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/1052/" description="Insert node 1"
+        expectedJsonFile="expected\005_02.json"
+        inputJsonFile="input\005_02.json" name="02" outputJsonFile="output\005_02.json"/>
+
+
+    <test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory for both items"
+        expectedJsonFile="expected\005_05_1.json"
+        inputJsonFile="input\005_05_1.json" name="05_1" outputJsonFile="output\005_05_1.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory - before previous time stamp"
+        expectedJsonFile="expected\005_05_2.json"
+        inputJsonFile="input\005_05_2.json" name="05_2" outputJsonFile="output\005_05_2.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory - equal to previous time stamp"
+        expectedJsonFile="expected\005_05_3.json"
+        inputJsonFile="input\005_05_3.json" name="05_3" outputJsonFile="output\005_05_3.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory - after previous timestamp"
+        expectedJsonFile="expected\005_05_4.json"
+        inputJsonFile="input\005_05_4.json" name="05_4" outputJsonFile="output\005_05_4.json"/>
+	
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity: set valid capacity"
+        expectedJsonFile="expected\005_07.json"
+        inputJsonFile="input\005_07.json" name="07" outputJsonFile="output\005_07.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread: verify Atp"
+        expectedJsonFile="expected\005_08.json"
+        inputJsonFile="input\005_08.json" name="08" outputJsonFile="output\005_08.json"/>
+		
+		
+	        <test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+				description="item_inventory"
+				expectedJsonFile="expected\005_61.json"
+				inputJsonFile="input\005_61.json" name="61" outputJsonFile="output\005_61.json"/>
+				
+			<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+				description="item_inventory"
+				expectedJsonFile="expected\005_62.json"
+				inputJsonFile="input\005_62.json" name="62" outputJsonFile="output\005_62.json"/>
+				
+			<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+				description="item_inventory"
+				expectedJsonFile="expected\005_63.json"
+				inputJsonFile="input\005_63.json" name="63" outputJsonFile="output\005_63.json"/>
+				
+				
+				
+
+			<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/"
+				description="location inventory"
+				expectedJsonFile="expected\005_71.json"
+				inputJsonFile="input\005_71.json" name="71" outputJsonFile="output\005_71.json"/>
+				
+			<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/"
+				description="location inventory"
+				expectedJsonFile="expected\005_72.json"
+				inputJsonFile="input\005_72.json" name="72" outputJsonFile="output\005_72.json"/>
+				
+			<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/"
+				description="location inventory"
+				expectedJsonFile="expected\005_73.json"
+				inputJsonFile="input\005_73.json" name="73" outputJsonFile="output\005_73.json"/>
+			
+				
+	
+</testsuite>

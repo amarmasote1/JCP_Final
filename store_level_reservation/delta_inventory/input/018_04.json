@@ -1,0 +1,29 @@
+
+[
+  {
+    "storeID": "2838",
+    "itemID": "34010002023",
+    "uom": "EACH",
+    "supplyData": {
+      "onhandsupply": 10
+    },
+    "demandData": {
+        "reserveddemand": 0
+      },
+    "timestamp": "<$nextTwoMinute>"
+    
+  },
+  {
+    "storeID": "2839",
+    "itemID": "34010002023",
+    "uom": "EACH",
+    "supplyData": {
+      "onhandsupply": 10
+    },
+    "demandData": {
+        "reserveddemand": 0
+      },
+    "timestamp": "<$nextTwoMinute>"
+    
+  }
+]

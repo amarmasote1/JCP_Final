@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify ATP when safety stock and inventory insert with delta feed are applied 
+				
+				Inventory insert with absolute feed   			 ATP = 100
+				safety stock qty = 100 				  			 ATP = 0
+				Inventory insert with delta feed  qty = 50	  	 ATP = 50
+				update safety stock		qty = 10			   	 ATP = 140
+
+ -->
+		
+<testsuite description="Verify ATP when safety stock and inventory insert with delta feed are applied " name="010">
+
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details "
+        expectedJsonFile="expected\010_01.json"
+        inputJsonFile="input\010_01.json" name="01" outputJsonFile="output\010_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/2814/" description="Insert node 1"
+        expectedJsonFile="expected\010_02.json"
+        inputJsonFile="input\010_02.json" name="02" outputJsonFile="output\010_02.json"/>
+
+		
+	<test apiMethod="POST" apiUrl="/master/itemMapping"
+        description="map itemID to retailID"
+        expectedJsonFile="expected\010_03.json"
+        inputJsonFile="input\010_03.json" name="03" outputJsonFile="output\010_03.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory"
+        expectedJsonFile="expected\010_04.json"
+        inputJsonFile="input\010_04.json" name="04" outputJsonFile="output\010_04.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="ATP = 100"
+        expectedJsonFile="expected\010_05.json"
+        inputJsonFile="input\010_05.json" name="05" outputJsonFile="output\010_05.json"/>
+
+
+
+<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+        description="Get Enterprise level inventory"
+        expectedJsonFile="expected\010_13.json"
+        inputJsonFile="input\010_13.json" name="13" outputJsonFile="output\010_13.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/master/sfsInsert/"
+        description="SFS"
+        expectedJsonFile="expected\010_07.json"
+        inputJsonFile="input\010_07.json" name="07" outputJsonFile="output\010_07.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="multiread ATP : 0"
+        expectedJsonFile="expected\010_08.json"
+        inputJsonFile="input\010_08.json" name="08" outputJsonFile="output\010_08.json"/>
+
+
+<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+        description="Get Enterprise level inventory"
+        expectedJsonFile="expected\010_14.json"
+        inputJsonFile="input\010_14.json" name="14" outputJsonFile="output\010_14.json"/>
+
+		
+<test apiMethod="delay" delay="400" description="Delay : 400 ms" name="15"/>		
+	
+	<test apiMethod="POST" apiUrl="/inventory/JCP/delta/"
+        description="update inventory qty = 50"
+        expectedJsonFile="expected\010_09.json"
+        inputJsonFile="input\010_09.json" name="09" outputJsonFile="output\010_09.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="multiread ATP : 0"
+        expectedJsonFile="expected\010_10.json"
+        inputJsonFile="input\010_10.json" name="10" outputJsonFile="output\010_10.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/master/sfsInsert/"
+        description="Update sfs to qty = 10"
+        expectedJsonFile="expected\010_11.json"
+        inputJsonFile="input\010_11.json" name="11" outputJsonFile="output\010_11.json"/>
+		
+
+		
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="multiread ATP : 140"
+        expectedJsonFile="expected\010_12.json"
+        inputJsonFile="input\010_12.json" name="12" outputJsonFile="output\010_12.json"/>
+		
+</testsuite>

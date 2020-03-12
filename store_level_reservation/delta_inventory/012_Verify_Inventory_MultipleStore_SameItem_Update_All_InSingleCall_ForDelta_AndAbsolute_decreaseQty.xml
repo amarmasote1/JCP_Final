@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify ATP when Item is present in multiple stores and inventory is updated with delta and absolute feed in single call
+				
+				Item is present in 5 stores, Qty = 10, 20, 30, 40 and 50				absolute
+				Update with absolute feed as : 100, 200, 300, 400 and 500				absolute
+				Update with delta feed : -1, -2, -3, -4 and -5						    delta
+				Update with delta feed as : -5, 5, 5, 5 and -5							delta
+ -->
+		
+<testsuite description="Verify ATP when Item is present in multiple stores and inventory is updated with delta and absolute feed in single call" name="012">
+
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details "
+        expectedJsonFile="expected\012_01.json"
+        inputJsonFile="input\012_01.json" name="01" outputJsonFile="output\012_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/2823/" description="Insert node 1"
+        expectedJsonFile="expected\012_21.json"
+        inputJsonFile="input\012_21.json" name="21" outputJsonFile="output\012_21.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2824/" description="Insert node 2"
+        expectedJsonFile="expected\012_22.json"
+        inputJsonFile="input\012_22.json" name="22" outputJsonFile="output\012_22.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2825/" description="Insert node 3"
+        expectedJsonFile="expected\012_23.json"
+        inputJsonFile="input\012_23.json" name="23" outputJsonFile="output\012_23.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2826/" description="Insert node 4"
+        expectedJsonFile="expected\012_24.json"
+        inputJsonFile="input\012_24.json" name="24" outputJsonFile="output\012_24.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2827/" description="Insert node 5"
+        expectedJsonFile="expected\012_25.json"
+        inputJsonFile="input\012_25.json" name="25" outputJsonFile="output\012_25.json"/>
+
+		
+	<test apiMethod="POST" apiUrl="/master/itemMapping"
+        description="map itemID to retailID"
+        expectedJsonFile="expected\012_03.json"
+        inputJsonFile="input\012_03.json" name="03" outputJsonFile="output\012_03.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory Absolute feed : Qty = 10, 20, 30, 40 and 50 "
+        expectedJsonFile="expected\012_04.json"
+        inputJsonFile="input\012_04.json" name="04" outputJsonFile="output\012_04.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="ATP = 10, 20, 30, 40 and 50"
+        expectedJsonFile="expected\012_05.json"
+        inputJsonFile="input\012_05.json" name="05" outputJsonFile="output\012_05.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+        description="Get Enterprise level inventory"
+        expectedJsonFile="expected\012_07.json"
+        inputJsonFile="input\012_07.json" name="07" outputJsonFile="output\012_07.json"/>
+
+
+		
+		
+<test apiMethod="delay" delay="400" description="Delay : 400 ms" name="19"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="update inventory qty = 100, 200, 300, 400 and 500"
+        expectedJsonFile="expected\012_08.json"
+        inputJsonFile="input\012_08.json" name="08" outputJsonFile="output\012_08.json"/>
+	
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="qty = 100, 200, 300, 400 and 500"
+        expectedJsonFile="expected\012_09.json"
+        inputJsonFile="input\012_09.json" name="09" outputJsonFile="output\012_09.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+        description="Enterprise inventory"
+        expectedJsonFile="expected\012_10.json"
+        inputJsonFile="input\012_10.json" name="10" outputJsonFile="output\012_10.json"/>
+
+		
+		
+<test apiMethod="delay" delay="400" description="Delay : 400 ms" name="17"/>		
+		
+	<test apiMethod="POST" apiUrl="/inventory/JCP/delta/"
+        description="update inventory qty = -1, -2, -3, -4 and -5"
+        expectedJsonFile="expected\012_11.json"
+        inputJsonFile="input\012_11.json" name="11" outputJsonFile="output\012_11.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="multiread ATP : 99, 198, 297, 396 and 495"
+        expectedJsonFile="expected\012_12.json"
+        inputJsonFile="input\012_12.json" name="12" outputJsonFile="output\012_12.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+        description="Enterprise inventory"
+        expectedJsonFile="expected\012_13.json"
+        inputJsonFile="input\012_13.json" name="13" outputJsonFile="output\012_13.json"/>
+		
+		
+	
+<test apiMethod="delay" delay="400" description="Delay : 400 ms" name="18"/>	
+		
+	<test apiMethod="POST" apiUrl="/inventory/JCP/delta/"
+        description="update inventory qty = -5, 5, 5, 5 and 5"
+        expectedJsonFile="expected\012_14.json"
+        inputJsonFile="input\012_14.json" name="14" outputJsonFile="output\012_14.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="multiread ATP : 94, 203, 302, 401 and 500"
+        expectedJsonFile="expected\012_15.json"
+        inputJsonFile="input\012_15.json" name="15" outputJsonFile="output\012_15.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+        description="Enterprise inventory"
+        expectedJsonFile="expected\012_16.json"
+        inputJsonFile="input\012_16.json" name="16" outputJsonFile="output\012_16.json"/>
+		
+</testsuite>

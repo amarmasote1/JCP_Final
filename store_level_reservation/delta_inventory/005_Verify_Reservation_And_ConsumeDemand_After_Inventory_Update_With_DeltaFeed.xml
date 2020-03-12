@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify reservation and consume demand after inventory update with delta feed
+
+		inventory insert with Absolute qty = 100.           ATP = 100
+		inventory insert with delta qty = 34.     			ATP = 134
+		reservation qty = 100								ATP = 34
+		Inventory insert with delta qty = 50				ATP = 84
+ -->
+		
+<testsuite description="Verify reservation and consume demand after inventory update with delta feed" name="005">
+
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details same- item across all the store"
+        expectedJsonFile="expected\005_01.json"
+        inputJsonFile="input\005_01.json" name="01" outputJsonFile="output\005_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/2806/" description="Insert node 1"
+        expectedJsonFile="expected\005_02.json"
+        inputJsonFile="input\005_02.json" name="02" outputJsonFile="output\005_02.json"/>
+
+	
+	<test apiMethod="POST" apiUrl="/master/itemMapping"
+        description="map itemID to retailID"
+        expectedJsonFile="expected\005_05.json"
+        inputJsonFile="input\005_05.json" name="05" outputJsonFile="output\005_05.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory qty = 100"
+        expectedJsonFile="expected\005_03.json"
+        inputJsonFile="input\005_03.json" name="03" outputJsonFile="output\005_03.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity: set valid capacity"
+        expectedJsonFile="expected\005_06.json"
+        inputJsonFile="input\005_06.json" name="06" outputJsonFile="output\005_06.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="multiread ATP : 100 "
+        expectedJsonFile="expected\005_04.json"
+        inputJsonFile="input\005_04.json" name="04" outputJsonFile="output\005_04.json"/>
+		
+	
+
+<test apiMethod="delay" delay="400" description="Delay : 400 ms" name="13"/>		
+	
+	<test apiMethod="POST" apiUrl="/inventory/JCP/delta/"
+        description="update inventory qty = 34"
+        expectedJsonFile="expected\005_07.json"
+        inputJsonFile="input\005_07.json" name="07" outputJsonFile="output\005_07.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="multiread ATP : 134"
+        expectedJsonFile="expected\005_08.json"
+        inputJsonFile="input\005_08.json" name="08" outputJsonFile="output\005_08.json"/>
+	
+
+	
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Reservation qty = 100"
+        expectedJsonFile="expected\005_09.json"
+        inputJsonFile="input\005_09.json" name="09" outputJsonFile="output\005_09.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="multiread ATP : 34"
+        expectedJsonFile="expected\005_10.json"
+        inputJsonFile="input\005_10.json" name="10" outputJsonFile="output\005_10.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/20170000999900001008/consumedemand/Y/"
+        description="Consume demand "
+        expectedJsonFile="expected\005_11.json"
+        inputJsonFile="input\005_11.json" name="11" outputJsonFile="output\005_11.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="multiread ATP : 34"
+        expectedJsonFile="expected\005_12.json"
+        inputJsonFile="input\005_12.json" name="12" outputJsonFile="output\005_12.json"/>
+		
+		
+	
+<test apiMethod="delay" delay="400" description="Delay : 400 ms" name="15"/>		
+	
+	<test apiMethod="POST" apiUrl="/inventory/JCP/delta/"
+        description="update inventory qty = 50"
+        expectedJsonFile="expected\005_13.json"
+        inputJsonFile="input\005_13.json" name="13" outputJsonFile="output\005_13.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="multiread ATP : 84"
+        expectedJsonFile="expected\005_14.json"
+        inputJsonFile="input\005_14.json" name="14" outputJsonFile="output\005_14.json"/>
+	
+</testsuite>

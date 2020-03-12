@@ -1,0 +1,18 @@
+[
+{
+"skuIds": [
+"87945674532","87945674533"
+],
+"transactionID": "2018-06-08T21:40:30.027",
+"priceList": [
+
+{
+"activationDate": "2018-06-21T00:00:00.000",
+"deActivationDate": "2019-11-25T23:59:59.999",
+"price": 17,
+"priceType": "CLEARANCE"
+}
+]
+}
+]
+

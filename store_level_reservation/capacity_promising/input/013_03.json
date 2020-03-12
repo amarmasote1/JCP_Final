@@ -1,0 +1,14 @@
+{
+	"countryCode": "US",
+	"zipCode": "92408",
+	"longitude": "10.0",
+	"latitude": "15.0",
+	"nodeName": "0184",
+	"nodeProcessingTime": 0,
+	"timeZone": "en_US_CST",
+	"region":"CAP", "state":"cap1", "nodeType": "Store",
+	"shippable": "true",
+	"bopus": "true",
+	"cutOffTime": "23:30:00",
+	"locationActive": true
+}

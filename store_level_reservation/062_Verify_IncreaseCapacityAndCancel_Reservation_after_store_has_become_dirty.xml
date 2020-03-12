@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify  capacity and cancel reservation after store has become dirty.
+pre requisite : item, store
+-->
+
+<!-- expected  
+		1. Multiread before reservation : ATP ( Ship and bopus = 100), Available capacity = 4 
+		2. Multiread After reservation (Qty = 10)  : ATP (Ship and bopus = 90), Available capacity =  3 , reserved Demand = 10 
+		3. Multiread After dirty node  : ATP (Ship and bopus = 0), Available capacity =  3, reserved Demand = 10 
+		4. Multiread After cancel reservation  :  ATP (Ship and bopus = 0), Available capacity =  4 , reserved Demand = 0 
+-->
+
+
+<testsuite description="Verify capacity and cancel reservation after store has become dirty." name="062">
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details"
+        expectedJsonFile="expected\062_01.json"
+        inputJsonFile="input\062_01.json" name="01" outputJsonFile="output\062_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/1250/" description="Insert node"
+        expectedJsonFile="expected\062_02.json"
+        inputJsonFile="input\062_02.json" name="02" outputJsonFile="output\062_02.json"/>
+		
+
+
+    <test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory - in store 1250"
+        expectedJsonFile="expected\062_03.json"
+        inputJsonFile="input\062_03.json" name="03" outputJsonFile="output\062_03.json"/>
+		
+	
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity"
+        expectedJsonFile="expected\062_05.json"
+        inputJsonFile="input\062_05.json" name="05" outputJsonFile="output\062_05.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\062_06.json"
+        inputJsonFile="input\062_06.json" name="06" outputJsonFile="output\062_06.json"/>
+		
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+					description="item_inventory for item"
+					expectedJsonFile="expected\062_51.json"
+					inputJsonFile="input\062_51.json" name="71" outputJsonFile="output\062_51.json"/>
+
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/"
+					description="location inventory for item-store1"
+					expectedJsonFile="expected\062_52.json"
+					inputJsonFile="input\062_52.json" name="72" outputJsonFile="output\062_52.json"/>
+					
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_reservation_map/"
+					description="reservation map"
+					expectedJsonFile="expected\062_55.json"
+					inputJsonFile="input\062_55.json" name="75" outputJsonFile="output\062_55.json"/>
+	
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description=" Reservation 1"
+        expectedJsonFile="expected\062_09.json"
+        inputJsonFile="input\062_09.json" name="09" outputJsonFile="output\062_09.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\062_10.json"
+        inputJsonFile="input\062_10.json" name="10" outputJsonFile="output\062_10.json"/>
+		
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+					description="item_inventory for item"
+					expectedJsonFile="expected\062_61.json"
+					inputJsonFile="input\062_61.json" name="71" outputJsonFile="output\062_61.json"/>
+
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/"
+					description="location inventory for item-store1"
+					expectedJsonFile="expected\062_62.json"
+					inputJsonFile="input\062_62.json" name="72" outputJsonFile="output\062_62.json"/>
+					
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_reservation_map/"
+					description="reservation map"
+					expectedJsonFile="expected\062_65.json"
+					inputJsonFile="input\062_65.json" name="75" outputJsonFile="output\062_65.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/nodeControl/JCP/"
+        description=" making store dirty"
+        expectedJsonFile="expected\062_13.json"
+        inputJsonFile="input\062_13.json" name="13" outputJsonFile="output\062_13.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\062_14.json"
+        inputJsonFile="input\062_14.json" name="14" outputJsonFile="output\062_14.json"/>
+		
+		
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+					description="item_inventory for item"
+					expectedJsonFile="expected\062_71.json"
+					inputJsonFile="input\062_71.json" name="71" outputJsonFile="output\062_71.json"/>
+
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/"
+					description="location inventory for item-store1"
+					expectedJsonFile="expected\062_72.json"
+					inputJsonFile="input\062_72.json" name="72" outputJsonFile="output\062_72.json"/>
+					
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_reservation_map/"
+					description="reservation map"
+					expectedJsonFile="expected\062_75.json"
+					inputJsonFile="input\062_75.json" name="75" outputJsonFile="output\062_75.json"/>
+					
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description=" cancel Reservation @ store 0911"
+        expectedJsonFile="expected\062_15.json"
+        inputJsonFile="input\062_15.json" name="15" outputJsonFile="output\062_15.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\062_16.json"
+        inputJsonFile="input\062_16.json" name="16" outputJsonFile="output\062_16.json"/>
+		
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+					description="item_inventory for item"
+					expectedJsonFile="expected\062_81.json"
+					inputJsonFile="input\062_81.json" name="71" outputJsonFile="output\062_81.json"/>
+
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/"
+					description="location inventory for item-store1"
+					expectedJsonFile="expected\062_82.json"
+					inputJsonFile="input\062_82.json" name="72" outputJsonFile="output\062_82.json"/>
+					
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_reservation_map/"
+					description="reservation map"
+					expectedJsonFile="expected\062_85.json"
+					inputJsonFile="input\062_85.json" name="75" outputJsonFile="output\062_85.json"/>
+		
+	
+    
+</testsuite>

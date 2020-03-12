@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Add all the stores used in this folder to DG.
+-->
+<!--
+<testsuite description="All the stores used in this folder are added to this DG" name="001">
+
+	<test apiMethod="POST" apiUrl="/master/distributionrule/"
+        description="Distributuion Group"
+        expectedJsonFile="expected\0001_01.json"
+        inputJsonFile="input\0001_01.json" name="001" outputJsonFile="output\0001_01.json"/>
+</testsuite>
+
+
+-->
+

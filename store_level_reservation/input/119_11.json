@@ -1,0 +1,14 @@
+{
+	"countryCode": "US",
+	"zipCode": "92408",
+	"longitude": "12.0",
+	"latitude": "10.0",
+	"nodeName": "1831",
+	"nodeProcessingTime": 0,
+	"timeZone": "en_US_CST",
+	"region":"STR", "state":"str1", "nodeType": "Store",
+	"shippable": "true",
+	"bopus": "true",
+	"cutOffTime": "23:30:00",
+	"locationActive": true
+}

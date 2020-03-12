@@ -1,0 +1,52 @@
+{
+    "message": "Success",
+    "body": [
+        {
+            "partiallyReservedQty": 0,
+            "shortageQty": 0,
+            "orgCode": "JCP",
+            "reservedQty": 20,
+            "requestLine": {
+                "deliveryMethod": null,
+                "channel": null,
+                "lineID": "1",
+                "storeID": "1811",
+                "itemID": "1534567-2120",
+                "schedule": false,
+                "uom": "EACH",
+                "shippable": true,
+                "reservationID": "211706142218171002220",
+                "procurementAllowed": false,
+                "qty": 20,
+                "bopus": false,
+                "increaseCapacity": null,
+                "shutdown": false
+            },
+            "problemType": "SUCCESS"
+        },
+        {
+            "partiallyReservedQty": 0,
+            "shortageQty": 0,
+            "orgCode": "JCP",
+            "reservedQty": 20,
+            "requestLine": {
+                "deliveryMethod": null,
+                "channel": null,
+                "lineID": "1",
+                "storeID": "1816",
+                "itemID": "1534567-2120",
+                "schedule": false,
+                "uom": "EACH",
+                "shippable": true,
+                "reservationID": "211706142218171002221",
+                "procurementAllowed": false,
+                "qty": 20,
+                "bopus": false,
+                "increaseCapacity": null,
+                "shutdown": false
+            },
+            "problemType": "SUCCESS"
+        }
+    ],
+    "status": 200
+}

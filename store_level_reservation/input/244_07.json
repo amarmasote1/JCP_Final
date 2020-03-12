@@ -1,0 +1,9 @@
+[
+    {
+        "storeID": "2702",
+        "standardCapacity": "100",
+        "capacityUnitOfMeasure": "RELEASE",
+        "clearanceCapacityPercentage": 50,
+        "date": "<$today>"
+    }
+]

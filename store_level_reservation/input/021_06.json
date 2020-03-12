@@ -1,0 +1,14 @@
+
+
+[
+    {  "storeID" :"0658",
+	   "standardCapacity" : "100",
+	   "capacityUnitOfMeasure" : "RELEASE", 
+	   "date" : "<$today>"
+    },
+	{  "storeID" :"0663",
+	   "standardCapacity" : "100",
+	   "capacityUnitOfMeasure" : "RELEASE", 
+	   "date" : "<$today>"
+    }
+]

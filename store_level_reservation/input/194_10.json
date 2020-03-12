@@ -1,0 +1,20 @@
+ [
+  {
+     "purchaseType" : "FashionSFS2",
+     "onhandSafetyFactorQuantity" : "10",
+     "onhandPickSafetyFactorQuantity" : "10",
+     "storeSub" : "171"
+  },
+  {
+     "purchaseType" : "FashionSFS2",
+     "onhandSafetyFactorQuantity" : "10",
+     "onhandPickSafetyFactorQuantity" : "10",
+     "storeSub" : "171"
+  },
+  {
+     "purchaseType" : "FashionSFS2",
+     "onhandSafetyFactorQuantity" : "10",
+     "onhandPickSafetyFactorQuantity" : "10",
+     "storeSub" : "171"
+  }
+]

@@ -1,0 +1,16 @@
+
+[
+  {
+    "storeID": "2833",
+    "itemID": "1200040006020",
+    "uom": "EACH",
+    "supplyData": {
+      "onhandsupply": -15
+    },
+    "demandData": {
+        "reserveddemand": 0
+      },
+    "timestamp": "<$nextHour>"
+    
+  }
+]

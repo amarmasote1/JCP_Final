@@ -1,0 +1,22 @@
+{
+    "body": [
+        {
+            "warnings": null,
+            "message": "Data Write Successful",
+            "nodeType": null,
+            "body": null,
+            "key": "1234567|123|0739",
+            "status": 212
+        },
+        {
+            "warnings": null,
+            "message": "Data Write Successful",
+            "nodeType": null,
+            "body": null,
+            "key": "1234567|123|0739",
+            "status": 212
+        }
+    ],
+    "message": "Successful",
+    "status": 221
+}

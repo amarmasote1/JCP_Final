@@ -1,0 +1,19 @@
+{
+    "message": "Success",
+    "body": [
+        {
+            "itemID": "35145678010",
+            "uom": "EACH",
+            "demandData": null,
+            "markDown": {
+                "active": false
+            },
+            "storeID": "1052",
+            "supplyData": {
+                "onhandsupply": 50
+            },
+            "timestamp": "2019-01-15 15:15:00.0941 CST"
+        }
+    ],
+    "status": 200
+}

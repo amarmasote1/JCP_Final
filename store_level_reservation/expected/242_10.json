@@ -1,0 +1,33 @@
+{
+	"body": [{
+		"status": 200,
+		"message": "Success",
+		"key": "JCP|2358|17112343083|EACH",
+		"body": {
+			"invall": {
+				
+				"shipATP": 2,
+				
+				"unconfirmeddemand": 0,
+				
+				
+				"pickSafetyFactorSource": 0,
+				"ship_active": 1,
+				
+				"Available_capacity": 8,
+				
+				"shipSafetyFactorSource": 0,
+				"isDirty": 0,
+				"bopusSafetyFactor": 5,
+				"bopusATP": 2,
+				"shipSafetyFactor": 5,
+				"reserveddemand": 0,
+				"bopus_active": 1,
+				"onhandsupply": 7
+			}
+		},
+		"warnings": null
+	}],
+	"status": 221,
+	"message": "Successful"
+}

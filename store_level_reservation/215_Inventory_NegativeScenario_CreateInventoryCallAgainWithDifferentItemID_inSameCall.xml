@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- verify create inventory : different itemID in same call
+Pre Requisite : item and store
+-->
+
+<!-- expected  
+		1. MultilIne Inventory creation(qty = 40 and 40) with same body except itemID: Successful, Successful
+		2. Multiread after inventory creation : ATP (Ship and Bopus) = 40 and 40
+-->
+
+<testsuite description="verify create inventory : different itemID in same call" name="215">
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/2279/"
+        description="store 1"
+        expectedJsonFile="expected\215_01.json"
+        inputJsonFile="input\215_01.json" name="01" outputJsonFile="output\215_01.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="item1"
+        expectedJsonFile="expected\215_02.json"
+        inputJsonFile="input\215_02.json" name="02" outputJsonFile="output\215_02.json"/>
+
+	
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="item2"
+        expectedJsonFile="expected\215_03.json"
+        inputJsonFile="input\215_03.json" name="03" outputJsonFile="output\215_03.json"/>
+
+	
+
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory"
+        expectedJsonFile="expected\215_04.json"
+        inputJsonFile="input\215_04.json" name="04" outputJsonFile="output\215_04.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\215_05.json"
+        inputJsonFile="input\215_05.json" name="05" outputJsonFile="output\215_05.json"/>
+		
+		
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+					description="item_inventory for item"
+					expectedJsonFile="expected\215_41.json"
+					inputJsonFile="input\215_41.json" name="41" outputJsonFile="output\215_41.json"/>
+					
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+					description="location inventory for item-store1"
+					expectedJsonFile="expected\215_44.json"
+					inputJsonFile="input\215_44.json" name="44" outputJsonFile="output\215_44.json"/>
+
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/"
+					description="location inventory for item-store1"
+					expectedJsonFile="expected\215_42.json"
+					inputJsonFile="input\215_42.json" name="42" outputJsonFile="output\215_42.json"/>
+					
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/"
+					description="location inventory for item-store1"
+					expectedJsonFile="expected\215_43.json"
+					inputJsonFile="input\215_43.json" name="43" outputJsonFile="output\215_43.json"/>
+		
+	
+</testsuite>

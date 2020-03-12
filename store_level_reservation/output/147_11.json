@@ -1,0 +1,10 @@
+{
+    "warnings": null,
+    "message": "Data validation failed, resubmit with corrections",
+    "nodeType": null,
+    "body": {
+        "JCP|1944|20200303": "new standard capacity cannot be less than the current total consumed capacity "
+    },
+    "key": "JCP",
+    "status": 400
+}

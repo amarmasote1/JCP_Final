@@ -1,0 +1,14 @@
+[
+   {
+      "gtin" : "",
+      "uom" : "EACH",
+      "itemID" : "80210002005",
+      "bopus" : "true",
+      "lotNumber" : "8021000",
+      "shippable" : "true",
+      "productLine" : "802",
+      "purchaseType" : "Factory Ship",
+      "isSubstitutionAllowed" : "N",
+      "itemProcessingTime" : "10"
+   }
+]

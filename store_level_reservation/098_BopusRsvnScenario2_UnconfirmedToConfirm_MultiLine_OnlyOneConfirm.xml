@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify Unconfirmed to confirm Scenario: multiLine Case. 2 reservations at single store. only 1 is moved to comfirm. To convert to confirm demand you have to call confirm reservation with reservationID generated in unconfirm-Reservation step of this testCase
+pre requisite : 
+2 items , 1store and 2 reservations
+-->
+
+
+<!-- expected  
+		1. Multiread before reservation : ATP (Ship and bopus) = 50, Available capacity = 8, reserved demand = 0 for both items
+		2. Multiread after reservation multiLine(Qty = 10,10) : ATP ( Ship and bopus) = 40, Available capacity = 8, Unconfirmed demand=10 for both item 
+		3. Convert unConfirmed to confirm manually and verify reserved demand replaces unConfirmed demand
+		
+		As it is bopus reservation capacity should not decrease
+-->
+
+
+<testsuite description="Verify Unconfirmed to confirm Scenario: multiLine Case. 2 reservations at single store. only 1 is moved to comfirm. To convert to confirm demand you have to call confirm reservation with reservatioID generated in unconfirm Reservation of this testCase" name="098">
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details"
+        expectedJsonFile="expected\098_01.json"
+        inputJsonFile="input\098_01.json" name="01" outputJsonFile="output\098_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/1612/" description="Insert node"
+        expectedJsonFile="expected\098_02.json"
+        inputJsonFile="input\098_02.json" name="02" outputJsonFile="output\098_02.json"/>
+		
+		
+
+
+    <test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory - in store 1612"
+        expectedJsonFile="expected\098_03.json"
+        inputJsonFile="input\098_03.json" name="03" outputJsonFile="output\098_03.json"/>
+		
+	
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity"
+        expectedJsonFile="expected\098_05.json"
+        inputJsonFile="input\098_05.json" name="05" outputJsonFile="output\098_05.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\098_06.json"
+        inputJsonFile="input\098_06.json" name="06" outputJsonFile="output\098_06.json"/>
+		
+		
+		
+		
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/12/N/"
+        description="Unconfirmed Reservation "
+        expectedJsonFile="expected\098_07.json"
+        inputJsonFile="input\098_07.json" name="07" outputJsonFile="output\098_07.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\098_08.json"
+        inputJsonFile="input\098_08.json" name="08" outputJsonFile="output\098_08.json"/>	
+		
+	
+		
+	
+    
+</testsuite>

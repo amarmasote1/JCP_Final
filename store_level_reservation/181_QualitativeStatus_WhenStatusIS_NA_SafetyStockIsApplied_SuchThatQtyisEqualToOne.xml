@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify combined qualitative status, when qualitative status is NA, safetyStock is applied such that Available quantity becomes equal to One
+	pre requisite : 
+	1 item, 3 stores and safety Factor.
+-->
+
+<!-- expected  
+		1. Get Qualitative-status should be AL . ( network qual status will be AL for Qty equal to 1)
+-->
+
+<testsuite description="Verify combined qualitative status, when qualitative status is NA, safetyStock is applied such that Available quantity becomes equal to One" name="181">
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details"
+        expectedJsonFile="expected\181_01.json"
+        inputJsonFile="input\181_01.json" name="01" outputJsonFile="output\181_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/2115/" 
+		description="Insert node 1"
+        expectedJsonFile="expected\181_02.json"
+        inputJsonFile="input\181_02.json" name="02" outputJsonFile="output\181_02.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2119/" 
+		description="Insert node 2"
+        expectedJsonFile="expected\181_03.json"
+        inputJsonFile="input\181_03.json" name="03" outputJsonFile="output\181_03.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2121/" 
+		description="Insert node 3"
+        expectedJsonFile="expected\181_04.json"
+        inputJsonFile="input\181_04.json" name="04" outputJsonFile="output\181_04.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="Insert capacity for all stores"
+        expectedJsonFile="expected\181_04_1.json"
+        inputJsonFile="input\181_04_1.json" name="04_1" outputJsonFile="output\181_04_1.json"/>
+		
+	 
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory "
+        expectedJsonFile="expected\181_05.json"
+        inputJsonFile="input\181_05.json" name="05" outputJsonFile="output\181_05.json"/>
+		
+	
+	
+	<test apiMethod="POST" apiUrl="/master/sfsInsert/"
+        description="safetyStock Applied "
+        expectedJsonFile="expected\181_08.json"
+        inputJsonFile="input\181_08.json" name="08" outputJsonFile="output\181_08.json"/>
+	
+			<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+					description="item_inventory for item"
+					expectedJsonFile="expected\181_41.json"
+					inputJsonFile="input\181_41.json" name="41" outputJsonFile="output\181_41.json"/>
+	
+	    <!--
+	
+	<test apiMethod="GET" apiUrl="/refreshActiveStores/"
+       description="Refresh active stores: "
+        expectedJsonFile="expected\181_08_5.json"
+        name="08_05" outputJsonFile="output\181_08_5.json"/>	
+	
+	
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread with update mode"
+        expectedJsonFile="expected\181_08_1.json"
+        inputJsonFile="input\181_08_1.json" name="08_1" outputJsonFile="output\181_08_1.json"/>		 -->
+	
+	
+	
+	
+	<test apiMethod="POST" apiUrl="/master/qualitativeStatus/"
+        description="Qualtitatve status : NA"
+        expectedJsonFile="expected\181_06.json"
+        inputJsonFile="input\181_06.json" name="06" outputJsonFile="output\181_06.json"/>
+		
+		
+		     <!--
+		
+	<test apiMethod="GET" apiUrl="/refreshActiveStores/"
+       description="Refresh active stores : "
+        expectedJsonFile="expected\181_08_5.json"
+        name="08_05" outputJsonFile="output\181_08_5.json"/>	
+	
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread with update mode"
+        expectedJsonFile="expected\181_08_2.json"
+        inputJsonFile="input\181_08_2.json" name="08_2" outputJsonFile="output\181_08_2.json"/>		 -->
+	
+
+<test apiMethod="delay" delay="15000" description="delay : 10000 ms" name="100"/>		
+	
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="Get Qualitative status"
+        expectedJsonFile="expected\181_07.json"
+        inputJsonFile="input\181_07.json" name="07" outputJsonFile="output\181_07.json"/>
+		
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+					description="item_inventory for item"
+					expectedJsonFile="expected\181_51.json"
+					inputJsonFile="input\181_51.json" name="51" outputJsonFile="output\181_51.json"/>
+	
+    
+</testsuite>

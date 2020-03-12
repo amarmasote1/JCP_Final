@@ -1,0 +1,26 @@
+{
+	"status": 200,
+	"message": "Success",
+	"body": [{
+		"shortageQty": 0,
+		"reservedQty": 10,
+		"partiallyReservedQty": 0,
+		"problemType": "SUCCESS",
+		"orgCode": "JCP",
+		"requestLine": {
+			"lineID": "2",
+			"itemID": "8021000-2007",
+			"uom": "EACH",
+			"bopus": false,
+			"shippable": true,
+			"deliveryMethod": null,
+			"increaseCapacity": null,
+			"shutdown": false,
+			"qty": 10,
+			"storeID": "1048",
+			"channel": null,
+			"reservationID": "6df7f9dc-60b3-4f15-bd99-cb849866448",
+			"procurementAllowed": false
+		}
+	}]
+}

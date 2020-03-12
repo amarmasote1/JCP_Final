@@ -1,0 +1,17 @@
+Datagrid : 
+----------
+
+capacity : 
+	promising:
+      enabled: true
+      calculation:
+         enabled: true
+		
+
+
+
+		
+2. 20190408   to current date in this format
+3. 20190409   to tomorrow date in this format 
+
+----------------------------------------------------------------------------------------------------------------------------------

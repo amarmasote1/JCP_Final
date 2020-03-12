@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify Cancel reservation Scenario: MultiLine, Cancel both the reservations. You have to call cancel reservation manually with reservationID generated in Reservation Step of this TestCase.
+pre requisite : 
+ 2 items, 2 stores and 2 reservations
+-->
+
+<!-- expected  
+		1. Multiread before reservation : ATP (Ship and bopus) = 50, Available capacity = 8, reserved demand = 0  in both stores
+		2. Multiread after reservation multiline (Qty = 10 and 10) : ATP ( Ship and bopus) = 40, Available capacity = 8, reserved demand = 10 in both store
+		3. call cancel reservation manually and verify reserved demand is 0
+		4. Multiread after cancel reservation : ATP ( Ship and bopus) = 50, Available capacity = 8, reserved demand = 0
+		
+		As it is bopus reservation capacity should not decrease
+-->
+
+
+<testsuite description="Verify Cancel reservation Scenario: MultiLine, Cancel both the reservations. You have to call cancel reservation manually with reservationID generated in Reservation Step of this TestCase." name="101">
+  
+  <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details"
+        expectedJsonFile="expected\101_01.json"
+        inputJsonFile="input\101_01.json" name="01" outputJsonFile="output\101_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/1623/" description="Insert node"
+        expectedJsonFile="expected\101_02.json"
+        inputJsonFile="input\101_02.json" name="02" outputJsonFile="output\101_02.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/1650/" description="Insert node"
+        expectedJsonFile="expected\101_09.json"
+        inputJsonFile="input\101_09.json" name="09" outputJsonFile="output\101_09.json"/>
+		
+		
+
+
+    <test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory - in store 1623 and 1650"
+        expectedJsonFile="expected\101_03.json"
+        inputJsonFile="input\101_03.json" name="03" outputJsonFile="output\101_03.json"/>
+		
+	
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity"
+        expectedJsonFile="expected\101_05.json"
+        inputJsonFile="input\101_05.json" name="05" outputJsonFile="output\101_05.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\101_06.json"
+        inputJsonFile="input\101_06.json" name="06" outputJsonFile="output\101_06.json"/>
+		
+		
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="2 Reservations "
+        expectedJsonFile="expected\101_07.json"
+        inputJsonFile="input\101_07.json" name="07" outputJsonFile="output\101_07.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\101_08.json"
+        inputJsonFile="input\101_08.json" name="08" outputJsonFile="output\101_08.json"/>	
+		
+	
+		
+	
+    
+</testsuite>

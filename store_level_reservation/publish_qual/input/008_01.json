@@ -1,0 +1,24 @@
+[
+  {
+    "itemId": "87945674526",
+    "qualitativeStatus": "AL",
+    "firstFutureAvailableDate": "2018-10-31T00:00:00-04:00",
+    "onHandAvlQty": 110,
+    "futureAvlQty": 0,
+    "factoryShipLeadTimeQty": 0,
+    "factoryShipLeadTimeUOM": "",
+    "factoryShipInventoryIndicator": "N",
+    "whseClass": "A"
+  },
+  {
+    "itemId": "87945674527",
+    "qualitativeStatus": "AH",
+    "firstFutureAvailableDate": "2018-10-31T00:00:00-04:00",
+    "onHandAvlQty": 110,
+    "futureAvlQty": 0,
+    "factoryShipLeadTimeQty": 0,
+    "factoryShipLeadTimeUOM": "",
+    "factoryShipInventoryIndicator": "N",
+    "whseClass": "A"
+  }
+]

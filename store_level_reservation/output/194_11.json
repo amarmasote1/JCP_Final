@@ -1,0 +1,22 @@
+{
+    "body": [
+        {
+            "warnings": [],
+            "message": "Data Write Successful",
+            "nodeType": null,
+            "body": null,
+            "key": "FashionSFS3|171",
+            "status": 212
+        },
+        {
+            "warnings": [],
+            "message": "Data Write Successful",
+            "nodeType": null,
+            "body": null,
+            "key": "FashionSFS1|171",
+            "status": 212
+        }
+    ],
+    "message": "Successful",
+    "status": 221
+}

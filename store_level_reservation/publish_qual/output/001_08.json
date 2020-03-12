@@ -1,0 +1,8 @@
+{
+    "warnings": null,
+    "message": "Invalid QS Type : It can either be WH or NW",
+    "nodeType": null,
+    "body": null,
+    "key": null,
+    "status": 400
+}

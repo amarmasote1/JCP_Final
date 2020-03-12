@@ -1,0 +1,14 @@
+[
+   {
+      "gtin" : "",
+      "uom" : "EACH",
+      "itemID" : "Jcpeeny11",
+      "bopus" : "true",
+      "productLine": "153",
+      "shippable" : "true",
+	  "purchaseType": "Fashion",
+      "lotNumber" : "1534567",
+      "isSubstitutionAllowed" : "N",
+      "itemProcessingTime" : "10"
+   }
+]            

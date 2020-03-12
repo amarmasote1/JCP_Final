@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>		 
+<!-- Verify publish qual  : NW (network) and N       
+                      Non-store
+       1. item1 -  NA                (Inventory not added)
+       2. item2 -  AL
+       3. item3 -  AH
+       4. item4 -  BO                (FutureAvailDate<7Days)
+-->
+
+<testsuite description="Verify publish qual  : NW (network) and N       
+                      Non-store
+       1. item1 -  NA 
+       2. item2 -  AL 
+       3. item3 -  AH 
+       4. item4 -  BO "
+	   name="005">
+	   
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item insert : 1 item"
+        expectedJsonFile="expected\005_001.json"
+        inputJsonFile="input\005_001.json" name="001" outputJsonFile="output\005_001.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/qualitativeStatus/"
+        description="Qual status : NA, AL, AH, BO"
+        expectedJsonFile="expected\005_01.json"
+        inputJsonFile="input\005_01.json" name="01" outputJsonFile="output\005_01.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/publishQS/87945674514/NW/N"
+        description="item1 : 0"
+        expectedJsonFile="expected\005_02.json"
+        inputJsonFile="input\005_02.json" name="02" outputJsonFile="output\005_02.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/publishQS/87945674515/NW/N"
+        description="item2 : 1"
+        expectedJsonFile="expected\005_03.json"
+        inputJsonFile="input\005_03.json" name="03" outputJsonFile="output\005_03.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/publishQS/87945674516/NW/N"
+        description="item3 : 2"
+        expectedJsonFile="expected\005_04.json"
+        inputJsonFile="input\005_04.json" name="04" outputJsonFile="output\005_04.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/publishQS/87945674517/NW/N"
+        description="item4 : 3"
+        expectedJsonFile="expected\005_05.json"
+        inputJsonFile="input\005_05.json" name="05" outputJsonFile="output\005_05.json"/>
+		
+    
+
+</testsuite>

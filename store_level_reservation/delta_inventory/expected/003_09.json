@@ -1,0 +1,16 @@
+{
+	"status": 200,
+	"message": "Success",
+	"body": [{
+			"itemID": "34010002006",
+			"uom": "EACH",
+			"storeID": "2804",
+			"supplyData": {
+				"onhandsupply": 5
+			},
+			"demandData": {
+				"reserveddemand": 0
+			}
+		}
+	]
+}

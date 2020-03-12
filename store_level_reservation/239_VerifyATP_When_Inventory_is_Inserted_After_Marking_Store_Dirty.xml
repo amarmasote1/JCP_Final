@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify ATP when inventory is inserted after marking store dirty.
+-->
+
+<!-- expected  
+	1. ATP should be zero 
+	
+	
+-->
+
+<testsuite description="Verify ATP when inventory is inserted after marking store dirty" name="239">
+		
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="items: 1 "
+        expectedJsonFile="expected\239_01.json"
+        inputJsonFile="input\239_01.json" name="01" outputJsonFile="output\239_01.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2354/"
+        description="store 1"
+        expectedJsonFile="expected\239_02.json"
+        inputJsonFile="input\239_02.json" name="02" outputJsonFile="output\239_02.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory : Create inventory"
+        expectedJsonFile="expected\239_03.json"
+        inputJsonFile="input\239_03.json" name="03" outputJsonFile="output\239_03.json"/>
+	
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity: Available Capacity = 10"
+        expectedJsonFile="expected\239_05.json"
+        inputJsonFile="input\239_05.json" name="05" outputJsonFile="output\239_05.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread: shipAtp=12, bopusAtp=12 "
+        expectedJsonFile="expected\239_06.json"
+        inputJsonFile="input\239_06.json" name="06" outputJsonFile="output\239_06.json"/>
+		
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+					description="item_inventory for item"
+					expectedJsonFile="expected\239_41.json"
+					inputJsonFile="input\239_41.json" name="41" outputJsonFile="output\239_41.json"/>
+					
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/"
+					description="location inventory for item-store"
+					expectedJsonFile="expected\239_42.json"
+					inputJsonFile="input\239_42.json" name="42" outputJsonFile="output\239_42.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/nodeControl/JCP/"
+        description="Node control "
+         expectedJsonFile="expected\239_07.json"
+        inputJsonFile="input\239_07.json" name="07" outputJsonFile="output\239_07.json"/>
+	
+	
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread: shipAtp=0, bopusAtp=0"
+        expectedJsonFile="expected\239_08.json"
+        inputJsonFile="input\239_08.json" name="08" outputJsonFile="output\239_08.json"/>
+		
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+					description="item_inventory for item"
+					expectedJsonFile="expected\239_51.json"
+					inputJsonFile="input\239_51.json" name="51" outputJsonFile="output\239_51.json"/>
+					
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/"
+					description="location inventory for item-store"
+					expectedJsonFile="expected\239_52.json"
+					inputJsonFile="input\239_52.json" name="52" outputJsonFile="output\239_52.json"/>
+					
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_dirty_keys/"
+					description="jcp_dirty_keys"
+					expectedJsonFile="expected\239_53.json"
+					inputJsonFile="input\239_53.json" name="53" outputJsonFile="output\239_53.json"/>
+		
+	
+	<test apiMethod="delay" delay="0814" description="Delay to increase create inventory step time stamp : 0814 ms" name="100"/>
+	
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="Create inventory : for same item and same store"
+        expectedJsonFile="expected\239_09.json"
+        inputJsonFile="input\239_09.json" name="09" outputJsonFile="output\239_09.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread: shipAtp=0, bopusAtp=0"
+        expectedJsonFile="expected\239_10.json"
+        inputJsonFile="input\239_10.json" name="10" outputJsonFile="output\239_10.json"/>
+		
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+					description="item_inventory for item"
+					expectedJsonFile="expected\239_61.json"
+					inputJsonFile="input\239_61.json" name="61" outputJsonFile="output\239_61.json"/>
+					
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/"
+					description="location inventory for item-store"
+					expectedJsonFile="expected\239_62.json"
+					inputJsonFile="input\239_62.json" name="62" outputJsonFile="output\239_62.json"/>
+					
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_dirty_keys/"
+					description="jcp_dirty_keys"
+					expectedJsonFile="expected\239_63.json"
+					inputJsonFile="input\239_63.json" name="63" outputJsonFile="output\239_63.json"/>
+	
+</testsuite>

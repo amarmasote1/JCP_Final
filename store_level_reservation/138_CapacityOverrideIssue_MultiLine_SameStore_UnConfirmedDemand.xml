@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify Capacity Override issue : for MultiLine, same store UnConfirmed Demand
+pre requisite : 
+	item, store and multiLine unconfirmed reservation
+-->
+
+
+<!-- expected  
+		1. Multiread before reservation : ATP (Ship and bopus) = 100, Available capacity = 10, reserved demand = 0 in 
+		2. Multiread after 1st multiLine reservation(Qty = 20, 20, 20) : ATP(Ship and bopus) = 40, Available capacity = 9, unconfirmed demand = 60 
+		3. Multiread after 2nd multiLine reservation(Qty = 20, 20, 20) : ATP(Ship and bopus) = 40, Available capacity = 8, unconfirmed demand = 60 
+		4. Multiread after 3rd multiLine reservation(Qty = 20, 20, 20) : ATP(Ship and bopus) = 40, Available capacity = 7, unconfirmed demand = 60 
+		
+		2nd and 3rd reservation should fail : success, Capacity should decrease for every repeated unconfirm call , Said by Gautham
+-->
+
+
+
+<testsuite description="Verify Capacity Override issue : for MultiLine, same store UnConfirmed Demand, Capacity should decrease for every repeated unconfirm call , Said by Gautham" name="138">
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details"
+        expectedJsonFile="expected\138_01.json"
+        inputJsonFile="input\138_01.json" name="01" outputJsonFile="output\138_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/1919/" description="Insert node"
+        expectedJsonFile="expected\138_02.json"
+        inputJsonFile="input\138_02.json" name="02" outputJsonFile="output\138_02.json"/>
+		
+	
+		
+	
+		
+
+
+    <test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory - in store 1919"
+        expectedJsonFile="expected\138_03.json"
+        inputJsonFile="input\138_03.json" name="03" outputJsonFile="output\138_03.json"/>
+		
+	
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity"
+        expectedJsonFile="expected\138_05.json"
+        inputJsonFile="input\138_05.json" name="05" outputJsonFile="output\138_05.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\138_06.json"
+        inputJsonFile="input\138_06.json" name="06" outputJsonFile="output\138_06.json"/>
+		
+		
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/1/N/"
+        description="UnConfirmed Reservation : single store "
+        expectedJsonFile="expected\138_07.json"
+        inputJsonFile="input\138_07.json" name="07" outputJsonFile="output\138_07.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread after reservation"
+        expectedJsonFile="expected\138_08.json"
+        inputJsonFile="input\138_08.json" name="08" outputJsonFile="output\138_08.json"/>
+	
+
+	
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/1/N/"
+        description="Unconfirmed Re-Reservation : single store"
+        expectedJsonFile="expected\138_09.json"
+        inputJsonFile="input\138_09.json" name="09" outputJsonFile="output\138_09.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread after 2nd time reservation"
+        expectedJsonFile="expected\138_10.json"
+        inputJsonFile="input\138_10.json" name="10" outputJsonFile="output\138_10.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/1/N/"
+        description="UnConfirmed Re-Reservation : single store "
+        expectedJsonFile="expected\138_11.json"
+        inputJsonFile="input\138_11.json" name="11" outputJsonFile="output\138_11.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread after 3rd time reservation"
+        expectedJsonFile="expected\138_12.json"
+        inputJsonFile="input\138_12.json" name="12" outputJsonFile="output\138_12.json"/>
+		
+	
+		
+	
+    
+</testsuite>

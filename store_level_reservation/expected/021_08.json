@@ -1,0 +1,18 @@
+{
+	"body": [{
+		"status": 212,
+		"message": "Data Write Successful",
+		"key": "ALL|901|0658",
+		"body": null,
+		"warnings": null
+	},
+	{
+		"status": 212,
+		"message": "Data Write Successful",
+		"key": "ALL|901|0658",
+		"body": null,
+		"warnings": null
+	}],
+	"status": 221,
+	"message": "Successful"
+}

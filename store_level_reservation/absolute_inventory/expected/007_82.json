@@ -1,0 +1,24 @@
+{
+	"status": 200,
+	"message": "Success",
+	"key": "JCP|1068|35145678013|EACH",
+	"body": {
+		"onhandSupply": 100,
+		
+		"bopusAtp": 97,
+		"shipAtp": 97,
+		"shipSafetyFactor": 0,
+		"bopusSafetyFactor": 0,
+		"shipSafetyFactorSource": 0,
+		"pickSafetyFactorSource": 0,
+
+		
+		
+		
+		"reservedDemand": 3,
+		"unconfirmedDemand": 0,
+		
+		"dirty": false
+	},
+	"warnings": null
+}

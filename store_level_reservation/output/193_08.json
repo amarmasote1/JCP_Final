@@ -1,0 +1,20 @@
+{
+    "body": [
+        {
+            "warnings": null,
+            "message": "Add failed: Store 2177 has overlapping shutdown dates for 2020-02-05 14:01:52.0000 CST to 2020-02-13 14:01:52.0000 CST for Pick program.",
+            "body": null,
+            "key": "2177|P",
+            "status": 454
+        },
+        {
+            "warnings": null,
+            "message": "Add failed: Store 2177 has overlapping shutdown dates for 2020-02-05 14:01:52.0000 CST to 2020-02-13 14:01:52.0000 CST for Pick program.",
+            "body": null,
+            "key": "2177|P",
+            "status": 454
+        }
+    ],
+    "message": "Failure",
+    "status": 514
+}

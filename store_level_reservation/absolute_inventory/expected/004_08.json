@@ -1,0 +1,79 @@
+{
+	"body": [{
+			"status": 404,
+			"message": "Record not found",
+			"key": "JCP|1048|35145678005|EACH",
+			"body": {
+				"invall": {
+
+				}
+			},
+			"warnings": null
+		},
+		{
+			"status": 404,
+			"message": "Record not found",
+			"key": "JCP|1048|30056000004|EACH",
+			"body": {
+				"invall": {
+
+				}
+			},
+			"warnings": null
+		},
+		{
+			"status": 404,
+			"message": "Record not found",
+			"key": "JCP|1048|35145678006|EACH",
+			"body": {
+				"invall": {
+
+				}
+			},
+			"warnings": null
+		},
+		{
+			"warnings": null,
+			"message": "Record not found",
+			"nodeType": "Location or NodeType is not available",
+			"body": {
+				"invall": {}
+			},
+			"key": "JCP|8888|35145678004|EACH",
+			"status": 404
+
+
+		},
+		{
+			"status": 200,
+			"message": "Success",
+			"key": "JCP|1048|35145678007|EACH",
+			"body": {
+				"invall": {
+
+					"shipATP": 0,
+
+					"unconfirmeddemand": 0,
+					"standard_capacity": 100,
+
+					"pickSafetyFactorSource": 0,
+					"ship_active": 1,
+
+					"Available_capacity": 100,
+
+					"shipSafetyFactorSource": 0,
+					"isDirty": 0,
+					"bopusSafetyFactor": 0,
+					"bopusATP": 0,
+					"shipSafetyFactor": 0,
+					"reserveddemand": 0,
+					"bopus_active": 1,
+					"onhandsupply": 0
+				}
+			},
+			"warnings": null
+		}
+	],
+	"status": 321,
+	"message": "Partially Successful"
+}

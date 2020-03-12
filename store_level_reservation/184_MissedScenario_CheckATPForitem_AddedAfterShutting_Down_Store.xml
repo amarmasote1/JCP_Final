@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify ATP when inventory is created in a store which is shut down
+	pre requisite : 
+	2 item, store and shut down
+-->
+
+<!-- expected  
+		1.  Multitread before shut down : ATP (ship and bopus) = 100 for item1, no inventory for item 2
+		2.  Multiread after shut down : ATP (ship and bopus) = 0 for item1, no inventory for item 2
+		3.  Multiread after 2nd item insert and inventory creation : ATP (ship and bopus) = 0 for both items
+-->
+
+<testsuite description="Verify ATP when inventory is created in a store which is shut down" name="184">
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details : 2 items"
+        expectedJsonFile="expected\184_01.json"
+        inputJsonFile="input\184_01.json" name="01" outputJsonFile="output\184_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/2138/" 
+		description="Insert node 1"
+        expectedJsonFile="expected\184_02.json"
+        inputJsonFile="input\184_02.json" name="02" outputJsonFile="output\184_02.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory "
+        expectedJsonFile="expected\184_03.json"
+        inputJsonFile="input\184_03.json" name="03" outputJsonFile="output\184_03.json"/>
+		
+	
+	 
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity"
+        expectedJsonFile="expected\184_05.json"
+        inputJsonFile="input\184_05.json" name="05" outputJsonFile="output\184_05.json"/>
+		
+	
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\184_06.json"
+        inputJsonFile="input\184_06.json" name="06" outputJsonFile="output\184_06.json"/>
+			
+			<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+					description="item_inventory for item"
+					expectedJsonFile="expected\184_41.json"
+					inputJsonFile="input\184_41.json" name="41" outputJsonFile="output\184_41.json"/>
+					
+			<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+					description="item_inventory for item"
+					expectedJsonFile="expected\184_42.json"
+					inputJsonFile="input\184_42.json" name="42" outputJsonFile="output\184_42.json"/>
+					
+			<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/"
+					description="location inventory for item-store1"
+					expectedJsonFile="expected\184_43.json"
+					inputJsonFile="input\184_43.json" name="43" outputJsonFile="output\184_43.json"/>
+					
+			<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/"
+					description="location inventory for item-store1"
+					expectedJsonFile="expected\184_44.json"
+					inputJsonFile="input\184_44.json" name="44" outputJsonFile="output\184_44.json"/>
+					
+			
+	
+	<test apiMethod="POST" apiUrl="/master/storeShutdown/"
+        description="shut down"
+        expectedJsonFile="expected\184_07.json"
+        inputJsonFile="input\184_07.json" name="07" outputJsonFile="output\184_07.json"/>
+	
+
+<test apiMethod="delay" delay="15000" description="Delay after shut down : 10000 ms" name="100"/>				
+
+	
+	
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\184_08.json"
+        inputJsonFile="input\184_08.json" name="08" outputJsonFile="output\184_08.json"/>
+		
+			<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+					description="item_inventory for item"
+					expectedJsonFile="expected\184_51.json"
+					inputJsonFile="input\184_51.json" name="51" outputJsonFile="output\184_51.json"/>
+					
+			<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+					description="item_inventory for item"
+					expectedJsonFile="expected\184_52.json"
+					inputJsonFile="input\184_52.json" name="52" outputJsonFile="output\184_52.json"/>
+					
+			<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/"
+					description="location inventory for item-store1"
+					expectedJsonFile="expected\184_53.json"
+					inputJsonFile="input\184_53.json" name="53" outputJsonFile="output\184_53.json"/>
+					
+			<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/"
+					description="location inventory for item-store1"
+					expectedJsonFile="expected\184_54.json"
+					inputJsonFile="input\184_54.json" name="54" outputJsonFile="output\184_54.json"/>
+					
+			
+					
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="create inventory for second item"
+        expectedJsonFile="expected\184_09.json"
+        inputJsonFile="input\184_09.json" name="09" outputJsonFile="output\184_09.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\184_10.json"
+        inputJsonFile="input\184_10.json" name="08" outputJsonFile="output\184_10.json"/>
+		
+			<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+					description="item_inventory for item"
+					expectedJsonFile="expected\184_61.json"
+					inputJsonFile="input\184_61.json" name="61" outputJsonFile="output\184_61.json"/>
+					
+			<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+					description="item_inventory for item"
+					expectedJsonFile="expected\184_62.json"
+					inputJsonFile="input\184_62.json" name="62" outputJsonFile="output\184_62.json"/>
+					
+			<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/"
+					description="location inventory for item-store1"
+					expectedJsonFile="expected\184_63.json"
+					inputJsonFile="input\184_63.json" name="63" outputJsonFile="output\184_63.json"/>
+					
+			<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/"
+					description="location inventory for item-store1"
+					expectedJsonFile="expected\184_64.json"
+					inputJsonFile="input\184_64.json" name="64" outputJsonFile="output\184_64.json"/>
+					
+			
+    
+</testsuite>

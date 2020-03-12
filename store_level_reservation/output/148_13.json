@@ -1,0 +1,75 @@
+{
+    "message": "Success",
+    "body": [
+        {
+            "partiallyReservedQty": 0,
+            "shortageQty": 0,
+            "orgCode": "JCP",
+            "reservedQty": 5,
+            "requestLine": {
+                "deliveryMethod": null,
+                "channel": null,
+                "lineID": "1",
+                "storeID": "1950",
+                "itemID": "1534567-2167",
+                "schedule": false,
+                "uom": "EACH",
+                "shippable": true,
+                "reservationID": "211700140008014002305",
+                "procurementAllowed": false,
+                "qty": 5,
+                "bopus": false,
+                "increaseCapacity": null,
+                "shutdown": false
+            },
+            "problemType": "SUCCESS"
+        },
+        {
+            "partiallyReservedQty": 0,
+            "shortageQty": 0,
+            "orgCode": "JCP",
+            "reservedQty": 5,
+            "requestLine": {
+                "deliveryMethod": null,
+                "channel": null,
+                "lineID": "1",
+                "storeID": "1948",
+                "itemID": "1534567-2167",
+                "schedule": false,
+                "uom": "EACH",
+                "shippable": true,
+                "reservationID": "211700140008014002304",
+                "procurementAllowed": false,
+                "qty": 5,
+                "bopus": false,
+                "increaseCapacity": null,
+                "shutdown": false
+            },
+            "problemType": "SUCCESS"
+        },
+        {
+            "partiallyReservedQty": 0,
+            "shortageQty": 0,
+            "orgCode": "JCP",
+            "reservedQty": 5,
+            "requestLine": {
+                "deliveryMethod": null,
+                "channel": null,
+                "lineID": "1",
+                "storeID": "1945",
+                "itemID": "1534567-2167",
+                "schedule": false,
+                "uom": "EACH",
+                "shippable": true,
+                "reservationID": "211700140008014002303",
+                "procurementAllowed": false,
+                "qty": 5,
+                "bopus": false,
+                "increaseCapacity": null,
+                "shutdown": false
+            },
+            "problemType": "SUCCESS"
+        }
+    ],
+    "status": 200
+}

@@ -1,0 +1,30 @@
+{
+	"body": [{
+			"status": 200,
+			"message": "Success",
+			"key": "JCP|1972|15345672187|EACH",
+			"body": {
+				"invall": {
+					
+					"shipATP": 90,
+					
+					"unconfirmeddemand": 0,
+					"standard_capacity": 10,
+					
+					"ship_active": 1,
+					"Available_capacity": 10,
+					
+					"bopusSafetyFactor": 10,
+					"bopusATP": 90,
+					"shipSafetyFactor": 10,
+					"reserveddemand": 0,
+					"bopus_active": 1,
+					"onhandsupply": 100
+				}
+			},
+			"warnings": null
+		}
+	],
+	"status": 221,
+	"message": "Successful"
+}

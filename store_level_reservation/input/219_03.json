@@ -1,0 +1,35 @@
+[
+{
+"itemId":"17112343053",
+    "qualitativeStatus":"AL",
+    
+    "onHandAvlQty":0,
+    "futureAvlQty":0,
+    "factoryShipLeadTimeQty":0,
+    "factoryShipLeadTimeUOM":"",
+    "factoryShipInventoryIndicator":"N",
+    "whseClass":"A"
+},
+{
+"itemId":"17112343054",
+    "qualitativeStatus":"AH",
+   
+    "onHandAvlQty":0,
+    "futureAvlQty":0,
+    "factoryShipLeadTimeQty":0,
+    "factoryShipLeadTimeUOM":"",
+    "factoryShipInventoryIndicator":"N",
+    "whseClass":"A"
+},
+{
+"itemId":"17112343055",
+    "qualitativeStatus":"BO",
+    "firstFutureAvailableDate":"0910-12-08T00:00:00-04:00",
+    "onHandAvlQty":0,
+    "futureAvlQty":10,
+    "factoryShipLeadTimeQty":0,
+    "factoryShipLeadTimeUOM":"",
+    "factoryShipInventoryIndicator":"N",
+    "whseClass":"A"
+}
+]

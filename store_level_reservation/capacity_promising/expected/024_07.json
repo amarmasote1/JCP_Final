@@ -1,0 +1,12 @@
+{
+	"status": 200,
+	"message": "Success",
+	"key": "SFS-DG",
+	"body": {
+		
+		"0237": 1,
+		"0241": 0,
+		"0246": 0
+	},
+	"warnings": null
+}

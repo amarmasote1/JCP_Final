@@ -1,0 +1,21 @@
+{
+	"status": 200,
+	"message": "Success",
+	"key": "201706232218171002006|JCP",
+	"body": {
+		"qty": 5,
+		"itemID": "15345672006",
+		"currentQty": 5,
+		"originalOrderedQty": 0,
+		"storeID": "0852",
+		
+		"shortageQty": 0,
+		"shippedQty": 0,
+		"substitutedItemQty": null,
+		"uom": null,
+		"increaseCapacity": false,
+		"confirmed": true,
+		"substitutionDone": false
+	},
+	"warnings": null
+}

@@ -1,0 +1,16 @@
+there are some reservation grouping scenarios: so make sure below properties are set.
+
+1. "yih.reservation.cancelBeforeScheduleAlreadyExists": "true"
+
+2. "yih.reservation.grouping.capacity": "true"
+
+
+
+
+----
+  Set this property enableDynamicSafetyStock : false.
+  
+  
+  Maps : 
+  1. Reservation : 
+		jcp_reservation_map is in hazelcast only. 

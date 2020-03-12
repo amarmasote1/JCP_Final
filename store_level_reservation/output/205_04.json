@@ -1,0 +1,21 @@
+{
+    "message": "Failure: Out of sequence transaction detected. Transaction Ignored.",
+    "body": [
+        {
+            "itemID": "17112343036",
+            "uom": "EACH",
+            "demandData": {
+                "reserveddemand": 0
+            },
+            "markDown": {
+                "active": false
+            },
+            "storeID": "2239",
+            "supplyData": {
+                "onhandsupply": 40
+            },
+            "timestamp": "2020-03-03 11:53:34.0000 IST"
+        }
+    ],
+    "status": 900
+}

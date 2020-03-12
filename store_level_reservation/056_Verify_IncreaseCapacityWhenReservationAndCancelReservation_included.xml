@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify IncreaseCapacity for ship reservation.
+
+pre requisite : item, store ,  capacity=4, reservation=2(multiple rsvn calls) and cancel reservation=2(multiple rsvn calls)
+-->
+
+
+<!-- expected  
+		1. Multiread before reservation : ATP ( Ship and bopus = 100), Available capacity = 4 
+		2. Multiread After 1st reservation (Qty = 10) : ATP (Ship and bopus = 90), Available capacity =  3 , reserved Demand = 10 
+		3. Multiread After 2nd reservation (Qty = 10) : ATP (Ship and bopus = 80), Available capacity =  2 , reserved Demand = 20 
+		4. Multiread After 1st cancel reservation  : ATP (Ship and bopus = 90), Available capacity =  3 , reserved Demand = 10 
+		5. Multiread after 2nd cancel reservation : ATP ( Ship and bopus = 100), Available capacity = 4 , reserved demand = 0
+-->
+
+
+<testsuite description="Verify capacity when reservation and cancel reservation are inlcuded" name="056">
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details"
+        expectedJsonFile="expected\056_01.json"
+        inputJsonFile="input\056_01.json" name="01" outputJsonFile="output\056_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/1223/" description="Insert node"
+        expectedJsonFile="expected\056_02.json"
+        inputJsonFile="input\056_02.json" name="02" outputJsonFile="output\056_02.json"/>
+
+
+    <test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory - in store 1223"
+        expectedJsonFile="expected\056_03.json"
+        inputJsonFile="input\056_03.json" name="03" outputJsonFile="output\056_03.json"/>
+		
+	
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity"
+        expectedJsonFile="expected\056_05.json"
+        inputJsonFile="input\056_05.json" name="05" outputJsonFile="output\056_05.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\056_06.json"
+        inputJsonFile="input\056_06.json" name="06" outputJsonFile="output\056_06.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Reservation 1"
+        expectedJsonFile="expected\056_07.json"
+        inputJsonFile="input\056_07.json" name="07" outputJsonFile="output\056_07.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\056_08.json"
+        inputJsonFile="input\056_08.json" name="08" outputJsonFile="output\056_08.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Reservation 2"
+        expectedJsonFile="expected\056_09.json"
+        inputJsonFile="input\056_09.json" name="09" outputJsonFile="output\056_09.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\056_10.json"
+        inputJsonFile="input\056_10.json" name="10" outputJsonFile="output\056_10.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Cancel Reservation 1"
+        expectedJsonFile="expected\056_11.json"
+        inputJsonFile="input\056_11.json" name="11" outputJsonFile="output\056_11.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\056_12.json"
+        inputJsonFile="input\056_12.json" name="12" outputJsonFile="output\056_12.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Cancel Reservation 2"
+        expectedJsonFile="expected\056_13.json"
+        inputJsonFile="input\056_13.json" name="13" outputJsonFile="output\056_13.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\056_14.json"
+        inputJsonFile="input\056_14.json" name="14" outputJsonFile="output\056_14.json"/>
+		
+	
+    
+</testsuite>

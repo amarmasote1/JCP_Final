@@ -1,0 +1,25 @@
+{
+	"body": [{
+			"status": 200,
+			"message": "Success",
+			"key": "JCP|1323|15345672034|EACH",
+			"body": {
+				"invall": {
+					"shipATP": 30,
+					"Available_capacity": 4,
+					"bopusSafetyFactor": 80,
+					"shipSafetyFactor": 70,
+					"bopusATP": 20,
+					"reserveddemand": 0,
+					"standard_capacity": 4,
+					"bopus_active": 1,
+					"onhandsupply": 100,
+					"ship_active": 1
+				}
+			},
+			"warnings": null
+		}
+	],
+	"status": 221,
+	"message": "Successful"
+}

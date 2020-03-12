@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>		 
+<!-- Verify Sku level exclusion : positive flow, Single store, multiple items
+-->
+
+<testsuite description="Verify Sku level exclusion : positive flow, Single store, multiple items" name="002">
+
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details :3 items"
+        expectedJsonFile="expected\002_01.json"
+        inputJsonFile="input\002_01.json" name="01" outputJsonFile="output\002_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/1028/" 
+		description="Insert node 1"
+        expectedJsonFile="expected\002_02.json"
+        inputJsonFile="input\002_02.json" name="02" outputJsonFile="output\002_02.json"/>
+<!--
+  <test apiMethod="POST" apiUrl="/master/node/JCP/5302/" 
+		description="Insert node 2"
+        expectedJsonFile="expected\002_03.json"
+        inputJsonFile="input\002_03.json" name="03" outputJsonFile="output\002_03.json"/>
+
+   <test apiMethod="POST" apiUrl="/master/node/JCP/5303/" 
+		description="Insert node 3"
+        expectedJsonFile="expected\002_04.json"
+        inputJsonFile="input\002_04.json" name="04" outputJsonFile="output\002_04.json"/>
+	
+-->	
+
+    <test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory : qty = 11,22,33 in all the stores"
+        expectedJsonFile="expected\002_05.json"
+        inputJsonFile="input\002_05.json" name="05" outputJsonFile="output\002_05.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Check ATP : 80"
+        expectedJsonFile="expected\002_06.json"
+        inputJsonFile="input\002_06.json" name="06" outputJsonFile="output\002_06.json"/>
+		
+		
+	<test apiMethod="Post" apiUrl="/master/itemExclusion/"
+        description="Exclusion : Sku level for item1"
+        expectedJsonFile="expected\002_07.json" inputJsonFile="input\002_07.json"
+        name="07" outputJsonFile="output\002_07.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Check ATP : 0 for item1"
+        expectedJsonFile="expected\002_08.json"
+        inputJsonFile="input\002_08.json" name="08" outputJsonFile="output\002_08.json"/>
+		
+	
+	<test apiMethod="Post" apiUrl="/master/itemExclusion/"
+        description="Exclusion : Sku level for item2"
+        expectedJsonFile="expected\002_09.json" inputJsonFile="input\002_09.json"
+        name="09" outputJsonFile="output\002_09.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Check ATP : 0 for item2"
+        expectedJsonFile="expected\002_10.json" inputJsonFile="input\002_10.json" 
+		name="10" outputJsonFile="output\002_10.json"/>
+		
+		
+	<test apiMethod="Post" apiUrl="/master/itemExclusion/"
+        description="Exclusion : Sku level for item3"
+        expectedJsonFile="expected\002_11.json" inputJsonFile="input\002_11.json"
+        name="11" outputJsonFile="output\002_11.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Check ATP : 0 for item3"
+        expectedJsonFile="expected\002_12.json" inputJsonFile="input\002_12.json" 
+		name="12" outputJsonFile="output\002_12.json"/>
+		
+	
+	<test apiMethod="Post" apiUrl="/master/itemExclusion/"
+        description="Remove exclusion : Sku level for item1"
+        expectedJsonFile="expected\002_13.json" inputJsonFile="input\002_13.json"
+        name="13" outputJsonFile="output\002_13.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Check ATP : 11 for item1"
+        expectedJsonFile="expected\002_14.json" inputJsonFile="input\002_14.json" 
+		name="14" outputJsonFile="output\002_14.json"/>
+		
+	<test apiMethod="Post" apiUrl="/master/itemExclusion/"
+        description="Remove exclusion : Sku level for item2"
+        expectedJsonFile="expected\002_15.json" inputJsonFile="input\002_15.json"
+        name="15" outputJsonFile="output\002_15.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Check ATP : 22 for item2"
+        expectedJsonFile="expected\002_16.json" inputJsonFile="input\002_16.json" 
+		name="16" outputJsonFile="output\002_16.json"/>
+		
+	<test apiMethod="Post" apiUrl="/master/itemExclusion/"
+        description="Remove exclusion : Sku level for item3"
+        expectedJsonFile="expected\002_17.json" inputJsonFile="input\002_17.json"
+        name="17" outputJsonFile="output\002_17.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Check ATP : 33 for item3"
+        expectedJsonFile="expected\002_18.json" inputJsonFile="input\002_18.json" 
+		name="18" outputJsonFile="output\002_18.json"/>
+ 
+</testsuite>

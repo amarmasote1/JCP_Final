@@ -1,0 +1,25 @@
+
+    [{
+     "itemID" : "24041730231",
+     "qualitativeStatus" : "BO",
+     "firstFutureAvailableDate" : "<$nextWeek>",
+     "onHandAvlQty": 0,
+     "futureAvlQty": 5
+     
+  },
+  {
+     "itemID" : "24041730232",
+     "qualitativeStatus" : "AL",
+     "firstFutureAvailableDate" : "",
+     "onHandAvlQty": 3,
+     "futureAvlQty": 0
+     
+  },
+  {
+    "itemID" : "24041730237",
+      "qualitativeStatus" : "BO",
+     "firstFutureAvailableDate" : "20-09-2017T00:00:00-04:00",
+     "onHandAvlQty": 87,
+     "futureAvlQty": 0
+  }
+]

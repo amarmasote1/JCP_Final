@@ -1,0 +1,30 @@
+{
+	"body": [{
+		"status": 200,
+		"message": "Success",
+		"key": "JCP|2844|34010002028|EACH",
+		"body": {
+			"invall": {
+				
+				"shipATP": 0,
+				
+				"unconfirmeddemand": 0,
+				"standard_capacity": 100,
+				
+				"ship_active": 0,
+				"Available_capacity": 99,
+				
+				"isDirty": 1,
+				"bopusSafetyFactor": 0,
+				"bopusATP": 0,
+				"shipSafetyFactor": 0,
+				"reserveddemand": 2,
+				"bopus_active": 0,
+				"onhandsupply": 10
+			}
+		},
+		"warnings": null
+	}],
+	"status": 221,
+	"message": "Successful"
+}

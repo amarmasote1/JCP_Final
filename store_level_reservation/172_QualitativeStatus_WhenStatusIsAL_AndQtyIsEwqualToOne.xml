@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify combined qualitative status :  when input qual status is AL and qty is equal to 1
+	pre requisite : 
+	1 item, 3 stores and sum of inventory across all the stores = 1.
+-->
+
+<!-- expected  
+		1. Get Qualitative-status should be AL for the item.
+-->
+
+<testsuite description="Verify combined qualitative status :  when input qual status is AL and qty is equal to 1" name="172">
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details"
+        expectedJsonFile="expected\172_01.json"
+        inputJsonFile="input\172_01.json" name="01" outputJsonFile="output\172_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/2058/" 
+		description="Insert node 1"
+        expectedJsonFile="expected\172_02.json"
+        inputJsonFile="input\172_02.json" name="02" outputJsonFile="output\172_02.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2060/" 
+		description="Insert node 2"
+        expectedJsonFile="expected\172_03.json"
+        inputJsonFile="input\172_03.json" name="03" outputJsonFile="output\172_03.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2063/" 
+		description="Insert node 3"
+        expectedJsonFile="expected\172_04.json"
+        inputJsonFile="input\172_04.json" name="04" outputJsonFile="output\172_04.json"/>
+		
+	 
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory "
+        expectedJsonFile="expected\172_05.json"
+        inputJsonFile="input\172_05.json" name="05" outputJsonFile="output\172_05.json"/>
+		
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+					description="item_inventory for item"
+					expectedJsonFile="expected\172_41.json"
+					inputJsonFile="input\172_41.json" name="41" outputJsonFile="output\172_41.json"/>
+	
+	<test apiMethod="POST" apiUrl="/master/qualitativeStatus/"
+        description="Qualtitatve status : AL"
+        expectedJsonFile="expected\172_06.json"
+        inputJsonFile="input\172_06.json" name="06" outputJsonFile="output\172_06.json"/>
+		
+	  <!--
+	<test apiMethod="GET" apiUrl="/refreshActiveStores/"
+       description="Multiread with update mode : "
+        expectedJsonFile="expected\001_30.json"
+        name="30" outputJsonFile="output\001_30.json"/>
+	
+
+	<test apiMethod="GET" apiUrl="/refreshActiveStores/"
+       description="Multiread with update mode : "
+        expectedJsonFile="expected\001_30.json"
+        name="30" outputJsonFile="output\001_30.json"/>
+	  -->
+
+<test apiMethod="delay" delay="10000" description="delay : 10000 ms" name="100"/>		
+	  
+	  
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="Get Qualitative status"
+        expectedJsonFile="expected\172_07.json"
+        inputJsonFile="input\172_07.json" name="07" outputJsonFile="output\172_07.json"/>
+		
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+					description="item_inventory for item"
+					expectedJsonFile="expected\172_51.json"
+					inputJsonFile="input\172_51.json" name="51" outputJsonFile="output\172_51.json"/>
+		
+			
+	
+    
+</testsuite>

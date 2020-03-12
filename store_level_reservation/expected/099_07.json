@@ -1,0 +1,1 @@
+{"status":200,"message":"Success","body":[{"shortageQty":0,"reservedQty":10,"partiallyReservedQty":0,"problemType":"SUCCESS","orgCode":"JCP","requestLine":{"lineID":"1","itemID":"1534567-2095","uom":"EACH","bopus":true,"shippable":false,"deliveryMethod":null,"increaseCapacity":null,"qty":10,"storeID":"1614","channel":null,"procurementAllowed":false}}]}

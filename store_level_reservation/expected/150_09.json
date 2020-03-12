@@ -1,0 +1,46 @@
+{
+	"status": 350,
+	"message": "Problems Found",
+	"body": [{
+		"shortageQty": 0,
+		"reservedQty": 0,
+		"partiallyReservedQty": 0,
+		"problemType": "NO_AVAILABILITY",
+		"orgCode": "JCP",
+		"requestLine": {
+			"lineID": "1",
+			"itemID": "1534567-2173",
+			"uom": "EACH",
+			"bopus": false,
+			"shippable": true,
+			"deliveryMethod": null,
+			"increaseCapacity": null,
+			"qty": 15,
+			"storeID": "1953",
+			"channel": null,
+			"reservationID": null,
+			"procurementAllowed": false
+		}
+	},
+	{
+		"shortageQty": 0,
+		"reservedQty": 35,
+		"partiallyReservedQty": 0,
+		"problemType": "SUCCESS",
+		"orgCode": "JCP",
+		"requestLine": {
+			"lineID": "1",
+			"itemID": "1534567-2174",
+			"uom": "EACH",
+			"bopus": false,
+			"shippable": true,
+			"deliveryMethod": null,
+			"increaseCapacity": null,
+			"qty": 35,
+			"storeID": "1953",
+			"channel": null,
+			"reservationID": "211700140008014002313",
+			"procurementAllowed": false
+		}
+	}]
+}

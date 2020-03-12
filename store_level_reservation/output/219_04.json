@@ -1,0 +1,33 @@
+{
+    "body": [
+        {
+            "warnings": null,
+            "message": "Record not found",
+            "body": {
+                "invall": {}
+            },
+            "key": "JCP|2294|17112343054|EACH",
+            "status": 404
+        },
+        {
+            "warnings": null,
+            "message": "Record not found",
+            "body": {
+                "invall": {}
+            },
+            "key": "JCP|2294|17112343055|EACH",
+            "status": 404
+        },
+        {
+            "warnings": null,
+            "message": "Record not found",
+            "body": {
+                "invall": {}
+            },
+            "key": "JCP|2294|17112343053|EACH",
+            "status": 404
+        }
+    ],
+    "message": "Partially Successful",
+    "status": 321
+}

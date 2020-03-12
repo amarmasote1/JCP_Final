@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify Insertion of same item multiple times : Multiple items
+pre requisiste : 
+Scenario1 : item1, item1
+Scenario2 : item2, item3
+Scenario3 : item4, item5, item3 (Already present)
+Scenario4 : item6, item7, item1 with bopus : false (update)
+-->
+
+<!-- expected  
+		1. Scenario1 : Success
+		2. Scenario2 : Success
+		3. Scenario3 : Success
+		4. Scenario4 : Success  and see the respected changes made in map
+-->
+
+<testsuite description="Verify Insertion of same item multiple times : Multiple items
+Scenario1 : item1, item1
+Scenario2 : item2, item3
+Scenario3 : item4, item5, item3 (Already present)
+Scenario4 : item6, item7, item1 with bopus : false (update)" name="186">
+
+
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="1 item : 2 times"
+        expectedJsonFile="expected\186_01.json"
+        inputJsonFile="input\186_01.json" name="01" outputJsonFile="output\186_01.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="item2, and item3"
+        expectedJsonFile="expected\186_02.json"
+        inputJsonFile="input\186_02.json" name="02" outputJsonFile="output\186_02.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="item4, item5, item3"
+        expectedJsonFile="expected\186_03.json"
+        inputJsonFile="input\186_03.json" name="03" outputJsonFile="output\186_03.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="item6, item7 and item1 with bopus false"
+        expectedJsonFile="expected\186_04.json"
+        inputJsonFile="input\186_04.json" name="04" outputJsonFile="output\186_04.json"/>
+		
+		
+		
+	
+		
+	
+    
+</testsuite>

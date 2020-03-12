@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify multiread reservation and cancel reservation when available capacity is More than standard capacity
+ pre requisite : item, store
+-->
+
+<!-- expected  
+		1. Available capacity can be either less than or equal to standard capacity
+		2. Reservation should succeed.!
+		
+-->
+
+
+<testsuite description="Verify reservation when AvaCapacity More Than Standard Capacity" name="060">
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details"
+        expectedJsonFile="expected\060_01.json"
+        inputJsonFile="input\060_01.json" name="01" outputJsonFile="output\060_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/1240/" description="Insert node"
+        expectedJsonFile="expected\060_02.json"
+        inputJsonFile="input\060_02.json" name="02" outputJsonFile="output\060_02.json"/>
+
+
+    <test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory - in store 1240"
+        expectedJsonFile="expected\060_03.json"
+        inputJsonFile="input\060_03.json" name="03" outputJsonFile="output\060_03.json"/>
+		
+	
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity"
+        expectedJsonFile="expected\060_05.json"
+        inputJsonFile="input\060_05.json" name="05" outputJsonFile="output\060_05.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\060_06.json"
+        inputJsonFile="input\060_06.json" name="06" outputJsonFile="output\060_06.json"/>
+		
+		
+	
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description=" Reservation 1"
+        expectedJsonFile="expected\060_09.json"
+        inputJsonFile="input\060_09.json" name="09" outputJsonFile="output\060_09.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\060_10.json"
+        inputJsonFile="input\060_10.json" name="10" outputJsonFile="output\060_10.json"/>
+		
+	
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description=" cancel Reservation "
+        expectedJsonFile="expected\060_13.json"
+        inputJsonFile="input\060_13.json" name="13" outputJsonFile="output\060_13.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\060_14.json"
+        inputJsonFile="input\060_14.json" name="14" outputJsonFile="output\060_14.json"/>
+		
+	
+    
+</testsuite>

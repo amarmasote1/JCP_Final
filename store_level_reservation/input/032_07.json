@@ -1,0 +1,9 @@
+
+[
+   {
+      "purchaseType" : "Basic100",
+      "onhandSafetyFactorQuantity" : "-10",
+      "onhandPickSafetyFactorQuantity" : "-20",
+      "storeSub" : "123"
+   }
+] 

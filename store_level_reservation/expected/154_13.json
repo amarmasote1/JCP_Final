@@ -1,0 +1,56 @@
+{
+	"body": [{
+			"status": 200,
+			"message": "Success",
+			"key": "JCP|1965|15345672184|EACH",
+			"body": {
+				"invall": {
+					
+					"shipATP": 20,
+					
+					"unconfirmeddemand": 0,
+					"standard_capacity": 10,
+					
+					"ship_active": 1,
+					"Available_capacity": 10,
+					
+					"isDirty": 0,
+					"bopusSafetyFactor": 80,
+					"bopusATP": 20,
+					"shipSafetyFactor": 80,
+					"reserveddemand": 0,
+					"bopus_active": 1,
+					"onhandsupply": 100
+				}
+			},
+			"warnings": null
+		}, {
+			"status": 200,
+			"message": "Success",
+			"key": "JCP|1963|15345672183|EACH",
+			"body": {
+				"invall": {
+					
+					"shipATP": 0,
+					
+					"unconfirmeddemand": 0,
+					"standard_capacity": 10,
+					
+					"ship_active": 0,
+					"Available_capacity": 10,
+					
+					"isDirty": 0,
+					"bopusSafetyFactor": 0,
+					"bopusATP": 0,
+					"shipSafetyFactor": 0,
+					"reserveddemand": 0,
+					"bopus_active": 0,
+					"onhandsupply": 100
+				}
+			},
+			"warnings": null
+		}
+	],
+	"status": 221,
+	"message": "Successful"
+}

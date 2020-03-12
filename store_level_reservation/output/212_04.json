@@ -1,0 +1,21 @@
+{
+    "message": "Success",
+    "body": [
+        {
+            "itemID": "17112343043",
+            "uom": "EACH",
+            "demandData": {
+                "reserveddemand": 0
+            },
+            "markDown": {
+                "active": false
+            },
+            "storeID": "2266",
+            "supplyData": {
+                "onhandsupply": 40
+            },
+            "timestamp": "2019-12-12 16:02:56.0650 IST"
+        }
+    ],
+    "status": 200
+}

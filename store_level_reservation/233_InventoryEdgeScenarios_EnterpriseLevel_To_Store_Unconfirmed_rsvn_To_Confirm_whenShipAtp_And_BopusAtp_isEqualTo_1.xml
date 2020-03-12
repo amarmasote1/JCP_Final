@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Inventory Edge Scenarios, enterpriseLevel to store :  unconfirmed reservation to confirm reservation,  when bopus atp and ship atp is equal to 1.
+-->
+
+<!-- expected  
+	1. ship reservation should succeed, and bopus enterprise reservation should fail.
+	2. conversion etp to store : ship should have same reservation and bopus should create new reservation
+	3. cancel store reservation should succeed (both).
+	
+	1. Multiread Before reservation 	: ATP = 1, UnconfirmedDemandDemand = 0, Available Capacity = 8 for both ship and bopus
+	2. Multiread After ETP rsvn 		: ATP = 1, UnconfirmedDemandDemand = 0, Available Capacity = 8 (Multiread doesn't show ETP demand)
+	3. Multiread After Converting to store rsvn	: ATP = 0, Reserved DemandDemand = 1, Available Capacity = 7 and 8 for ship and bopus 
+	4. Multiread After cancelling store rsvn	: ATP = 1, Reserved DemandDemand = 0, Available Capacity = 8 for ship and bopus 
+	
+-->
+
+<testsuite description="Inventory Edge Scenarios, enterpriseLevel to store :  unconfirmed reservation to confirm reservation,  when bopus atp and ship atp is equal to 1." name="233">
+		
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="item: 2 "
+        expectedJsonFile="expected\233_01.json"
+        inputJsonFile="input\233_01.json" name="01" outputJsonFile="output\233_01.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2341/"
+        description="store 1"
+        expectedJsonFile="expected\233_02.json"
+        inputJsonFile="input\233_02.json" name="02" outputJsonFile="output\233_02.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2342/"
+        description="store 2"
+        expectedJsonFile="expected\233_11.json"
+        inputJsonFile="input\233_11.json" name="11" outputJsonFile="output\233_11.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory : qty=1 for both items"
+        expectedJsonFile="expected\233_03.json"
+        inputJsonFile="input\233_03.json" name="03" outputJsonFile="output\233_03.json"/>
+	
+
+		
+		
+	
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity: avaCapacity=8 for both stores"
+        expectedJsonFile="expected\233_05.json"
+        inputJsonFile="input\233_05.json" name="05" outputJsonFile="output\233_05.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread: shipAtp=1, bopusAtp=1 for both store-item combination"
+        expectedJsonFile="expected\233_06.json"
+        inputJsonFile="input\233_06.json" name="06" outputJsonFile="output\233_06.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/120/N/"
+        description="Reservation:ship pass, bopus fail"
+         expectedJsonFile="expected\233_07.json"
+        inputJsonFile="input\233_07.json" name="07" outputJsonFile="output\233_07.json"/>
+
+	
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread: UnconfirmedDemand=1 for ship"
+        expectedJsonFile="expected\233_08.json"
+        inputJsonFile="input\233_08.json" name="08" outputJsonFile="output\233_08.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Convert enterprise to store Reservation"
+        expectedJsonFile="expected\233_09.json"
+        inputJsonFile="input\233_09.json" name="09" outputJsonFile="output\233_09.json"/>	
+		
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread: shipAtp and bopusAtp=0, ReservedDemand=1"
+        expectedJsonFile="expected\233_10.json"
+        inputJsonFile="input\233_10.json" name="10" outputJsonFile="output\233_10.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="cancel store Reservation"
+        expectedJsonFile="expected\233_13.json"
+        inputJsonFile="input\233_13.json" name="13" outputJsonFile="output\233_13.json"/>	
+		
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread: shipAtp and bopusAtp=1, ReservedDemand=0"
+        expectedJsonFile="expected\233_14.json"
+        inputJsonFile="input\233_14.json" name="14" outputJsonFile="output\233_14.json"/>
+		
+	
+		
+	
+</testsuite>

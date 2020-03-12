@@ -1,0 +1,29 @@
+{
+    "message": "Success",
+    "body": [
+        {
+            "partiallyReservedQty": 0,
+            "shortageQty": 0,
+            "orgCode": "JCP",
+            "reservedQty": 0,
+            "requestLine": {
+                "deliveryMethod": null,
+                "channel": null,
+                "lineID": "3",
+                "storeID": "0779",
+                "itemID": "1234567-8071",
+                "schedule": false,
+                "uom": "EACH",
+                "shippable": false,
+                "reservationID": "20170613221817100273",
+                "procurementAllowed": false,
+                "qty": 0,
+                "bopus": true,
+                "increaseCapacity": null,
+                "shutdown": false
+            },
+            "problemType": "SUCCESS"
+        }
+    ],
+    "status": 200
+}

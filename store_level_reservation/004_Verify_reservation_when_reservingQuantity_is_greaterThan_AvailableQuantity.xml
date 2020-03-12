@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify  
+		1. Reservation When reservation qty > avaQty
+		2. Consume demand
+-->
+
+<!-- expected  
+	1. Before reservation: atp=100, avaCapacity=80
+	2. After reservation: atp=100, avaCapacity=80
+	3. After consume demand: atp=100, avaCapacity=80
+-->
+<testsuite description="Verify reservation when RsvnQty>AvaQty : 1. When reservation qty > avaQty
+		2. Consume demand" name="004">
+		
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details: only 1 item"
+        expectedJsonFile="expected\004_01.json"
+        inputJsonFile="input\004_01.json" name="01" outputJsonFile="output\004_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/0559/" 
+		description="Insert node 1"
+        expectedJsonFile="expected\004_02.json"
+        inputJsonFile="input\004_02.json" name="02" outputJsonFile="output\004_02.json"/>
+
+
+    <test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory : qty=100"
+        expectedJsonFile="expected\004_03.json"
+        inputJsonFile="input\004_03.json" name="03" outputJsonFile="output\004_03.json"/>
+		
+	
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity: avaCapacity=80"
+        expectedJsonFile="expected\004_05.json"
+        inputJsonFile="input\004_05.json" name="05" outputJsonFile="output\004_05.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread: atp=100, avaCapacity=80"
+        expectedJsonFile="expected\004_06.json"
+        inputJsonFile="input\004_06.json" name="06" outputJsonFile="output\004_06.json"/>
+		
+		
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+					description="item_inventory for item"
+					expectedJsonFile="expected\004_71.json"
+					inputJsonFile="input\004_71.json" name="71" outputJsonFile="output\004_71.json"/>
+
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/"
+					description="location inventory for item-store1"
+					expectedJsonFile="expected\004_72.json"
+					inputJsonFile="input\004_72.json" name="72" outputJsonFile="output\004_72.json"/>
+					
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_reservation_map/"
+					description="reservation map"
+					expectedJsonFile="expected\004_75.json"
+					inputJsonFile="input\004_75.json" name="75" outputJsonFile="output\004_75.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Reservation : qty=150"
+        expectedJsonFile="expected\004_07.json"
+        inputJsonFile="input\004_07.json" name="07" outputJsonFile="output\004_07.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread: atp=100, avaCapacity=80 "
+        expectedJsonFile="expected\004_08.json"
+        inputJsonFile="input\004_08.json" name="08" outputJsonFile="output\004_08.json"/>
+		
+		
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+					description="item_inventory for item"
+					expectedJsonFile="expected\004_81.json"
+					inputJsonFile="input\004_81.json" name="81" outputJsonFile="output\004_81.json"/>
+
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/"
+					description="location inventory for item-store1"
+					expectedJsonFile="expected\004_82.json"
+					inputJsonFile="input\004_82.json" name="82" outputJsonFile="output\004_82.json"/>
+					
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_reservation_map/"
+					description="reservation map"
+					expectedJsonFile="expected\004_85.json"
+					inputJsonFile="input\004_85.json" name="85" outputJsonFile="output\004_85.json"/>
+					
+					
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/20170613221817100153/consumedemand/Y/"
+        description="CosumeDemand: storeLevel reservation not found"
+        expectedJsonFile="expected\004_09.json"
+        inputJsonFile="input\004_09.json" name="09" outputJsonFile="output\004_09.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread: atp=100, avaCapacity=80"
+        expectedJsonFile="expected\004_10.json"
+        inputJsonFile="input\004_10.json" name="10" outputJsonFile="output\004_10.json"/>
+		
+		
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+					description="item_inventory for item"
+					expectedJsonFile="expected\004_91.json"
+					inputJsonFile="input\004_91.json" name="91" outputJsonFile="output\004_91.json"/>
+
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/"
+					description="location inventory for item-store1"
+					expectedJsonFile="expected\004_92.json"
+					inputJsonFile="input\004_92.json" name="92" outputJsonFile="output\004_92.json"/>
+					
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_reservation_map/"
+					description="reservation map"
+					expectedJsonFile="expected\004_95.json"
+					inputJsonFile="input\004_95.json" name="95" outputJsonFile="output\004_95.json"/>
+    
+</testsuite>

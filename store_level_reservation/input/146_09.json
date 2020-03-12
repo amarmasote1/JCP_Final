@@ -1,0 +1,32 @@
+{"reservation":[
+ {
+"storeID" : "1936",
+"reservationID" : "211700140008014002282",
+"procurementAllowed" : "false",
+"shippable" : "true",
+"uom" : "EACH",
+"itemID" : "15345672163",
+"lineID" : "1",
+"qty" : "15"
+ },
+ {
+"storeID" : "1939",
+"reservationID" : "211700140008014002283",
+"procurementAllowed" : "false",
+"shippable" : "true",
+"uom" : "EACH",
+"itemID" : "15345672163",
+"lineID" : "1",
+"qty" : "15"
+ },
+ {
+"storeID" : "1940",
+"reservationID" : "211700140008014002284",
+"procurementAllowed" : "false",
+"shippable" : "true",
+"uom" : "EACH",
+"itemID" : "15345672163",
+"lineID" : "1",
+"qty" : "15"
+ }
+]}

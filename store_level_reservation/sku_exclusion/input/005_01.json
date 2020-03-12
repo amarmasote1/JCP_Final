@@ -1,0 +1,26 @@
+[
+   {
+      "gtin" : "",
+      "uom" : "EACH",
+      "itemID" : "80210002006",
+      "bopus" : "true",
+      "lotNumber" : "8021000",
+      "shippable" : "true",
+      "productLine" : "802",
+      "purchaseType" : "Factory Ship",
+      "isSubstitutionAllowed" : "N",
+      "itemProcessingTime" : "10"
+   },
+   {
+      "gtin" : "",
+      "uom" : "EACH",
+      "itemID" : "80210002007",
+      "bopus" : "true",
+      "lotNumber" : "8021000",
+      "shippable" : "true",
+      "productLine" : "802",
+      "purchaseType" : "Factory Ship",
+      "isSubstitutionAllowed" : "N",
+      "itemProcessingTime" : "10"
+   }
+]

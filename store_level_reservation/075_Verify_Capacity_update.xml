@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify capacity update, where capacity decreased from 4 to 2 in store 1362 and increased from 4 to 8 in store 1368
+
+pre requisite : item, store and capacity
+-->
+
+<!-- expected  
+		1. Multiread before capacity update : ATP ( Ship and bopus) = 40, Available capacity = 4 in both stores
+		2. Multiread after capacity update : ATP ( Ship and bopus) = 40, Available capacity = 2 in store 1362 and  ATP ( Ship and bopus) = 40, Available capacity = 8 in store 1368
+-->
+
+
+
+
+<testsuite description="Verify capacity update, where capacity decreased from 4 to 2 in store 1362 and increased from 4 to 8 in store 1368" name="075">
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details"
+        expectedJsonFile="expected\075_01.json"
+        inputJsonFile="input\075_01.json" name="01" outputJsonFile="output\075_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/1362/" description="Insert node"
+        expectedJsonFile="expected\075_02.json"
+        inputJsonFile="input\075_02.json" name="02" outputJsonFile="output\075_02.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/1368/" description="Insert node"
+        expectedJsonFile="expected\075_07.json"
+        inputJsonFile="input\075_07.json" name="07" outputJsonFile="output\075_07.json"/>
+
+
+    <test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory - in store 1362 and 1368"
+        expectedJsonFile="expected\075_03.json"
+        inputJsonFile="input\075_03.json" name="03" outputJsonFile="output\075_03.json"/>
+	
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity"
+        expectedJsonFile="expected\075_05.json"
+        inputJsonFile="input\075_05.json" name="05" outputJsonFile="output\075_05.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\075_06.json"
+        inputJsonFile="input\075_06.json" name="06" outputJsonFile="output\075_06.json"/>
+		
+		
+	
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description=" Capacity update"
+        expectedJsonFile="expected\075_09.json"
+        inputJsonFile="input\075_09.json" name="09" outputJsonFile="output\075_09.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\075_10.json"
+        inputJsonFile="input\075_10.json" name="10" outputJsonFile="output\075_10.json"/>
+		
+	
+    
+</testsuite>

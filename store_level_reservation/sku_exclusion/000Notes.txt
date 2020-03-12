@@ -1,0 +1,6 @@
+Service Application.yml
+-----------------------
+
+for sku_exclusion :
+app.feature.flags.performanceBasedExclusionReadEnabled: true
+"yih.exclusion.newmap.read.enabled": "true",

@@ -1,0 +1,14 @@
+[
+   {
+      "gtin" : "",
+      "uom" : "EACH",
+      "itemID" : "11345672000",
+      "bopus" : "true",
+      "lotNumber" : "1134567",
+      "shippable" : "true",
+      "productLine" : "113",
+      "purchaseType" : "Basic",
+      "isSubstitutionAllowed" : "N",
+      "itemProcessingTime" : "10"
+   }
+]

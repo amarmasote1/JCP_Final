@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>		 
+<!-- Verify publish qual  : With Clearance , flag = N   , WH                  
+       
+       1. item1 -  AL 
+       2. item2 -  AH 
+        
+-->
+
+<testsuite description="Verify publish qual  : With Clearance , flag = N   , WH                  
+       
+       1. item1 -  AL 
+       2. item2 -  AH 
+        "
+	   name="009">
+	   
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item insert : 2 item"
+        expectedJsonFile="expected\009_001.json"
+        inputJsonFile="input\009_001.json" name="001" outputJsonFile="output\009_001.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/qualitativeStatus/"
+        description="Qual status :  AL, AH"
+        expectedJsonFile="expected\009_01.json"
+        inputJsonFile="input\009_01.json" name="01" outputJsonFile="output\009_01.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/publishQS/87945674528/WH/N"
+        description="item1 : 1"
+        expectedJsonFile="expected\009_02.json"
+        inputJsonFile="input\009_02.json" name="02" outputJsonFile="output\009_02.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/publishQS/87945674529/WH/N"
+        description="item2 : 2"
+        expectedJsonFile="expected\009_03.json"
+        inputJsonFile="input\009_03.json" name="03" outputJsonFile="output\009_03.json"/>
+<!--		
+	<test apiMethod="POST" apiUrl="/master/publishQS/87945674524/WH/Y"
+        description="item3 : 2"
+        expectedJsonFile="expected\009_04.json"
+        inputJsonFile="input\009_04.json" name="04" outputJsonFile="output\009_04.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/publishQS/87945674525/WH/Y"
+        description="item4 : 3"
+        expectedJsonFile="expected\009_05.json"
+        inputJsonFile="input\009_05.json" name="05" outputJsonFile="output\009_05.json"/>
+		
+-->		
+	
+	<test apiMethod="POST" apiUrl="/item/price/"
+        description="Apply clearance for both items"
+        expectedJsonFile="expected\009_06.json"
+        inputJsonFile="input\009_06.json" name="06" outputJsonFile="output\009_06.json"/>
+		
+		
+		
+    <test apiMethod="POST" apiUrl="/master/publishQS/87945674528/WH/N"
+        description="item1 : 1"
+        expectedJsonFile="expected\009_07.json"
+        inputJsonFile="input\009_07.json" name="07" outputJsonFile="output\009_07.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/publishQS/87945674529/WH/N"
+        description="item2 : 2"
+        expectedJsonFile="expected\009_08.json"
+        inputJsonFile="input\009_08.json" name="08" outputJsonFile="output\009_08.json"/>
+<!--		
+	<test apiMethod="POST" apiUrl="/master/publishQS/87945674524/WH/Y"
+        description="item3 : 3"
+        expectedJsonFile="expected\009_09.json"
+        inputJsonFile="input\009_09.json" name="09" outputJsonFile="output\009_09.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/publishQS/87945674525/WH/Y"
+        description="item4 : 0"
+        expectedJsonFile="expected\009_10.json"
+        inputJsonFile="input\009_10.json" name="10" outputJsonFile="output\009_10.json"/>
+-->
+</testsuite>

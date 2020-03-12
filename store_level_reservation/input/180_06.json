@@ -1,0 +1,14 @@
+[
+  
+  {
+     "itemID" : "17145672229",
+     "qualitativeStatus" : "AH",
+     
+     "onHandAvlQty": 2,
+     "futureAvlQty": 0,
+	 "factoryShipLeadTimeQty":0,
+    "factoryShipLeadTimeUOM":"",
+    "factoryShipInventoryIndicator":"N",
+    "whseClass":"A"
+  }
+]

@@ -1,0 +1,21 @@
+{
+	"status": 200,
+	"message": "Success",
+	"key": "211706142218171002209|JCP",
+	"body": {
+		"qty": 10,
+		"itemID": "Jcpeeny11",
+		"currentQty": 10,
+		"originalOrderedQty": 0,
+		"storeID": "1749",
+		
+		"shortageQty": 0,
+		"shippedQty": 0,
+		"substitutedItemQty": null,
+		"uom": null,
+		"increaseCapacity": false,
+		"substitutionDone": false,
+		"confirmed": true
+	},
+	"warnings": null
+}

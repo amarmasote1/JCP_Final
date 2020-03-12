@@ -1,0 +1,13 @@
+[
+  {
+     "itemID" : "15345672208",
+     "qualitativeStatus" : "AH",
+     
+     "onHandAvlQty": 5,
+     "futureAvlQty": 0,
+	 "factoryShipLeadTimeQty":0,
+    "factoryShipLeadTimeUOM":"1",
+    "factoryShipInventoryIndicator":"N",
+    "whseClass":"1"
+  }
+]
