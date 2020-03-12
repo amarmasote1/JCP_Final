@@ -1,0 +1,119 @@
+[
+  {
+    "storeID": "2920",
+    "itemID": "55551112015",
+    "uom": "EACH",
+    "supplyData": {
+      "onhandsupply": 100
+    },
+    "demandData": {
+        "reserveddemand": 0
+      },
+    "timestamp": "<$today>"
+    
+  },
+  {
+    "storeID": "2920",
+    "itemID": "55551112016",
+    "uom": "EACH",
+    "supplyData": {
+      "onhandsupply": 100
+    },
+    "demandData": {
+        "reserveddemand": 0
+      },
+    "timestamp": "<$today>"
+    
+  },
+  {
+    "storeID": "2921",
+    "itemID": "55551112016",
+    "uom": "EACH",
+    "supplyData": {
+      "onhandsupply": 100
+    },
+    "demandData": {
+        "reserveddemand": 0
+      },
+    "timestamp": "<$today>"
+    
+  },
+  {
+    "storeID": "2920",
+    "itemID": "55551112017",
+    "uom": "EACH",
+    "supplyData": {
+      "onhandsupply": 100
+    },
+    "demandData": {
+        "reserveddemand": 0
+      },
+    "timestamp": "<$today>"
+    
+  },
+  {
+    "storeID": "2920",
+    "itemID": "55551112018",
+    "uom": "EACH",
+    "supplyData": {
+      "onhandsupply": 100
+    },
+    "demandData": {
+        "reserveddemand": 0
+      },
+    "timestamp": "<$today>"
+    
+  },
+  {
+    "storeID": "2920",
+    "itemID": "55551112019",
+    "uom": "EACH",
+    "supplyData": {
+      "onhandsupply": 100
+    },
+    "demandData": {
+        "reserveddemand": 0
+      },
+    "timestamp": "<$today>"
+    
+  },
+  {
+    "storeID": "2921",
+    "itemID": "55551112019",
+    "uom": "EACH",
+    "supplyData": {
+      "onhandsupply": 100
+    },
+    "demandData": {
+        "reserveddemand": 0
+      },
+    "timestamp": "<$today>"
+    
+  },
+  {
+    "storeID": "2920",
+    "itemID": "55551112020",
+    "uom": "EACH",
+    "supplyData": {
+      "onhandsupply": 100
+    },
+    "demandData": {
+        "reserveddemand": 0
+      },
+    "timestamp": "<$today>"
+    
+  },
+  {
+    "storeID": "2921",
+    "itemID": "55551112020",
+    "uom": "EACH",
+    "supplyData": {
+      "onhandsupply": 100
+    },
+    "demandData": {
+        "reserveddemand": 0
+      },
+    "timestamp": "<$today>"
+    
+  }
+]

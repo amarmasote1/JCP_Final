@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify MOQ when Node control is applied and removed. single store
+		
+		store		capacity	ATP
+		2453		10			20		
+-->
+
+<!-- expected  
+				Before Node control 					 MOQ : 20
+				After  Node control						 MOQ : 0
+				Remove Node control         			 MOQ : 20
+						
+-->
+
+<testsuite description="Verify MOQ when Node control is applied and removed. single store" name="012">
+		
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="items: 1 "
+        expectedJsonFile="expected\012_01.json"
+        inputJsonFile="input\012_01.json" name="01" outputJsonFile="output\012_01.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2453/"
+        description="store 1"
+        expectedJsonFile="expected\012_02.json"
+        inputJsonFile="input\012_02.json" name="02" outputJsonFile="output\012_02.json"/>
+	
+		
+	
+	
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="Create inventory "
+        expectedJsonFile="expected\012_03.json"
+        inputJsonFile="input\012_03.json" name="03" outputJsonFile="output\012_03.json"/>
+	
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity: Available Capacity = 10"
+        expectedJsonFile="expected\012_05.json"
+        inputJsonFile="input\012_05.json" name="05" outputJsonFile="output\012_05.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\012_06.json"
+        inputJsonFile="input\012_06.json" name="06" outputJsonFile="output\012_06.json"/>
+		
+
+
+	
+	<test apiMethod="POST" apiUrl="/master/qualitativeStatus/"
+        description="insert qual status : AL"
+        expectedJsonFile="expected\012_07.json"
+        inputJsonFile="input\012_07.json" name="07" outputJsonFile="output\012_07.json"/>
+
+<test apiMethod="delay" delay="10000" description="Delay : 10000 ms" name="100"/>				
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="get Qual status: MOQ = 20"
+        expectedJsonFile="expected\012_08.json"
+        inputJsonFile="input\012_08.json" name="8" outputJsonFile="output\012_08.json"/>
+		
+		
+		
+		
+	<test apiMethod="POST" apiUrl="/master/nodeControl/JCP/"
+        description="Apply Node control"
+        expectedJsonFile="expected\012_09.json"
+        inputJsonFile="input\012_09.json" name="09" outputJsonFile="output\012_09.json"/>
+
+<test apiMethod="delay" delay="10000" description="Delay : 10000 ms" name="100"/>				
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="get Qual status: MOQ = 0"
+        expectedJsonFile="expected\012_10.json"
+        inputJsonFile="input\012_10.json" name="10" outputJsonFile="output\012_10.json"/>
+
+	
+</testsuite>
+
+
+
+

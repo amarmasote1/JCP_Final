@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>		 
+<!-- Verify item delete for : Validation scenarios
+       1. item not present in DB
+       2. item not present in DB (multiple items)
+       3. empty body
+       4. empty array
+-->
+
+<testsuite description="Verify item delete for : Validation scenarios
+       1. item not present in DB
+       2. item not present in DB (multiple items)
+       3. empty body
+       4. empty array"
+	   name="001">
+
+    <test apiMethod="DELETE" apiUrl="/master/itemDetails/JCP/"
+        description="Item delete : item not present in DB"
+        expectedJsonFile="expected\001_01.json"
+        inputJsonFile="input\001_01.json" name="01" outputJsonFile="output\001_01.json"/>
+
+    <test apiMethod="DELETE" apiUrl="/master/itemDetails/JCP/" 
+		description="Item delete : item not present in DB (multiple items)"
+        expectedJsonFile="expected\001_02.json"
+        inputJsonFile="input\001_02.json" name="02" outputJsonFile="output\001_02.json"/>
+
+	<test apiMethod="DELETE" apiUrl="/master/itemDetails/JCP/" 
+		description="Item delete : empty body"
+        expectedJsonFile="expected\001_03.json"
+        inputJsonFile="input\001_03.json" name="03" outputJsonFile="output\001_03.json"/>
+
+	<test apiMethod="DELETE" apiUrl="/master/itemDetails/JCP/" 
+		description="Item delete : empty array"
+        expectedJsonFile="expected\001_04.json"
+        inputJsonFile="input\001_04.json" name="04" outputJsonFile="output\001_04.json"/>
+
+</testsuite>

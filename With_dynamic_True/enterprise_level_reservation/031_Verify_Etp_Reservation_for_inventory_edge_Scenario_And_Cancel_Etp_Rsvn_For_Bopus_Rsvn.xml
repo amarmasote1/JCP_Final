@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify Etp Reservation for inventory edge scenario for bopus i.e when BopusATP = 1 and cancel
+-->
+
+
+<!-- Expected
+1. Multiread Before Enterprise reservation : ATP (Ship and Bopus) = 1 , Capacity = 10 in store1  
+2. Multiread after Enterprise reservation(Qty = 1) : ATP (Ship and Bopus) = 1 , Capacity = 10 in store1 
+3. Multiread after Etp level rsvn cancel : ATP (Ship and Bopus) = 1 , Capacity = 10 in store1 
+4. Multiread after Etp level rsvn (Qty = 1) : ATP (Ship and Bopus) = 1 , Capacity = 10 in store1 
+5. Multiread after store level rsvn (Qty = 1) : ATP (Ship and Bopus) = 0 , Capacity = 10 in store1 
+		
+		
+		Etp reservation should fail as bopus reservation needs storeID.  
+		Cancel etp reservation should also fail as there is no reservation.
+		
+-->
+
+<testsuite description="Verify Etp Reservation for inventory edge scenario for bopus i.e when BopusATP = 1 and convert to store level reservation" name="031">
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details"
+        expectedJsonFile="expected\031_01.json"
+        inputJsonFile="input\031_01.json" name="01" outputJsonFile="output\031_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/1306/" 
+		description="Insert node 1"
+        expectedJsonFile="expected\031_02.json"
+        inputJsonFile="input\031_02.json" name="02" outputJsonFile="output\031_02.json"/>
+
+<!--   <test apiMethod="POST" apiUrl="/master/node/JCP/1270/" 
+		description="Insert node 2"
+        expectedJsonFile="expected\031_03.json"
+        inputJsonFile="input\031_03.json" name="03" outputJsonFile="output\031_03.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/1274/" 
+		description="Insert node 3"
+        expectedJsonFile="expected\031_04.json"
+        inputJsonFile="input\031_04.json" name="04" outputJsonFile="output\031_04.json"/>
+-->		
+	
+
+    <test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory"
+        expectedJsonFile="expected\031_05.json"
+        inputJsonFile="input\031_05.json" name="05" outputJsonFile="output\031_05.json"/>
+		
+	
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity"
+        expectedJsonFile="expected\031_07.json"
+        inputJsonFile="input\031_07.json" name="07" outputJsonFile="output\031_07.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\031_08.json"
+        inputJsonFile="input\031_08.json" name="08" outputJsonFile="output\031_08.json"/>
+		
+		
+		
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Reservation :  EnterpriseLevel for bopus"
+        expectedJsonFile="expected\031_09.json"
+        inputJsonFile="input\031_09.json" name="09" outputJsonFile="output\031_09.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread after EnterpriseLevel reservation"
+        expectedJsonFile="expected\031_10.json"
+        inputJsonFile="input\031_10.json" name="10" outputJsonFile="output\031_10.json"/>
+		
+	
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Reservation : Cancel etp rsvn " 
+		expectedJsonFile="expected\031_11.json"
+        inputJsonFile="input\031_11.json" name="11" outputJsonFile="output\031_11.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread after : Etp rsvn cancel"
+        expectedJsonFile="expected\031_12.json"
+        inputJsonFile="input\031_12.json" name="12" outputJsonFile="output\031_12.json"/>
+		
+	
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description=" Again Etp Reservation  " 
+		expectedJsonFile="expected\031_13.json"
+        inputJsonFile="input\031_13.json" name="13" outputJsonFile="output\031_13.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread after : Etp Level rsvn cancel"
+        expectedJsonFile="expected\031_14.json"
+        inputJsonFile="input\031_14.json" name="14" outputJsonFile="output\031_14.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description=" etp to store rsvn" 
+		expectedJsonFile="expected\031_15.json"
+        inputJsonFile="input\031_15.json" name="15" outputJsonFile="output\031_15.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread after : storeLevel rsvn "
+        expectedJsonFile="expected\031_16.json"
+        inputJsonFile="input\031_16.json" name="16" outputJsonFile="output\031_16.json"/>
+		
+		
+		
+	
+</testsuite>

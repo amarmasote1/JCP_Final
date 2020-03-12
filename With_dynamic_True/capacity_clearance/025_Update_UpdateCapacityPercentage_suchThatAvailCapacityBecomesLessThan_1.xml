@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>		 
+<!-- Verify
+			Capacity, when capacity percentage is updated such that Avail capacity becomes less than 1
+-->
+
+<testsuite description="Capacity, when capacity percentage is updated such that Avail capacity becomes less than 1" name="025">
+
+    
+   <test apiMethod="POST" apiUrl="/master/node/JCP/2008/" 
+		description="Insert node 1"
+        expectedJsonFile="expected\025_01.json"
+        inputJsonFile="input\025_01.json" name="01" outputJsonFile="output\025_01.json"/>
+
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="Insert clearance capacity "
+        expectedJsonFile="expected\025_02.json"
+        inputJsonFile="input\025_02.json" name="02" outputJsonFile="output\025_02.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+		description="Get Capacity : "
+        expectedJsonFile="expected\025_03.json"
+        inputJsonFile="input\025_03.json" name="03" outputJsonFile="output\025_03.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="Insert clearance capacity "
+        expectedJsonFile="expected\025_04.json"
+        inputJsonFile="input\025_04.json" name="04" outputJsonFile="output\025_04.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+		description="Get Capacity : "
+        expectedJsonFile="expected\025_05.json"
+        inputJsonFile="input\025_05.json" name="05" outputJsonFile="output\025_05.json"/>
+	
+</testsuite>

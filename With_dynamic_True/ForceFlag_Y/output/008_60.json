@@ -1,0 +1,14 @@
+{
+    "warnings": null,
+    "message": "Success",
+    "nodeType": null,
+    "body": {
+        "itemID": "55551112024",
+        "uom": "EACH",
+        "endDate": "2020-03-06 12:45:54.0000 IST",
+        "storeID": "2922",
+        "startDate": "2020-02-27 12:45:54.0000 IST"
+    },
+    "key": "JCP|2922|55551112024|EACH",
+    "status": 200
+}

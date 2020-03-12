@@ -1,0 +1,11 @@
+{
+    "warnings": [
+        "values for from=2019-02-03T10:12:43.632Z and to=2018-03-30T07:48:49.632Z, are either null or 'from' is greater than 'to', All Failed task will be published to map for retry",
+        "Trigger calculate now is set to false"
+    ],
+    "message": null,
+    "nodeType": null,
+    "body": true,
+    "key": null,
+    "status": 200
+}

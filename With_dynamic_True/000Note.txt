@@ -1,0 +1,51 @@
+Application.yml of Service :
+
+	1. dynamicSafetyStock : true, 								UseSafetyStock : false
+	2. for moq --> inventory.moq.responseEnabled : true
+	
+	
+	5. new exclusion feature flags are also true  (FeatureControlEnabled and exclusiomEvent)
+	
+	
+	7. yih.itempurge.forcedDelete : true             -By default it is true in prod 
+
+
+
+Application.yml of Datagrid : 
+
+	
+	
+	
+	1. new exclusion feature flags are also true  (FeatureControlEnabled and exclusiomEvent)
+
+
+
+Note : Change the date to current date in getNodeCapacity folder. open expected/007.08 .
+				Find and replace the date to current date
+				
+	   Change the date to current date in clearance_Capacity folder. open expected/001.21 .
+				Find and replace the date to current date
+
+				
+				
+
+
+Dynamic safety stock calculation : 
+-----------------------------------
+    1.  Dynamic safety stock : False    &    pick=2, ship=1
+	
+           Before safetyStock :  ShipATP    = ATP-1
+                                 BopusATP   = ATP-2
+
+           After Safety Stock  :  ShipATP    = ATP-5         (safety factor = 5)
+                                  BopusATP   = ATP-5
+
+
+    2.  Dynamic safety stock : True      &    pick=2, ship=1
+	
+              Before safetyStock :  ShipATP    = ATP-1
+                                    BopusATP   = ATP-2
+
+              After Safety Stock  :  ShipATP    = ATP-1
+                                     BopusATP 	= ATP-2
+    

@@ -1,0 +1,273 @@
+{
+	"DistributionRule": {
+		"Description": "R6 Distribution Group",
+		"DistributionRuleId": "SFS-DG",
+		"ItemGroupCode": "PROD",
+		"OwnerKey": "JCP",
+		"ItemShipNodes": {
+			"ItemShipNode": [
+
+				{
+					"DistributionRuleId": "SFS-DG",
+					"EffectiveEndDate": "2500-01-01",
+					"EffectiveStartDate": "1900-01-01",
+					"ItemId": "ALL",
+					"ItemType": "ALL",
+					"OwnerKey": "JCP",
+					"Priority": "1",
+					"ShipnodeKey": "2410"
+				},
+				{
+					"DistributionRuleId": "SFS-DG",
+					"EffectiveEndDate": "2500-01-01",
+					"EffectiveStartDate": "1900-01-01",
+					"ItemId": "ALL",
+					"ItemType": "ALL",
+					"OwnerKey": "JCP",
+					"Priority": "1",
+					"ShipnodeKey": "2414"
+				},
+				{
+					"DistributionRuleId": "SFS-DG",
+					"EffectiveEndDate": "2500-01-01",
+					"EffectiveStartDate": "1900-01-01",
+					"ItemId": "ALL",
+					"ItemType": "ALL",
+					"OwnerKey": "JCP",
+					"Priority": "1",
+					"ShipnodeKey": "2416"
+				},
+				{
+					"DistributionRuleId": "SFS-DG",
+					"EffectiveEndDate": "2500-01-01",
+					"EffectiveStartDate": "1900-01-01",
+					"ItemId": "ALL",
+					"ItemType": "ALL",
+					"OwnerKey": "JCP",
+					"Priority": "1",
+					"ShipnodeKey": "2417"
+				},
+				{
+					"DistributionRuleId": "SFS-DG",
+					"EffectiveEndDate": "2500-01-01",
+					"EffectiveStartDate": "1900-01-01",
+					"ItemId": "ALL",
+					"ItemType": "ALL",
+					"OwnerKey": "JCP",
+					"Priority": "1",
+					"ShipnodeKey": "2418"
+				},
+				{
+					"DistributionRuleId": "SFS-DG",
+					"EffectiveEndDate": "2500-01-01",
+					"EffectiveStartDate": "1900-01-01",
+					"ItemId": "ALL",
+					"ItemType": "ALL",
+					"OwnerKey": "JCP",
+					"Priority": "1",
+					"ShipnodeKey": "2419"
+				},
+				{
+					"DistributionRuleId": "SFS-DG",
+					"EffectiveEndDate": "2500-01-01",
+					"EffectiveStartDate": "1900-01-01",
+					"ItemId": "ALL",
+					"ItemType": "ALL",
+					"OwnerKey": "JCP",
+					"Priority": "1",
+					"ShipnodeKey": "2423"
+				},
+				{
+					"DistributionRuleId": "SFS-DG",
+					"EffectiveEndDate": "2500-01-01",
+					"EffectiveStartDate": "1900-01-01",
+					"ItemId": "ALL",
+					"ItemType": "ALL",
+					"OwnerKey": "JCP",
+					"Priority": "1",
+					"ShipnodeKey": "2427"
+				},
+				{
+					"DistributionRuleId": "SFS-DG",
+					"EffectiveEndDate": "2500-01-01",
+					"EffectiveStartDate": "1900-01-01",
+					"ItemId": "ALL",
+					"ItemType": "ALL",
+					"OwnerKey": "JCP",
+					"Priority": "1",
+					"ShipnodeKey": "2428"
+				},
+				{
+					"DistributionRuleId": "SFS-DG",
+					"EffectiveEndDate": "2500-01-01",
+					"EffectiveStartDate": "1900-01-01",
+					"ItemId": "ALL",
+					"ItemType": "ALL",
+					"OwnerKey": "JCP",
+					"Priority": "1",
+					"ShipnodeKey": "2430"
+				},
+				{
+					"DistributionRuleId": "SFS-DG",
+					"EffectiveEndDate": "2500-01-01",
+					"EffectiveStartDate": "1900-01-01",
+					"ItemId": "ALL",
+					"ItemType": "ALL",
+					"OwnerKey": "JCP",
+					"Priority": "1",
+					"ShipnodeKey": "2431"
+				},
+				{
+					"DistributionRuleId": "SFS-DG",
+					"EffectiveEndDate": "2500-01-01",
+					"EffectiveStartDate": "1900-01-01",
+					"ItemId": "ALL",
+					"ItemType": "ALL",
+					"OwnerKey": "JCP",
+					"Priority": "1",
+					"ShipnodeKey": "2433"
+				},
+				{
+					"DistributionRuleId": "SFS-DG",
+					"EffectiveEndDate": "2500-01-01",
+					"EffectiveStartDate": "1900-01-01",
+					"ItemId": "ALL",
+					"ItemType": "ALL",
+					"OwnerKey": "JCP",
+					"Priority": "1",
+					"ShipnodeKey": "2434"
+				},
+				{
+					"DistributionRuleId": "SFS-DG",
+					"EffectiveEndDate": "2500-01-01",
+					"EffectiveStartDate": "1900-01-01",
+					"ItemId": "ALL",
+					"ItemType": "ALL",
+					"OwnerKey": "JCP",
+					"Priority": "1",
+					"ShipnodeKey": "2436"
+				},
+				{
+					"DistributionRuleId": "SFS-DG",
+					"EffectiveEndDate": "2500-01-01",
+					"EffectiveStartDate": "1900-01-01",
+					"ItemId": "ALL",
+					"ItemType": "ALL",
+					"OwnerKey": "JCP",
+					"Priority": "1",
+					"ShipnodeKey": "2439"
+				},
+				{
+					"DistributionRuleId": "SFS-DG",
+					"EffectiveEndDate": "2500-01-01",
+					"EffectiveStartDate": "1900-01-01",
+					"ItemId": "ALL",
+					"ItemType": "ALL",
+					"OwnerKey": "JCP",
+					"Priority": "1",
+					"ShipnodeKey": "2442"
+				},
+				{
+					"DistributionRuleId": "SFS-DG",
+					"EffectiveEndDate": "2500-01-01",
+					"EffectiveStartDate": "1900-01-01",
+					"ItemId": "ALL",
+					"ItemType": "ALL",
+					"OwnerKey": "JCP",
+					"Priority": "1",
+					"ShipnodeKey": "2443"
+				},
+				{
+					"DistributionRuleId": "SFS-DG",
+					"EffectiveEndDate": "2500-01-01",
+					"EffectiveStartDate": "1900-01-01",
+					"ItemId": "ALL",
+					"ItemType": "ALL",
+					"OwnerKey": "JCP",
+					"Priority": "1",
+					"ShipnodeKey": "2447"
+				},
+				{
+					"DistributionRuleId": "SFS-DG",
+					"EffectiveEndDate": "2500-01-01",
+					"EffectiveStartDate": "1900-01-01",
+					"ItemId": "ALL",
+					"ItemType": "ALL",
+					"OwnerKey": "JCP",
+					"Priority": "1",
+					"ShipnodeKey": "2449"
+				},
+				{
+					"DistributionRuleId": "SFS-DG",
+					"EffectiveEndDate": "2500-01-01",
+					"EffectiveStartDate": "1900-01-01",
+					"ItemId": "ALL",
+					"ItemType": "ALL",
+					"OwnerKey": "JCP",
+					"Priority": "1",
+					"ShipnodeKey": "2452"
+				},
+				{
+					"DistributionRuleId": "SFS-DG",
+					"EffectiveEndDate": "2500-01-01",
+					"EffectiveStartDate": "1900-01-01",
+					"ItemId": "ALL",
+					"ItemType": "ALL",
+					"OwnerKey": "JCP",
+					"Priority": "1",
+					"ShipnodeKey": "2453"
+				},
+				{
+					"DistributionRuleId": "SFS-DG",
+					"EffectiveEndDate": "2500-01-01",
+					"EffectiveStartDate": "1900-01-01",
+					"ItemId": "ALL",
+					"ItemType": "ALL",
+					"OwnerKey": "JCP",
+					"Priority": "1",
+					"ShipnodeKey": "2456"
+				},
+				{
+					"DistributionRuleId": "SFS-DG",
+					"EffectiveEndDate": "2500-01-01",
+					"EffectiveStartDate": "1900-01-01",
+					"ItemId": "ALL",
+					"ItemType": "ALL",
+					"OwnerKey": "JCP",
+					"Priority": "1",
+					"ShipnodeKey": "2457"
+				},
+				{
+					"DistributionRuleId": "SFS-DG",
+					"EffectiveEndDate": "2500-01-01",
+					"EffectiveStartDate": "1900-01-01",
+					"ItemId": "ALL",
+					"ItemType": "ALL",
+					"OwnerKey": "JCP",
+					"Priority": "1",
+					"ShipnodeKey": "2458"
+				},
+				{
+					"DistributionRuleId": "SFS-DG",
+					"EffectiveEndDate": "2500-01-01",
+					"EffectiveStartDate": "1900-01-01",
+					"ItemId": "ALL",
+					"ItemType": "ALL",
+					"OwnerKey": "JCP",
+					"Priority": "1",
+					"ShipnodeKey": "2460"
+				},
+				{
+					"DistributionRuleId": "SFS-DG",
+					"EffectiveEndDate": "2500-01-01",
+					"EffectiveStartDate": "1900-01-01",
+					"ItemId": "ALL",
+					"ItemType": "ALL",
+					"OwnerKey": "JCP",
+					"Priority": "1",
+					"ShipnodeKey": "1156"
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,8 @@
+{
+    "warnings": null,
+    "message": "Clearance Capacity Percentage cannot be less than 0 or greater than 100",
+    "nodeType": null,
+    "body": null,
+    "key": null,
+    "status": 400
+}

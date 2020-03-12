@@ -1,0 +1,27 @@
+{"reservation": [ 
+{ 
+"lineID": "5", 
+"itemID": "1711234-5009", 
+"reservationID": "891b24c5-b368-479f-8df0-a5c8049c058d",
+"uom": "EACH", 
+"qty": "0", 
+"channel": "web", 
+"procurementAllowed": "false", 
+"deliveryMethod": "", 
+"groupID": "00", 
+"fulfillmentType": "RES_PARCEL", 
+"action":"CANCEL" 
+} 
+], 
+    "enterpriseCode": "0001", 
+    "city": "SEATTLE", 
+    "state": "WA", 
+    "zipcode": "98125", 
+    "country": "US", 
+    "facilityType": "0", 
+    "routingType": "DirectShipping", 
+    "allocationRuleID": "RES_INTRV", 
+    "sourcingClassification": "03", 
+    "primeDC": "02", 
+    "requestType":"UPDATE" 
+} 

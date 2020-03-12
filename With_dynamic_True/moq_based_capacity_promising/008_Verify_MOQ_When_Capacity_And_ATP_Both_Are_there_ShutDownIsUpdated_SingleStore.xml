@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify MOQ when capacity and ATP both are there but shut down is applied. Single store scenario
+		
+		store		capacity	ATP
+		2436		10			20
+			
+-->
+
+<!-- expected  
+				Before Shut Down   MOQ : 20
+				After  Shut Down   MOQ : 0
+				
+-->
+
+<testsuite description="Verify MOQ when capacity and ATP both are there but shut down is applied. Single store scenario" name="008">
+		
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="items: 1 "
+        expectedJsonFile="expected\008_01.json"
+        inputJsonFile="input\008_01.json" name="01" outputJsonFile="output\008_01.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2436/"
+        description="store 1"
+        expectedJsonFile="expected\008_02.json"
+        inputJsonFile="input\008_02.json" name="02" outputJsonFile="output\008_02.json"/>
+		
+	
+	
+		
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="Create inventory "
+        expectedJsonFile="expected\008_03.json"
+        inputJsonFile="input\008_03.json" name="03" outputJsonFile="output\008_03.json"/>
+	
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity: Available Capacity = 10"
+        expectedJsonFile="expected\008_05.json"
+        inputJsonFile="input\008_05.json" name="05" outputJsonFile="output\008_05.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\008_06.json"
+        inputJsonFile="input\008_06.json" name="06" outputJsonFile="output\008_06.json"/>
+
+	
+	<test apiMethod="POST" apiUrl="/master/qualitativeStatus/"
+        description="insert qual status : AL"
+        expectedJsonFile="expected\008_07.json"
+        inputJsonFile="input\008_07.json" name="07" outputJsonFile="output\008_07.json"/>
+		
+<test apiMethod="delay" delay="10000" description="Delay : 10000 ms" name="100"/>				
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="get Qual status: MOQ = 20"
+        expectedJsonFile="expected\008_08.json"
+        inputJsonFile="input\008_08.json" name="8" outputJsonFile="output\008_08.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/master/storeShutdown/"
+        description="Apply shut down to the store"
+        expectedJsonFile="expected\008_09.json"
+        inputJsonFile="input\008_09.json" name="09" outputJsonFile="output\008_09.json"/>
+		
+		
+<test apiMethod="delay" delay="10000" description="Delay : 10000 ms" name="100"/>				
+
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="get Qual status: MOQ = 0"
+        expectedJsonFile="expected\008_10.json"
+        inputJsonFile="input\008_10.json" name="10" outputJsonFile="output\008_10.json"/>
+
+
+				
+		
+	<test apiMethod="POST" apiUrl="/master/storeShutdown/"
+        description="Remove shut down from the store"
+        expectedJsonFile="expected\008_11.json"
+        inputJsonFile="input\008_11.json" name="11" outputJsonFile="output\008_11.json"/>
+		
+<test apiMethod="delay" delay="10000" description="Delay : 10000 ms" name="100"/>				
+
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="get Qual status: MOQ = 20"
+        expectedJsonFile="expected\008_12.json"
+        inputJsonFile="input\008_12.json" name="12" outputJsonFile="output\008_12.json"/>
+
+	
+</testsuite>
+
+
+
+

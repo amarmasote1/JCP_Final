@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify Reservation wrapper : positive flow when non-store : NA  combined : AL, it should go to HAZELCAST
+pre requisite : item, stote and qualitativeStatus
+-->
+
+<!-- expected  
+	1. Multiread Before wrapper : ATP = 100
+	2. Combined Qualitative status after Inventiry insert : AL
+	3. Reservation Wrapper (Enterprise, Qty = 1) : should success  (should first route to  HAZELCAST)
+	4. Multiread after Wrapper reservation : ATP = 100, As it is enterprise reservation, multiread doesn't show demand
+	5. Qualitative status  : ShipAtp = 99
+-->
+
+<testsuite description="Verify Reservation wrapper : positive flow when non-store : NA  combined : AL, it should go to HAZELCAST" name="002">
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/2505/"
+        description="store 1"
+        expectedJsonFile="expected\02\002_01.json"
+        inputJsonFile="input\02\002_01.json" name="01" outputJsonFile="output\02\002_01.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="item1"
+        expectedJsonFile="expected\02\002_02.json"
+        inputJsonFile="input\02\002_02.json" name="02" outputJsonFile="output\02\002_02.json"/>
+
+	
+
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory"
+        expectedJsonFile="expected\02\002_03.json"
+        inputJsonFile="input\02\002_03.json" name="03" outputJsonFile="output\02\002_03.json"/>
+		
+	
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity"
+        expectedJsonFile="expected\02\002_05.json"
+        inputJsonFile="input\02\002_05.json" name="05" outputJsonFile="output\02\002_05.json"/>
+	
+	
+	<test apiMethod="POST" apiUrl="/master/qualitativeStatus/"
+        description="Qual Status : NA"
+        expectedJsonFile="expected\02\002_09.json"
+        inputJsonFile="input\02\002_09.json" name="09" outputJsonFile="output\02\002_09.json"/>
+		
+		<!--
+	
+	
+	<test apiMethod="GET" apiUrl="/refreshActiveStores/"
+        description="Refresh Active stores"
+        expectedJsonFile="expected\02\002_31.json"
+        name="31" outputJsonFile="output\02\002_31.json"/>
+
+<test apiMethod="delay" delay="2000" description="Delay : 2000 ms" name="100"/>				
+
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread with update mode"
+        expectedJsonFile="expected\02\002_32.json"
+        inputJsonFile="input\02\002_32.json" name="32" outputJsonFile="output\02\002_32.json"/>
+	-->
+	
+<test apiMethod="delay" delay="10000" description="Delay : 10000 ms" name="100"/>				
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="Get Qual Status : AL,   ShipATP = 100, As this is enterprise reservation, ATP should not get decreased"
+        expectedJsonFile="expected\02\002_10.json"
+        inputJsonFile="input\02\002_10.json" name="10" outputJsonFile="output\02\002_10.json"/>
+	
+		
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+        description="jcp_item_inventory : ATP = 100"
+        expectedJsonFile="expected\02\002_06.json"
+        inputJsonFile="input\02\002_06.json" name="06" outputJsonFile="output\02\002_06.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reservations/"
+        description="Reservation Wrapper"
+        expectedJsonFile="expected\02\002_07.json"
+        inputJsonFile="input\02\002_07.json" name="07" outputJsonFile="output\02\002_07.json"/>
+		
+		
+		
+<test apiMethod="delay" delay="1000" description="Delay : 1000 ms" name="100"/>		
+
+          <!--
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread with update mode"
+        expectedJsonFile="expected\02\002_32_1.json"
+        inputJsonFile="input\02\002_32_1.json" name="32_1" outputJsonFile="output\02\002_32_1.json"/>	
+			-->
+
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+        description="jcp_item_inventory : ATP = 99"
+        expectedJsonFile="expected\02\002_15.json"
+        inputJsonFile="input\02\002_15.json" name="15" outputJsonFile="output\02\002_15.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\02\002_08.json"
+        inputJsonFile="input\02\002_08.json" name="08" outputJsonFile="output\02\002_08.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="Get Qual Status"
+        expectedJsonFile="expected\02\002_11.json"
+        inputJsonFile="input\02\002_11.json" name="11" outputJsonFile="output\02\002_11.json"/>
+	
+	<test apiMethod="POST" apiUrl="/reservations/"
+        description=" cancel Reservation Wrapper"
+        expectedJsonFile="expected\02\002_13.json"
+        inputJsonFile="input\02\002_13.json" name="13" outputJsonFile="output\02\002_13.json"/>
+		
+		
+		 <!--
+	<test apiMethod="GET" apiUrl="/refreshActiveStores/"
+        description="Refresh Active stores"
+        expectedJsonFile="expected\02\002_31_2.json"
+        name="31_2" outputJsonFile="output\02\002_31_2.json"/>   -->
+		
+<test apiMethod="delay" delay="70000" description="Delay : 70000 ms" name="100"/>		
+		      <!--
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread with update mode"
+        expectedJsonFile="expected\02\002_32_2.json"
+        inputJsonFile="input\02\002_32_2.json" name="32_2" outputJsonFile="output\02\002_32_2.json"/>		
+		            -->	
+		
+		
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+        description="jcp_item_inventory : ATP = 100"
+        expectedJsonFile="expected\02\002_14.json"
+        inputJsonFile="input\02\002_14.json" name="14" outputJsonFile="output\02\002_14.json"/>
+	
+</testsuite>

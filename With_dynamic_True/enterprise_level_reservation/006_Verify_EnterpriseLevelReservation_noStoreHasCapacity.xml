@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify  enterprise level reservation to store level reservation : when no store has availability
+         stores : store1,store2,store3.        
+-->
+
+
+<!-- Expected
+1. Multiread Before Enterprise reservation : ATP (Ship and Bopus) = 10 in each store, Capacity = 0 in all the stores.
+2. Multiread after Enterprise reservation(Qty = 30) : ATP (Ship and Bopus) = 10 in each store, Capacity = 10 in all the stores.
+				Enterprise level reservation should success. 
+				Converting enterprise to store should fail. (Insufficient Node capacity)
+-->
+
+
+<testsuite description="Verify  enterprise level reservation to store level reservation : when no store has capacity" name="006">
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details : only 1 item"
+        expectedJsonFile="expected\006_01.json"
+        inputJsonFile="input\006_01.json" name="01" outputJsonFile="output\006_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/1122/" description="Insert node"
+        expectedJsonFile="expected\006_02.json"
+        inputJsonFile="input\006_02.json" name="02" outputJsonFile="output\006_02.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/1128/" description="Insert node"
+        expectedJsonFile="expected\006_03.json"
+        inputJsonFile="input\006_03.json" name="03" outputJsonFile="output\006_03.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/1130/" description="Insert node"
+        expectedJsonFile="expected\006_04.json"
+        inputJsonFile="input\006_04.json" name="04" outputJsonFile="output\006_04.json"/>
+
+    <test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory : qty = 10 in each store"
+        expectedJsonFile="expected\006_05.json"
+        inputJsonFile="input\006_05.json" name="05" outputJsonFile="output\006_05.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity : Available Capacity = 0 in each store"
+        expectedJsonFile="expected\006_07.json"
+        inputJsonFile="input\006_07.json" name="07" outputJsonFile="output\006_07.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread : Atp = 10, Available Capacity = 0"
+        expectedJsonFile="expected\006_08.json"
+        inputJsonFile="input\006_08.json" name="08" outputJsonFile="output\006_08.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Reservation : EnterpriseLevel : Qty = 30"
+        expectedJsonFile="expected\006_09.json"
+        inputJsonFile="input\006_09.json" name="09" outputJsonFile="output\006_09.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread after enterpriise reservation : Atp = 10, Available Capacity = 0"
+        expectedJsonFile="expected\006_10.json"
+        inputJsonFile="input\006_10.json" name="10" outputJsonFile="output\006_10.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Reservation : EnterpriseLevel to store : Insufficient Node Capacity"
+        expectedJsonFile="expected\006_11.json"
+        inputJsonFile="input\006_11.json" name="11" outputJsonFile="output\006_11.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread after converting enterprise to store reservation : Atp = 10, Available Capacity = 0"
+        expectedJsonFile="expected\006_12.json"
+        inputJsonFile="input\006_12.json" name="12" outputJsonFile="output\006_12.json"/>
+	
+    
+</testsuite>

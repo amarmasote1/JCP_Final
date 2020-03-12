@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify MOQ when LotNumber and storeID are ALL.
+		item is present in 5 stores.  storeID      ATP
+										2303		10
+										2304		20
+										2309		30
+										2311		40
+										2312		50
+-->
+
+<!-- expected  
+				MOQ before exclusion : 50
+				MOQ after exclusion : 0
+-->
+
+<testsuite description=" Verify MOQ when LotNumber and storeID are ALL." name="244">
+		
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="items: 1 "
+        expectedJsonFile="expected\244_01.json"
+        inputJsonFile="input\244_01.json" name="01" outputJsonFile="output\244_01.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2303/"
+        description="store 1"
+        expectedJsonFile="expected\244_02.json"
+        inputJsonFile="input\244_02.json" name="02" outputJsonFile="output\244_02.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2304/"
+        description="store 2"
+        expectedJsonFile="expected\244_11.json"
+        inputJsonFile="input\244_11.json" name="11" outputJsonFile="output\244_11.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2309/"
+        description="store 3"
+        expectedJsonFile="expected\244_12.json"
+        inputJsonFile="input\244_12.json" name="12" outputJsonFile="output\244_12.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2311/"
+        description="store 4"
+        expectedJsonFile="expected\244_13.json"
+        inputJsonFile="input\244_13.json" name="13" outputJsonFile="output\244_13.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2312/"
+        description="store 5"
+        expectedJsonFile="expected\244_14.json"
+        inputJsonFile="input\244_14.json" name="14" outputJsonFile="output\244_14.json"/>
+		
+		
+		
+		
+		
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="Create inventory :  in 5 stores"
+        expectedJsonFile="expected\244_03.json"
+        inputJsonFile="input\244_03.json" name="03" outputJsonFile="output\244_03.json"/>
+	
+
+		
+		
+	
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity: Available Capacity = 8"
+        expectedJsonFile="expected\244_05.json"
+        inputJsonFile="input\244_05.json" name="05" outputJsonFile="output\244_05.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread: shipATP and BopusATP will be 10 20 30 40 and 50"
+        expectedJsonFile="expected\244_06.json"
+        inputJsonFile="input\244_06.json" name="06" outputJsonFile="output\244_06.json"/>
+		
+
+
+	
+	<test apiMethod="POST" apiUrl="/master/qualitativeStatus/"
+        description="insert qual status : AH"
+        expectedJsonFile="expected\244_07.json"
+        inputJsonFile="input\244_07.json" name="07" outputJsonFile="output\244_07.json"/>
+		
+<test apiMethod="delay" delay="10000" description="Delay after Exclusion : 10000 ms" name="100"/>
+
+		
+	<test apiMethod="POST" apiUrl="//master/getqualitativeStatus/"
+        description="get Qual status: check for MOQ"
+        expectedJsonFile="expected\244_08.json"
+        inputJsonFile="input\244_08.json" name="8" outputJsonFile="output\244_08.json"/>
+		
+		
+		
+		
+	<test apiMethod="POST" apiUrl="/master/itemExclusion/"
+        description="Exclusion : LotNumber and StoreID both equal to ALL"
+        expectedJsonFile="expected\244_09.json"
+        inputJsonFile="input\244_09.json" name="09" outputJsonFile="output\244_09.json"/>
+		
+<test apiMethod="delay" delay="10000" description="Delay after Exclusion : 10000 ms" name="100"/>
+
+		
+	<test apiMethod="POST" apiUrl="//master/getqualitativeStatus/"
+        description="get Qual status: check for MOQ"
+        expectedJsonFile="expected\244_10.json"
+        inputJsonFile="input\244_10.json" name="10" outputJsonFile="output\244_10.json"/>
+		
+		
+		
+	<test apiMethod="POST" apiUrl="/master/itemExclusion/"
+        description=" remove exclusion"
+        expectedJsonFile="expected\244_15.json"
+        inputJsonFile="input\244_15.json" name="15" outputJsonFile="output\244_15.json"/>
+		
+<test apiMethod="delay" delay="10000" description="Delay after Exclusion : 10000 ms" name="100"/>
+
+		
+	<test apiMethod="POST" apiUrl="//master/getqualitativeStatus/"
+        description="get Qual status: check for MOQ"
+        expectedJsonFile="expected\244_16.json"
+        inputJsonFile="input\244_16.json" name="16" outputJsonFile="output\244_16.json"/>
+		
+	
+	
+</testsuite>

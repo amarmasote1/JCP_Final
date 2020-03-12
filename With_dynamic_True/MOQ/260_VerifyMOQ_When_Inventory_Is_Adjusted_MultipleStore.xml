@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify MOQ when inventory is adjusted
+		item is present in 2 stores.  storeID      ATP
+										2369		2
+										2370		10
+										
+-->
+
+<!-- expected  
+				MOQ   : 10
+				store 1 inventory is increased from 2 to 22
+				MOQ	  : 22
+				store 2 inventory is increased from 10 100
+				MOQ   : 100
+				store 2 inventory is decreased to 10
+				MOQ	  : 22
+				store 1 inventory is decreased to 2
+				MOQ   : 2
+-->
+
+<testsuite description="Verify MOQ when inventory is adjusted" name="260">
+		
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="items: 1 "
+        expectedJsonFile="expected\260_01.json"
+        inputJsonFile="input\260_01.json" name="01" outputJsonFile="output\260_01.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2369/"
+        description="store 1"
+        expectedJsonFile="expected\260_02.json"
+        inputJsonFile="input\260_02.json" name="02" outputJsonFile="output\260_02.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2370/"
+        description="store 1"
+        expectedJsonFile="expected\260_17.json"
+        inputJsonFile="input\260_17.json" name="17" outputJsonFile="output\260_17.json"/>
+		
+	
+	
+		
+		
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="Create inventory : qty = 2 and 10"
+        expectedJsonFile="expected\260_03.json"
+        inputJsonFile="input\260_03.json" name="03" outputJsonFile="output\260_03.json"/>
+	
+
+	
+		
+	
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity: Available Capacity = 8"
+        expectedJsonFile="expected\260_05.json"
+        inputJsonFile="input\260_05.json" name="05" outputJsonFile="output\260_05.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\260_06.json"
+        inputJsonFile="input\260_06.json" name="06" outputJsonFile="output\260_06.json"/>
+		
+
+
+	
+	<test apiMethod="POST" apiUrl="/master/qualitativeStatus/"
+        description="insert qual status : AL"
+        expectedJsonFile="expected\260_07.json"
+        inputJsonFile="input\260_07.json" name="07" outputJsonFile="output\260_07.json"/>
+		
+<test apiMethod="delay" delay="10000" description="Delay after Exclusion : 10000 ms" name="100"/>
+
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="get Qual status: check for MOQ"
+        expectedJsonFile="expected\260_08.json"
+        inputJsonFile="input\260_08.json" name="8" outputJsonFile="output\260_08.json"/>
+		
+		
+<test apiMethod="delay" delay="2000" description="Delay after node control : 2000 ms" name="110"/>		
+		
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="store1 inventory updated to 22"
+        expectedJsonFile="expected\260_09.json"
+        inputJsonFile="input\260_09.json" name="09" outputJsonFile="output\260_09.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="get Qual status: check for MOQ"
+        expectedJsonFile="expected\260_10.json"
+        inputJsonFile="input\260_10.json" name="10" outputJsonFile="output\260_10.json"/>
+
+
+<test apiMethod="delay" delay="2000" description="Delay after node control : 2000 ms" name="111"/>		
+		
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="store2 Inventory updated to 100"
+        expectedJsonFile="expected\260_11.json"
+        inputJsonFile="input\260_11.json" name="11" outputJsonFile="output\260_11.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="get Qual status: check for MOQ"
+        expectedJsonFile="expected\260_12.json"
+        inputJsonFile="input\260_12.json" name="12" outputJsonFile="output\260_12.json"/>
+	
+<test apiMethod="delay" delay="2000" description="Delay after node control : 2000 ms" name="112"/>		
+
+	
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="store2 Inventory updated to 10"
+        expectedJsonFile="expected\260_13.json"
+        inputJsonFile="input\260_13.json" name="13" outputJsonFile="output\260_13.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="get Qual status: check for MOQ"
+        expectedJsonFile="expected\260_14.json"
+        inputJsonFile="input\260_14.json" name="14" outputJsonFile="output\260_14.json"/>
+
+
+<test apiMethod="delay" delay="2000" description="Delay after node control : 2000 ms" name="113"/>		
+		
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="store1 Inventory updated to 2"
+        expectedJsonFile="expected\260_15.json"
+        inputJsonFile="input\260_15.json" name="15" outputJsonFile="output\260_15.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="get Qual status: check for MOQ"
+        expectedJsonFile="expected\260_16.json"
+        inputJsonFile="input\260_16.json" name="16" outputJsonFile="output\260_16.json"/>
+		
+	
+	
+</testsuite>
+
+
+
+

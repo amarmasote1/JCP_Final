@@ -1,0 +1,58 @@
+{
+    "message": "Success",
+    "body": {
+        "enterpriseCode": "00001",
+        "reservation": [
+            {
+                "bundleParentLineId": "",
+                "kitQty": "",
+                "priorityNode": null,
+                "itemReservationStatus": "RS",
+                "expectedFulfillmentDate": "2020-02-28",
+                "reservedQty": 2,
+                "requestLine": {
+                    "itemID": "1711234-5017",
+                    "uom": "EACH",
+                    "reservationID": "2355f044-0e77-42bd-8833-018d32a92001",
+                    "deliveryMethod": null,
+                    "procurementAllowed": null,
+                    "qty": "2",
+                    "increaseCapacity": false,
+                    "channel": "WRAPPER",
+                    "lineID": "1",
+                    "storeId": null,
+                    "nodeType": "Store"
+                },
+                "shipDate": "2020-02-28",
+                "error": null,
+                "problemType": "SUCCESS"
+            },
+            {
+                "bundleParentLineId": "",
+                "kitQty": "",
+                "priorityNode": null,
+                "itemReservationStatus": "RS",
+                "expectedFulfillmentDate": "2020-02-28",
+                "reservedQty": 2,
+                "requestLine": {
+                    "itemID": "1711234-5018",
+                    "uom": "EACH",
+                    "reservationID": "2355f044-0e77-42bd-8833-018d32a92002",
+                    "deliveryMethod": null,
+                    "procurementAllowed": null,
+                    "qty": "2",
+                    "increaseCapacity": false,
+                    "channel": "WRAPPER",
+                    "lineID": "2",
+                    "storeId": null,
+                    "nodeType": "Store"
+                },
+                "shipDate": "2020-02-28",
+                "error": null,
+                "problemType": "SUCCESS"
+            }
+        ],
+        "allocationRuleID": "RES_INTRV"
+    },
+    "status": 200
+}

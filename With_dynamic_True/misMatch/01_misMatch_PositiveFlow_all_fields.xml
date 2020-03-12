@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<testSuite description="description" name="01">
+    <test apiMethod="post" apiUrl="/master/itemDetails/JCP/" description="" expectedJsonFile="expected\01\01_01.json" inputJsonFile="input\01\01_01.json" name="1" outputJsonFile="output\01\01_01.json"/>
+
+    <test apiMethod="post" apiUrl="/master/node/JCP/1308" description="" expectedJsonFile="expected\01\01_02.json" inputJsonFile="input\01\01_02.json" name="2" outputJsonFile="output\01\01_02.json"/>
+
+    <test apiMethod="post" apiUrl="/inventory/JCP/absolute/" description="" expectedJsonFile="expected\01\01_03.json" inputJsonFile="input\01\01_03.json" name="3" outputJsonFile="output\01\01_03.json"/>
+
+    <test apiMethod="post" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" description="" expectedJsonFile="expected\01\01_04.json" inputJsonFile="input\01\01_04.json" name="4" outputJsonFile="output\01\01_04.json"/>
+
+    <test apiMethod="post" apiUrl="/inventory/multiread/JCP/" description="" expectedJsonFile="expected\01\01_05.json" inputJsonFile="input\01\01_05.json" name="5" outputJsonFile="output\01\01_05.json"/>
+
+    <test apiMethod="post" apiUrl="/master/mapValue/jcp_item_inventory/" description="" expectedJsonFile="expected\01\01_06.json" inputJsonFile="input\01\01_06.json" name="6" outputJsonFile="output\01\01_06.json"/>
+
+	<test apiMethod="post" apiUrl="/items/44477770001/locations/1308/markdown/" description="markdown" expectedJsonFile="expected\01\01_06_1.json" inputJsonFile="input\01\01_06_1.json" name="6_1" outputJsonFile="output\01\01_06_1.json"/>
+	
+	<test apiMethod="post" apiUrl="/reserve/JCP/0/N/" description="Reservation before mismatch" expectedJsonFile="expected\01\01_07_2.json" inputJsonFile="input\01\01_07_2.json" name="07_1" outputJsonFile="output\01\01_07_2.json"/>
+	
+	<test apiMethod="post" apiUrl="/master/mapValue/jcp_item_inventory/" description="" expectedJsonFile="expected\01\01_08.json" inputJsonFile="input\01\01_08.json" name="8" outputJsonFile="output\01\01_08.json"/>
+	
+    <test apiMethod="post" apiUrl="/inventory/mismatch" description="" expectedJsonFile="expected\01\01_07.json" inputJsonFile="input\01\01_07.json" name="7" outputJsonFile="output\01\01_07.json"/>
+
+	<test apiMethod="post" apiUrl="/reserve/JCP/0/N/" description="Reservation" expectedJsonFile="expected\01\01_07_1.json" inputJsonFile="input\01\01_07_1.json" name="07_1" outputJsonFile="output\01\01_07_1.json"/>
+
+    <test apiMethod="post" apiUrl="/inventory/multiread/JCP/" description="" expectedJsonFile="expected\01\01_09.json" inputJsonFile="input\01\01_09.json" name="9" outputJsonFile="output\01\01_09.json"/>  
+
+
+	<test apiMethod="post" apiUrl="/inventory/multiread/JCP/" description="updateMode" expectedJsonFile="expected\01\01_11.json" inputJsonFile="input\01\01_11.json" name="11" outputJsonFile="output\01\01_11.json"/>
+	
+	
+    <test apiMethod="post" apiUrl="/master/mapValue/jcp_item_inventory/" description="" expectedJsonFile="expected\01\01_10.json" inputJsonFile="input\01\01_10.json" name="10" outputJsonFile="output\01\01_10.json"/>
+
+   
+</testSuite>

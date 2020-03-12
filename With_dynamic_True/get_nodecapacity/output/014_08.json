@@ -1,0 +1,79 @@
+{
+    "body": [
+        {
+            "clearanceCapacityEnabled": true,
+            "message": "feature flag value",
+            "status": 200
+        },
+        {
+            "warnings": null,
+            "message": "Success",
+            "nodeType": null,
+            "body": {
+                "availableCapacity": 8,
+                "clearanceCapacityPercentage": 100,
+                "consumedClearanceCapacity": 0,
+                "standardCapacity": 8,
+                "availableClearanceCapacity": 8,
+                "consumedTotalCapacity": 0,
+                "capacityUnitOfMeasure": "RELEASE"
+            },
+            "key": "JCP|2159|20200228",
+            "status": 200
+        },
+        {
+            "warnings": null,
+            "message": "Success",
+            "nodeType": null,
+            "body": {
+                "availableCapacity": 8,
+                "clearanceCapacityPercentage": 100,
+                "consumedClearanceCapacity": 0,
+                "standardCapacity": 8,
+                "availableClearanceCapacity": 8,
+                "consumedTotalCapacity": 0,
+                "capacityUnitOfMeasure": "RELEASE"
+            },
+            "key": "JCP|2160|20200228",
+            "status": 200
+        },
+        {
+            "warnings": null,
+            "message": "Success",
+            "nodeType": null,
+            "body": {
+                "availableCapacity": 8,
+                "clearanceCapacityPercentage": 100,
+                "consumedClearanceCapacity": 0,
+                "standardCapacity": 8,
+                "availableClearanceCapacity": 8,
+                "consumedTotalCapacity": 0,
+                "capacityUnitOfMeasure": "RELEASE"
+            },
+            "key": "JCP|2153|20200228",
+            "status": 200
+        },
+        {
+            "warnings": null,
+            "message": "Success",
+            "nodeType": null,
+            "body": {
+                "overallCapacity": [
+                    {
+                        "totalAvailableClearanceCapacity": 24,
+                        "totalStandardCapacity": 24,
+                        "totalClearanceCapacity": 24,
+                        "totalConsumedCapacity": 0,
+                        "capacityUnitOfMeasure": "RELEASE",
+                        "totalAvailableCapacity": 24,
+                        "totalConsumedClearanceCapacity": 0
+                    }
+                ]
+            },
+            "key": "",
+            "status": 200
+        }
+    ],
+    "message": "Successful",
+    "status": 221
+}

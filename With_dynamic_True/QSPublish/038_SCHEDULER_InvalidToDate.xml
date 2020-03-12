@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>		 
+<!-- Scheduler - Manual trigger : Invalid To Date
+-->
+
+<testsuite description="Scheduler - Manual trigger : Invalid To Date" name="038">
+
+	 <test apiMethod="POST" apiUrl="/master/node/JCP/2957/" 
+		description="Insert node 1"
+        expectedJsonFile="expected\038\038_01.json"
+        inputJsonFile="input\038\038_01.json" name="01" outputJsonFile="output\038\038_01.json"/>
+
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/" 
+		description="item details"
+        expectedJsonFile="expected\038\038_02.json"
+        inputJsonFile="input\038\038_02.json" name="02" outputJsonFile="output\038\038_02.json"/>
+
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/" 
+		description="insert inventory"
+        expectedJsonFile="expected\038\038_03.json"
+        inputJsonFile="input\038\038_03.json" name="03" outputJsonFile="output\038\038_03.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="insert capacity"
+        expectedJsonFile="expected\038\038_04.json"
+        inputJsonFile="input\038\038_04.json" name="04" outputJsonFile="output\038\038_04.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/" 
+		description="multiread"
+		expectedJsonFile="expected\038\038_05.json"
+		inputJsonFile="input\038\038_05.json" name="05" outputJsonFile="output\038\038_05.json"/>
+	
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/" 
+						description="location inventory"
+						expectedJsonFile="expected\038\038_07.json"
+						inputJsonFile="input\038\038_07.json" name="07" outputJsonFile="output\038\038_07.json"/>
+						
+					<test apiMethod="delay" delay="15000" description="Delay : 15000 ms" name="99"/> 
+						
+		<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/" 
+		description="get qualitativeStatus"
+		expectedJsonFile="expected\038\038_08.json"
+		inputJsonFile="input\038\038_08.json" name="08" outputJsonFile="output\038\038_08.json"/>		
+
+					<test apiMethod="delay" delay="15000" description="Delay : 15000 ms" name="100"/>  
+						
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_capacity_exclusions" 
+						description="Check entry in jcp_capacity_exclusions map"
+						expectedJsonFile="expected\038\038_09.json"
+						inputJsonFile="input\038\038_09.json" name="09" outputJsonFile="output\038\038_09.json"/>
+						
+		<test apiMethod="POST" apiUrl="/inventory/calculate/capacityqs/reprocess" 
+		description="SCHEDULER Manual trigger"
+		expectedJsonFile="expected\038\038_10.json"
+		inputJsonFile="input\038\038_10.json" name="10" outputJsonFile="output\038\038_10.json"/>
+		
+		<test apiMethod="delay" delay="45000" description="Delay : 45000 ms" name="101"/>  
+						
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_capacity_exclusions" 
+						description="Check entry in jcp_capacity_exclusions map"
+						expectedJsonFile="expected\038\038_09_01.json"
+						inputJsonFile="input\038\038_09.json" name="09_01" outputJsonFile="output\038\038_09_01.json"/>					
+</testsuite>

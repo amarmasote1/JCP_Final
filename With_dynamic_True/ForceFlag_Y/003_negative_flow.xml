@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>		 
+<!-- Verify item delete : Negative flow
+      1. delete multiple times
+      2. delete multiple times : multiple items 
+-->
+
+<testsuite description="Verify item delete : Negative flow
+      1. delete multiple times
+      2. delete multiple times : multiple items  "
+	   name="003">
+
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item insert : 4 items"
+        expectedJsonFile="expected\003_01.json"
+        inputJsonFile="input\003_01.json" name="01" outputJsonFile="output\003_01.json"/>
+
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item/" 
+		description="Get map value : item1 "
+        expectedJsonFile="expected\003_10.json"
+         inputJsonFile="input\003_10.json" name="10" outputJsonFile="output\003_10.json"/>
+		 
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item/" 
+		description="Get map value : item2 "
+        expectedJsonFile="expected\003_11.json"
+        inputJsonFile="input\003_11.json" name="11" outputJsonFile="output\003_11.json"/>
+		 
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item/" 
+		description="Get map value : item3 "
+        expectedJsonFile="expected\003_12.json"
+        inputJsonFile="input\003_12.json" name="12" outputJsonFile="output\003_12.json"/>
+		 
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item/" 
+		description="Get map value : item4 "
+        expectedJsonFile="expected\003_13.json"
+        inputJsonFile="input\003_13.json" name="13" outputJsonFile="output\003_13.json"/>
+		 	
+		
+		
+    <test apiMethod="DELETE" apiUrl="/master/itemDetails/JCP/" 
+		description="Item delete : Single item"
+        expectedJsonFile="expected\003_02.json"
+        inputJsonFile="input\003_02.json" name="02" outputJsonFile="output\003_02.json"/>
+
+	<test apiMethod="DELETE" apiUrl="/master/itemDetails/JCP/" 
+		description="Item delete : single item again"
+        expectedJsonFile="expected\003_03.json"
+        inputJsonFile="input\003_03.json" name="03" outputJsonFile="output\003_03.json"/>
+	
+	
+	<test apiMethod="DELETE" apiUrl="/master/itemDetails/JCP/" 
+		description="Item delete : multiple items"
+        expectedJsonFile="expected\003_04.json"
+        inputJsonFile="input\003_04.json" name="04" outputJsonFile="output\003_04.json"/>
+		
+	<test apiMethod="DELETE" apiUrl="/master/itemDetails/JCP/" 
+		description="Item delete : multiple items again"
+        expectedJsonFile="expected\003_05.json"
+        inputJsonFile="input\003_05.json" name="05" outputJsonFile="output\003_05.json"/>
+		
+	<test apiMethod="DELETE" apiUrl="/master/itemDetails/JCP/" 
+		description="Item delete : multiple items again with new item"
+        expectedJsonFile="expected\003_06.json"
+        inputJsonFile="input\003_06.json" name="06" outputJsonFile="output\003_06.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item/" 
+		description="Get map value : item1 "
+        expectedJsonFile="expected\003_14.json"
+         inputJsonFile="input\003_14.json" name="14" outputJsonFile="output\003_14.json"/>
+		 
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item/" 
+		description="Get map value : item2 "
+        expectedJsonFile="expected\003_15.json"
+        inputJsonFile="input\003_15.json" name="15" outputJsonFile="output\003_15.json"/>
+		 
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item/" 
+		description="Get map value : item3 "
+        expectedJsonFile="expected\003_16.json"
+        inputJsonFile="input\003_16.json" name="16" outputJsonFile="output\003_16.json"/>
+		 
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item/" 
+		description="Get map value : item4 "
+        expectedJsonFile="expected\003_17.json"
+        inputJsonFile="input\003_17.json" name="17" outputJsonFile="output\003_17.json"/>
+
+</testsuite>

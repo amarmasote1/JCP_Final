@@ -1,0 +1,8 @@
+{
+    "warnings": [],
+    "message": "Both the date criterias should not be passed",
+    "nodeType": null,
+    "body": null,
+    "key": null,
+    "status": 400
+}

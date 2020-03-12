@@ -1,0 +1,63 @@
+{
+    "body": [
+        {
+            "clearanceCapacityEnabled": true,
+            "message": "feature flag value",
+            "status": 200
+        },
+        {
+            "warnings": null,
+            "message": "Success",
+            "nodeType": null,
+            "body": {
+                "availableCapacity": 0,
+                "clearanceCapacityPercentage": 100,
+                "consumedClearanceCapacity": 0,
+                "standardCapacity": 1,
+                "availableClearanceCapacity": 0,
+                "consumedTotalCapacity": 1,
+                "capacityUnitOfMeasure": "EACH"
+            },
+            "key": "JCP|2243|20200228",
+            "status": 200
+        },
+        {
+            "warnings": null,
+            "message": "Success",
+            "nodeType": null,
+            "body": {
+                "availableCapacity": 998,
+                "clearanceCapacityPercentage": 100,
+                "consumedClearanceCapacity": 0,
+                "standardCapacity": 999,
+                "availableClearanceCapacity": 998,
+                "consumedTotalCapacity": 1,
+                "capacityUnitOfMeasure": "EACH"
+            },
+            "key": "JCP|2244|20200228",
+            "status": 200
+        },
+        {
+            "warnings": null,
+            "message": "Success",
+            "nodeType": null,
+            "body": {
+                "overallCapacity": [
+                    {
+                        "totalAvailableClearanceCapacity": 0,
+                        "totalStandardCapacity": 0,
+                        "totalClearanceCapacity": 0,
+                        "totalConsumedCapacity": 0,
+                        "capacityUnitOfMeasure": "RELEASE",
+                        "totalAvailableCapacity": 0,
+                        "totalConsumedClearanceCapacity": 0
+                    }
+                ]
+            },
+            "key": "",
+            "status": 200
+        }
+    ],
+    "message": "Successful",
+    "status": 221
+}

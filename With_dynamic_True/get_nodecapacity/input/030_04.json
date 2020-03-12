@@ -1,0 +1,15 @@
+[{
+	"storeID": "2257",
+	"capacityUnitOfMeasure": "RELEASE",
+	"fromDate": "<$today>",
+	"toDate": "<$sixDayAhead>",
+	"dayOfTheWeek": [110,100,90,100,100,100,150]
+},
+{
+	"storeID": "2258",
+	"capacityUnitOfMeasure": "RELEASE",
+	"fromDate": "<$today>",
+	"toDate": "<$sixDayAhead>",
+	"dayOfTheWeek": [0,100,90,0,0,0,0]
+}
+]

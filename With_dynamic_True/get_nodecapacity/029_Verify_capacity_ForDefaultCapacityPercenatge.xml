@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify capacity when capacity percentage is not applied. It should fetch default capacity percantge.
+-->
+
+<testsuite description="Verify capacity when capacity percentage is not applied. It should fetch default capacity percantge." name="028">
+
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details : insert only 1 item"
+        expectedJsonFile="expected\029_01.json"
+        inputJsonFile="input\029_01.json" name="01" outputJsonFile="output\029_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/2250/" 
+		description="Insert node 1"
+        expectedJsonFile="expected\029_02.json"
+        inputJsonFile="input\029_02.json" name="02" outputJsonFile="output\029_02.json"/>
+		
+	 <test apiMethod="POST" apiUrl="/master/node/JCP/2256/" 
+		description="Insert node 2"
+        expectedJsonFile="expected\029_17.json"
+        inputJsonFile="input\029_17.json" name="17" outputJsonFile="output\029_17.json"/>
+		
+	
+		
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory : qty = 100 in all stores"
+        expectedJsonFile="expected\029_03.json"
+        inputJsonFile="input\029_03.json" name="03" outputJsonFile="output\029_03.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Insert capacity : As per above condition"
+        expectedJsonFile="expected\029_04.json"
+        inputJsonFile="input\029_04.json" name="04" outputJsonFile="output\029_04.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/" 
+		description="Multiread"
+        expectedJsonFile="expected\029_05.json"
+        inputJsonFile="input\029_05.json" name="05" outputJsonFile="output\029_05.json"/>
+		
+	
+	<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/"
+        description="Get For one day"
+        expectedJsonFile="expected\029_06.json"
+        inputJsonFile="input\029_06.json" name="06" outputJsonFile="output\029_06.json"/>
+	
+	
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Update : add clearanceCapacityPercentage"
+        expectedJsonFile="expected\029_07.json"
+        inputJsonFile="input\029_07.json" name="07" outputJsonFile="output\029_07.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/"
+        description="Get Capacity "
+        expectedJsonFile="expected\029_08.json"
+        inputJsonFile="input\029_08.json" name="08" outputJsonFile="output\029_08.json"/>
+		
+		
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Update : Remove clearanceCapacityPercentage"
+        expectedJsonFile="expected\029_09.json"
+        inputJsonFile="input\029_09.json" name="09" outputJsonFile="output\029_09.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/"
+        description="Get Capacity "
+        expectedJsonFile="expected\029_10.json"
+        inputJsonFile="input\029_10.json" name="10" outputJsonFile="output\029_10.json"/>
+		
+	
+</testsuite>

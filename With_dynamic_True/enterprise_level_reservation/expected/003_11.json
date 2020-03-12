@@ -1,0 +1,26 @@
+{
+	"status": 350,
+	"message": "Problems Found",
+	"body": [{
+		"shortageQty": 0,
+		"reservedQty": 0,
+		"partiallyReservedQty": 0,
+		"problemType": "NO_AVAILABILITY",
+		"orgCode": "JCP",
+		"requestLine": {
+			"lineID": "1",
+			"itemID": "1734567-0003",
+			"uom": "EACH",
+			"bopus": false,
+			"shippable": true,
+			"deliveryMethod": null,
+			"increaseCapacity": null,
+			"shutdown": false,
+		
+			"storeID": "1068",
+			"channel": null,
+			"reservationID": null,
+			"procurementAllowed": false
+		}
+	}]
+}

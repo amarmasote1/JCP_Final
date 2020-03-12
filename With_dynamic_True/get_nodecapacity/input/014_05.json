@@ -1,0 +1,41 @@
+[
+  {
+    "storeID": "2153",
+    "itemID": "17345671014",
+    "uom": "EACH",
+    "supplyData": {
+      "onhandsupply": 100
+    },
+    "demandData": {
+        "reserveddemand": 0
+      },
+    "timestamp": "<$currentTime>"
+    
+  },
+  {
+    "storeID": "2159",
+    "itemID": "17345671014",
+    "uom": "EACH",
+    "supplyData": {
+      "onhandsupply": 100
+    },
+    "demandData": {
+        "reserveddemand": 0
+      },
+    "timestamp": "<$currentTime>"
+    
+  },
+  {
+    "storeID": "2160",
+    "itemID": "17345671014",
+    "uom": "EACH",
+    "supplyData": {
+      "onhandsupply": 100
+    },
+    "demandData": {
+        "reserveddemand": 0
+      },
+    "timestamp": "<$currentTime>"
+    
+  }
+]

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify multiread : Enterprise rsvn such that Enterprise ATP less than Rsvn Qty
+			
+ -->
+
+<testsuite description="Verify multiread :  Enterprise rsvn such that Enterprise ATP less than Rsvn Qty" name="019">
+
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details "
+        expectedJsonFile="expected\019_01.json"
+        inputJsonFile="input\019_01.json" name="01" outputJsonFile="output\019_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/2066/" description="Insert node 1"
+        expectedJsonFile="expected\019_02.json"
+        inputJsonFile="input\019_02.json" name="02" outputJsonFile="output\019_02.json"/>
+		
+	
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2067/" description="Insert node 2"
+        expectedJsonFile="expected\019_03.json"
+        inputJsonFile="input\019_03.json" name="03" outputJsonFile="output\019_03.json"/>	
+	
+
+    <test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory"
+        expectedJsonFile="expected\019_05.json"
+        inputJsonFile="input\019_05.json" name="05" outputJsonFile="output\019_05.json"/>
+	
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity: set valid capacity"
+        expectedJsonFile="expected\019_06.json"
+        inputJsonFile="input\019_06.json" name="06" outputJsonFile="output\019_06.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread: verify ATP"
+        expectedJsonFile="expected\019_08.json"
+        inputJsonFile="input\019_08.json" name="08" outputJsonFile="output\019_08.json"/>
+		
+		
+		
+	<test apiMethod="POST" apiUrl="/master/safetyFactor/"
+        description="SafetyStock for store1"
+        expectedJsonFile="expected\019_09.json"
+        inputJsonFile="input\019_09.json" name="09" outputJsonFile="output\019_09.json"/>	
+		
+		
+	<test apiMethod="POST" apiUrl="/master/safetyFactor/"
+        description="SafetyStock for store2"
+        expectedJsonFile="expected\019_15.json"
+        inputJsonFile="input\019_15.json" name="15" outputJsonFile="output\019_15.json"/>		
+		
+			<!--
+		
+	<test apiMethod="GET" apiUrl="/refreshActiveStores/"
+        description="refresh Active store"
+        expectedJsonFile="expected\019_10.json"
+        name="10" outputJsonFile="output\019_10.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="multiread with update mode"
+        expectedJsonFile="expected\019_11.json"
+        inputJsonFile="input\019_11.json" name="11" outputJsonFile="output\019_11.json"/>  -->
+	
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread: verify ATP"
+        expectedJsonFile="expected\019_12.json"
+        inputJsonFile="input\019_12.json" name="12" outputJsonFile="output\019_12.json"/>
+		
+		
+	
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Reservation"
+        expectedJsonFile="expected\019_13.json"
+        inputJsonFile="input\019_13.json" name="13" outputJsonFile="output\019_13.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread: verify Atp"
+        expectedJsonFile="expected\019_14.json"
+        inputJsonFile="input\019_14.json" name="14" outputJsonFile="output\019_14.json"/>
+	
+		
+</testsuite>

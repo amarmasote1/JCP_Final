@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify  enterprise level reservation Cancellation
+-->
+
+
+<!-- Expected
+1. Multiread Before Enterprise reservation : ATP (Ship and Bopus) = 10 in each store, Capacity = 10 in all the stores.
+2. Multiread after Enterprise reservation(Qty = 25) : ATP (Ship and Bopus) = 10 in each store, Capacity = 10 in all the stores.
+				Enterprise level reservation should success. 
+				Cancel Enterprise Rsvn  should pass. Check in DB , This ReservationID should not be there..!
+-->
+
+
+<testsuite description="Verify  enterprise level reservation Cancellation" name="008">
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details : only 1 item"
+        expectedJsonFile="expected\008_01.json"
+        inputJsonFile="input\008_01.json" name="01" outputJsonFile="output\008_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/1142/" 
+		description="Insert node"
+        expectedJsonFile="expected\008_02.json"
+        inputJsonFile="input\008_02.json" name="02" outputJsonFile="output\008_02.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/1148/" 
+		description="Insert node"
+        expectedJsonFile="expected\008_03.json"
+        inputJsonFile="input\008_03.json" name="03" outputJsonFile="output\008_03.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/1150/" 
+		description="Insert node"
+        expectedJsonFile="expected\008_04.json"
+        inputJsonFile="input\008_04.json" name="04" outputJsonFile="output\008_04.json"/>
+
+    <test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory : qty = 10 in each store"
+        expectedJsonFile="expected\008_05.json"
+        inputJsonFile="input\008_05.json" name="05" outputJsonFile="output\008_05.json"/>
+		
+	
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity : Available Capacity = 10"
+        expectedJsonFile="expected\008_07.json"
+        inputJsonFile="input\008_07.json" name="07" outputJsonFile="output\008_07.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread : ATP = 10, Available Capacity = 10"
+        expectedJsonFile="expected\008_08.json"
+        inputJsonFile="input\008_08.json" name="08" outputJsonFile="output\008_08.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Reservation : EnterpriseLevel : qty = 25"
+        expectedJsonFile="expected\008_09.json"
+        inputJsonFile="input\008_09.json" name="09" outputJsonFile="output\008_09.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread after enterpriise reservation : ATP = 10, Available Capacity = 10"
+        expectedJsonFile="expected\008_10.json"
+        inputJsonFile="input\008_10.json" name="10" outputJsonFile="output\008_10.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Cancel Enterprise Reservation  : Success"
+        expectedJsonFile="expected\008_11.json"
+        inputJsonFile="input\008_11.json" name="11" outputJsonFile="output\008_11.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread after EnterPrise Reservation Cancellation  : ATP = 10, Available Capacity = 10. "
+        expectedJsonFile="expected\008_12.json"
+        inputJsonFile="input\008_12.json" name="12" outputJsonFile="output\008_12.json"/>
+	
+    
+</testsuite>

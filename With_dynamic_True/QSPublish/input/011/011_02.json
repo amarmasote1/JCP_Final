@@ -1,0 +1,15 @@
+[  
+   
+   {
+      "gtin" : "",
+      "uom" : "EACH",
+      "itemID" : "77012131011",
+      "bopus" : "true",
+      "lotNumber" : "7701213",
+      "shippable" : "true",
+      "productLine" : "770",
+      "purchaseType" : "FashionAutomation",
+      "isSubstitutionAllowed" : "N",
+      "itemProcessingTime" : "10"
+   }
+]

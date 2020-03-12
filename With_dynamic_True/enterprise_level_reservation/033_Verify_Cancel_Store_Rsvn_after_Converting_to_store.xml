@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify Available Capacity and ATP after cancelling store reservation
+-->
+
+<!-- Expected
+1. Multiread Before Enterprise reservation : ATP (Ship and Bopus) = 50 ,Available Capacity = 8 in store1 
+2. Multiread after etp reservation : ATP (Ship and Bopus) = 50 ,Available  Capacity = 8 in store1 
+3. Multiread after store level reservation : ATP (Ship and Bopus) = 30 ,Available Capacity = 7 in store1 
+4. Multiread after store level rsvn cancel : ATP (Ship and Bopus) = 50 , Capacity = 8 in store1 
+       Capacity should get back and as well ATP..!
+		
+-->
+
+
+<testsuite description="Verify Available Capacity and ATP after canceling store reservation" name="033">
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details : 1 item"
+        expectedJsonFile="expected\033_01.json"
+        inputJsonFile="input\033_01.json" name="01" outputJsonFile="output\033_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/1319/" 
+		description="Insert node 1"
+        expectedJsonFile="expected\033_02.json"
+        inputJsonFile="input\033_02.json" name="02" outputJsonFile="output\033_02.json"/>
+
+
+	
+
+    <test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory : qty = 50"
+        expectedJsonFile="expected\033_05.json"
+        inputJsonFile="input\033_05.json" name="05" outputJsonFile="output\033_05.json"/>
+		
+	
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity :  Available Capacity = 8"
+        expectedJsonFile="expected\033_07.json"
+        inputJsonFile="input\033_07.json" name="07" outputJsonFile="output\033_07.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread : ATP = 50 and Available Capacity = 8"
+        expectedJsonFile="expected\033_08.json"
+        inputJsonFile="input\033_08.json" name="08" outputJsonFile="output\033_08.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Reservation :  EnterpriseLevel : qty = 20"
+        expectedJsonFile="expected\033_09.json"
+        inputJsonFile="input\033_09.json" name="09" outputJsonFile="output\033_09.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread after EnterpriseLevel reservation : ATP = 50 and Available Capacity = 8"
+        expectedJsonFile="expected\033_10.json"
+        inputJsonFile="input\033_10.json" name="10" outputJsonFile="output\033_10.json"/>
+		
+	
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Reservation : Store Level Reservation : 	qty = 20" 
+		expectedJsonFile="expected\033_11.json"
+        inputJsonFile="input\033_11.json" name="11" outputJsonFile="output\033_11.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread after : Store level reservation : ATP = 30 and Available Capacity = 7"
+        expectedJsonFile="expected\033_12.json"
+        inputJsonFile="input\033_12.json" name="12" outputJsonFile="output\033_12.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Cancel : Store Level Reservation with increase capacity as true" 
+		expectedJsonFile="expected\033_13.json"
+        inputJsonFile="input\033_13.json" name="13" outputJsonFile="output\033_13.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread after cancelling Store level reservation : ATP = 50 and Available Capacity = 8"
+        expectedJsonFile="expected\033_14.json"
+        inputJsonFile="input\033_14.json" name="14" outputJsonFile="output\033_14.json"/>
+		
+	
+	
+		
+		
+	
+</testsuite>

@@ -1,0 +1,44 @@
+{
+    "body": [
+        {
+            "warnings": null,
+            "message": "Success",
+            "body": {
+                "invall": {
+                    "isSubLotSFSExclusion": 0,
+                    "isPerformanceSFSExclusion": 0,
+                    "isSublotBOPUSExclusion": 0,
+                    "isBelowAur": 0,
+                    "unconfirmeddemand": 0,
+                    "standard_capacity": 10,
+                   
+                    "isDirty": 0,
+                    "bopusSafetyFactor": 2,
+                    "shipSafetyFactor": 1,
+                    "isOnClearance": 0,
+                    "clearance_capacity_percentage": 0,
+                    "reserveddemand": 0,
+                    "isBopisMarkdownEligible": 1,
+                    "onhandsupply": 20,
+                   
+                    "isSFSMarkdownEligible": 1,
+                    "shipATP": 0,
+                    "isPerformanceBopusExclusion": 0,
+                    "pickSafetyFactorSource": 0,
+                    "ship_active": 0,
+                    "Available_capacity": 10,
+                    "shipSafetyFactorSource": 0,
+                    "isActiveMarkDown": 0,
+                    "bopusATP": 0,
+                    "grossShipAtp": 19,
+                    "bopus_active": 0,
+                    "grossBopusAtp": 18
+                }
+            },
+            "key": "JCP|1195|17345670019|EACH",
+            "status": 200
+        }
+    ],
+    "message": "Successful",
+    "status": 221
+}

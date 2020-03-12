@@ -1,0 +1,7 @@
+{
+    "warnings": [],
+    "message": "Mandatory parameter fromDate/toDate or date is missing",
+    "body": null,
+    "key": null,
+    "status": 400
+}

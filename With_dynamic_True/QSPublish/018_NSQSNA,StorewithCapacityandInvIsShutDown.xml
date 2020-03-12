@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>		 
+<!-- Consider an item with NS QS = NA and StoreInventory + Capacity Available, Store shutdown
+-->
+
+<testsuite description="positive flow : Consider an item with NS QS = NA and StoreInventory + Capacity Available, store shutdown" name="018">
+
+	 <test apiMethod="POST" apiUrl="/master/node/JCP/2982/" 
+		description="Insert node 1"
+        expectedJsonFile="expected\018\018_01.json"
+        inputJsonFile="input\018\018_01.json" name="01" outputJsonFile="output\018\018_01.json"/>
+
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/" 
+		description="item details"
+        expectedJsonFile="expected\018\018_02.json"
+        inputJsonFile="input\018\018_02.json" name="02" outputJsonFile="output\018\018_02.json"/>
+
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/" 
+		description="insert inventory"
+        expectedJsonFile="expected\018\018_03.json"
+        inputJsonFile="input\018\018_03.json" name="03" outputJsonFile="output\018\018_03.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="insert capacity"
+        expectedJsonFile="expected\018\018_04.json"
+        inputJsonFile="input\018\018_04.json" name="04" outputJsonFile="output\018\018_04.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/" 
+		description="multiread"
+		expectedJsonFile="expected\018\018_05.json"
+		inputJsonFile="input\018\018_05.json" name="05" outputJsonFile="output\018\018_05.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/qualitativeStatus/" 
+		description="insert qualitativeStatus"
+		expectedJsonFile="expected\018\018_06.json"
+		inputJsonFile="input\018\018_06.json" name="06" outputJsonFile="output\018\018_06.json"/>
+	
+
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/" 
+						description="location inventory"
+						expectedJsonFile="expected\018\018_07.json"
+						inputJsonFile="input\018\018_07.json" name="07" outputJsonFile="output\018\018_07.json"/>
+						
+					<test apiMethod="delay" delay="15000" description="Delay : 15000 ms" name="99"/> 
+						
+		<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/" 
+		description="get qualitativeStatus"
+		expectedJsonFile="expected\018\018_08.json"
+		inputJsonFile="input\018\018_08.json" name="08" outputJsonFile="output\018\018_08.json"/>		
+
+					<test apiMethod="delay" delay="15000" description="Delay : 15000 ms" name="100"/>  
+						
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_capacity_exclusions" 
+						description="Check entry in jcp_capacity_exclusions map"
+						expectedJsonFile="expected\018\018_09.json"
+						inputJsonFile="input\018\018_09.json" name="09" outputJsonFile="output\018\018_09.json"/>
+						
+		<test apiMethod="POST" apiUrl="/master/storeShutdown/" 
+		description="Shutdown store with has Inventory and Capacity"
+		expectedJsonFile="expected\018\018_10.json"
+		inputJsonFile="input\018\018_10.json" name="10" outputJsonFile="output\018\018_10.json"/>
+		
+		<test apiMethod="delay" delay="45000" description="Delay : 45000 ms" name="101"/> 
+						
+		<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/" 
+		description="get qualitativeStatus"
+		expectedJsonFile="expected\018\018_08_01.json"
+		inputJsonFile="input\018\018_08.json" name="08_01" outputJsonFile="output\018\018_08_01.json"/>		
+
+					<test apiMethod="delay" delay="15000" description="Delay : 15000 ms" name="100"/>  
+						
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_capacity_exclusions" 
+						description="Check entry in jcp_capacity_exclusions map"
+						expectedJsonFile="expected\018\018_09_01.json"
+						inputJsonFile="input\018\018_09.json" name="09_01" outputJsonFile="output\018\018_09_01.json"/>
+		
+
+		
+</testsuite>

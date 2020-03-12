@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<testSuite description="description" name="01">
+    <test apiMethod="post" apiUrl="/master/itemDetails/JCP/" description="" expectedJsonFile="expected\27\27_01.json" inputJsonFile="input\27\27_01.json" name="1" outputJsonFile="output\27\27_01.json"/>
+
+    <test apiMethod="post" apiUrl="/master/node/JCP/1330" description="" expectedJsonFile="expected\27\27_02.json" inputJsonFile="input\27\27_02.json" name="2" outputJsonFile="output\27\27_02.json"/>
+
+    <test apiMethod="post" apiUrl="/inventory/JCP/absolute/" description="" expectedJsonFile="expected\27\27_03.json" inputJsonFile="input\27\27_03.json" name="3" outputJsonFile="output\27\27_03.json"/>
+
+    <test apiMethod="post" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" description="" expectedJsonFile="expected\27\27_04.json" inputJsonFile="input\27\27_04.json" name="4" outputJsonFile="output\27\27_04.json"/>
+
+
+    <test apiMethod="post" apiUrl="/inventory/multiread/JCP/" description="" expectedJsonFile="expected\27\27_06.json" inputJsonFile="input\27\27_06.json" name="6" outputJsonFile="output\27\27_06.json"/>
+
+    <test apiMethod="post" apiUrl="/master/mapValue/jcp_item_inventory/" description="" expectedJsonFile="expected\27\27_07.json" inputJsonFile="input\27\27_07.json" name="7" outputJsonFile="output\27\27_07.json"/>
+
+    <test apiMethod="post" apiUrl="/inventory/mismatch" description="" expectedJsonFile="expected\27\27_08.json" inputJsonFile="input\27\27_08.json" name="8" outputJsonFile="output\27\27_08.json"/>
+<!--
+    <test apiMethod="post" apiUrl="/master/mapValue/jcp_item_inventory/" description="" expectedJsonFile="expected\27\27_09.json" inputJsonFile="input\27\27_09.json" name="9" outputJsonFile="output\27\27_09.json"/>-->
+
+    <test apiMethod="post" apiUrl="/inventory/multiread/JCP/" description="" expectedJsonFile="expected\27\27_010.json" inputJsonFile="input\27\27_010.json" name="10" outputJsonFile="output\27\27_010.json"/>
+
+    <test apiMethod="post" apiUrl="/master/safetyFactor/" description="" expectedJsonFile="expected\27\27_011.json" inputJsonFile="input\27\27_011.json" name="11" outputJsonFile="output\27\27_011.json"/>
+<!--
+    <test apiMethod="post" apiUrl="/master/mapValue/jcp_item_inventory/" description="" expectedJsonFile="expected\27\27_012.json" inputJsonFile="input\27\27_012.json" name="12" outputJsonFile="output\27\27_012.json"/>-->
+
+    <test apiMethod="post" apiUrl="/inventory/multiread/JCP/" description="" expectedJsonFile="expected\27\27_013.json" inputJsonFile="input\27\27_013.json" name="13" outputJsonFile="output\27\27_013.json"/>
+<!--
+	 <test apiMethod="post" apiUrl="/master/mapValue/jcp_item_inventory/" description="" expectedJsonFile="expected\27\27_014.json" inputJsonFile="input\27\27_014.json" name="14" outputJsonFile="output\27\27_014.json"/>  -->
+</testSuite>

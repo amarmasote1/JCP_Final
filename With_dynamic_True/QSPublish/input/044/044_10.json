@@ -1,0 +1,11 @@
+{
+"queryFilter":{
+     "fromTime": "2018-12-29 10:12:43.632 UTC",
+     "toTime": "2019-12-30 07:48:49.632 UTC",
+     "currentOrHistory": "CURRENT",
+     "status": "TEST"
+},
+
+"perfromCalculate":true
+
+}

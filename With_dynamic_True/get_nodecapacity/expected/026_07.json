@@ -1,0 +1,106 @@
+{
+	"body": [{
+			"status": 200,
+			"message": "Success",
+			
+			"body": {
+				"capacityUnitOfMeasure": "EACH",
+				"standardCapacity": 4,
+				"availableCapacity": 4
+			},
+			"warnings": null
+		}, {
+			"status": 200,
+			"message": "Success",
+			
+			"body": {
+				"capacityUnitOfMeasure": "EACH",
+				"standardCapacity": 3,
+				"availableCapacity": 3
+			},
+			"warnings": null
+		}, {
+			"status": 200,
+			"message": "Success",
+			
+			"body": {
+				"capacityUnitOfMeasure": "EACH",
+				"standardCapacity": 6,
+				"availableCapacity": 6
+			},
+			"warnings": null
+		}, {
+			"status": 200,
+			"message": "Success",
+			
+			"body": {
+				"capacityUnitOfMeasure": "EACH",
+				"standardCapacity": 5,
+				"availableCapacity": 5
+			},
+			"warnings": null
+		}, {
+			"status": 200,
+			"message": "Success",
+			
+			"body": {
+				"capacityUnitOfMeasure": "EACH",
+				"standardCapacity": 1,
+				"availableCapacity": 1
+			},
+			"warnings": null
+		}, {
+			"status": 200,
+			"message": "Success",
+			
+			"body": {
+				"capacityUnitOfMeasure": "EACH",
+				"standardCapacity": 7,
+				"availableCapacity": 7
+			},
+			"warnings": null
+		}, {
+			"status": 200,
+			"message": "Success",
+			
+			"body": {
+				"capacityUnitOfMeasure": "EACH",
+				"standardCapacity": 6,
+				"availableCapacity": 6
+			},
+			"warnings": null
+		}, {
+			"status": 200,
+			"message": "Success",
+			
+			"body": {
+				"capacityUnitOfMeasure": "EACH",
+				"standardCapacity": 1,
+				"availableCapacity": 1
+			},
+			"warnings": null
+		}, {
+			"status": 200,
+			"message": "Success",
+			
+			"body": {
+				"capacityUnitOfMeasure": "EACH",
+				"standardCapacity": 7,
+				"availableCapacity": 7
+			},
+			"warnings": null
+		}, {
+			"status": 200,
+			"message": "Success",
+			
+			"body": {
+				"capacityUnitOfMeasure": "EACH",
+				"standardCapacity": 2,
+				"availableCapacity": 2
+			},
+			"warnings": null
+		}
+	],
+	"status": 221,
+	"message": "Successful"
+}

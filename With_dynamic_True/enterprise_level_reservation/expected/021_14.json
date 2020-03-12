@@ -1,0 +1,82 @@
+{
+    "body": [
+        {
+            "warnings": null,
+            "message": "Success",
+            "body": {
+                "invall": {
+                    "isSubLotSFSExclusion": 0,
+                    "isPerformanceSFSExclusion": 0,
+                    "isSublotBOPUSExclusion": 0,
+                    "isBelowAur": 0,
+                    "unconfirmeddemand": 0,
+                    "standard_capacity": 10,
+                   
+                    "isDirty": 0,
+                    "bopusSafetyFactor": 2,
+                    "shipSafetyFactor": 1,
+                    "isOnClearance": 0,
+                    "clearance_capacity_percentage": 0,
+                    "reserveddemand": 9,
+                    "isBopisMarkdownEligible": 1,
+                    "onhandsupply": 10,
+                   
+                    "isSFSMarkdownEligible": 1,
+                    "shipATP": 0,
+                    "isPerformanceBopusExclusion": 0,
+                    "pickSafetyFactorSource": 0,
+                    "ship_active": 1,
+                    "Available_capacity": 9,
+                    "shipSafetyFactorSource": 0,
+                    "isActiveMarkDown": 0,
+                    "bopusATP": 0,
+                    "grossShipAtp": 0,
+                    "bopus_active": 1,
+                    "grossBopusAtp": 0
+                }
+            },
+            "key": "JCP|1212|17345670021|EACH",
+            "status": 200
+        },
+        {
+            "warnings": null,
+            "message": "Success",
+            "body": {
+                "invall": {
+                    "isSubLotSFSExclusion": 0,
+                    "isPerformanceSFSExclusion": 0,
+                    "isSublotBOPUSExclusion": 0,
+                    "isBelowAur": 0,
+                    "unconfirmeddemand": 0,
+                    "standard_capacity": 10,
+                   
+                    "isDirty": 0,
+                    "bopusSafetyFactor": 2,
+                    "shipSafetyFactor": 1,
+                    "isOnClearance": 0,
+                    "clearance_capacity_percentage": 0,
+                    "reserveddemand": 0,
+                    "isBopisMarkdownEligible": 1,
+                    "onhandsupply": 90,
+                   
+                    "isSFSMarkdownEligible": 1,
+                    "shipATP": 89,
+                    "isPerformanceBopusExclusion": 0,
+                    "pickSafetyFactorSource": 0,
+                    "ship_active": 1,
+                    "Available_capacity": 10,
+                    "shipSafetyFactorSource": 0,
+                    "isActiveMarkDown": 0,
+                    "bopusATP": 88,
+                    "grossShipAtp": 89,
+                    "bopus_active": 1,
+                    "grossBopusAtp": 88
+                }
+            },
+            "key": "JCP|1217|17345670021|EACH",
+            "status": 200
+        }
+    ],
+    "message": "Successful",
+    "status": 221
+}

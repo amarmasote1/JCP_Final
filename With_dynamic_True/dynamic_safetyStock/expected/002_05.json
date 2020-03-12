@@ -1,0 +1,34 @@
+{
+    "message": "Success",
+    "body": [
+        {
+            "itemID": "68627571002",
+            "uom": "EACH",
+            "demandData": {
+                "reserveddemand": 0
+            },
+            "markDown": {
+                "active": false
+            },
+            "storeID": "2010",
+            "supplyData": {
+                "onhandsupply": 10
+            }
+        },
+        {
+            "itemID": "68627571002",
+            "uom": "EACH",
+            "demandData": {
+                "reserveddemand": 0
+            },
+            "markDown": {
+                "active": false
+            },
+            "storeID": "2011",
+            "supplyData": {
+                "onhandsupply": 10
+            }
+        }
+    ],
+    "status": 200
+}

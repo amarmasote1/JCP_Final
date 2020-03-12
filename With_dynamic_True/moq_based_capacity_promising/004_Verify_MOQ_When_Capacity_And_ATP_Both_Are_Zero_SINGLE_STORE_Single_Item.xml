@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify MOQ when capacity and ATP are zero in store. Single store single item
+		
+		store has ATP. ATP = 0, Capacity = 0
+										
+										
+-->
+
+<!-- expected  
+				MOQ : 0
+-->
+
+<testsuite description="Verify MOQ when capacity and ATP are zero in store. Single store single item" name="004">
+		
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="items: 1 "
+        expectedJsonFile="expected\004_01.json"
+        inputJsonFile="input\004_01.json" name="01" outputJsonFile="output\004_01.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2417/"
+        description="store 1"
+        expectedJsonFile="expected\004_02.json"
+        inputJsonFile="input\004_02.json" name="02" outputJsonFile="output\004_02.json"/>
+		
+	
+	
+		
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="Create inventory "
+        expectedJsonFile="expected\004_03.json"
+        inputJsonFile="input\004_03.json" name="03" outputJsonFile="output\004_03.json"/>
+	
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity: Available Capacity = 0"
+        expectedJsonFile="expected\004_05.json"
+        inputJsonFile="input\004_05.json" name="05" outputJsonFile="output\004_05.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\004_06.json"
+        inputJsonFile="input\004_06.json" name="06" outputJsonFile="output\004_06.json"/>
+		
+
+
+	
+	<test apiMethod="POST" apiUrl="/master/qualitativeStatus/"
+        description="insert qual status : AL"
+        expectedJsonFile="expected\004_07.json"
+        inputJsonFile="input\004_07.json" name="07" outputJsonFile="output\004_07.json"/>
+	
+<test apiMethod="delay" delay="10000" description="Delay : 10000 ms" name="100"/>				
+	
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="get Qual status: MOQ = 0"
+        expectedJsonFile="expected\004_08.json"
+        inputJsonFile="input\004_08.json" name="8" outputJsonFile="output\004_08.json"/>
+		
+	
+</testsuite>
+
+
+
+

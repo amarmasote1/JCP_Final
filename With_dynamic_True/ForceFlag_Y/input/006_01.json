@@ -1,0 +1,74 @@
+[  
+   {
+      "gtin" : "",
+      "uom" : "EACH",
+      "itemID" : "55551112015",
+      "bopus" : "true",
+      "lotNumber" : "5555111",
+      "shippable" : "true",
+      "productLine" : "555",
+      "purchaseType" : "Fashion",
+      "isSubstitutionAllowed" : "N",
+      "itemProcessingTime" : "10"
+   },
+   {
+      "gtin" : "",
+      "uom" : "EACH",
+      "itemID" : "55551112016",
+      "bopus" : "true",
+      "lotNumber" : "5555111",
+      "shippable" : "true",
+      "productLine" : "555",
+      "purchaseType" : "Fashion",
+      "isSubstitutionAllowed" : "N",
+      "itemProcessingTime" : "10"
+   },
+   {
+      "gtin" : "",
+      "uom" : "EACH",
+      "itemID" : "55551112017",
+      "bopus" : "true",
+      "lotNumber" : "5555111",
+      "shippable" : "true",
+      "productLine" : "555",
+      "purchaseType" : "Fashion",
+      "isSubstitutionAllowed" : "N",
+      "itemProcessingTime" : "10"
+   },
+   {
+      "gtin" : "",
+      "uom" : "EACH",
+      "itemID" : "55551112018",
+      "bopus" : "true",
+      "lotNumber" : "5555111",
+      "shippable" : "true",
+      "productLine" : "555",
+      "purchaseType" : "Fashion",
+      "isSubstitutionAllowed" : "N",
+      "itemProcessingTime" : "10"
+   },
+   {
+      "gtin" : "",
+      "uom" : "EACH",
+      "itemID" : "55551112019",
+      "bopus" : "true",
+      "lotNumber" : "5555111",
+      "shippable" : "true",
+      "productLine" : "555",
+      "purchaseType" : "Fashion",
+      "isSubstitutionAllowed" : "N",
+      "itemProcessingTime" : "10"
+   },
+   {
+      "gtin" : "",
+      "uom" : "EACH",
+      "itemID" : "55551112020",
+      "bopus" : "true",
+      "lotNumber" : "5555111",
+      "shippable" : "true",
+      "productLine" : "555",
+      "purchaseType" : "Fashion",
+      "isSubstitutionAllowed" : "N",
+      "itemProcessingTime" : "10"
+   }
+]

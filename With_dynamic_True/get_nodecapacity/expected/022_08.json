@@ -1,0 +1,15 @@
+{
+	"body": [{
+			"status": 200,
+			"message": "Success",
+			
+			"body": {
+				"capacityUnitOfMeasure": "EACH"
+				
+			},
+			"warnings": null
+		}
+	],
+	"status": 221,
+	"message": "Successful"
+}

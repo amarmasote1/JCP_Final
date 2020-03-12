@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify Insert capacity for input validations
+-->
+
+<!--Expected
+		1. Capacity out of range value : less than 0                  Error message
+		2. Capacity out of range value : more than 999				  Error message
+		3. Capacity for 5 digit store  : eg. storeID = 52525		  Error message
+		4. Capacity for 3 digit store  : eg. storeID = 525			  Error message
+		5. DaysOfTheWeek has 10 days   :                              
+		6. daysOfTheWeek has 2 days    :                              Success
+		7. Passing string values in daysOfTheWeek : eg. today		  Error message
+-->
+
+
+<testsuite description="Verify Insert capacity for input validations" name="018">
+
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details : insert only 1 item"
+        expectedJsonFile="expected\018_01.json"
+        inputJsonFile="input\018_01.json" name="01" outputJsonFile="output\018_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/2175/" 
+		description="Insert node 1"
+        expectedJsonFile="expected\018_02.json"
+        inputJsonFile="input\018_02.json" name="02" outputJsonFile="output\018_02.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2176/" 
+		description="Insert node 2"
+        expectedJsonFile="expected\018_03.json"
+        inputJsonFile="input\018_03.json" name="03" outputJsonFile="output\018_03.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/52525/" 
+		description="Node with 5 digits"
+        expectedJsonFile="expected\018_04.json"
+        inputJsonFile="input\018_04.json" name="04" outputJsonFile="output\018_04.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/525/" 
+		description="Node with 3 digits"
+        expectedJsonFile="expected\018_05.json"
+        inputJsonFile="input\018_05.json" name="05" outputJsonFile="output\018_05.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2177/" 
+		description="Node 3"
+        expectedJsonFile="expected\018_06.json"
+        inputJsonFile="input\018_06.json" name="06" outputJsonFile="output\018_06.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2178/" 
+		description="Node 4"
+        expectedJsonFile="expected\018_07.json"
+        inputJsonFile="input\018_07.json" name="07" outputJsonFile="output\018_07.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2184/" 
+		description="Node 5"
+        expectedJsonFile="expected\018_08.json"
+        inputJsonFile="input\018_08.json" name="08" outputJsonFile="output\018_08.json"/>
+
+		
+	 
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory in all the stores : qty = 100 in each store"
+        expectedJsonFile="expected\018_09.json"
+        inputJsonFile="input\018_09.json" name="09" outputJsonFile="output\018_09.json"/>
+	
+	
+	
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Capacity = -2"
+        expectedJsonFile="expected\018_10.json"
+        inputJsonFile="input\018_10.json" name="10" outputJsonFile="output\018_10.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/"
+        description=" Get StoreCapacity   = 0"
+        expectedJsonFile="expected\018_11.json"
+        inputJsonFile="input\018_11.json" name="11" outputJsonFile="output\018_11.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Capacity = 1000"
+        expectedJsonFile="expected\018_12.json"
+        inputJsonFile="input\018_12.json" name="12" outputJsonFile="output\018_12.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/"
+        description=" Get StoreCapacity   = 0"
+        expectedJsonFile="expected\018_13.json"
+        inputJsonFile="input\018_13.json" name="13" outputJsonFile="output\018_13.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Capacity for 5 digit store : Error message"
+        expectedJsonFile="expected\018_14.json"
+        inputJsonFile="input\018_14.json" name="14" outputJsonFile="output\018_14.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/"
+        description=" Error message"
+        expectedJsonFile="expected\018_15.json"
+        inputJsonFile="input\018_15.json" name="15" outputJsonFile="output\018_15.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Capacity for 3 digit store : Error message"
+        expectedJsonFile="expected\018_16.json"
+        inputJsonFile="input\018_16.json" name="16" outputJsonFile="output\018_16.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/"
+        description=" Error message"
+        expectedJsonFile="expected\018_17.json"
+        inputJsonFile="input\018_17.json" name="17" outputJsonFile="output\018_17.json"/>
+		
+	
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Capacity for 10 days "
+        expectedJsonFile="expected\018_18.json"
+        inputJsonFile="input\018_18.json" name="18" outputJsonFile="output\018_18.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/"
+        description=" "
+        expectedJsonFile="expected\018_19.json"
+        inputJsonFile="input\018_19.json" name="19" outputJsonFile="output\018_19.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Capacity for 2 days "
+        expectedJsonFile="expected\018_20.json"
+        inputJsonFile="input\018_20.json" name="20" outputJsonFile="output\018_20.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/"
+        description="Success Message"
+        expectedJsonFile="expected\018_21.json"
+        inputJsonFile="input\018_21.json" name="21" outputJsonFile="output\018_21.json"/>
+	
+	
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Capacity : string value in dayOfTheWeek "
+        expectedJsonFile="expected\018_22.json"
+        inputJsonFile="input\018_22.json" name="22" outputJsonFile="output\018_22.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/"
+        description="Error message"
+        expectedJsonFile="expected\018_23.json"
+        inputJsonFile="input\018_23.json" name="23" outputJsonFile="output\018_23.json"/>
+		
+    
+</testsuite>

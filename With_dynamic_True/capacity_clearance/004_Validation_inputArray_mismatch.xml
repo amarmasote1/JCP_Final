@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>		 
+<!-- Verify
+
+	Validations : input array mis-match
+
+     1.  fromDate - toDate : 2 days gap , array for 7 days
+     2.  fromDate - toDate : 9 days gap,  array for 7 days
+     3.  fromDate - toDate : 7 days gap , empty array 
+     4.  fromDate - toDate :  7 days gap, array more than 7 days
+     
+-->
+
+<testsuite description="Verify Validations, when mandatory parameter missing" name="004">
+
+    
+   <test apiMethod="POST" apiUrl="/master/node/JCP/1956/" 
+		description="Insert node 1"
+        expectedJsonFile="expected\004_01.json"
+        inputJsonFile="input\004_01.json" name="01" outputJsonFile="output\004_01.json"/>
+
+  <test apiMethod="POST" apiUrl="/master/node/JCP/1958/" 
+		description="Insert node 2"
+        expectedJsonFile="expected\004_02.json"
+        inputJsonFile="input\004_02.json" name="02" outputJsonFile="output\004_02.json"/>
+
+   <test apiMethod="POST" apiUrl="/master/node/JCP/1959/" 
+		description="Insert node 3"
+        expectedJsonFile="expected\004_03.json"
+        inputJsonFile="input\004_03.json" name="03" outputJsonFile="output\004_03.json"/>
+	
+	  
+	<test apiMethod="POST" apiUrl="/master/node/JCP/1960/" 
+		description="Insert node 4"
+        expectedJsonFile="expected\004_04.json"
+        inputJsonFile="input\004_04.json" name="04" outputJsonFile="output\004_04.json"/>
+
+   <test apiMethod="POST" apiUrl="/master/node/JCP/1961/" 
+		description="Insert node 5"
+        expectedJsonFile="expected\004_05.json"
+        inputJsonFile="input\004_05.json" name="05" outputJsonFile="output\004_05.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/1962/" 
+		description="Insert node 6"
+        expectedJsonFile="expected\004_06.json"
+        inputJsonFile="input\004_06.json" name="06" outputJsonFile="output\004_06.json"/>
+	<!--	
+	<test apiMethod="POST" apiUrl="/master/node/JCP/1951/" 
+		description="Insert node 7"
+        expectedJsonFile="expected\004_07.json"
+        inputJsonFile="input\004_07.json" name="07" outputJsonFile="output\004_07.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/1953/" 
+		description="Insert node 8"
+        expectedJsonFile="expected\004_08.json"
+        inputJsonFile="input\004_08.json" name="08" outputJsonFile="output\004_08.json"/>
+		   -->
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="Insert clearance capacity : fromDate - toDate : 2 days gap , array for 7 days"
+        expectedJsonFile="expected\004_09.json"
+        inputJsonFile="input\004_09.json" name="09" outputJsonFile="output\004_09.json"/>
+		
+				<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+						description="Get Capacity "
+						expectedJsonFile="expected\004_21.json"
+						inputJsonFile="input\004_21.json" name="21" outputJsonFile="output\004_21.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="Insert clearance capacity : fromDate - toDate : 9 days gap,  array for 7 days"
+        expectedJsonFile="expected\004_10.json"
+        inputJsonFile="input\004_10.json" name="10" outputJsonFile="output\004_10.json"/>
+		
+				<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+						description="Get Capacity "
+						expectedJsonFile="expected\004_22.json"
+						inputJsonFile="input\004_22.json" name="22" outputJsonFile="output\004_22.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="Insert clearance capacity :  fromDate - toDate : 7 days gap , empty array "
+        expectedJsonFile="expected\004_11.json"
+        inputJsonFile="input\004_11.json" name="11" outputJsonFile="output\004_11.json"/>
+		
+				<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+						description="Get Capacity "
+						expectedJsonFile="expected\004_23.json"
+						inputJsonFile="input\004_23.json" name="23" outputJsonFile="output\004_23.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="Insert clearance capacity : fromDate - toDate : 7 days gap , empty array"
+        expectedJsonFile="expected\004_12.json"
+        inputJsonFile="input\004_12.json" name="12" outputJsonFile="output\004_12.json"/>
+		
+				<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+						description="Get Capacity "
+						expectedJsonFile="expected\004_24.json"
+						inputJsonFile="input\004_24.json" name="24" outputJsonFile="output\004_24.json"/>
+		  
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="Insert clearance capacity 1 : fromDate - toDate :  7 days gap, array more than 7 days"
+        expectedJsonFile="expected\004_13.json"
+        inputJsonFile="input\004_13.json" name="13" outputJsonFile="output\004_13.json"/>
+		
+				<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+						description="Get Capacity "
+						expectedJsonFile="expected\004_25.json"
+						inputJsonFile="input\004_25.json" name="25" outputJsonFile="output\004_25.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="Insert clearance capacity 2 : fromDate - toDate :  7 days gap, array more than 7 days"
+        expectedJsonFile="expected\004_14.json"
+        inputJsonFile="input\004_14.json" name="14" outputJsonFile="output\004_14.json"/>
+		
+				<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+						description="Get Capacity "
+						expectedJsonFile="expected\004_26.json"
+						inputJsonFile="input\004_26.json" name="26" outputJsonFile="output\004_26.json"/>
+		<!--
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="Insert clearance capacity : 100 clearanceCapacityPercentage"
+        expectedJsonFile="expected\004_15.json"
+        inputJsonFile="input\004_15.json" name="15" outputJsonFile="output\004_15.json"/>
+		
+				<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+						description="Get Capacity "
+						expectedJsonFile="expected\004_27.json"
+						inputJsonFile="input\004_27.json" name="27" outputJsonFile="output\004_27.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="Insert clearance capacity : 120 clearanceCapacityPercentage"
+        expectedJsonFile="expected\004_16.json"
+        inputJsonFile="input\004_16.json" name="16" outputJsonFile="output\004_16.json"/>
+		
+				<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+						description="Get Capacity "
+						expectedJsonFile="expected\004_28.json"
+						inputJsonFile="input\004_28.json" name="28" outputJsonFile="output\004_28.json"/>
+    -->
+
+ 
+</testsuite>

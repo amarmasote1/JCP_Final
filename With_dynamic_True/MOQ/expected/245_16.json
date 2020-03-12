@@ -1,0 +1,24 @@
+{
+    "body": [
+        {
+            "warnings": null,
+            "message": "Successful",
+            "body": {
+                "nonStoreonHandQty": 0,
+                "itemID": "29512343088",
+                "futureAvlQty": 10,
+                "shipAtp": 145,
+                "firstFutureAvailableDate": null,
+                "qualitativeStatus": "AL",
+                "nonStoreQualitativeStatus": "NA",
+                "moq": {
+                    "value": 49
+                }
+            },
+            "key": null,
+            "status": 221
+        }
+    ],
+    "message": "Successful",
+    "status": 200
+}

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify MOQ when safetystock is applied and removed for multiple store
+		item is present in 2 stores.  storeID      ATP
+										2367		20	
+										
+-->
+
+<!-- expected  
+				MOQ   : 20
+					Ship safety stock = 10
+					Bopus safety stock = 15
+				MOQ  : 
+					Ship safety stock = 10
+					Bopus safety stock = 15
+				MOQ  : 
+-->
+
+<testsuite description="Verify MOQ when safety stock is applied and removed for multiple store" name="257">
+		
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="items: 1 "
+        expectedJsonFile="expected\258_01.json"
+        inputJsonFile="input\258_01.json" name="01" outputJsonFile="output\258_01.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2367/"
+        description="store 1"
+        expectedJsonFile="expected\258_02.json"
+        inputJsonFile="input\258_02.json" name="02" outputJsonFile="output\258_02.json"/>
+		
+	
+	
+		
+		
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="Create inventory "
+        expectedJsonFile="expected\258_03.json"
+        inputJsonFile="input\258_03.json" name="03" outputJsonFile="output\258_03.json"/>
+	
+
+		
+		
+	
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity: Available Capacity = 8"
+        expectedJsonFile="expected\258_05.json"
+        inputJsonFile="input\258_05.json" name="05" outputJsonFile="output\258_05.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\258_06.json"
+        inputJsonFile="input\258_06.json" name="06" outputJsonFile="output\258_06.json"/>
+		
+
+
+	
+	<test apiMethod="POST" apiUrl="/master/qualitativeStatus/"
+        description="insert qual status : AL"
+        expectedJsonFile="expected\258_07.json"
+        inputJsonFile="input\258_07.json" name="07" outputJsonFile="output\258_07.json"/>
+		
+<test apiMethod="delay" delay="10000" description="Delay after Exclusion : 10000 ms" name="100"/>
+
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="get Qual status: check for MOQ"
+        expectedJsonFile="expected\258_08.json"
+        inputJsonFile="input\258_08.json" name="8" outputJsonFile="output\258_08.json"/>
+		
+		
+		
+		
+	<test apiMethod="POST" apiUrl="/master/sfsInsert/"
+        description="Apply safety stock "
+        expectedJsonFile="expected\258_09.json"
+        inputJsonFile="input\258_09.json" name="09" outputJsonFile="output\258_09.json"/>
+		
+<test apiMethod="delay" delay="10000" description="Delay after Exclusion : 10000 ms" name="100"/>
+
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="get Qual status: check for MOQ"
+        expectedJsonFile="expected\258_10.json"
+        inputJsonFile="input\258_10.json" name="10" outputJsonFile="output\258_10.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/sfsInsert/"
+        description="Apply safety stock update"
+        expectedJsonFile="expected\258_11.json"
+        inputJsonFile="input\258_11.json" name="11" outputJsonFile="output\258_11.json"/>
+		
+<test apiMethod="delay" delay="10000" description="Delay after Exclusion : 10000 ms" name="100"/>
+
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="get Qual status: check for MOQ"
+        expectedJsonFile="expected\258_12.json"
+        inputJsonFile="input\258_12.json" name="12" outputJsonFile="output\258_12.json"/>
+		
+	
+	
+</testsuite>
+
+
+
+

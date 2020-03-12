@@ -1,0 +1,34 @@
+{
+	"body": [{
+			"status": 200,
+			"message": "Success",
+			"key": "JCP|2241|17345671026|EACH",
+			"body": {
+				"invall": {
+					"scheduleddemand": 0,
+					"shipATP": 100,
+					"allocateddemand": 0,
+					"unconfirmeddemand": 0,
+					"standard_capacity": 6,
+					"forceddemand": 0,
+					"ship_active": 1,
+					
+					"Available_capacity": 6,
+					"reservedorder": 0,
+					"isDirty": 0,
+					"bopusSafetyFactor": 0,
+					"bopusATP": 100,
+					"shipSafetyFactor": 0,
+					"reserveddemand": 0,
+					"bopus_active": 1,
+					"onhandsupply": 100,
+					"totalAva": 100,
+					"preCalculated": 1
+				}
+			},
+			"warnings": null
+		}
+	],
+	"status": 221,
+	"message": "Successful"
+}

@@ -1,0 +1,29 @@
+{
+    "message": "Problems Found",
+    "body": [
+        {
+            "partiallyReservedQty": 0,
+            "shortageQty": 0,
+            "orgCode": "JCP",
+            "reservedQty": 0,
+            "requestLine": {
+                "deliveryMethod": null,
+                "channel": null,
+                "lineID": "1",
+                "storeID": null,
+                "itemID": "1734567-0031",
+                "schedule": false,
+                "uom": "EACH",
+                "shippable": false,
+                "reservationID": null,
+                "procurementAllowed": false,
+                "qty": 1,
+                "bopus": true,
+                "increaseCapacity": null,
+                "shutdown": false
+            },
+            "problemType": "Mandatory reservation line level parameters missing."
+        }
+    ],
+    "status": 350
+}

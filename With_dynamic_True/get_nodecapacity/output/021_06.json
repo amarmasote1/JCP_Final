@@ -1,0 +1,123 @@
+{
+    "body": [
+        {
+            "clearanceCapacityEnabled": true,
+            "message": "feature flag value",
+            "status": 200
+        },
+        {
+            "warnings": null,
+            "message": "Success",
+            "nodeType": null,
+            "body": {
+                "availableCapacity": 15,
+                "clearanceCapacityPercentage": 100,
+                "consumedClearanceCapacity": 0,
+                "standardCapacity": 15,
+                "availableClearanceCapacity": 15,
+                "consumedTotalCapacity": 0,
+                "capacityUnitOfMeasure": "EACH"
+            },
+            "key": "JCP|2210|20200305",
+            "status": 200
+        },
+        {
+            "warnings": null,
+            "message": "Success",
+            "nodeType": null,
+            "body": {
+                "availableCapacity": 16,
+                "clearanceCapacityPercentage": 100,
+                "consumedClearanceCapacity": 0,
+                "standardCapacity": 16,
+                "availableClearanceCapacity": 16,
+                "consumedTotalCapacity": 0,
+                "capacityUnitOfMeasure": "EACH"
+            },
+            "key": "JCP|2210|20200228",
+            "status": 200
+        },
+        {
+            "warnings": null,
+            "message": "Success",
+            "nodeType": null,
+            "body": {
+                "availableCapacity": 17,
+                "clearanceCapacityPercentage": 100,
+                "consumedClearanceCapacity": 0,
+                "standardCapacity": 17,
+                "availableClearanceCapacity": 17,
+                "consumedTotalCapacity": 0,
+                "capacityUnitOfMeasure": "EACH"
+            },
+            "key": "JCP|2210|20200229",
+            "status": 200
+        },
+        {
+            "warnings": null,
+            "message": "Success",
+            "nodeType": null,
+            "body": {
+                "availableCapacity": 11,
+                "clearanceCapacityPercentage": 100,
+                "consumedClearanceCapacity": 0,
+                "standardCapacity": 11,
+                "availableClearanceCapacity": 11,
+                "consumedTotalCapacity": 0,
+                "capacityUnitOfMeasure": "EACH"
+            },
+            "key": "JCP|2210|20200301",
+            "status": 200
+        },
+        {
+            "warnings": null,
+            "message": "Success",
+            "nodeType": null,
+            "body": {
+                "availableCapacity": 12,
+                "clearanceCapacityPercentage": 100,
+                "consumedClearanceCapacity": 0,
+                "standardCapacity": 12,
+                "availableClearanceCapacity": 12,
+                "consumedTotalCapacity": 0,
+                "capacityUnitOfMeasure": "EACH"
+            },
+            "key": "JCP|2210|20200302",
+            "status": 200
+        },
+        {
+            "warnings": null,
+            "message": "Success",
+            "nodeType": null,
+            "body": {
+                "availableCapacity": 13,
+                "clearanceCapacityPercentage": 100,
+                "consumedClearanceCapacity": 0,
+                "standardCapacity": 13,
+                "availableClearanceCapacity": 13,
+                "consumedTotalCapacity": 0,
+                "capacityUnitOfMeasure": "EACH"
+            },
+            "key": "JCP|2210|20200303",
+            "status": 200
+        },
+        {
+            "warnings": null,
+            "message": "Success",
+            "nodeType": null,
+            "body": {
+                "availableCapacity": 14,
+                "clearanceCapacityPercentage": 100,
+                "consumedClearanceCapacity": 0,
+                "standardCapacity": 14,
+                "availableClearanceCapacity": 14,
+                "consumedTotalCapacity": 0,
+                "capacityUnitOfMeasure": "EACH"
+            },
+            "key": "JCP|2210|20200304",
+            "status": 200
+        }
+    ],
+    "message": "Successful",
+    "status": 221
+}

@@ -1,0 +1,16 @@
+{
+	"countryCode": "US",
+	"zipCode": "92408",
+	"region":"csr", 
+	"state":"csr1",
+	"longitude": "10.0",
+	"latitude": "20.0",
+	"nodeName": "2051",
+	"nodeProcessingTime": 0,
+	"timeZone": "en_US_CST",
+	"nodeType": "Store",
+	"shippable": "true",
+	"bopus": "true",
+	"cutOffTime": "23:30:00",
+	"locationActive": true
+}

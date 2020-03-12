@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify MOQ when capacity is there in store. Single store single item
+		
+		store has both ATP and capacity. ATP = 100, Capacity = 10
+										
+										
+-->
+
+<!-- expected  
+				MOQ : 100
+-->
+
+<testsuite description="Verify MOQ when capacity is there in store. Single store single item. store has both ATP and capacity" name="001">
+		
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="items: 1 "
+        expectedJsonFile="expected\001_01.json"
+        inputJsonFile="input\001_01.json" name="01" outputJsonFile="output\001_01.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2410/"
+        description="store 1"
+        expectedJsonFile="expected\001_02.json"
+        inputJsonFile="input\001_02.json" name="02" outputJsonFile="output\001_02.json"/>
+		
+	
+	
+		
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="Create inventory "
+        expectedJsonFile="expected\001_03.json"
+        inputJsonFile="input\001_03.json" name="03" outputJsonFile="output\001_03.json"/>
+	
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity: Available Capacity =10"
+        expectedJsonFile="expected\001_05.json"
+        inputJsonFile="input\001_05.json" name="05" outputJsonFile="output\001_05.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread: ATP = 100, capacity = 10"
+        expectedJsonFile="expected\001_06.json"
+        inputJsonFile="input\001_06.json" name="06" outputJsonFile="output\001_06.json"/>
+		
+
+
+	
+	<test apiMethod="POST" apiUrl="/master/qualitativeStatus/"
+        description="insert qual status : AH"
+        expectedJsonFile="expected\001_07.json"
+        inputJsonFile="input\001_07.json" name="07" outputJsonFile="output\001_07.json"/>
+
+<test apiMethod="delay" delay="10000" description="Delay : 10000 ms" name="100"/>				
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="get Qual status: MOQ = 100"
+        expectedJsonFile="expected\001_08.json"
+        inputJsonFile="input\001_08.json" name="8" outputJsonFile="output\001_08.json"/>
+		
+	
+</testsuite>
+
+
+
+

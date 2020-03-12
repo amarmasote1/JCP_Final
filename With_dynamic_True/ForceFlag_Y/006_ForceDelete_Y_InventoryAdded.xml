@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>		 
+<!-- Verify item delete :  ForceDelete = Y,  inventory  added
+      1. Single item,  (present in 1 store)
+      2. Single item,  (present in 2 stores)
+      3. multiple items,  (present in 1 store)
+      4. multiple items, (present in multiple stores)
+	  
+	  item1 - store1
+	  item2 - store1 and store2
+	  item3 and item4 - store1
+	  item5 and item6 - store1 and store2
+-->
+
+<testsuite description="Verify item delete :  ForceDelete = Y,  inventory  added
+      1. Single item,  (present in 1 store)
+      2. Single item,  (present in 2 stores)
+      3. multiple items,  (present in 1 store)
+      4. multiple items, (present in multiple stores).
+	  
+	  item1 - store1
+	  item2 - store1 and store2
+	  item3 and item4 - store1
+	  item5 and item6 - store1 and store2"
+	   name="006">
+
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item insert : 6 items"
+        expectedJsonFile="expected\006_01.json"
+        inputJsonFile="input\006_01.json" name="01" outputJsonFile="output\006_01.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2920/"
+        description="store1"
+        expectedJsonFile="expected\006_02.json"
+        inputJsonFile="input\006_02.json" name="02" outputJsonFile="output\006_02.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2921/"
+        description="store2"
+        expectedJsonFile="expected\006_03.json"
+        inputJsonFile="input\006_03.json" name="03" outputJsonFile="output\006_03.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="create inventory as per above mentioned"
+        expectedJsonFile="expected\006_04.json"
+        inputJsonFile="input\006_04.json" name="04" outputJsonFile="output\006_04.json"/>
+	
+	<!-- jcp_item map GET-->
+	
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item/" 
+		description="Get map value : item1 "
+        expectedJsonFile="expected\006_20.json"
+         inputJsonFile="input\006_20.json" name="20" outputJsonFile="output\006_20.json"/>
+		 
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item/" 
+		description="Get map value : item2 "
+        expectedJsonFile="expected\006_21.json"
+        inputJsonFile="input\006_21.json" name="21" outputJsonFile="output\006_21.json"/>
+		 
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item/" 
+		description="Get map value : item3 "
+        expectedJsonFile="expected\006_22.json"
+        inputJsonFile="input\006_22.json" name="22" outputJsonFile="output\006_22.json"/>
+		 
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item/" 
+		description="Get map value : item4 "
+        expectedJsonFile="expected\006_23.json"
+        inputJsonFile="input\006_23.json" name="23" outputJsonFile="output\006_23.json"/>
+	
+		<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item/" 
+		description="Get map value : item5 "
+        expectedJsonFile="expected\006_24.json"
+        inputJsonFile="input\006_24.json" name="24" outputJsonFile="output\006_24.json"/>
+		 
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item/" 
+		description="Get map value : item6 "
+        expectedJsonFile="expected\006_25.json"
+        inputJsonFile="input\006_25.json" name="25" outputJsonFile="output\006_25.json"/>
+		
+	
+			<!-- jcp_item_inventory	map GET-->
+			
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/" 
+		description="Get map value : item1 "
+        expectedJsonFile="expected\006_26.json"
+        inputJsonFile="input\006_26.json" name="26" outputJsonFile="output\006_26.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/" 
+		description="Get map value : item2 "
+        expectedJsonFile="expected\006_27.json"
+        inputJsonFile="input\006_27.json" name="27" outputJsonFile="output\006_27.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/" 
+		description="Get map value : item3"
+        expectedJsonFile="expected\006_28.json"
+        inputJsonFile="input\006_28.json" name="28" outputJsonFile="output\006_28.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/" 
+		description="Get map value : item4"
+        expectedJsonFile="expected\006_29.json"
+        inputJsonFile="input\006_29.json" name="29" outputJsonFile="output\006_29.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/" 
+		description="Get map value : item5"
+        expectedJsonFile="expected\006_30.json"
+        inputJsonFile="input\006_30.json" name="30" outputJsonFile="output\006_30.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/" 
+		description="Get map value : item6"
+        expectedJsonFile="expected\006_31.json"
+        inputJsonFile="input\006_31.json" name="31" outputJsonFile="output\006_31.json"/>
+		
+
+		
+
+		
+		
+    <test apiMethod="DELETE" apiUrl="/master/itemDetails/JCP/" 
+		description="Item delete : Single item,  (present in 1 store)"
+        expectedJsonFile="expected\006_05.json"
+        inputJsonFile="input\006_05.json" name="05" outputJsonFile="output\006_05.json"/>
+
+	<test apiMethod="DELETE" apiUrl="/master/itemDetails/JCP/" 
+		description="Item delete : Single item,  (present in 2 stores)"
+        expectedJsonFile="expected\006_06.json"
+        inputJsonFile="input\006_06.json" name="06" outputJsonFile="output\006_06.json"/>
+		
+	<test apiMethod="DELETE" apiUrl="/master/itemDetails/JCP/" 
+		description="Item delete : multiple items,  (present in 1 store)"
+        expectedJsonFile="expected\006_07.json"
+        inputJsonFile="input\006_07.json" name="07" outputJsonFile="output\006_07.json"/>
+		
+	<test apiMethod="DELETE" apiUrl="/master/itemDetails/JCP/" 
+		description="Item delete : multiple items,  (present in 2 stores)"
+        expectedJsonFile="expected\006_08.json"
+        inputJsonFile="input\006_08.json" name="08" outputJsonFile="output\006_08.json"/>
+
+		
+	
+	<!-- jcp_item map GET-->
+	
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item/" 
+		description="Get map value : item1 "
+        expectedJsonFile="expected\006_40.json"
+         inputJsonFile="input\006_40.json" name="40" outputJsonFile="output\006_40.json"/>
+		 
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item/" 
+		description="Get map value : item2 "
+        expectedJsonFile="expected\006_41.json"
+        inputJsonFile="input\006_41.json" name="41" outputJsonFile="output\006_41.json"/>
+		 
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item/" 
+		description="Get map value : item3 "
+        expectedJsonFile="expected\006_42.json"
+        inputJsonFile="input\006_42.json" name="42" outputJsonFile="output\006_42.json"/>
+		 
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item/" 
+		description="Get map value : item4 "
+        expectedJsonFile="expected\006_43.json"
+        inputJsonFile="input\006_43.json" name="43" outputJsonFile="output\006_43.json"/>
+	
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item/" 
+		description="Get map value : item5 "
+        expectedJsonFile="expected\006_44.json"
+        inputJsonFile="input\006_44.json" name="44" outputJsonFile="output\006_44.json"/>
+		 
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item/" 
+		description="Get map value : item6 "
+        expectedJsonFile="expected\006_45.json"
+        inputJsonFile="input\006_45.json" name="45" outputJsonFile="output\006_45.json"/>
+		
+	
+			<!-- jcp_item_inventory	map GET-->
+			
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/" 
+		description="Get map value : item1 "
+        expectedJsonFile="expected\006_46.json"
+        inputJsonFile="input\006_46.json" name="46" outputJsonFile="output\006_46.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/" 
+		description="Get map value : item2 "
+        expectedJsonFile="expected\006_47.json"
+        inputJsonFile="input\006_47.json" name="47" outputJsonFile="output\006_47.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/" 
+		description="Get map value : item3"
+        expectedJsonFile="expected\006_48.json"
+        inputJsonFile="input\006_48.json" name="48" outputJsonFile="output\006_48.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/" 
+		description="Get map value : item4"
+        expectedJsonFile="expected\006_49.json"
+        inputJsonFile="input\006_49.json" name="49" outputJsonFile="output\006_49.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/" 
+		description="Get map value : item5"
+        expectedJsonFile="expected\006_50.json"
+        inputJsonFile="input\006_50.json" name="50" outputJsonFile="output\006_50.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/" 
+		description="Get map value : item6"
+        expectedJsonFile="expected\006_51.json"
+        inputJsonFile="input\006_51.json" name="51" outputJsonFile="output\006_51.json"/>
+		
+		
+	
+</testsuite>

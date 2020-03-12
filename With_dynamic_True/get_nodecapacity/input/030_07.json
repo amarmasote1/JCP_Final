@@ -1,0 +1,17 @@
+[{
+	"storeID": "2257",
+	"capacityUnitOfMeasure": "RELEASE",
+	"fromDate": "<$today>",
+	"toDate": "<$sixDayAhead>",
+	"clearanceCapacityOfTheWeek":["10","20","30","40","50","60","70"],
+	"dayOfTheWeek": [100,200,300,400,500,600,700]
+},
+{
+	"storeID": "2258",
+	"capacityUnitOfMeasure": "RELEASE",
+	"fromDate": "<$today>",
+	"toDate": "<$sixDayAhead>",
+	"clearanceCapacityOfTheWeek":["10","20","30","40","50","60","70"],
+	"dayOfTheWeek": [0,100,90,0,0,0,0]
+}
+]

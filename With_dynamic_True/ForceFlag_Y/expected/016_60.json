@@ -1,0 +1,22 @@
+{
+    "warnings": null,
+    "message": "Success",
+    "nodeType": null,
+    "body": {
+        "shortageQty": 0,
+        "substitutionDone": false,
+        "currentQty": 3,
+        "storeID": "2931",
+        "confirmed": true,
+        "itemID": "55951112051",
+        "uom": null,
+       
+        "substitutedItemQty": null,
+        "qty": 3,
+        "increaseCapacity": true,
+        "originalOrderedQty": 0,
+        "shippedQty": 0
+    },
+    "key": "RRR051RRR|JCP",
+    "status": 200
+}

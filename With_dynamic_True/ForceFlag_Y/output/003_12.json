@@ -1,0 +1,17 @@
+{
+    "warnings": null,
+    "message": "Success",
+    "nodeType": null,
+    "body": {
+        "productLine": "555",
+        "itemID": "55551112007",
+        "uom": "EACH",
+        "shippable": true,
+        "bopus": true,
+        "lotNumber": "5555111",
+        "bundle": false,
+        "purchaseType": "Fashion"
+    },
+    "key": "JCP|55551112007|EACH",
+    "status": 200
+}

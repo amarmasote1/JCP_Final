@@ -1,0 +1,15 @@
+[{
+		"storeID": "2250",
+		"capacityUnitOfMeasure": "EACH",
+		"standardCapacity": "1",
+		"clearanceCapacityPercentage": "50",
+		"date": "<$today>"
+	},
+	{
+		"storeID": "2256",
+		"capacityUnitOfMeasure": "EACH",
+		"standardCapacity": "1",
+		"clearanceCapacityPercentage": "50",
+		"date": "<$today>"
+	}
+]

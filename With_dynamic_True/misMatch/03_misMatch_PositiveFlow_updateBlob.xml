@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<testSuite description="description" name="01">
+    <test apiMethod="post" apiUrl="/master/itemDetails/JCP/" description="" expectedJsonFile="expected\03\03_01.json" inputJsonFile="input\03\03_01.json" name="1" outputJsonFile="output\03\03_01.json"/>
+
+    <test apiMethod="post" apiUrl="/master/node/JCP/1313" description="" expectedJsonFile="expected\03\03_02.json" inputJsonFile="input\03\03_02.json" name="2" outputJsonFile="output\03\03_02.json"/>
+
+    <test apiMethod="post" apiUrl="/inventory/JCP/absolute/" description="" expectedJsonFile="expected\03\03_03.json" inputJsonFile="input\03\03_03.json" name="3" outputJsonFile="output\03\03_03.json"/>
+
+    <test apiMethod="post" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" description="" expectedJsonFile="expected\03\03_04.json" inputJsonFile="input\03\03_04.json" name="4" outputJsonFile="output\03\03_04.json"/>
+
+    <test apiMethod="post" apiUrl="/master/qualitativeStatus/" description="" expectedJsonFile="expected\03\03_05.json" inputJsonFile="input\03\03_05.json" name="5" outputJsonFile="output\03\03_05.json"/>
+
+    <test apiMethod="post" apiUrl="/inventory/multiread/JCP/" description="" expectedJsonFile="expected\03\03_06.json" inputJsonFile="input\03\03_06.json" name="6" outputJsonFile="output\03\03_06.json"/>
+
+	<test apiMethod="delay" delay="15000" description="Delay : 15000 ms" name="100"/>				
+
+    <test apiMethod="post" apiUrl="/master/getqualitativeStatus/" description="" expectedJsonFile="expected\03\03_07.json" inputJsonFile="input\03\03_07.json" name="7" outputJsonFile="output\03\03_07.json"/>
+<!--
+    <test apiMethod="post" apiUrl="/master/mapValue/jcp_item_inventory/" description="" expectedJsonFile="expected\03\03_08.json" inputJsonFile="input\03\03_08.json" name="8" outputJsonFile="output\03\03_08.json"/>
+  -->
+    <test apiMethod="post" apiUrl="/inventory/mismatch" description="" expectedJsonFile="expected\03\03_09.json" inputJsonFile="input\03\03_09.json" name="9" outputJsonFile="output\03\03_09.json"/>
+<!--
+    <test apiMethod="post" apiUrl="/master/mapValue/jcp_item_inventory/" description="" expectedJsonFile="expected\03\03_010.json" inputJsonFile="input\03\03_010.json" name="10" outputJsonFile="output\03\03_010.json"/>
+ -->
+    <test apiMethod="post" apiUrl="/inventory/multiread/JCP/" description="" expectedJsonFile="expected\03\03_011.json" inputJsonFile="input\03\03_011.json" name="11" outputJsonFile="output\03\03_011.json"/>
+  
+  <test apiMethod="delay" delay="15000" description="Delay : 15000 ms" name="100"/>				
+
+    <test apiMethod="post" apiUrl="/master/getqualitativeStatus/" description="" expectedJsonFile="expected\03\03_012.json" inputJsonFile="input\03\03_012.json" name="12" outputJsonFile="output\03\03_012.json"/>
+
+
+	 <test apiMethod="post" apiUrl="/inventory/multiread/JCP/" description="update mode" expectedJsonFile="expected\03\03_011_1.json" inputJsonFile="input\03\03_011_1.json" name="11_1" outputJsonFile="output\03\03_011_1.json"/>
+<!--
+	 <test apiMethod="post" apiUrl="/master/mapValue/jcp_item_inventory/" description="" expectedJsonFile="expected\03\03_010_1.json" inputJsonFile="input\03\03_010_1.json" name="10_1" outputJsonFile="output\03\03_010_1.json"/> -->
+
+	<test apiMethod="post" apiUrl="/master/getqualitativeStatus/" description="" expectedJsonFile="expected\03\03_012_1.json" inputJsonFile="input\03\03_012_1.json" name="12_1" outputJsonFile="output\03\03_012_1.json"/>
+
+	<test apiMethod="post" apiUrl="/inventory/JCP/absolute/" description="" expectedJsonFile="expected\03\03_03_1.json" inputJsonFile="input\03\03_03_1.json" name="3_1" outputJsonFile="output\03\03_03_1.json"/>
+
+	<!--
+	
+	<test apiMethod="post" apiUrl="/master/mapValue/jcp_item_inventory/" description="" expectedJsonFile="expected\03\03_010_2.json" inputJsonFile="input\03\03_010_2.json" name="10_2" outputJsonFile="output\03\03_010_2.json"/>  -->
+
+	<test apiMethod="delay" delay="15000" description="Delay : 15000 ms" name="100"/>				
+
+	<test apiMethod="post" apiUrl="/master/getqualitativeStatus/" description="" expectedJsonFile="expected\03\03_012_2.json" inputJsonFile="input\03\03_012_2.json" name="12_2" outputJsonFile="output\03\03_012_2.json"/>
+
+	<test apiMethod="post" apiUrl="/inventory/multiread/JCP/" description="" expectedJsonFile="expected\03\03_011_3.json" inputJsonFile="input\03\03_011_3.json" name="11_3" outputJsonFile="output\03\03_011_3.json"/>
+
+</testSuite>

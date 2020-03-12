@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify MOQ when exclusion is applied and removed. single store
+		
+		store		capacity	ATP
+		2452		10			20		
+-->
+
+<!-- expected  
+				Before Exclusion 						 MOQ : 20
+				After  Exclusion						 MOQ : 0
+				After exclusion is removed  			 MOQ : 20
+						
+-->
+
+<testsuite description="Verify MOQ when exclusion is applied and removed. single store" name="011">
+		
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="items: 1 "
+        expectedJsonFile="expected\011_01.json"
+        inputJsonFile="input\011_01.json" name="01" outputJsonFile="output\011_01.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2452/"
+        description="store 1"
+        expectedJsonFile="expected\011_02.json"
+        inputJsonFile="input\011_02.json" name="02" outputJsonFile="output\011_02.json"/>
+	
+		
+	
+	
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="Create inventory "
+        expectedJsonFile="expected\011_03.json"
+        inputJsonFile="input\011_03.json" name="03" outputJsonFile="output\011_03.json"/>
+	
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity: Available Capacity = 10"
+        expectedJsonFile="expected\011_05.json"
+        inputJsonFile="input\011_05.json" name="05" outputJsonFile="output\011_05.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\011_06.json"
+        inputJsonFile="input\011_06.json" name="06" outputJsonFile="output\011_06.json"/>
+		
+
+
+	
+	<test apiMethod="POST" apiUrl="/master/qualitativeStatus/"
+        description="insert qual status : AL"
+        expectedJsonFile="expected\011_07.json"
+        inputJsonFile="input\011_07.json" name="07" outputJsonFile="output\011_07.json"/>
+
+<test apiMethod="delay" delay="10000" description="Delay : 10000 ms" name="100"/>				
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="get Qual status: MOQ = 20"
+        expectedJsonFile="expected\011_08.json"
+        inputJsonFile="input\011_08.json" name="8" outputJsonFile="output\011_08.json"/>
+		
+		
+		
+		
+	<test apiMethod="POST" apiUrl="/master/itemExclusion/"
+        description="Apply Exclusion"
+        expectedJsonFile="expected\011_09.json"
+        inputJsonFile="input\011_09.json" name="09" outputJsonFile="output\011_09.json"/>
+
+<test apiMethod="delay" delay="10000" description="Delay : 10000 ms" name="100"/>				
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="get Qual status: MOQ = 0"
+        expectedJsonFile="expected\011_10.json"
+        inputJsonFile="input\011_10.json" name="10" outputJsonFile="output\011_10.json"/>
+
+
+				
+		
+	<test apiMethod="POST" apiUrl="/master/itemExclusion/"
+        description="Remove exclusion"
+        expectedJsonFile="expected\011_11.json"
+        inputJsonFile="input\011_11.json" name="11" outputJsonFile="output\011_11.json"/>
+
+<test apiMethod="delay" delay="10000" description="Delay : 10000 ms" name="100"/>				
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="get Qual status: MOQ = 20"
+        expectedJsonFile="expected\011_12.json"
+        inputJsonFile="input\011_12.json" name="12" outputJsonFile="output\011_12.json"/>
+	
+</testsuite>
+
+
+
+

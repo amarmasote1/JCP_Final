@@ -1,0 +1,7 @@
+{
+    "warnings": null,
+    "message": "Mandatory parameter day of the week array size should be 7",
+    "body": null,
+    "key": null,
+    "status": 400
+}

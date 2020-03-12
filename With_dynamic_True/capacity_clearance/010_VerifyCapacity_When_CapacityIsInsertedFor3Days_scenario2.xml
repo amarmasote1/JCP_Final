@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>		 
+<!-- Verify
+			Capacity, when capacity is inserted for 3 days,  today, tomorrow and day after tomorrow
+-->
+
+<testsuite description="Capacity, when capacity is inserted for 3 days,  today, tomorrow and day after tomorrow" name="010">
+
+    
+   <test apiMethod="POST" apiUrl="/master/node/JCP/1976/" 
+		description="Insert node 1"
+        expectedJsonFile="expected\010_01.json"
+        inputJsonFile="input\010_01.json" name="01" outputJsonFile="output\010_01.json"/>
+
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="Insert clearance capacity "
+        expectedJsonFile="expected\010_02.json"
+        inputJsonFile="input\010_02.json" name="02" outputJsonFile="output\010_02.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+		description="Get Capacity "
+        expectedJsonFile="expected\010_03.json"
+        inputJsonFile="input\010_03.json" name="03" outputJsonFile="output\010_03.json"/>
+
+ 
+</testsuite>

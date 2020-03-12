@@ -1,0 +1,9 @@
+[{ 
+			"storeID": "2185",
+			"capacityUnitOfMeasure": "EACH",
+			
+			"date": "<$today>",
+			"dayOfTheWeek": [100, 100, 100, 100, 100, 100, 100]
+		
+	}
+]

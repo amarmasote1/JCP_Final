@@ -1,0 +1,12 @@
+{
+    "warnings": [
+        "50000011113",
+        "50000011111",
+        "50000011112"
+    ],
+    "message": "Successfully deleted except the records in the warning",
+    "nodeType": null,
+    "body": null,
+    "key": null,
+    "status": 200
+}

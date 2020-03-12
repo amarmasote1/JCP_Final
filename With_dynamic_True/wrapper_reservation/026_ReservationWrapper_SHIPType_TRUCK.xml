@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify Reservation wrapper:SHIP Type : TRUCK
+pre requisite : 1 item, store and qualitativeStatus
+-->
+
+<!-- expected  
+	1. Multiread Before wrapper : ATP = 10
+	2. Combined Qualitative status after Inventiry insert :AL
+	3. Reservation Wrapper (Enterprise  Qty = 6) : should succeed.
+	4. Multiread after Wrapper reservation : ATP = 10
+	5. qualitativeStatus after Wrapper reservation : ShipAtp = 4
+	6. Multiread after Wrapper reservation Cancel : ATP = 10
+-->
+<!--
+<testsuite description="Verify Reservation wrapper:SHIP Type : TRUCK" name="026">
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/2832/"
+        description="store 1"
+        expectedJsonFile="expected\026_01.json"
+        inputJsonFile="input\026_01.json" name="01" outputJsonFile="output\026_01.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="item1 "
+        expectedJsonFile="expected\026_02.json"
+        inputJsonFile="input\026_02.json" name="02" outputJsonFile="output\026_02.json"/>
+	
+
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory"
+        expectedJsonFile="expected\026_03.json"
+        inputJsonFile="input\026_03.json" name="03" outputJsonFile="output\026_03.json"/>
+		
+	
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity"
+        expectedJsonFile="expected\026_05.json"
+        inputJsonFile="input\026_05.json" name="05" outputJsonFile="output\026_05.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/qualitativeStatus/"
+        description="Qual Status"
+        expectedJsonFile="expected\026_09.json"
+        inputJsonFile="input\026_09.json" name="09" outputJsonFile="output\026_09.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="Get Qual Status"
+        expectedJsonFile="expected\026_10.json"
+        inputJsonFile="input\026_10.json" name="10" outputJsonFile="output\026_10.json"/>
+	
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\026_06.json"
+        inputJsonFile="input\026_06.json" name="06" outputJsonFile="output\026_06.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reservations/"
+        description="Reservation Wrapper : SHIPType: TRUCK"
+        expectedJsonFile="expected\026_07.json"
+        inputJsonFile="input\026_07.json" name="07" outputJsonFile="output\026_07.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="Get Qual Status"
+        expectedJsonFile="expected\026_13.json"
+        inputJsonFile="input\026_13.json" name="13" outputJsonFile="output\026_13.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\026_08.json"
+        inputJsonFile="input\026_08.json" name="08" outputJsonFile="output\026_08.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reservations/"
+        description="Reservation Wrapper : Cancel "
+        expectedJsonFile="expected\026_11.json"
+        inputJsonFile="input\026_11.json" name="11" outputJsonFile="output\026_11.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="Get Qual Status"
+        expectedJsonFile="expected\026_14.json"
+        inputJsonFile="input\026_14.json" name="14" outputJsonFile="output\026_14.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread after cancel "
+        expectedJsonFile="expected\026_12.json"
+        inputJsonFile="input\026_12.json" name="12" outputJsonFile="output\026_12.json"/>
+		
+	
+		
+	
+		
+			
+	
+</testsuite>
+-->

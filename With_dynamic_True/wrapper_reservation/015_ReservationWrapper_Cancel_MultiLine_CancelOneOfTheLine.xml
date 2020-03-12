@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify Reservation wrapper: cancel one of the line of multiple lines 
+pre requisite : 2 items, store and qualitativeStatus
+-->
+
+<!-- expected  
+	1. Multiread Before wrapper : ATP = 10, 10
+	2. Combined Qualitative status after Inventiry insert :AL, AL
+	3. Reservation Wrapper (Enterprise multiLine, Qty = 2,2) : should Succeed
+	4. jcp_item_inventory after Wrapper reservation : ATP = 10  
+	5. jcp_item_inventory after Wrapper rsvn cancel (only 1 line) : ATP = 10, 8   
+	
+-->
+<testsuite description="Verify Reservation wrapper: cancel one of the line of multiple lines" name="015">
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/2527/"
+        description="store 1"
+        expectedJsonFile="expected\15\015_01.json"
+        inputJsonFile="input\15\015_01.json" name="01" outputJsonFile="output\15\015_01.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="item1 "
+        expectedJsonFile="expected\15\015_02.json"
+        inputJsonFile="input\15\015_02.json" name="02" outputJsonFile="output\15\015_02.json"/>
+	
+
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory"
+        expectedJsonFile="expected\15\015_03.json"
+        inputJsonFile="input\15\015_03.json" name="03" outputJsonFile="output\15\015_03.json"/>
+		
+	
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity"
+        expectedJsonFile="expected\15\015_05.json"
+        inputJsonFile="input\15\015_05.json" name="05" outputJsonFile="output\15\015_05.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/qualitativeStatus/"
+        description="Qual Status"
+        expectedJsonFile="expected\15\015_09.json"
+        inputJsonFile="input\15\015_09.json" name="09" outputJsonFile="output\15\015_09.json"/>
+		
+		
+		<!--
+		
+	<test apiMethod="GET" apiUrl="/refreshActiveStores/"
+        description="Refresh Active stores"
+        expectedJsonFile="expected\15\015_31.json"
+        name="31" outputJsonFile="output\15\015_31.json"/>
+		
+
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread with update mode"
+        expectedJsonFile="expected\15\015_32.json"
+        inputJsonFile="input\15\015_32.json" name="32" outputJsonFile="output\15\015_32.json"/>		-->
+
+<test apiMethod="delay" delay="10000" description="Delay : 10000 ms" name="100"/>			
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="Get Qual Status"
+        expectedJsonFile="expected\15\015_10.json"
+        inputJsonFile="input\15\015_10.json" name="10" outputJsonFile="output\15\015_10.json"/>
+		
+		<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+        description="jcp_item_inventory item1 : ATP = 10"
+        expectedJsonFile="expected\15\015_16.json"
+        inputJsonFile="input\15\015_16.json" name="16" outputJsonFile="output\15\015_16.json"/>
+
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+        description="jcp_item_inventory item2 : ATP = 10"
+        expectedJsonFile="expected\15\015_17.json"
+        inputJsonFile="input\15\015_17.json" name="17" outputJsonFile="output\15\015_17.json"/>
+	
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\15\015_06.json"
+        inputJsonFile="input\15\015_06.json" name="06" outputJsonFile="output\15\015_06.json"/>  
+		
+	<test apiMethod="POST" apiUrl="/reservations/"
+        description="Reservation Wrapper : Create"
+        expectedJsonFile="expected\15\015_07.json"
+        inputJsonFile="input\15\015_07.json" name="07" outputJsonFile="output\15\015_07.json"/>
+		
+<test apiMethod="delay" delay="1000" description="Delay : 1000 ms" name="100"/>	
+
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+        description="jcp_item_inventory item1 : ATP = 8"
+        expectedJsonFile="expected\15\015_18.json"
+        inputJsonFile="input\15\015_18.json" name="18" outputJsonFile="output\15\015_18.json"/>
+
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+        description="jcp_item_inventory item2 : ATP = 8"
+        expectedJsonFile="expected\15\015_19.json"
+        inputJsonFile="input\15\015_19.json" name="19" outputJsonFile="output\15\015_19.json"/>
+		                                                    
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\15\015_08.json"
+        inputJsonFile="input\15\015_08.json" name="08" outputJsonFile="output\15\015_08.json"/>  
+		
+	<test apiMethod="POST" apiUrl="/reservations/"
+        description="Reservation Wrapper : Cancel one line"
+        expectedJsonFile="expected\15\015_11.json"
+        inputJsonFile="input\15\015_11.json" name="11" outputJsonFile="output\15\015_11.json"/>
+		
+<test apiMethod="delay" delay="1000" description="Delay : 1000 ms" name="100"/>	
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread after cancel"
+        expectedJsonFile="expected\15\015_12.json"
+        inputJsonFile="input\15\015_12.json" name="12" outputJsonFile="output\15\015_12.json"/>  
+	
+	
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+        description="jcp_item_inventory item1 : ATP = 10"
+        expectedJsonFile="expected\15\015_20.json"
+        inputJsonFile="input\15\015_20.json" name="20" outputJsonFile="output\15\015_20.json"/>
+
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+        description="jcp_item_inventory item2 : ATP = 8"
+        expectedJsonFile="expected\15\015_21.json"
+        inputJsonFile="input\15\015_21.json" name="21" outputJsonFile="output\15\015_21.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reservations/"
+        description="Reservation Wrapper : Cancel one line"
+        expectedJsonFile="expected\15\015_31.json"
+        inputJsonFile="input\15\015_31.json" name="31" outputJsonFile="output\15\015_31.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+        description="jcp_item_inventory item1 : ATP = 10"
+        expectedJsonFile="expected\15\015_22.json"
+        inputJsonFile="input\15\015_22.json" name="22" outputJsonFile="output\15\015_22.json"/>
+
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+        description="jcp_item_inventory item2 : ATP = 8"
+        expectedJsonFile="expected\15\015_23.json"
+        inputJsonFile="input\15\015_23.json" name="23" outputJsonFile="output\15\015_23.json"/>
+		
+</testsuite>

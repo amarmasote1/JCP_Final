@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>		 
+<!-- Verify item delete :  Sku level exclusion and node control added
+      1. item1 - node control and exclusion applied to same store
+
+ForceDelete Flag = Y
+-->
+
+<testsuite description="Verify item delete :  Sku level exclusion and node control added
+      1. item1 - node control and exclusion applied to same store
+	  
+
+ForceDelete Flag = Y"    name="014">
+
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item insert : 1 item"
+        expectedJsonFile="expected\014_01.json"
+        inputJsonFile="input\014_01.json" name="01" outputJsonFile="output\014_01.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2930/"
+        description="store1"
+        expectedJsonFile="expected\014_02.json"
+        inputJsonFile="input\014_02.json" name="02" outputJsonFile="output\014_02.json"/>
+		
+		
+		
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="create inventory"
+        expectedJsonFile="expected\014_04.json"
+        inputJsonFile="input\014_04.json" name="04" outputJsonFile="output\014_04.json"/>
+
+		
+	
+		
+		
+    <test apiMethod="POST" apiUrl="/master/itemExclusion/" 
+		description="Sku level exclusion for item1-store1"
+        expectedJsonFile="expected\014_05.json"
+        inputJsonFile="input\014_05.json" name="05" outputJsonFile="output\014_05.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/nodeControl/JCP/" 
+		description="Node control : for item-store1"
+        expectedJsonFile="expected\014_06.json"
+        inputJsonFile="input\014_06.json" name="06" outputJsonFile="output\014_06.json"/>
+		
+		
+	<!-- jcp_item map GET-->
+	
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item/" 
+		description="Get map value : item1 "
+        expectedJsonFile="expected\014_20.json"
+         inputJsonFile="input\014_20.json" name="20" outputJsonFile="output\014_20.json"/>
+
+	<!-- jcp_item_inventory	map GET-->
+			
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/" 
+		description="Get map value : item1 "
+        expectedJsonFile="expected\014_26.json"
+        inputJsonFile="input\014_26.json" name="26" outputJsonFile="output\014_26.json"/>
+		
+	<!-- jcp_dirty_stores	map GET-->
+	
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_dirty_stores/" 
+		description="Data"
+        expectedJsonFile="expected\014_65.json"
+        inputJsonFile="input\014_65.json" name="65" outputJsonFile="output\014_65.json"/>
+		
+	
+	<!-- jcp_exclusion_map	map GET-->
+	
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_exclusion_map/" 
+		description="entries should be present "
+        expectedJsonFile="expected\014_60.json"
+        inputJsonFile="input\014_60.json" name="60" outputJsonFile="output\014_60.json"/>
+		
+		
+		
+		
+
+	<test apiMethod="DELETE" apiUrl="/master/itemDetails/JCP/" 
+		description="Item delete : single item"
+        expectedJsonFile="expected\014_08.json"
+        inputJsonFile="input\014_08.json" name="08" outputJsonFile="output\014_08.json"/>
+
+		
+	
+	<!-- jcp_item map GET-->	
+	
+	
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item/" 
+		description="Get map value : item1 "
+        expectedJsonFile="expected\014_40.json"
+         inputJsonFile="input\014_40.json" name="40" outputJsonFile="output\014_40.json"/>
+		 
+	<!-- jcp_item_inventory	map GET-->
+			
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/" 
+		description="Get map value : item1 "
+        expectedJsonFile="expected\014_46.json"
+        inputJsonFile="input\014_46.json" name="46" outputJsonFile="output\014_46.json"/>
+		
+	<!-- jcp_dirty_stores	map GET-->
+	
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_dirty_stores/" 
+		description="Data"
+        expectedJsonFile="expected\014_66.json"
+        inputJsonFile="input\014_66.json" name="66" outputJsonFile="output\014_66.json"/>
+		
+	
+	<!-- jcp_exclusion_map	map GET-->
+	
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_exclusion_map/" 
+		description="entries should not be present "
+        expectedJsonFile="expected\014_61.json"
+        inputJsonFile="input\014_61.json" name="61" outputJsonFile="output\014_61.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/master/itemExclusion/" 
+		description="Sku level exclusion for item1-store1"
+        expectedJsonFile="expected\014_05_1.json"
+        inputJsonFile="input\014_05_1.json" name="05_1" outputJsonFile="output\014_05_1.json"/>
+		
+		
+</testsuite>

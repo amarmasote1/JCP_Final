@@ -1,0 +1,14 @@
+[
+{
+"itemId":"17112345007",
+    "qualitativeStatus":"BO",
+   "firstFutureAvailableDate":"2018-12-08T00:00:00-04:00",
+    "onHandAvlQty":0,
+    "futureAvlQty":5,
+    "factoryShipLeadTimeQty":0,
+    "factoryShipLeadTimeUOM":"",
+    "factoryShipInventoryIndicator":"N",
+    "whseClass":"A"
+
+}
+]

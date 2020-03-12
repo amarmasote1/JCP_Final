@@ -1,0 +1,15 @@
+[
+  {
+    "storeID": "2048",
+    "itemID": "68627571012",
+    "uom": "EACH",
+    "supplyData": {
+      "onhandsupply": 2
+    },
+    "demandData": {
+        "reserveddemand": 0
+      },
+    "timestamp": "2019-07-12 12:22:44.0000 IST"
+    
+  }
+]

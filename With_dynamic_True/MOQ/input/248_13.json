@@ -1,0 +1,27 @@
+[
+{
+  "storeId": "1128",
+  "exclusionIndi": "S",
+  "productLine": "296",
+  "removeExclusion": "Y",
+  "lotNumber": "2961234"
+}, {
+  "storeId": "1128",
+  "exclusionIndi": "P",
+  "productLine": "296",
+  "removeExclusion": "Y",
+  "lotNumber": "2961234"
+},
+{
+  "storeId": "1130",
+  "exclusionIndi": "S",
+  "productLine": "296",
+  "removeExclusion": "Y",
+  "lotNumber": "2961234"
+}, {
+  "storeId": "1130",
+  "exclusionIndi": "P",
+  "productLine": "296",
+  "removeExclusion": "Y",
+  "lotNumber": "2961234"
+}]

@@ -1,0 +1,8 @@
+{
+    "warnings": [],
+    "message": "Mandatory parameter fromDate/toDate or date is missing",
+    "nodeType": null,
+    "body": null,
+    "key": null,
+    "status": 400
+}

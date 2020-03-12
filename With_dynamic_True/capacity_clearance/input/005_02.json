@@ -1,0 +1,10 @@
+[
+  {
+    "storeID": "1963",
+    "capacityUnitOfMeasure": "RELEASE",
+    "standardCapacity": "10",
+    "clearanceCapacityPercentage": "2",
+    "date": "<$today>",
+    "capacityOrganizationCode": "JCP"
+  }
+]

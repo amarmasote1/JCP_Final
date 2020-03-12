@@ -1,0 +1,32 @@
+{
+    "message": "Problems Found",
+    "body": {
+        "enterpriseCode": "00001",
+        "reservation": [
+            {
+                "bundleParentLineId": "",
+                "kitQty": "",
+                "priorityNode": null,
+                "itemReservationStatus": "RS",
+                "reservedQty": 0,
+                "requestLine": {
+                    "itemID": null,
+                    "uom": null,
+                    "reservationID": null,
+                   
+                    "procurementAllowed": null,
+                    "qty": "0",
+                    "increaseCapacity": false,
+                    "channel": null,
+                    "lineID": null,
+                    "storeId": null,
+                    "nodeType": null
+                },
+                "error": null,
+                "problemType": "NO_AVAILABILITY"
+            }
+        ],
+        "allocationRuleID": "RES_INTRV"
+    },
+    "status": 350
+}

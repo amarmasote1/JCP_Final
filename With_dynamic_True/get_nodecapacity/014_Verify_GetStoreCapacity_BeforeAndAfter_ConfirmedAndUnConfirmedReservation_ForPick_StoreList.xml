@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify Get StoreCapacity Before and after Confirmed and Unconfirmed reservation for Pick
+-->
+
+
+<!--Expected
+
+1. Before reservation,  GetCapacity output : should contain all the stores and overall capacity should be some of capacities (std and avail seperately) across all the stores. TotalStd Capacity = 30, TotalAvail Capacity = 30.
+2. After Confirmed reservation, Get Capacity output : should contain all the stores and overall capacity should be some of capacities (std and avail seperately) across all the stores. TotalStd Capacity = 30, TotalAvail Capacity = 30.
+3. After Unconfirmed bopus Reservation, Get Capacity output : should contain all the stores and overall capacity should be some of capacities (std and avail seperately) across all the stores. TotalStd Capacity = 30, TotalAvail Capacity = 30.
+
+-->
+
+
+<testsuite description="Verify Get StoreCapacity Before and after Confirmed and Unconfirmed reservation for pick : With DG Store List" name="014">
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details : only 1 item"
+        expectedJsonFile="expected\014_01.json"
+        inputJsonFile="input\014_01.json" name="01" outputJsonFile="output\014_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/2153/" 
+		description="Insert node 1"
+        expectedJsonFile="expected\014_02.json"
+        inputJsonFile="input\014_02.json" name="02" outputJsonFile="output\014_02.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2159/" 
+		description="Insert node 2"
+        expectedJsonFile="expected\014_03.json"
+        inputJsonFile="input\014_03.json" name="03" outputJsonFile="output\014_03.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2160/" 
+		description="Insert node 3"
+        expectedJsonFile="expected\014_04.json"
+        inputJsonFile="input\014_04.json" name="04" outputJsonFile="output\014_04.json"/>
+		
+	 
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory in all the stores : qty = 100 in each store"
+        expectedJsonFile="expected\014_05.json"
+        inputJsonFile="input\014_05.json" name="05" outputJsonFile="output\014_05.json"/>
+		
+	
+	
+<!--	<test apiMethod="POST" apiUrl="/master/distributionrule/"
+        description="Distribution group : Add all"
+        expectedJsonFile="expected\014_06.json"
+        inputJsonFile="input\014_06.json" name="06" outputJsonFile="output\014_06.json"/>
+-->	
+	
+	
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node capacity : Avail Capacity = 10 in each store"
+        expectedJsonFile="expected\014_07.json"
+        inputJsonFile="input\014_07.json" name="07" outputJsonFile="output\014_07.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/"
+        description="Get Store Capacity : TotalStd Capacity = 30, TotalAvail Capacity = 30."
+        expectedJsonFile="expected\014_08.json"
+        inputJsonFile="input\014_08.json" name="08" outputJsonFile="output\014_08.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Confirmed Reservation for pick"
+        expectedJsonFile="expected\014_09.json"
+        inputJsonFile="input\014_09.json" name="09" outputJsonFile="output\014_09.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/"
+        description="Get Store Capacity after Confirmed Reservation: TotalStd Capacity = 30, TotalAvail Capacity = 30."
+        expectedJsonFile="expected\014_10.json"
+        inputJsonFile="input\014_10.json" name="10" outputJsonFile="output\014_10.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/2/N/"
+        description="UnConfirmed Reservation for pick"
+        expectedJsonFile="expected\014_11.json"
+        inputJsonFile="input\014_11.json" name="11" outputJsonFile="output\014_11.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/"
+        description="Get Store Capacity after UnConfirmed Reservation : TotalStd Capacity = 30, TotalAvail Capacity = 30."
+        expectedJsonFile="expected\014_12.json"
+        inputJsonFile="input\014_12.json" name="12" outputJsonFile="output\014_12.json"/>
+		
+	
+	
+    
+</testsuite>

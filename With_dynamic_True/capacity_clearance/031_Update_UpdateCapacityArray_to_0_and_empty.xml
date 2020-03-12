@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>		 
+<!-- Verify
+			Capacity, when capacity array is updated 0 and empty
+-->
+
+<testsuite description="Capacity, when capacity array is updated to 0 and empty" name="031">
+
+    
+   <test apiMethod="POST" apiUrl="/master/node/JCP/2021/" 
+		description="Insert node 1"
+        expectedJsonFile="expected\031_01.json"
+        inputJsonFile="input\031_01.json" name="01" outputJsonFile="output\031_01.json"/>
+
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="Insert clearance capacity "
+        expectedJsonFile="expected\031_02.json"
+        inputJsonFile="input\031_02.json" name="02" outputJsonFile="output\031_02.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+		description="Get Capacity : "
+        expectedJsonFile="expected\031_03.json"
+        inputJsonFile="input\031_03.json" name="03" outputJsonFile="output\031_03.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="Insert clearance capacity "
+        expectedJsonFile="expected\031_04.json"
+        inputJsonFile="input\031_04.json" name="04" outputJsonFile="output\031_04.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+		description="Get Capacity : "
+        expectedJsonFile="expected\031_05.json"
+        inputJsonFile="input\031_05.json" name="05" outputJsonFile="output\031_05.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+		description="Get Capacity : "
+        expectedJsonFile="expected\031_07.json"
+        inputJsonFile="input\031_07.json" name="07" outputJsonFile="output\031_07.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+		description="Get Capacity :"
+        expectedJsonFile="expected\031_08.json"
+        inputJsonFile="input\031_08.json" name="08" outputJsonFile="output\031_08.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+		description="Get Capacity : "
+        expectedJsonFile="expected\031_09.json"
+        inputJsonFile="input\031_09.json" name="09" outputJsonFile="output\031_09.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+		description="Get Capacity :  day"
+        expectedJsonFile="expected\031_10.json"
+        inputJsonFile="input\031_10.json" name="10" outputJsonFile="output\031_10.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+		description="Get Capacity : "
+        expectedJsonFile="expected\031_11.json"
+        inputJsonFile="input\031_11.json" name="11" outputJsonFile="output\031_11.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+		description="Get Capacity :  day"
+        expectedJsonFile="expected\031_12.json"
+        inputJsonFile="input\031_12.json" name="12" outputJsonFile="output\031_12.json"/>
+		
+	
+	
+</testsuite>

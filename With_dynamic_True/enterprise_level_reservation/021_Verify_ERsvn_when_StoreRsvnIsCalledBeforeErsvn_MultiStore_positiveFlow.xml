@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify  enterprise level reservation  : when Store level reservation is called before enterprise level reservation, positive flow
+
+stores: store1 and store2
+AvailQty : 10 and 90 
+Store Rsvn : 10
+Ent Rsvn : 90
+-->
+
+<!-- Expected
+1. Multiread Before StoreLevel reservation : ATP (Ship and Bopus) = 10 , Capacity = 10 in store1  and ATP (Ship and Bopus) = 90 , Capacity = 10 in store2
+2. Multiread after StoreLevel reservation(Qty = 10) : ATP (Ship and Bopus) = 0 , Capacity = 9 in store1 and ATP(Ship and Bopus) = 90 , Capacity = 10 in store2
+3. Multiread after Enterprise reservation(Qty = 90) : ATP (Ship and Bopus) = 0, Capacity = 9 in store1 and ATP (Ship and Bopus) = 90 , Capacity = 10 in store2
+		
+-->
+
+<testsuite description="Verify  enterprise level rsvn : when Store level rsvn is called before enterprise level rsvn : Postive Flow, 2 stores, availQty = 50 each, storeRsvn 10, EtpRsvn = 90" name="021">
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details : item 1"
+        expectedJsonFile="expected\021_01.json"
+        inputJsonFile="input\021_01.json" name="01" outputJsonFile="output\021_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/1212/" 
+		description="Insert node 1"
+        expectedJsonFile="expected\021_02.json"
+        inputJsonFile="input\021_02.json" name="02" outputJsonFile="output\021_02.json"/>
+
+   <test apiMethod="POST" apiUrl="/master/node/JCP/1217/" 
+		description="Insert node 2"
+        expectedJsonFile="expected\021_03.json"
+        inputJsonFile="input\021_03.json" name="03" outputJsonFile="output\021_03.json"/>
+ <!--
+    <test apiMethod="POST" apiUrl="/master/node/JCP/1195/" description="Insert node"
+        expectedJsonFile="expected\021_04.json"
+        inputJsonFile="input\021_04.json" name="04" outputJsonFile="output\021_04.json"/>
+		
+	-->
+
+    <test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory Qty = 10 and 90 "
+        expectedJsonFile="expected\021_05.json"
+        inputJsonFile="input\021_05.json" name="05" outputJsonFile="output\021_05.json"/>
+		
+	
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity :  Availalbe Capacity  = 10 in both stores"
+        expectedJsonFile="expected\021_07.json"
+        inputJsonFile="input\021_07.json" name="07" outputJsonFile="output\021_07.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread : ATP = 10 and 90, Availalbe Capacity = 10 and 10"
+        expectedJsonFile="expected\021_08.json"
+        inputJsonFile="input\021_08.json" name="08" outputJsonFile="output\021_08.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Reservation : storeLevel Qty = 10 from store1"
+        expectedJsonFile="expected\021_09.json"
+        inputJsonFile="input\021_09.json" name="09" outputJsonFile="output\021_09.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread after storeLevel reservation : ATP = 0 and 90 , Availalbe Capacity = 9 and 10"
+        expectedJsonFile="expected\021_10.json"
+        inputJsonFile="input\021_10.json" name="10" outputJsonFile="output\021_10.json"/>
+		
+	
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Reservation : EnterpriseLevel : Qty = 90" 
+		expectedJsonFile="expected\021_13.json"
+        inputJsonFile="input\021_13.json" name="13" outputJsonFile="output\021_13.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread after : EnterpriseLevel rsvn :  ATP = 0 and 90 , Availalbe Capacity = 9 and 10"
+        expectedJsonFile="expected\021_14.json"
+        inputJsonFile="input\021_14.json" name="14" outputJsonFile="output\021_14.json"/>
+	
+    
+</testsuite>

@@ -1,0 +1,10 @@
+[
+{
+"storeID":"1923",
+"capacityUnitOfMeasure":"RELEASE",
+"fromDate":"2019-01-20",
+"toDate":"2019-01-26",
+
+"clearanceCapacityOfTheWeek":[10.0,20.0,30.0,40.0,50.0,60.0,70.0]
+}
+]

@@ -1,0 +1,221 @@
+{
+    "body": [
+        {
+            "clearanceCapacityEnabled": true,
+            "message": "feature flag value",
+            "status": 200
+        },
+        {
+            "warnings": null,
+            "message": "Success",
+            "body": {
+                "availableCapacity": 90,
+                "clearanceCapacityPercentage": 30,
+                "consumedClearanceCapacity": 0,
+                "standardCapacity": 90,
+                "availableClearanceCapacity": 27,
+                "consumedTotalCapacity": 0,
+                "capacityUnitOfMeasure": "RELEASE"
+            },
+            "key": "JCP|2258|20200211",
+            "status": 200
+        },
+        {
+            "warnings": null,
+            "message": "Success",
+            "body": {
+                "availableCapacity": 0,
+                "clearanceCapacityPercentage": 40,
+                "consumedClearanceCapacity": 0,
+                "standardCapacity": 0,
+                "availableClearanceCapacity": 0,
+                "consumedTotalCapacity": 0,
+                "capacityUnitOfMeasure": "RELEASE"
+            },
+            "key": "JCP|2258|20200212",
+            "status": 200
+        },
+        {
+            "warnings": null,
+            "message": "Success",
+            "body": {
+                "availableCapacity": 100,
+                "clearanceCapacityPercentage": 20,
+                "consumedClearanceCapacity": 0,
+                "standardCapacity": 100,
+                "availableClearanceCapacity": 20,
+                "consumedTotalCapacity": 0,
+                "capacityUnitOfMeasure": "RELEASE"
+            },
+            "key": "JCP|2258|20200210",
+            "status": 200
+        },
+        {
+            "warnings": null,
+            "message": "Success",
+            "body": {
+                "availableCapacity": 0,
+                "clearanceCapacityPercentage": 70,
+                "consumedClearanceCapacity": 0,
+                "standardCapacity": 0,
+                "availableClearanceCapacity": 0,
+                "consumedTotalCapacity": 0,
+                "capacityUnitOfMeasure": "RELEASE"
+            },
+            "key": "JCP|2258|20200215",
+            "status": 200
+        },
+        {
+            "warnings": null,
+            "message": "Success",
+            "body": {
+                "availableCapacity": 0,
+                "clearanceCapacityPercentage": 10,
+                "consumedClearanceCapacity": 0,
+                "standardCapacity": 0,
+                "availableClearanceCapacity": 0,
+                "consumedTotalCapacity": 0,
+                "capacityUnitOfMeasure": "RELEASE"
+            },
+            "key": "JCP|2258|20200216",
+            "status": 200
+        },
+        {
+            "warnings": null,
+            "message": "Success",
+            "body": {
+                "availableCapacity": 0,
+                "clearanceCapacityPercentage": 50,
+                "consumedClearanceCapacity": 0,
+                "standardCapacity": 0,
+                "availableClearanceCapacity": 0,
+                "consumedTotalCapacity": 0,
+                "capacityUnitOfMeasure": "RELEASE"
+            },
+            "key": "JCP|2258|20200213",
+            "status": 200
+        },
+        {
+            "warnings": null,
+            "message": "Success",
+            "body": {
+                "availableCapacity": 0,
+                "clearanceCapacityPercentage": 60,
+                "consumedClearanceCapacity": 0,
+                "standardCapacity": 0,
+                "availableClearanceCapacity": 0,
+                "consumedTotalCapacity": 0,
+                "capacityUnitOfMeasure": "RELEASE"
+            },
+            "key": "JCP|2258|20200214",
+            "status": 200
+        },
+        {
+            "warnings": null,
+            "message": "Success",
+            "body": {
+                "availableCapacity": 100,
+                "clearanceCapacityPercentage": 10,
+                "consumedClearanceCapacity": 0,
+                "standardCapacity": 100,
+                "availableClearanceCapacity": 10,
+                "consumedTotalCapacity": 0,
+                "capacityUnitOfMeasure": "RELEASE"
+            },
+            "key": "JCP|2257|20200216",
+            "status": 200
+        },
+        {
+            "warnings": null,
+            "message": "Success",
+            "body": {
+                "availableCapacity": 200,
+                "clearanceCapacityPercentage": 20,
+                "consumedClearanceCapacity": 0,
+                "standardCapacity": 200,
+                "availableClearanceCapacity": 40,
+                "consumedTotalCapacity": 0,
+                "capacityUnitOfMeasure": "RELEASE"
+            },
+            "key": "JCP|2257|20200210",
+            "status": 200
+        },
+        {
+            "warnings": null,
+            "message": "Success",
+            "body": {
+                "availableCapacity": 300,
+                "clearanceCapacityPercentage": 30,
+                "consumedClearanceCapacity": 0,
+                "standardCapacity": 300,
+                "availableClearanceCapacity": 90,
+                "consumedTotalCapacity": 0,
+                "capacityUnitOfMeasure": "RELEASE"
+            },
+            "key": "JCP|2257|20200211",
+            "status": 200
+        },
+        {
+            "warnings": null,
+            "message": "Success",
+            "body": {
+                "availableCapacity": 400,
+                "clearanceCapacityPercentage": 40,
+                "consumedClearanceCapacity": 0,
+                "standardCapacity": 400,
+                "availableClearanceCapacity": 160,
+                "consumedTotalCapacity": 0,
+                "capacityUnitOfMeasure": "RELEASE"
+            },
+            "key": "JCP|2257|20200212",
+            "status": 200
+        },
+        {
+            "warnings": null,
+            "message": "Success",
+            "body": {
+                "availableCapacity": 500,
+                "clearanceCapacityPercentage": 50,
+                "consumedClearanceCapacity": 0,
+                "standardCapacity": 500,
+                "availableClearanceCapacity": 250,
+                "consumedTotalCapacity": 0,
+                "capacityUnitOfMeasure": "RELEASE"
+            },
+            "key": "JCP|2257|20200213",
+            "status": 200
+        },
+        {
+            "warnings": null,
+            "message": "Success",
+            "body": {
+                "availableCapacity": 600,
+                "clearanceCapacityPercentage": 60,
+                "consumedClearanceCapacity": 0,
+                "standardCapacity": 600,
+                "availableClearanceCapacity": 360,
+                "consumedTotalCapacity": 0,
+                "capacityUnitOfMeasure": "RELEASE"
+            },
+            "key": "JCP|2257|20200214",
+            "status": 200
+        },
+        {
+            "warnings": null,
+            "message": "Success",
+            "body": {
+                "availableCapacity": 700,
+                "clearanceCapacityPercentage": 70,
+                "consumedClearanceCapacity": 0,
+                "standardCapacity": 700,
+                "availableClearanceCapacity": 490,
+                "consumedTotalCapacity": 0,
+                "capacityUnitOfMeasure": "RELEASE"
+            },
+            "key": "JCP|2257|20200215",
+            "status": 200
+        }
+    ],
+    "message": "Successful",
+    "status": 221
+}

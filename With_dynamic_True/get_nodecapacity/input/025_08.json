@@ -1,0 +1,8 @@
+
+
+{
+     "fromDate": "<$today>",
+	 "toDate": "<$today>",
+     "storeIDs" : ["2237", "2238", "2239", "2240"]
+     
+}

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify Get capacity for validations
+-->
+
+<!--Expected
+		 1. Both toDate/fromDdate and Date are missing
+         2. Both toDate/fromDate and Date are present
+         3. toDate is missing
+         4. fromDate is missing      
+-->
+
+
+<testsuite description="Verify Get capacity for validations" name="020">
+
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details : insert only 1 item"
+        expectedJsonFile="expected\020_01.json"
+        inputJsonFile="input\020_01.json" name="01" outputJsonFile="output\020_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/2203/" 
+		description="Insert node 1"
+        expectedJsonFile="expected\020_02.json"
+        inputJsonFile="input\020_02.json" name="02" outputJsonFile="output\020_02.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2204/" 
+		description="Insert node 2"
+        expectedJsonFile="expected\020_03.json"
+        inputJsonFile="input\020_03.json" name="03" outputJsonFile="output\020_03.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2207/" 
+		description="Node 3"
+        expectedJsonFile="expected\020_04.json"
+        inputJsonFile="input\020_04.json" name="04" outputJsonFile="output\020_04.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2209/" 
+		description="Node 4"
+        expectedJsonFile="expected\020_05.json"
+        inputJsonFile="input\020_05.json" name="05" outputJsonFile="output\020_05.json"/>
+		
+	
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Insert capacity for all the stores"
+        expectedJsonFile="expected\020_06.json"
+        inputJsonFile="input\020_06.json" name="06" outputJsonFile="output\020_06.json"/>
+	
+	
+	
+	 
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory in all the stores : qty = 100 in each store"
+        expectedJsonFile="expected\020_09.json"
+        inputJsonFile="input\020_09.json" name="09" outputJsonFile="output\020_09.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/"
+        description="Both toDate/fromDate and Date are missing"
+        expectedJsonFile="expected\020_10.json"
+        inputJsonFile="input\020_10.json" name="10" outputJsonFile="output\020_10.json"/>
+				
+	<!--<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/"
+        description="Both toDate/fromDate and Date are present"
+        expectedJsonFile="expected\020_12.json"
+        inputJsonFile="input\020_12.json" name="12" outputJsonFile="output\020_12.json"/>		-->
+		
+	<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/"
+        description="toDate is missing"
+        expectedJsonFile="expected\020_14.json"
+        inputJsonFile="input\020_14.json" name="14" outputJsonFile="output\020_14.json"/>
+			
+	<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/"
+        description="fromDate is missing"
+        expectedJsonFile="expected\020_16.json"
+        inputJsonFile="input\020_16.json" name="16" outputJsonFile="output\020_16.json"/>
+		
+    
+</testsuite>

@@ -1,0 +1,17 @@
+{
+	"body": [{
+		"status": 200,
+		"message": "Success",
+		"key": "",
+		"body": {
+			"overallCapacity": [{
+				"capacityUnitOfMeasure": "RELEASE",
+				"totalStandardCapacity": 0,
+				"totalAvailableCapacity": 0
+			}]
+		},
+		"warnings": null
+	}],
+	"status": 221,
+	"message": "Successful"
+}

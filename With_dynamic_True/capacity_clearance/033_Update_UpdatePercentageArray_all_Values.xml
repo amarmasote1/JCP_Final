@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>		 
+<!-- Verify
+			Capacity, when percentage array is updated for all values
+-->
+
+<testsuite description="Capacity, when percentage array is updated for all values" name="033">
+
+    
+   <test apiMethod="POST" apiUrl="/master/node/JCP/2024/" 
+		description="Insert node 1"
+        expectedJsonFile="expected\033_01.json"
+        inputJsonFile="input\033_01.json" name="01" outputJsonFile="output\033_01.json"/>
+
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="Insert clearance capacity "
+        expectedJsonFile="expected\033_02.json"
+        inputJsonFile="input\033_02.json" name="02" outputJsonFile="output\033_02.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+		description="Get Capacity : "
+        expectedJsonFile="expected\033_03.json"
+        inputJsonFile="input\033_03.json" name="03" outputJsonFile="output\033_03.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="Insert clearance capacity "
+        expectedJsonFile="expected\033_04.json"
+        inputJsonFile="input\033_04.json" name="04" outputJsonFile="output\033_04.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+		description="Get Capacity : today"
+        expectedJsonFile="expected\033_05.json"
+        inputJsonFile="input\033_05.json" name="05" outputJsonFile="output\033_05.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+		description="Get Capacity : tomorrow or 2nd day"
+        expectedJsonFile="expected\033_06.json"
+        inputJsonFile="input\033_06.json" name="06" outputJsonFile="output\033_06.json"/>
+	
+	
+	
+</testsuite>

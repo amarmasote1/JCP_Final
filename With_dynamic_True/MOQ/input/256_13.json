@@ -1,0 +1,18 @@
+[{
+
+		"storeId": "2357",
+		"shutdownIndi": "P",
+		"storeShutdown": "N",
+			"startDate": "2019-05-28 00:50:00.0391 CST",
+        "endDate": "2020-05-28 23:36:00.0391 CST"
+
+	}, {
+
+		"storeId": "2357",
+		"shutdownIndi": "S",
+		"storeShutdown": "N",
+			"startDate": "2019-05-28 00:50:00.0391 CST",
+        "endDate": "2020-05-28 23:36:00.0391 CST"
+
+	}
+]

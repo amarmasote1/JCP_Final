@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify MOQ when shut down is applied and removed for single store
+		item is present in 2 stores.  storeID      ATP
+										2343		10								
+-->
+
+<!-- expected  
+				MOQ before dirty node : 10
+			1.	shut down Applied
+				MOQ after dirty node  : 0
+			2.	shut down removed 
+				MOQ after dirty node  : 10			
+-->
+
+<testsuite description="Verify MOQ when shut down is applied and removed for single store" name="255">
+		
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="items: 1 "
+        expectedJsonFile="expected\255_01.json"
+        inputJsonFile="input\255_01.json" name="01" outputJsonFile="output\255_01.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2343/"
+        description="store 1"
+        expectedJsonFile="expected\255_02.json"
+        inputJsonFile="input\255_02.json" name="02" outputJsonFile="output\255_02.json"/>
+	
+		
+		
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="Create inventory "
+        expectedJsonFile="expected\255_03.json"
+        inputJsonFile="input\255_03.json" name="03" outputJsonFile="output\255_03.json"/>
+	
+
+
+	
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity: Available Capacity = 8"
+        expectedJsonFile="expected\255_05.json"
+        inputJsonFile="input\255_05.json" name="05" outputJsonFile="output\255_05.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread: shipATP and BopusATP  10"
+        expectedJsonFile="expected\255_06.json"
+        inputJsonFile="input\255_06.json" name="06" outputJsonFile="output\255_06.json"/>
+		
+
+
+	
+	<test apiMethod="POST" apiUrl="/master/qualitativeStatus/"
+        description="insert qual status : AL"
+        expectedJsonFile="expected\255_07.json"
+        inputJsonFile="input\255_07.json" name="07" outputJsonFile="output\255_07.json"/>
+		
+<test apiMethod="delay" delay="10000" description="Delay after Exclusion : 10000 ms" name="100"/>
+
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="get Qual status: check for MOQ"
+        expectedJsonFile="expected\255_08.json"
+        inputJsonFile="input\255_08.json" name="8" outputJsonFile="output\255_08.json"/>
+		
+		
+		
+		
+	<test apiMethod="POST" apiUrl="/master/storeShutdown/"
+        description="Apply shut down"
+        expectedJsonFile="expected\255_09.json"
+        inputJsonFile="input\255_09.json" name="09" outputJsonFile="output\255_09.json"/>
+		
+<test apiMethod="delay" delay="10000" description="Delay after Exclusion : 10000 ms" name="100"/>
+
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="get Qual status: check for MOQ"
+        expectedJsonFile="expected\255_10.json"
+        inputJsonFile="input\255_10.json" name="10" outputJsonFile="output\255_10.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/storeShutdown/"
+        description="remove shut down"
+        expectedJsonFile="expected\255_11.json"
+        inputJsonFile="input\255_11.json" name="11" outputJsonFile="output\255_11.json"/>
+		
+<test apiMethod="delay" delay="20000" description="Delay after Exclusion : 20000 ms" name="100"/>
+
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="get Qual status: check for MOQ"
+        expectedJsonFile="expected\255_12.json"
+        inputJsonFile="input\255_12.json" name="12" outputJsonFile="output\255_12.json"/>
+		
+	
+	
+</testsuite>
+
+
+
+

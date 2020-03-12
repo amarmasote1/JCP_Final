@@ -1,0 +1,16 @@
+{
+  "countryCode": "US",
+  "zipCode": "34507",
+  "longitude": "56.0",
+  "region":"WN", 
+  "state":"WA",
+  "latitude": "76.0",
+  "nodeName": "2976",
+  "nodeProcessingTime": 0,
+  "timeZone": "en_US_CST",
+  "nodeType": "Store",
+  "shippable": "true",
+  "bopus": "true",
+  "cutOffTime": "23:30:00",
+  "locationActive": true
+}

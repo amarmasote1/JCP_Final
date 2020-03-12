@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>		 
+<!-- Verify
+			Capacity, when standard capacity is updated
+-->
+
+<testsuite description="Capacity, when standard capacity is updated" name="014">
+
+    
+   <test apiMethod="POST" apiUrl="/master/node/JCP/1981/" 
+		description="Insert node 1"
+        expectedJsonFile="expected\014_01.json"
+        inputJsonFile="input\014_01.json" name="01" outputJsonFile="output\014_01.json"/>
+
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="Insert clearance capacity "
+        expectedJsonFile="expected\014_02.json"
+        inputJsonFile="input\014_02.json" name="02" outputJsonFile="output\014_02.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+		description="Get Capacity : "
+        expectedJsonFile="expected\014_03.json"
+        inputJsonFile="input\014_03.json" name="03" outputJsonFile="output\014_03.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="Insert clearance capacity : capacity update "
+        expectedJsonFile="expected\014_04.json"
+        inputJsonFile="input\014_04.json" name="04" outputJsonFile="output\014_04.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+		description="Get Capacity : get updated standard capacity"
+        expectedJsonFile="expected\014_05.json"
+        inputJsonFile="input\014_05.json" name="05" outputJsonFile="output\014_05.json"/>
+		
+		
+		
+		
+	 <test apiMethod="POST" apiUrl="/master/node/JCP/1982/" 
+		description="Insert node 2"
+        expectedJsonFile="expected\014_06.json"
+        inputJsonFile="input\014_06.json" name="06" outputJsonFile="output\014_06.json"/>
+
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="Insert clearance capacity for tomorrow"
+        expectedJsonFile="expected\014_07.json"
+        inputJsonFile="input\014_07.json" name="07" outputJsonFile="output\014_07.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+		description="Get Capacity : "
+        expectedJsonFile="expected\014_08.json"
+        inputJsonFile="input\014_08.json" name="08" outputJsonFile="output\014_08.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="Insert clearance capacity : capacity update for tomorrow"
+        expectedJsonFile="expected\014_09.json"
+        inputJsonFile="input\014_09.json" name="09" outputJsonFile="output\014_09.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+		description="Get Capacity : get updated standard capacity"
+        expectedJsonFile="expected\014_10.json"
+        inputJsonFile="input\014_10.json" name="10" outputJsonFile="output\014_10.json"/>
+		
+	
+</testsuite>

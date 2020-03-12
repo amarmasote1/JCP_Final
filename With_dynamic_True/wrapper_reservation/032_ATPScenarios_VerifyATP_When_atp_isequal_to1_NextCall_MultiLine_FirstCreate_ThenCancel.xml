@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify create wrapper Reservation  and cancel reservation wrapper when atp = 1, SCENARIO2
+				pre requisite : 1 item, store and qualitativeStatus
+		1. create wrapper reservation for qty = 1;     there was only 1 qty in atp
+		2. in next wrapper reservation call : 	Create another reservation, and	Cancel previous  reservation : MultilIne	
+													
+
+-->
+
+<!-- expected  
+-->
+<testsuite description="Verify create wrapper Reservation  and cancel reservation wrapper when atp = 1 SCENARIO2" name="032">
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/2620/"
+        description="store 1"
+        expectedJsonFile="expected\32\032_01.json"
+        inputJsonFile="input\32\032_01.json" name="01" outputJsonFile="output\32\032_01.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="item1 "
+        expectedJsonFile="expected\32\032_02.json"
+        inputJsonFile="input\32\032_02.json" name="02" outputJsonFile="output\32\032_02.json"/>
+	
+
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory"
+        expectedJsonFile="expected\32\032_03.json"
+        inputJsonFile="input\32\032_03.json" name="03" outputJsonFile="output\32\032_03.json"/>
+		
+	
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity"
+        expectedJsonFile="expected\32\032_05.json"
+        inputJsonFile="input\32\032_05.json" name="05" outputJsonFile="output\32\032_05.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/qualitativeStatus/"
+        description="Qual Status"
+        expectedJsonFile="expected\32\032_09.json"
+        inputJsonFile="input\32\032_09.json" name="09" outputJsonFile="output\32\032_09.json"/>
+		
+		
+		<!--
+	
+	<test apiMethod="GET" apiUrl="/refreshActiveStores/"
+        description="Refresh Active stores"
+        expectedJsonFile="expected\32\032_31.json"
+        name="31" outputJsonFile="output\32\032_31.json"/>
+		
+
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread with update mode"
+        expectedJsonFile="expected\32\032_32.json"
+        inputJsonFile="input\32\032_32.json" name="32" outputJsonFile="output\32\032_32.json"/>	-->
+						
+<test apiMethod="delay" delay="10000" description="Delay : 10000 ms" name="100"/>			
+		
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+        description="jcp_item_inventory item1 "
+        expectedJsonFile="expected\32\032_17.json"
+        inputJsonFile="input\32\032_17.json" name="17" outputJsonFile="output\32\032_17.json"/>
+			
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="Get Qual Status"
+        expectedJsonFile="expected\32\032_10.json"
+        inputJsonFile="input\32\032_10.json" name="10" outputJsonFile="output\32\032_10.json"/>
+	
+		
+
+		
+	<test apiMethod="POST" apiUrl="/reservations/"
+        description="Reservation Wrapper : Create with PARCEL"
+        expectedJsonFile="expected\32\032_07.json"
+        inputJsonFile="input\32\032_07.json" name="07" outputJsonFile="output\32\032_07.json"/>
+		
+<test apiMethod="delay" delay="1000" description="Delay : 1000 ms" name="100"/>		
+		
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+        description="jcp_item_inventory item"
+        expectedJsonFile="expected\32\032_18.json"
+        inputJsonFile="input\32\032_18.json" name="18" outputJsonFile="output\32\032_18.json"/>
+		
+		
+		
+	<test apiMethod="POST" apiUrl="/reservations/"
+        description="Reservation Wrapper :  Multiline, 1st line create another reservation, 2nd line cancel reservation generated in previous step"
+        expectedJsonFile="expected\32\032_11.json"
+        inputJsonFile="input\32\032_11.json" name="11" outputJsonFile="output\32\032_11.json"/>
+		
+<test apiMethod="delay" delay="1000" description="Delay : 1000 ms" name="100"/>	
+	
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+        description="jcp_item_inventory item"
+        expectedJsonFile="expected\32\032_19.json"
+        inputJsonFile="input\32\032_19.json" name="19" outputJsonFile="output\32\032_19.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="Get Qual Status"
+        expectedJsonFile="expected\32\032_20.json"
+        inputJsonFile="input\32\032_20.json" name="20" outputJsonFile="output\32\032_20.json"/>
+		
+		
+		
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_reservation_map/"
+					description="1st reservation"
+					expectedJsonFile="expected\32\032_30.json"
+					inputJsonFile="input\32\032_30.json" name="30" outputJsonFile="output\32\032_30.json"/>
+		
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_reservation_map/"
+					description="2nd reservation"
+					expectedJsonFile="expected\32\032_31.json"
+					inputJsonFile="input\32\032_31.json" name="31" outputJsonFile="output\32\032_31.json"/>
+	
+</testsuite>

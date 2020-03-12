@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify Get StoreCapacity when there are multiple stores and All of them are added to StoreList.
+	
+-->
+<!--Expected
+
+1.  GetCapacity output : should contain all the stores and overall capacity should be some of capacities (std and avail seperately) across all the stores.
+	Total std capacity = 30, Total Avail capacity = 30.
+
+-->
+
+
+
+<testsuite description="Verify Get StoreCapacity when there are multiple stores and All of them are added to StoreList." name="008">
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details : only 1 item"
+        expectedJsonFile="expected\008_01.json"
+        inputJsonFile="input\008_01.json" name="01" outputJsonFile="output\008_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/2105/" 
+		description="Insert node 1"
+        expectedJsonFile="expected\008_02.json"
+        inputJsonFile="input\008_02.json" name="02" outputJsonFile="output\008_02.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2108/" 
+		description="Insert node 2"
+        expectedJsonFile="expected\008_03.json"
+        inputJsonFile="input\008_03.json" name="03" outputJsonFile="output\008_03.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2110/" 
+		description="Insert node 3"
+        expectedJsonFile="expected\008_04.json"
+        inputJsonFile="input\008_04.json" name="04" outputJsonFile="output\008_04.json"/>
+		
+	 
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory in all the stores : qty = 100 in each store"
+        expectedJsonFile="expected\008_05.json"
+        inputJsonFile="input\008_05.json" name="05" outputJsonFile="output\008_05.json"/>
+		
+	
+	
+<!--	<test apiMethod="POST" apiUrl="/master/distributionrule/"
+        description="Distribution group : All 3 stores are added"
+        expectedJsonFile="expected\008_06.json"
+        inputJsonFile="input\008_06.json" name="06" outputJsonFile="output\008_06.json"/>
+-->	
+	
+	
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node capacity : stdCapacity = 10, AvailCapacity = 10 in each store"
+        expectedJsonFile="expected\008_07.json"
+        inputJsonFile="input\008_07.json" name="07" outputJsonFile="output\008_07.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/"
+        description="Get Store Capacity : Total std capacity = 30, Total Avail Capacity = 30"
+        expectedJsonFile="expected\008_08.json"
+        inputJsonFile="input\008_08.json" name="08" outputJsonFile="output\008_08.json"/>
+		
+	
+	
+    
+</testsuite>

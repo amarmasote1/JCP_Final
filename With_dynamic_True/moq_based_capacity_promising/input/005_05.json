@@ -1,0 +1,22 @@
+[{
+		"storeID": "2418",
+		"standardCapacity": "10",
+		"availableCapacity": "10",
+		"capacityUnitOfMeasure": "RELEASE",
+		"date": "<$today>"
+	},
+	{
+		"storeID": "2419",
+		"standardCapacity": "10",
+		"availableCapacity": "20",
+		"capacityUnitOfMeasure": "RELEASE",
+		"date": "<$today>"
+	},
+	{
+		"storeID": "2423",
+		"standardCapacity": "10",
+		"availableCapacity": "10",
+		"capacityUnitOfMeasure": "RELEASE",
+		"date": "<$today>"
+	}
+]

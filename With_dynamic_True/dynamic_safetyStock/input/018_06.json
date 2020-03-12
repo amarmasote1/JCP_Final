@@ -1,0 +1,13 @@
+[{
+		"storeID": "2064",
+		"standardCapacity": "10",
+		"capacityUnitOfMeasure": "RELEASE",
+		"date": "<$today>"
+	},
+	{
+		"storeID": "2065",
+		"standardCapacity": "10",
+		"capacityUnitOfMeasure": "RELEASE",
+		"date": "<$today>"
+	}
+]

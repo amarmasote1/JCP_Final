@@ -1,0 +1,43 @@
+{"reservation": [ 
+{ 
+"lineID": "1", 
+"itemID": "1711234-5016", 
+"reservationID": "e7a5c314-b0a1-4354-945e-4b548c501f81", 
+
+"uom": "EACH", 
+"qty": "0", 
+"channel": "web", 
+"procurementAllowed": "false", 
+"deliveryMethod": "", 
+"groupID": "00", 
+"fulfillmentType": "RES_PARCEL", 
+"action":"CANCEL" 
+},
+{ 
+"lineID": "2", 
+"itemID": "1711234-5016",
+"reservationID": "e7a5c314-b0a1-4354-945e-4b548c502f82",  
+
+"uom": "EACH", 
+"qty": "0", 
+"channel": "web", 
+"procurementAllowed": "false", 
+"deliveryMethod": "", 
+"groupID": "00", 
+"fulfillmentType": "RES_PARCEL", 
+"action":"CANCEL" 
+}
+], 
+    "enterpriseCode": "0001", 
+	
+    "city": "SEATTLE", 
+    "state": "WA", 
+    "zipcode": "98125", 
+    "country": "US", 
+    "facilityType": "0", 
+    "routingType": "DirectShipping", 
+    "allocationRuleID": "RES_INTRV", 
+    "sourcingClassification": "03", 
+    "primeDC": "02", 
+    "requestType":"UPDATE" 
+} 

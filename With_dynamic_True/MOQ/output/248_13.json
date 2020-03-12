@@ -1,0 +1,34 @@
+{
+    "body": [
+        {
+            "warnings": null,
+            "message": "Data Write Successful",
+            "body": null,
+            "key": "2961234|296|1128",
+            "status": 212
+        },
+        {
+            "warnings": null,
+            "message": "Data Write Successful",
+            "body": null,
+            "key": "2961234|296|1128",
+            "status": 212
+        },
+        {
+            "warnings": null,
+            "message": "Data Write Successful",
+            "body": null,
+            "key": "2961234|296|1130",
+            "status": 212
+        },
+        {
+            "warnings": null,
+            "message": "Data Write Successful",
+            "body": null,
+            "key": "2961234|296|1130",
+            "status": 212
+        }
+    ],
+    "message": "Successful",
+    "status": 221
+}

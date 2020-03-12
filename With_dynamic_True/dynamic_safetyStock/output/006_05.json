@@ -1,0 +1,36 @@
+{
+    "message": "Success",
+    "body": [
+        {
+            "itemID": "68627571006",
+            "uom": "EACH",
+            "demandData": {
+                "reserveddemand": 0
+            },
+            "markDown": {
+                "active": false
+            },
+            "storeID": "2025",
+            "supplyData": {
+                "onhandsupply": 1
+            },
+            "timestamp": "2020-02-28 12:45:54.0000 IST"
+        },
+        {
+            "itemID": "68627571006",
+            "uom": "EACH",
+            "demandData": {
+                "reserveddemand": 0
+            },
+            "markDown": {
+                "active": false
+            },
+            "storeID": "2034",
+            "supplyData": {
+                "onhandsupply": 1
+            },
+            "timestamp": "2020-02-28 12:45:54.0000 IST"
+        }
+    ],
+    "status": 200
+}

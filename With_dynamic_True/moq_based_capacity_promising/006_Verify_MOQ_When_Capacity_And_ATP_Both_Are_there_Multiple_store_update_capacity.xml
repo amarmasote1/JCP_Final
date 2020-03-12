@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify MOQ when capacity and ATP both are there in multiple stores. update Capacity and check for mOQ
+		
+		store		capacity	ATP
+		2427		10			20
+		2428		20			40
+		2430		10			60
+										
+	1. update store 2430 capacity to 0 and CHeck for MOQ		
+	2. update store 2428 capacity to 0 and check for MOQ
+    3. update store 2430 capacity to 1 and check for MOQ	
+-->
+
+<!-- expected  
+				Before capacity update                      	 MOQ : 60
+				reset store 2430 capacity to 0					 MOQ : 40
+				reset store 2428 capacity to 0					 MOQ : 20
+				reset store 2430 capacity to 1					 MOQ : 60
+-->
+
+<testsuite description="Verify MOQ when capacity and ATP both are there in multiple stores. update Capacity and check for mOQ" name="006">
+		
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="items: 1 "
+        expectedJsonFile="expected\006_01.json"
+        inputJsonFile="input\006_01.json" name="01" outputJsonFile="output\006_01.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2427/"
+        description="store 1"
+        expectedJsonFile="expected\006_02.json"
+        inputJsonFile="input\006_02.json" name="02" outputJsonFile="output\006_02.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2428/"
+        description="store 2"
+        expectedJsonFile="expected\006_15.json"
+        inputJsonFile="input\006_15.json" name="15" outputJsonFile="output\006_15.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2430/"
+        description="store 3"
+        expectedJsonFile="expected\006_16.json"
+        inputJsonFile="input\006_16.json" name="16" outputJsonFile="output\006_16.json"/>
+		
+	
+	
+		
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="Create inventory "
+        expectedJsonFile="expected\006_03.json"
+        inputJsonFile="input\006_03.json" name="03" outputJsonFile="output\006_03.json"/>
+	
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity: Available Capacity = 10, 20 and 10"
+        expectedJsonFile="expected\006_05.json"
+        inputJsonFile="input\006_05.json" name="05" outputJsonFile="output\006_05.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread"
+        expectedJsonFile="expected\006_06.json"
+        inputJsonFile="input\006_06.json" name="06" outputJsonFile="output\006_06.json"/>
+		
+
+
+	
+	<test apiMethod="POST" apiUrl="/master/qualitativeStatus/"
+        description="insert qual status : AL"
+        expectedJsonFile="expected\006_07.json"
+        inputJsonFile="input\006_07.json" name="07" outputJsonFile="output\006_07.json"/>
+
+<test apiMethod="delay" delay="10000" description="Delay : 10000 ms" name="100"/>				
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="get Qual status: MOQ = 60"
+        expectedJsonFile="expected\006_08.json"
+        inputJsonFile="input\006_08.json" name="8" outputJsonFile="output\006_08.json"/>
+		
+		
+		
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity:update store 2430 capacity to 0"
+        expectedJsonFile="expected\006_09.json"
+        inputJsonFile="input\006_09.json" name="09" outputJsonFile="output\006_09.json"/>
+
+<test apiMethod="delay" delay="10000" description="Delay : 10000 ms" name="100"/>				
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="get Qual status: MOQ = 40"
+        expectedJsonFile="expected\006_10.json"
+        inputJsonFile="input\006_10.json" name="10" outputJsonFile="output\006_10.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity:updatye store 2428 capacity to 0"
+        expectedJsonFile="expected\006_11.json"
+        inputJsonFile="input\006_11.json" name="11" outputJsonFile="output\006_11.json"/>
+
+<test apiMethod="delay" delay="10000" description="Delay : 10000 ms" name="100"/>				
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="get Qual status: MOQ = 20"
+        expectedJsonFile="expected\006_12.json"
+        inputJsonFile="input\006_12.json" name="12" outputJsonFile="output\006_12.json"/>
+	
+	
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity:updatye store 2430 capacity to 1"
+        expectedJsonFile="expected\006_13.json"
+        inputJsonFile="input\006_13.json" name="13" outputJsonFile="output\006_13.json"/>
+
+<test apiMethod="delay" delay="10000" description="Delay : 10000 ms" name="100"/>				
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="get Qual status: MOQ = 60"
+        expectedJsonFile="expected\006_14.json"
+        inputJsonFile="input\006_14.json" name="14" outputJsonFile="output\006_14.json"/>
+	
+</testsuite>
+
+
+
+

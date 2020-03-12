@@ -1,0 +1,49 @@
+{
+	"status": 200,
+	"message": "Success",
+	"body": [{
+		"itemID": "54003001008",
+		"uom": "EACH",
+		"storeID": "2439",
+		"supplyData": {
+			"onhandsupply": 20
+		},
+		"demandData": {
+			"reserveddemand": 0
+		},
+		
+		"markDown": {
+			"active": false
+		}
+	},
+	{
+		"itemID": "54003001008",
+		"uom": "EACH",
+		"storeID": "2442",
+		"supplyData": {
+			"onhandsupply": 30
+		},
+		"demandData": {
+			"reserveddemand": 0
+		},
+		
+		"markDown": {
+			"active": false
+		}
+	},
+	{
+		"itemID": "54003001008",
+		"uom": "EACH",
+		"storeID": "2443",
+		"supplyData": {
+			"onhandsupply": 40
+		},
+		"demandData": {
+			"reserveddemand": 0
+		},
+		
+		"markDown": {
+			"active": false
+		}
+	}]
+}

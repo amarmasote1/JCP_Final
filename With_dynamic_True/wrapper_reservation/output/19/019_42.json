@@ -1,0 +1,22 @@
+{
+    "warnings": null,
+    "message": "Success",
+    "nodeType": null,
+    "body": {
+        "shortageQty": 0,
+        "substitutionDone": false,
+        "currentQty": 2,
+        "storeID": null,
+        "confirmed": false,
+        "itemID": "17112345013",
+        "uom": null,
+        "reservationCreateDate": "2020-02-28 13:42:52.0945 IST",
+        "substitutedItemQty": null,
+        "qty": 2,
+        "increaseCapacity": false,
+        "originalOrderedQty": 0,
+        "shippedQty": 0
+    },
+    "key": "9e2af961-bfc9-4c41-a6ce-88ef05275f1a|JCP",
+    "status": 200
+}

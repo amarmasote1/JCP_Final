@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify MOQ when unconfirmed reservation is confirmed and then canceled.
+		item is present in 2 stores.  storeID      ATP
+										2346		4
+										2347		5
+										
+-->
+
+<!-- expected  
+				MOQ before reservation : 5
+			1.	UnconfirmedReservation at store 2 : qty = 4
+				MOQ after reservation  : 4
+			2.	ConfirmReservation at store 2 : qty = 4
+				MOQ after reservation  : 4
+			3.	Cancel reservation at store 2 : qty = 0
+				MOQ after reservation  : 5     
+			
+-->
+
+<testsuite description="Verify MOQ when unconfirmed reservation is confirmed and then canceled." name="251">
+		
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="items: 1 "
+        expectedJsonFile="expected\251_01.json"
+        inputJsonFile="input\251_01.json" name="01" outputJsonFile="output\251_01.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2346/"
+        description="store 1"
+        expectedJsonFile="expected\251_02.json"
+        inputJsonFile="input\251_02.json" name="02" outputJsonFile="output\251_02.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2347/"
+        description="store 1"
+        expectedJsonFile="expected\251_15.json"
+        inputJsonFile="input\251_15.json" name="15" outputJsonFile="output\251_15.json"/>
+		
+		
+		
+		
+		
+		
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="Create inventory in 2 stores"
+        expectedJsonFile="expected\251_03.json"
+        inputJsonFile="input\251_03.json" name="03" outputJsonFile="output\251_03.json"/>
+	
+
+
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity: Available Capacity = 8"
+        expectedJsonFile="expected\251_05.json"
+        inputJsonFile="input\251_05.json" name="05" outputJsonFile="output\251_05.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread: shipATP and BopusATP will 4 and 5"
+        expectedJsonFile="expected\251_06.json"
+        inputJsonFile="input\251_06.json" name="06" outputJsonFile="output\251_06.json"/>
+		
+
+
+	
+	<test apiMethod="POST" apiUrl="/master/qualitativeStatus/"
+        description="insert qual status : AL"
+        expectedJsonFile="expected\251_07.json"
+        inputJsonFile="input\251_07.json" name="07" outputJsonFile="output\251_07.json"/>
+		
+<test apiMethod="delay" delay="10000" description="Delay after Exclusion : 10000 ms" name="100"/>
+
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="get Qual status: check for MOQ"
+        expectedJsonFile="expected\251_08.json"
+        inputJsonFile="input\251_08.json" name="8" outputJsonFile="output\251_08.json"/>
+		
+		
+		
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/2/N/"
+        description="UnconfirmedReservation at store 2 : qty = 4"
+        expectedJsonFile="expected\251_09.json"
+        inputJsonFile="input\251_09.json" name="09" outputJsonFile="output\251_09.json"/>
+		
+<test apiMethod="delay" delay="5000" description="Delay after Exclusion : 5000 ms" name="100"/>
+
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="get Qual status: check for MOQ"
+        expectedJsonFile="expected\251_10.json"
+        inputJsonFile="input\251_10.json" name="10" outputJsonFile="output\251_10.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="ConfirmReservation at store 2 : qty = 4"
+        expectedJsonFile="expected\251_11.json"
+        inputJsonFile="input\251_11.json" name="11" outputJsonFile="output\251_11.json"/>
+		
+<test apiMethod="delay" delay="5000" description="Delay after Exclusion : 5000 ms" name="100"/>
+
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="get Qual status: check for MOQ"
+        expectedJsonFile="expected\251_12.json"
+        inputJsonFile="input\251_12.json" name="12" outputJsonFile="output\251_12.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="CancelReservation at store 2 : qty = 0"
+        expectedJsonFile="expected\251_13.json"
+        inputJsonFile="input\251_13.json" name="13" outputJsonFile="output\251_13.json"/>
+		
+<test apiMethod="delay" delay="5000" description="Delay after Exclusion : 5000 ms" name="100"/>
+
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="get Qual status: check for MOQ"
+        expectedJsonFile="expected\251_14.json"
+        inputJsonFile="input\251_14.json" name="14" outputJsonFile="output\251_14.json"/>
+		
+		
+		
+	
+</testsuite>

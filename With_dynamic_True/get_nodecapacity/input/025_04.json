@@ -1,0 +1,29 @@
+[{
+		"storeID": "2237",
+		"capacityUnitOfMeasure": "EACH",
+		"fromDate": "<$today>",
+		"toDate": "<$today>",
+		"dayOfTheWeek": []
+	},
+	{
+		"storeID": "2238",
+		"capacityUnitOfMeasure": "EACH",
+		"fromDate": "<$today>",
+		"toDate": "<$today>",
+		"dayOfTheWeek": [2]
+	},
+	{
+		"storeID": "2239",
+		"capacityUnitOfMeasure": "EACH",
+		"fromDate": "<$today>",
+		"toDate": "<$today>",
+		"dayOfTheWeek": [3, 6, 9, 12]
+	},
+	{
+		"storeID": "2240",
+		"capacityUnitOfMeasure": "EACH",
+		"fromDate": "<$today>",
+		"toDate": "<$today>",
+		"dayOfTheWeek": [4, 8, 12, 16, 20, 24]
+	}
+]

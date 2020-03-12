@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>		 
+<!-- 032_Entry Exists In Table And Invoked Multiple Times
+-->
+
+<testsuite description="Entry Exists In Table And Invoked Multiple Times" name="032">
+
+	 <test apiMethod="POST" apiUrl="/master/node/JCP/2932/" 
+		description="Insert node 1"
+        expectedJsonFile="expected\032\032_01.json"
+        inputJsonFile="input\032\032_01.json" name="01" outputJsonFile="output\032\032_01.json"/>
+
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/" 
+		description="item details"
+        expectedJsonFile="expected\032\032_02.json"
+        inputJsonFile="input\032\032_02.json" name="02" outputJsonFile="output\032\032_02.json"/>
+
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/" 
+		description="insert inventory"
+        expectedJsonFile="expected\032\032_03.json"
+        inputJsonFile="input\032\032_03.json" name="03" outputJsonFile="output\032\032_03.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="insert capacity"
+        expectedJsonFile="expected\032\032_04.json"
+        inputJsonFile="input\032\032_04.json" name="04" outputJsonFile="output\032\032_04.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/" 
+		description="multiread"
+		expectedJsonFile="expected\032\032_05.json"
+		inputJsonFile="input\032\032_05.json" name="05" outputJsonFile="output\032\032_05.json"/>
+		
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/" 
+						description="location inventory"
+						expectedJsonFile="expected\032\032_07.json"
+						inputJsonFile="input\032\032_07.json" name="07" outputJsonFile="output\032\032_07.json"/>
+						
+					<test apiMethod="delay" delay="15000" description="Delay : 15000 ms" name="99"/> 
+						
+		<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/" 
+		description="get qualitativeStatus"
+		expectedJsonFile="expected\032\032_08.json"
+		inputJsonFile="input\032\032_08.json" name="08" outputJsonFile="output\032\032_08.json"/>		
+
+					<test apiMethod="delay" delay="15000" description="Delay : 15000 ms" name="100"/>  
+						
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_capacity_exclusions" 
+						description="Check entry in jcp_capacity_exclusions map"
+						expectedJsonFile="expected\032\032_09.json"
+						inputJsonFile="input\032\032_09.json" name="09" outputJsonFile="output\032\032_09.json"/>
+						
+		<test apiMethod="POST" apiUrl="/master/qualitativeStatus/" 
+		description="insert qualitativeStatus"
+		expectedJsonFile="expected\032\032_06.json"
+		inputJsonFile="input\032\032_06.json" name="06" outputJsonFile="output\032\032_06.json"/>
+						
+						
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_capacity_exclusions" 
+						description="Check entry is deleted in jcp_capacity_exclusions map"
+						expectedJsonFile="expected\032\032_10.json"
+						inputJsonFile="input\032\032_10.json" name="10" outputJsonFile="output\032\032_10.json"/>
+</testsuite>

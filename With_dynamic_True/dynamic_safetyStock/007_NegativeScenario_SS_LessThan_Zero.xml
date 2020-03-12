@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify multiread : when ML sends SS Less Than 0 
+			
+ -->
+
+<testsuite description="Verify multiread :  when ML sends SS less than 0 " name="007">
+
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details "
+        expectedJsonFile="expected\007_01.json"
+        inputJsonFile="input\007_01.json" name="01" outputJsonFile="output\007_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/2036/" description="Insert node 1"
+        expectedJsonFile="expected\007_02.json"
+        inputJsonFile="input\007_02.json" name="02" outputJsonFile="output\007_02.json"/>
+		
+	
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2039/" description="Insert node 2"
+        expectedJsonFile="expected\007_03.json"
+        inputJsonFile="input\007_03.json" name="03" outputJsonFile="output\007_03.json"/>	
+	
+
+    <test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory"
+        expectedJsonFile="expected\007_05.json"
+        inputJsonFile="input\007_05.json" name="05" outputJsonFile="output\007_05.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread: verify ATP"
+        expectedJsonFile="expected\007_08.json"
+        inputJsonFile="input\007_08.json" name="08" outputJsonFile="output\007_08.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/safetyFactor/"
+        description="SafetyStock less than 0"
+        expectedJsonFile="expected\007_09.json"
+        inputJsonFile="input\007_09.json" name="09" outputJsonFile="output\007_09.json"/>	
+		     <!--
+	<test apiMethod="GET" apiUrl="/refreshActiveStores/"
+        description="refresh Active store"
+        expectedJsonFile="expected\007_10.json"
+        name="10" outputJsonFile="output\007_10.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="multiread with update mode"
+        expectedJsonFile="expected\007_11.json"
+        inputJsonFile="input\007_11.json" name="11" outputJsonFile="output\007_11.json"/>  -->
+	
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread: verify capacity and qty"
+        expectedJsonFile="expected\007_12.json"
+        inputJsonFile="input\007_12.json" name="12" outputJsonFile="output\007_12.json"/>
+	
+    
+</testsuite>

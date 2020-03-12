@@ -1,0 +1,9 @@
+[
+{
+"storeID":"1924",
+"capacityUnitOfMeasure":"RELEASE",
+"fromDate":"<$today>",
+"toDate":"<$nextWeek>",
+"dayOfTheWeek":[100,200,300,400,500, 600, 700]
+}
+]

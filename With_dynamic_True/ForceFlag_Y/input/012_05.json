@@ -1,0 +1,68 @@
+[
+  
+  {
+     "storeId" : "ALL",
+     "exclusionIndi" : "P",
+     "productLine" : "555",
+    "removeExclusion" : "N",
+     "lotNumber" : "5555111",
+     "skuId":"55551112041"
+  },
+  {
+     "storeId" : "ALL",
+     "exclusionIndi" : "S",
+     "productLine" : "555",
+    "removeExclusion" : "N",
+     "lotNumber" : "5555111",
+     "skuId":"55551112041"
+  },
+  {
+     "storeId" : "ALL",
+     "exclusionIndi" : "P",
+     "productLine" : "555",
+    "removeExclusion" : "N",
+     "lotNumber" : "5555111",
+     "skuId":"55551112042"
+  },
+  {
+     "storeId" : "ALL",
+     "exclusionIndi" : "S",
+     "productLine" : "555",
+    "removeExclusion" : "N",
+     "lotNumber" : "5555111",
+     "skuId":"55551112042"
+  },
+  {
+     "storeId" : "ALL",
+     "exclusionIndi" : "P",
+     "productLine" : "555",
+    "removeExclusion" : "N",
+     "lotNumber" : "5555111",
+     "skuId":"55551112043"
+  },
+  {
+     "storeId" : "ALL",
+     "exclusionIndi" : "S",
+     "productLine" : "555",
+    "removeExclusion" : "N",
+     "lotNumber" : "5555111",
+     "skuId":"55551112043"
+  },
+  {
+     "storeId" : "ALL",
+     "exclusionIndi" : "P",
+     "productLine" : "555",
+    "removeExclusion" : "N",
+     "lotNumber" : "5555111",
+     "skuId":"55551112043"
+  },
+  {
+     "storeId" : "ALL",
+     "exclusionIndi" : "S",
+     "productLine" : "555",
+    "removeExclusion" : "N",
+     "lotNumber" : "5555111",
+     "skuId":"55551112043"
+  }
+
+]

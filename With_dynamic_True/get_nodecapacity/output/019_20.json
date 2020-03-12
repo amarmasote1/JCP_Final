@@ -1,0 +1,8 @@
+{
+    "warnings": null,
+    "message": "dayOfTheWeek and clearanceCapacityOfTheWeek values are not allowed in single capacity request",
+    "nodeType": null,
+    "body": null,
+    "key": null,
+    "status": 400
+}

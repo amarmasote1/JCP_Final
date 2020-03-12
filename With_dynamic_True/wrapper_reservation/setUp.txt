@@ -1,0 +1,22 @@
+e7a5c314-b0a1-4354-945e-4b548c552f73
+8d1468d4-5893-4812-a052-49bfb6ac2532
+3db5c29f-b21f-4a50-9779-e9e3b6bf2e03
+2355f044-0e77-42bd-8833-018d32a92120
+35923a18-c726-4de9-8eef-ca5621da3c5c
+9e2af961-bfc9-4c41-a6ce-88ef05275f1a
+
+
+2e2af961-bfc1-4c76-a6ce-88ef05275yla
+
+reservation cancellation body is not showing up in output.
+
+reservation fullfillmentType is different from cancellation fullfillmentType
+
+shipAtp = 0 when atp = 1 and safetyFactor = 1
+shipAtp = 1 when atp = 2 and safetyFactor = 1
+
+shipAtp = 1, rsvn qty = 1
+2nd rsvn call ; first create another reservation,  then cancel 1st reservation
+-->In output : only No_Availability. No info about reservation cancel
+
+cancel reservation after selective clearance -->No_Availability

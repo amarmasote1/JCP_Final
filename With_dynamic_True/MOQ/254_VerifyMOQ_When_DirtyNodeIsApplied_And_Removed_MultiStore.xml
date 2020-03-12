@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify MOQ when Dirty node is applied and removed for multiple store
+		item is present in 2 stores.  storeID      ATP
+										2354		9
+										2356		8
+										2342		7							
+-->
+
+<!-- expected  
+				MOQ before dirty node : 9
+			1.	Dirty node for 1st store
+				MOQ after dirty node  : 8
+			2.	Dirty node for 2nd store
+				MOQ after dirty node  : 7
+			3.  Dirty node for 3rd store
+				MOQ after dirty node  : 0
+			4.  Remove dirty node for 3rd store
+				MOQ 				  : 7
+			5.  Remove dirty node for 2nd store
+				MOQ 				  : 8		  		
+-->
+
+<testsuite description="Verify MOQ when Dirty node is applied and removed for multiple store" name="254">
+		
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="items: 1 "
+        expectedJsonFile="expected\254_01.json"
+        inputJsonFile="input\254_01.json" name="01" outputJsonFile="output\254_01.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2354/"
+        description="store 1"
+        expectedJsonFile="expected\254_02.json"
+        inputJsonFile="input\254_02.json" name="02" outputJsonFile="output\254_02.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2356/"
+        description="store 2"
+        expectedJsonFile="expected\254_15.json"
+        inputJsonFile="input\254_15.json" name="15" outputJsonFile="output\254_15.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2342/"
+        description="store 3"
+        expectedJsonFile="expected\254_16.json"
+        inputJsonFile="input\254_16.json" name="16" outputJsonFile="output\254_16.json"/>
+		
+	
+		
+		
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="Create inventory "
+        expectedJsonFile="expected\254_03.json"
+        inputJsonFile="input\254_03.json" name="03" outputJsonFile="output\254_03.json"/>
+	
+
+
+	
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity: Available Capacity = 8"
+        expectedJsonFile="expected\254_05.json"
+        inputJsonFile="input\254_05.json" name="05" outputJsonFile="output\254_05.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread: shipATP and BopusATP  5"
+        expectedJsonFile="expected\254_06.json"
+        inputJsonFile="input\254_06.json" name="06" outputJsonFile="output\254_06.json"/>
+		
+
+
+	
+	<test apiMethod="POST" apiUrl="/master/qualitativeStatus/"
+        description="insert qual status : AL"
+        expectedJsonFile="expected\254_07.json"
+        inputJsonFile="input\254_07.json" name="07" outputJsonFile="output\254_07.json"/>
+		
+		
+<test apiMethod="delay" delay="10000" description="Delay after Exclusion : 10000 ms" name="100"/>
+
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="get Qual status: check for MOQ"
+        expectedJsonFile="expected\254_08.json"
+        inputJsonFile="input\254_08.json" name="8" outputJsonFile="output\254_08.json"/>
+		
+		
+		
+		
+	<test apiMethod="POST" apiUrl="/master/nodeControl/JCP/"
+        description="Apply Node control  for store1"
+        expectedJsonFile="expected\254_09.json"
+        inputJsonFile="input\254_09.json" name="09" outputJsonFile="output\254_09.json"/>
+		
+<test apiMethod="delay" delay="5000" description="Delay after Exclusion : 5000 ms" name="100"/>
+
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="get Qual status: check for MOQ"
+        expectedJsonFile="expected\254_10.json"
+        inputJsonFile="input\254_10.json" name="10" outputJsonFile="output\254_10.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/nodeControl/JCP/"
+        description="Apply dirty node to store2"
+        expectedJsonFile="expected\254_11.json"
+        inputJsonFile="input\254_11.json" name="11" outputJsonFile="output\254_11.json"/>
+		
+		
+<test apiMethod="delay" delay="5000" description="Delay after Exclusion : 5000 ms" name="100"/>
+
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="get Qual status: check for MOQ"
+        expectedJsonFile="expected\254_12.json"
+        inputJsonFile="input\254_12.json" name="12" outputJsonFile="output\254_12.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/nodeControl/JCP/"
+        description="Apply dirty node to store3"
+        expectedJsonFile="expected\254_13.json"
+        inputJsonFile="input\254_13.json" name="13" outputJsonFile="output\254_13.json"/>
+		
+<test apiMethod="delay" delay="5000" description="Delay after Exclusion : 5000 ms" name="100"/>
+
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="get Qual status: check for MOQ"
+        expectedJsonFile="expected\254_14.json"
+        inputJsonFile="input\254_14.json" name="14" outputJsonFile="output\254_14.json"/>
+		
+		
+		
+		
+	<test apiMethod="POST" apiUrl="/master/nodeControl/JCP/"
+        description="remove dirty node from store3"
+        expectedJsonFile="expected\254_17.json"
+        inputJsonFile="input\254_17.json" name="17" outputJsonFile="output\254_17.json"/>
+	
+<test apiMethod="delay" delay="70000" description="Delay after node control : 70000 ms" name="11"/>	
+	
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="get Qual status: check for MOQ"
+        expectedJsonFile="expected\254_18.json"
+        inputJsonFile="input\254_18.json" name="18" outputJsonFile="output\254_18.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/nodeControl/JCP/"
+        description="remove dirty node from store2"
+        expectedJsonFile="expected\254_19.json"
+        inputJsonFile="input\254_19.json" name="19" outputJsonFile="output\254_19.json"/>
+
+<test apiMethod="delay" delay="70000" description="Delay after node control : 70000 ms" name="11"/>	
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="get Qual status: check for MOQ"
+        expectedJsonFile="expected\254_20.json"
+        inputJsonFile="input\254_20.json" name="20" outputJsonFile="output\254_20.json"/>
+		
+	
+	
+</testsuite>
+
+
+
+

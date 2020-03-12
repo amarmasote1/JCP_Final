@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify Get StoreCapacity when there are multiple stores and One which doesnot exist added to StoreList.
+	Scenario a : 3 existing and 1 non existing	
+	Scenario b : 2 existing and 1 non existing
+	Scenario c : 1 existing and 2 non existing
+-->
+
+
+<!--Expected
+
+1. Output of get node Capacity :
+a. Non-existing store also added :  Total Std Capacity = 30, Total Avail capacity = 30.
+b. 2 existing store and remaining non existing store : Total Std Capacity = 20, Total Avail capacity = 20.
+c. 1 existing store and remaining non existing store : Total Std Capacity = 10, Total Avail capacity = 10.
+
+-->
+
+
+<testsuite description="Verify Get StoreCapacity when there are multiple stores and One which doesnot exist added to StoreList." name="010">
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details : only 1 item"
+        expectedJsonFile="expected\010_01.json"
+        inputJsonFile="input\010_01.json" name="01" outputJsonFile="output\010_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/2122/" 
+		description="Insert node 1"
+        expectedJsonFile="expected\010_02.json"
+        inputJsonFile="input\010_02.json" name="02" outputJsonFile="output\010_02.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2123/" 
+		description="Insert node 2"
+        expectedJsonFile="expected\010_03.json"
+        inputJsonFile="input\010_03.json" name="03" outputJsonFile="output\010_03.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2130/" 
+		description="Insert node 3"
+        expectedJsonFile="expected\010_04.json"
+        inputJsonFile="input\010_04.json" name="04" outputJsonFile="output\010_04.json"/>
+		
+	 
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory in all the stores  :qty = 100 in each store"
+        expectedJsonFile="expected\010_05.json"
+        inputJsonFile="input\010_05.json" name="05" outputJsonFile="output\010_05.json"/>
+		
+	
+	
+	<!-- <test apiMethod="POST" apiUrl="/master/distributionrule/"
+        description="Distribution group : only 2 stores are added"
+        expectedJsonFile="expected\010_06.json"
+        inputJsonFile="input\010_06.json" name="06" outputJsonFile="output\010_06.json"/>
+	-->
+	
+	
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node capacity : Avail Capacity = 10 in each store"
+        expectedJsonFile="expected\010_07.json"
+        inputJsonFile="input\010_07.json" name="07" outputJsonFile="output\010_07.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/"
+        description="StoreCapacity : Has one store which does not exist added along with other existing stores"
+        expectedJsonFile="expected\010_08.json"
+        inputJsonFile="input\010_08.json" name="08" outputJsonFile="output\010_08.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/"
+        description="StoreCapacity : Update List to have 2 existing stores"
+        expectedJsonFile="expected\010_09.json"
+        inputJsonFile="input\010_09.json" name="09" outputJsonFile="output\010_09.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/"
+        description="Get Store Capacity : Update List to have Only Non existing Store"
+        expectedJsonFile="expected\010_10.json"
+        inputJsonFile="input\010_10.json" name="10" outputJsonFile="output\010_10.json"/>
+		
+	
+	
+    
+</testsuite>

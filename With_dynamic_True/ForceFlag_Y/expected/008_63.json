@@ -1,0 +1,11 @@
+{
+	"status": 200,
+	"message": "Success",
+	"key": "JCP|2922|55551112026|EACH",
+	"body": {
+		"storeID": "2922",
+		"itemID": "55551112026",
+		"uom": "EACH"
+	},
+	"warnings": null
+}

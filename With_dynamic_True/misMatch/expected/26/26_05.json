@@ -1,0 +1,14 @@
+{
+    "body": [
+        {
+            "warnings": null,
+            "message": "Data Write Successful",
+            "nodeType": null,
+            "body": null,
+            "key": "ItemMappingModel(retailItemID=1002000051029, ecomItemID=44477770029)",
+            "status": 212
+        }
+    ],
+    "message": "Successful",
+    "status": 221
+}

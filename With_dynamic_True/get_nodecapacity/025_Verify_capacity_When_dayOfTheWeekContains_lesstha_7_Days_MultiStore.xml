@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify Capacity when dayOfTheWeek contains less than 7 days, Multi Store. 
+					   1. Store1 : 0 day
+                       2. Store2 : 1 days
+                       3. Store3 : 4 days
+                       4. Store4 : 6 Days
+
+-->
+
+<testsuite description="Verify Capacity when dayOfTheWeek contains less than 7 days, Multi Store. 
+					   1. Store1 : 0 day
+                       2. Store2 : 1 days
+                       3. Store3 : 4 days
+                       4. Store4 : 6 Days" name="025">
+
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details : insert only 1 item"
+        expectedJsonFile="expected\025_01.json"
+        inputJsonFile="input\025_01.json" name="01" outputJsonFile="output\025_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/2237/" 
+		description="Insert node 1"
+        expectedJsonFile="expected\025_02.json"
+        inputJsonFile="input\025_02.json" name="02" outputJsonFile="output\025_02.json"/>
+		
+	 <test apiMethod="POST" apiUrl="/master/node/JCP/2238/" 
+		description="Insert node 2"
+        expectedJsonFile="expected\025_10.json"
+        inputJsonFile="input\025_10.json" name="10" outputJsonFile="output\025_10.json"/>
+		
+	 <test apiMethod="POST" apiUrl="/master/node/JCP/2239/" 
+		description="Insert node 3"
+        expectedJsonFile="expected\025_11.json"
+        inputJsonFile="input\025_11.json" name="11" outputJsonFile="output\025_11.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2240/" 
+		description="Insert node 4"
+        expectedJsonFile="expected\025_12.json"
+        inputJsonFile="input\025_12.json" name="12" outputJsonFile="output\025_12.json"/>
+		
+	
+		
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory : qty = 100 in all stores"
+        expectedJsonFile="expected\025_03.json"
+        inputJsonFile="input\025_03.json" name="03" outputJsonFile="output\025_03.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Insert capacity all stores: As per above mentioned condition"
+        expectedJsonFile="expected\025_04.json"
+        inputJsonFile="input\025_04.json" name="04" outputJsonFile="output\025_04.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/" 
+		description="Multiread"
+        expectedJsonFile="expected\025_05.json"
+        inputJsonFile="input\025_05.json" name="05" outputJsonFile="output\025_05.json"/>
+		
+	
+	<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/"
+        description="Get Capacity : pass date as today"
+        expectedJsonFile="expected\025_06.json"
+        inputJsonFile="input\025_06.json" name="06" outputJsonFile="output\025_06.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/"
+        description="Get Capacity : pass date as tomorrow"
+        expectedJsonFile="expected\025_07.json"
+        inputJsonFile="input\025_07.json" name="07" outputJsonFile="output\025_07.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/"
+        description="Get Capacity : pass toDate and fromDate as today"
+        expectedJsonFile="expected\025_08.json"
+        inputJsonFile="input\025_08.json" name="08" outputJsonFile="output\025_08.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/"
+        description="Get Capacity : pass fromDate as today and toDate as tomorrow"
+        expectedJsonFile="expected\025_09.json"
+        inputJsonFile="input\025_09.json" name="09" outputJsonFile="output\025_09.json"/>
+		
+	
+</testsuite>

@@ -1,0 +1,13 @@
+{"reservation":[
+ {
+ 
+"reservationID" : "20180603001717170007",
+"procurementAllowed" : "false",
+"shippable" : "true",
+"uom" : "EACH",
+"itemID" : "17345670007",
+"lineID" : "1",
+"qty" : "27"
+ }
+
+]}

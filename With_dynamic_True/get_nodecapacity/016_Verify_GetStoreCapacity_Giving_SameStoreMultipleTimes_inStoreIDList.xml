@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify Get StoreCapacity Giving same store Multiple times in StoreIDList.
+-->
+
+
+<!--Expected
+
+1. When stores are inserted multiple times in storesList,  GetCapacity output :  TotalStd Capacity = 30, TotalAvail Capacity = 12.
+
+-->
+
+
+
+
+<testsuite description="Verify Get StoreCapacity Giving same store Multiple times in StoreIDList." name="016">
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details : only 1 item"
+        expectedJsonFile="expected\016_01.json"
+        inputJsonFile="input\016_01.json" name="01" outputJsonFile="output\016_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/2168/" 
+		description="Insert node 1"
+        expectedJsonFile="expected\016_02.json"
+        inputJsonFile="input\016_02.json" name="02" outputJsonFile="output\016_02.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2169/" 
+		description="Insert node 2"
+        expectedJsonFile="expected\016_03.json"
+        inputJsonFile="input\016_03.json" name="03" outputJsonFile="output\016_03.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2171/" 
+		description="Insert node 3"
+        expectedJsonFile="expected\016_04.json"
+        inputJsonFile="input\016_04.json" name="04" outputJsonFile="output\016_04.json"/>
+		
+	 
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory in all the stores : qty = 100 in each store"
+        expectedJsonFile="expected\016_05.json"
+        inputJsonFile="input\016_05.json" name="05" outputJsonFile="output\016_05.json"/>
+		
+	
+	
+<!--	<test apiMethod="POST" apiUrl="/master/distributionrule/"
+        description="Distribution group : Add only 1 store"
+        expectedJsonFile="expected\016_06.json"
+        inputJsonFile="input\016_06.json" name="06" outputJsonFile="output\016_06.json"/>
+	-->
+	
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node capacity : Available CApacity = 3,4 and 5 respectively in 3 stores"
+        expectedJsonFile="expected\016_07.json"
+        inputJsonFile="input\016_07.json" name="07" outputJsonFile="output\016_07.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/"
+        description=" Get StoreCapacity  : Total Available CApacity = 12, Total Std CApacity = 30"
+        expectedJsonFile="expected\016_08.json"
+        inputJsonFile="input\016_08.json" name="08" outputJsonFile="output\016_08.json"/>
+		
+    
+</testsuite>

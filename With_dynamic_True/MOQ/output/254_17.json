@@ -1,0 +1,8 @@
+{
+    "warnings": [],
+    "message": "End Date must be after currentDate",
+    "nodeType": null,
+    "body": null,
+    "key": null,
+    "status": 400
+}

@@ -1,0 +1,7 @@
+{
+    "warnings": null,
+    "message": "Mandatory parameter dayOfTheWeek is missing",
+    "body": null,
+    "key": null,
+    "status": 400
+}

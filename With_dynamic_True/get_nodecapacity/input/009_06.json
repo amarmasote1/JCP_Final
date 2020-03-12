@@ -1,0 +1,15 @@
+{
+  "DistributionRule": {
+    "Description": "R6 Distribution Group",
+    "DistributionRuleId": "SFS-DG",
+    "ItemGroupCode": "PROD",
+    "OwnerKey": "JCP",
+    "ItemShipNodes": {
+      "ItemShipNode": 
+    [
+ 
+
+    ]
+    }
+  }
+}

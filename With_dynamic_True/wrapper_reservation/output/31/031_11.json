@@ -1,0 +1,9 @@
+{
+    "message": "Success",
+    "body": {
+        "enterpriseCode": "00001",
+        "reservation": [],
+        "allocationRuleID": "RES_INTRV"
+    },
+    "status": 200
+}

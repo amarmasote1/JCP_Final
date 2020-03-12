@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify Insert capacity for mandatory parameter validations
+-->
+
+<!--Expected
+		 1. Both toDate/fromDate and Date are missing     			Error message
+         2. Both toDate/fromDate and Date are present				Error message
+         3. toDate is missing										Error message
+         4. fromDate is missing										Error message
+         5. dayOfTheWeek is missing									Error message
+         6. dayOfTheWeek is passed with Date						Error message
+-->
+
+
+<testsuite description="Verify Insert capacity for mandatory parameter validations" name="019">
+
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details : insert only 1 item"
+        expectedJsonFile="expected\019_01.json"
+        inputJsonFile="input\019_01.json" name="01" outputJsonFile="output\019_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/2185/" 
+		description="Insert node 1"
+        expectedJsonFile="expected\019_02.json"
+        inputJsonFile="input\019_02.json" name="02" outputJsonFile="output\019_02.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2188/" 
+		description="Insert node 2"
+        expectedJsonFile="expected\019_03.json"
+        inputJsonFile="input\019_03.json" name="03" outputJsonFile="output\019_03.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2190/" 
+		description="Node 3"
+        expectedJsonFile="expected\019_04.json"
+        inputJsonFile="input\019_04.json" name="04" outputJsonFile="output\019_04.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2196/" 
+		description="Node 4"
+        expectedJsonFile="expected\019_05.json"
+        inputJsonFile="input\019_05.json" name="05" outputJsonFile="output\019_05.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2197/" 
+		description="Node 5"
+        expectedJsonFile="expected\019_06.json"
+        inputJsonFile="input\019_06.json" name="06" outputJsonFile="output\019_06.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2198/" 
+		description="Node 6"
+        expectedJsonFile="expected\019_07.json"
+        inputJsonFile="input\019_07.json" name="07" outputJsonFile="output\019_07.json"/>		
+	 
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory in all the stores : qty = 100 in each store"
+        expectedJsonFile="expected\019_09.json"
+        inputJsonFile="input\019_09.json" name="09" outputJsonFile="output\019_09.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Both toDate/fromDate and Date are missing"
+        expectedJsonFile="expected\019_10.json"
+        inputJsonFile="input\019_10.json" name="10" outputJsonFile="output\019_10.json"/>
+				
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="fromDate is missing"
+        expectedJsonFile="expected\019_12.json"
+        inputJsonFile="input\019_12.json" name="12" outputJsonFile="output\019_12.json"/>		
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Both toDate/fromDate and Date are present"
+        expectedJsonFile="expected\019_14.json"
+        inputJsonFile="input\019_14.json" name="14" outputJsonFile="output\019_14.json"/>
+			
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="fromDate is missing"
+        expectedJsonFile="expected\019_16.json"
+        inputJsonFile="input\019_16.json" name="16" outputJsonFile="output\019_16.json"/>
+	
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="dayOfTheWeek is missing"
+        expectedJsonFile="expected\019_18.json"
+        inputJsonFile="input\019_18.json" name="18" outputJsonFile="output\019_18.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="dayOfTheWeek is present with Date "
+        expectedJsonFile="expected\019_20.json"
+        inputJsonFile="input\019_20.json" name="20" outputJsonFile="output\019_20.json"/>
+		
+    
+</testsuite>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+
+-->
+
+<testsuite description="Verify create wrapper Reservation  and cancel reservation when whse class is 0" name="037">
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/2624/"
+        description="store 1"
+        expectedJsonFile="expected\37\037_01.json"
+        inputJsonFile="input\37\037_01.json" name="01" outputJsonFile="output\37\037_01.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="item1 "
+        expectedJsonFile="expected\37\037_02.json"
+        inputJsonFile="input\37\037_02.json" name="02" outputJsonFile="output\37\037_02.json"/>
+	
+
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory"
+        expectedJsonFile="expected\37\037_03.json"
+        inputJsonFile="input\37\037_03.json" name="03" outputJsonFile="output\37\037_03.json"/>
+		
+	
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity"
+        expectedJsonFile="expected\37\037_05.json"
+        inputJsonFile="input\37\037_05.json" name="05" outputJsonFile="output\37\037_05.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/qualitativeStatus/"
+        description="Qual Status"
+        expectedJsonFile="expected\37\037_09.json"
+        inputJsonFile="input\37\037_09.json" name="09" outputJsonFile="output\37\037_09.json"/>
+
+							
+
+<test apiMethod="delay" delay="10000" description="Delay : 10000 ms" name="100"/>				    
+							
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="Get Qual Status"
+        expectedJsonFile="expected\37\037_10.json"
+        inputJsonFile="input\37\037_10.json" name="10" outputJsonFile="output\37\037_10.json"/>
+
+	
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+        description="jcp_item_inventory item1 "
+        expectedJsonFile="expected\37\037_17.json"
+        inputJsonFile="input\37\037_17.json" name="17" outputJsonFile="output\37\037_17.json"/>
+			
+		
+		
+	<test apiMethod="POST" apiUrl="/reservations/"
+        description="Reservation Wrapper : Create with PARCEL"
+        expectedJsonFile="expected\37\037_07.json"
+        inputJsonFile="input\37\037_07.json" name="07" outputJsonFile="output\37\037_07.json"/>
+		                      
+<test apiMethod="delay" delay="1000" description="Delay : 1000 ms" name="100"/>			
+
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+        description="jcp_item_inventory item"
+        expectedJsonFile="expected\37\037_18.json"
+        inputJsonFile="input\37\037_18.json" name="18" outputJsonFile="output\37\037_18.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="Get Qual Status"
+        expectedJsonFile="expected\37\037_20.json"
+        inputJsonFile="input\37\037_20.json" name="20" outputJsonFile="output\37\037_20.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/qualitativeStatus/"
+        description="update Whse class to 0"
+        expectedJsonFile="expected\37\037_09_1.json"
+        inputJsonFile="input\37\037_09_1.json" name="09_1" outputJsonFile="output\37\037_09_1.json"/>	
+		
+<test apiMethod="delay" delay="5000" description="Delay : 5000 ms" name="100"/>			
+		
+			<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+					description="Get Qual Status"
+					expectedJsonFile="expected\37\037_60.json"
+					inputJsonFile="input\37\037_60.json" name="60" outputJsonFile="output\37\037_60.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reservations/"
+        description="2nd Reservation Wrapper"
+        expectedJsonFile="expected\37\037_11.json"
+        inputJsonFile="input\37\037_11.json" name="11" outputJsonFile="output\37\037_11.json"/>
+		
+<test apiMethod="delay" delay="5000" description="Delay : 5000 ms" name="100"/>			
+	
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+        description="jcp_item_inventory item"
+        expectedJsonFile="expected\37\037_19.json"
+        inputJsonFile="input\37\037_19.json" name="19" outputJsonFile="output\37\037_19.json"/>		
+		
+		
+				
+
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_reservation_map/"
+					description="1st reservation"
+					expectedJsonFile="expected\37\037_30.json"
+					inputJsonFile="input\37\037_30.json" name="30" outputJsonFile="output\37\037_30.json"/>
+		
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_reservation_map/"
+					description="2nd reservation"
+					expectedJsonFile="expected\37\037_31.json"
+					inputJsonFile="input\37\037_31.json" name="31" outputJsonFile="output\37\037_31.json"/>
+					
+					
+					
+					
+					
+	<test apiMethod="POST" apiUrl="/reservations/"
+        description="cancel 1st Reservation Wrapper"
+        expectedJsonFile="expected\37\037_41.json"
+        inputJsonFile="input\37\037_41.json" name="41" outputJsonFile="output\37\037_41.json"/>
+		
+<test apiMethod="delay" delay="5000" description="Delay : 5000 ms" name="100"/>			
+	
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/"
+        description="jcp_item_inventory item"
+        expectedJsonFile="expected\37\037_49.json"
+        inputJsonFile="input\37\037_49.json" name="49" outputJsonFile="output\37\037_49.json"/>		
+		
+		
+				<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+					description="Get Qual Status"
+					expectedJsonFile="expected\37\037_40.json"
+					inputJsonFile="input\37\037_40.json" name="40" outputJsonFile="output\37\037_40.json"/>
+
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_reservation_map/"
+					description="1st reservation"
+					expectedJsonFile="expected\37\037_50.json"
+					inputJsonFile="input\37\037_50.json" name="50" outputJsonFile="output\37\037_50.json"/>
+		
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_reservation_map/"
+					description="2nd reservation"
+					expectedJsonFile="expected\37\037_51.json"
+					inputJsonFile="input\37\037_51.json" name="51" outputJsonFile="output\37\037_51.json"/>
+	
+</testsuite>
+

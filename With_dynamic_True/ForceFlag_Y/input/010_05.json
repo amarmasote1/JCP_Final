@@ -1,0 +1,22 @@
+[{
+	"skuIds": ["55551112032", "55551112033", "55551112034"],
+	"transactionID": "2018-06-08T23:29:30.027",
+	"priceList": [{
+		"activationDate": "2019-06-02T10:00:00.000",
+		"deActivationDate": "2021-06-14T23:59:59.999",
+		"price": 1.99,
+		"priceType": "ORIGINAL"
+	},
+	{
+		"activationDate": "2019-06-15T00:00:00.000",
+		"deActivationDate": "2021-06-20T23:59:59.999",
+		"price": 3.5,
+		"priceType": "NOW"
+	},
+	{
+		"activationDate": "2019-06-21T00:00:00.000",
+		"deActivationDate": "2021-06-25T23:59:59.999",
+		"price": 8,
+		"priceType": "CLEARANCE"
+	}]
+}]

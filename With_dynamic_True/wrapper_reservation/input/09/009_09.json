@@ -1,0 +1,14 @@
+[
+{
+"itemId":"17112345009",
+    "qualitativeStatus":"NA",
+   
+    "onHandAvlQty":10,
+    "futureAvlQty":0,
+    "factoryShipLeadTimeQty":0,
+    "factoryShipLeadTimeUOM":"",
+    "factoryShipInventoryIndicator":"N",
+    "whseClass":"A"
+
+}
+]

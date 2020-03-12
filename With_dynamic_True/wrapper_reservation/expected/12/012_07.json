@@ -1,0 +1,32 @@
+{
+    "message": "Success",
+    "body": {
+        "enterpriseCode": "00001",
+        "reservation": [
+            {
+                "bundleParentLineId": "",
+                "kitQty": "",
+                "priorityNode": null,
+                "itemReservationStatus": "RS",
+                "reservedQty": 2,
+                "requestLine": {
+                    "itemID": "1711234-5013",
+                    "uom": "EACH",
+                    "reservationID": "a05be156-e534-4b71-a6ee-a786555e9ef2",
+                   
+                    "procurementAllowed": null,
+                    "qty": "2",
+                    "increaseCapacity": false,
+                    "channel": "WRAPPER",
+                    "lineID": "1",
+                    "storeId": null,
+                    "nodeType": "Store"
+                },
+                "error": null,
+                "problemType": "SUCCESS"
+            }
+        ],
+        "allocationRuleID": "RES_INTRV"
+    },
+    "status": 200
+}

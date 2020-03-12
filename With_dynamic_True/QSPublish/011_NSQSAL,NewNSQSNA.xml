@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>		 
+<!-- Consider an item with old NS QS = AL. Send a new NS QA = NA. Validate entry made into jcp_capacity_exclusions
+
+-->
+
+<testsuite description="Consider an item with old NS QS = AL. Send a new NS QA = NA. Validate entry made into jcp_capacity_exclusions" name="011">
+
+	 <test apiMethod="POST" apiUrl="/master/node/JCP/2988/" 
+		description="Insert node 1"
+        expectedJsonFile="expected\011\011_01.json"
+        inputJsonFile="input\011\011_01.json" name="01" outputJsonFile="output\011\011_01.json"/>
+
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/" 
+		description="item details"
+        expectedJsonFile="expected\011\011_02.json"
+        inputJsonFile="input\011\011_02.json" name="02" outputJsonFile="output\011\011_02.json"/>
+
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/" 
+		description="insert inventory"
+        expectedJsonFile="expected\011\011_03.json"
+        inputJsonFile="input\011\011_03.json" name="03" outputJsonFile="output\011\011_03.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="insert capacity"
+        expectedJsonFile="expected\011\011_04.json"
+        inputJsonFile="input\011\011_04.json" name="04" outputJsonFile="output\011\011_04.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/" 
+		description="multiread"
+		expectedJsonFile="expected\011\011_05.json"
+		inputJsonFile="input\011\011_05.json" name="05" outputJsonFile="output\011\011_05.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/qualitativeStatus/" 
+		description="insert qualitativeStatus"
+		expectedJsonFile="expected\011\011_06.json"
+		inputJsonFile="input\011\011_06.json" name="06" outputJsonFile="output\011\011_06.json"/>
+		
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/" 
+						description="location inventory"
+						expectedJsonFile="expected\011\011_07.json"
+						inputJsonFile="input\011\011_07.json" name="07" outputJsonFile="output\011\011_07.json"/>
+						
+					<test apiMethod="delay" delay="15000" description="Delay : 15000 ms" name="99"/> 
+						
+		<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/" 
+		description="get qualitativeStatus"
+		expectedJsonFile="expected\011\011_08.json"
+		inputJsonFile="input\011\011_08.json" name="08" outputJsonFile="output\011\011_08.json"/>		
+
+					<test apiMethod="delay" delay="15000" description="Delay : 15000 ms" name="100"/>  
+						
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_capacity_exclusions" 
+						description="Check entry in jcp_capacity_exclusions map"
+						expectedJsonFile="expected\011\011_09.json"
+						inputJsonFile="input\011\011_09.json" name="09" outputJsonFile="output\011\011_09.json"/>
+						
+		<test apiMethod="POST" apiUrl="/master/qualitativeStatus/" 
+		description="insert qualitativeStatus"
+		expectedJsonFile="expected\011\011_06_01.json"
+		inputJsonFile="input\011\011_06_01.json" name="06_01" outputJsonFile="output\011\011_06_01.json"/>
+		
+		<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="insert capacity"
+        expectedJsonFile="expected\011\011_04_01.json"
+        inputJsonFile="input\011\011_04_01.json" name="04_01" outputJsonFile="output\011\011_04_01.json"/>
+		
+		<test apiMethod="delay" delay="45000" description="Delay : 45000 ms" name="101"/>
+		
+		<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/" 
+		description="get qualitativeStatus"
+		expectedJsonFile="expected\011\011_08_01.json"
+		inputJsonFile="input\011\011_08.json" name="08_01" outputJsonFile="output\011\011_08_01.json"/>
+						
+						
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_capacity_exclusions" 
+						description="Check entry is deleted in jcp_capacity_exclusions map"
+						expectedJsonFile="expected\011\011_10.json"
+						inputJsonFile="input\011\011_10.json" name="10" outputJsonFile="output\011\011_10.json"/>
+</testsuite>

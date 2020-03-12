@@ -1,0 +1,8 @@
+{
+    "warnings": [],
+    "message": "fromDate or toDate is missing",
+    "nodeType": null,
+    "body": null,
+    "key": null,
+    "status": 400
+}

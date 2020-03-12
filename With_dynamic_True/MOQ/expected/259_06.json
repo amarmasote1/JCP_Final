@@ -1,0 +1,38 @@
+{
+    "body": [
+        {
+            "warnings": null,
+            "message": "Success",
+            "body": {
+                "invall": {
+                    "shipATP": 1,
+                    "unconfirmeddemand": 0,
+                    "standard_capacity": 10,
+                    "pickSafetyFactorSource": 0,
+                   
+                    "ship_active": 1,
+                    "Available_capacity": 10,
+                    "shipSafetyFactorSource": 0,
+                    "isDirty": 0,
+                    "isActiveMarkDown": 0,
+                    "bopusSafetyFactor": 2,
+                    "shipSafetyFactor": 1,
+                    "bopusATP": 0,
+                    "clearance_capacity_percentage": 0,
+                    "reserveddemand": 0,
+                    "grossShipAtp": 1,
+                    "isBopisMarkdownEligible": 1,
+                    "bopus_active": 1,
+                    "grossBopusAtp": 0,
+                    "onhandsupply": 2,
+                  
+                    "isSFSMarkdownEligible": 1
+                }
+            },
+            "key": "JCP|2368|29612343102|EACH",
+            "status": 200
+        }
+    ],
+    "message": "Successful",
+    "status": 221
+}

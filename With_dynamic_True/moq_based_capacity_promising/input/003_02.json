@@ -1,0 +1,14 @@
+{
+  "countryCode": "US",
+  "zipCode": "34507",
+  "longitude": "56.0",
+  "latitude": "76.0",
+  "nodeName": "2416",
+  "nodeProcessingTime": 0,
+  "timeZone": "en_US_CST",
+  "region":"MOQ", "state":"moq1", "nodeType": "Store",
+  "shippable": "true",
+  "bopus": "true",
+  "cutOffTime": "20:30:00",
+  "locationActive": true
+}

@@ -1,0 +1,82 @@
+{
+    "message": "Partial Success",
+    "body": {
+        "enterpriseCode": "00001",
+        "reservation": [
+            {
+                "bundleParentLineId": "",
+                "kitQty": "",
+                "priorityNode": null,
+                "itemReservationStatus": "RS",
+                "expectedFulfillmentDate": "2020-02-28",
+                "reservedQty": 6,
+                "requestLine": {
+                    "itemID": "1711234-5035",
+                    "uom": "EACH",
+                    "reservationID": "9e2af961-bfc9-4c41-a6ce-88ef05009f1b",
+                    "deliveryMethod": null,
+                    "procurementAllowed": null,
+                    "qty": "6",
+                    "increaseCapacity": false,
+                    "channel": "WRAPPER",
+                    "lineID": "1",
+                    "storeId": null,
+                    "nodeType": "Store"
+                },
+                "shipDate": "2020-02-28",
+                "error": null,
+                "problemType": "SUCCESS"
+            },
+            {
+                "bundleParentLineId": "",
+                "kitQty": "",
+                "priorityNode": "",
+                "itemReservationStatus": "NA",
+                "expectedFulfillmentDate": "2020-02-28",
+                "reservedQty": 0,
+                "requestLine": {
+                    "itemID": "1711234-5034",
+                    "uom": "EACH",
+                    "reservationID": "",
+                    "deliveryMethod": "",
+                    "procurementAllowed": "",
+                    "qty": "6",
+                    "increaseCapacity": false,
+                    "channel": "",
+                    "lineID": "1",
+                    "storeId": null,
+                    "nodeType": ""
+                },
+                "shipDate": "2020-02-28",
+                "error": null,
+                "problemType": "NO_AVAILABILITY"
+            },
+            {
+                "bundleParentLineId": "",
+                "kitQty": "",
+                "priorityNode": "",
+                "itemReservationStatus": "NA",
+                "expectedFulfillmentDate": "2020-02-28",
+                "reservedQty": 0,
+                "requestLine": {
+                    "itemID": "1711234-5036",
+                    "uom": "EACH",
+                    "reservationID": "",
+                    "deliveryMethod": "",
+                    "procurementAllowed": "",
+                    "qty": "6",
+                    "increaseCapacity": false,
+                    "channel": "",
+                    "lineID": "1",
+                    "storeId": null,
+                    "nodeType": ""
+                },
+                "shipDate": "2020-02-28",
+                "error": null,
+                "problemType": "NO_AVAILABILITY"
+            }
+        ],
+        "allocationRuleID": "RES_INTRV"
+    },
+    "status": 300
+}

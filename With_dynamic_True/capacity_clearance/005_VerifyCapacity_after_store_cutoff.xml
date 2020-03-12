@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>		 
+<!-- Verify
+			Capacity after store cut off
+-->
+
+<testsuite description="Verify capacity after store cutoff" name="005">
+
+    
+   <test apiMethod="POST" apiUrl="/master/node/JCP/1963/" 
+		description="Insert node 1"
+        expectedJsonFile="expected\005_01.json"
+        inputJsonFile="input\005_01.json" name="01" outputJsonFile="output\005_01.json"/>
+
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="Insert clearance capacity : after store cutoff"
+        expectedJsonFile="expected\005_02.json"
+        inputJsonFile="input\005_02.json" name="02" outputJsonFile="output\005_02.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+		description="Get Capacity : should return current day capacity"
+        expectedJsonFile="expected\005_03.json"
+        inputJsonFile="input\005_03.json" name="03" outputJsonFile="output\005_03.json"/>
+
+ 
+</testsuite>

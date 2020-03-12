@@ -1,0 +1,20 @@
+{
+    "warnings": null,
+    "message": "Success",
+    "body": {
+        "shortageQty": 0,
+        "substitutionDone": false,
+        "currentQty": 1,
+        "storeID": "2522",
+        "confirmed": true,
+        "itemID": "17112345013",
+        "uom": null,
+        "substitutedItemQty": null,
+        "qty": 1,
+        "increaseCapacity": true,
+        "originalOrderedQty": 0,
+        "shippedQty": 0
+    },
+    "key": "e37a70d6-736f-451c-8d72-b0b0cc40t779g8|JCP",
+    "status": 200
+}

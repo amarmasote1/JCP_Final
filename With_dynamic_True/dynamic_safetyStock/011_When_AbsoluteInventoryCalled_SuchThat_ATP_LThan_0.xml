@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify multiread : Absolute inventory after safetyStock such that ATP < 0
+			
+ -->
+
+<testsuite description="Verify multiread :  Absolute inventory after safetyStock such that ATP Less than 0" name="011">
+
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item details "
+        expectedJsonFile="expected\011_01.json"
+        inputJsonFile="input\011_01.json" name="01" outputJsonFile="output\011_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/2048/" description="Insert node 1"
+        expectedJsonFile="expected\011_02.json"
+        inputJsonFile="input\011_02.json" name="02" outputJsonFile="output\011_02.json"/>
+		
+<!--	
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2047/" description="Insert node 2"
+        expectedJsonFile="expected\011_03.json"
+        inputJsonFile="input\011_03.json" name="03" outputJsonFile="output\011_03.json"/>	
+	
+-->
+    <test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory"
+        expectedJsonFile="expected\011_05.json"
+        inputJsonFile="input\011_05.json" name="05" outputJsonFile="output\011_05.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread: verify ATP"
+        expectedJsonFile="expected\011_08.json"
+        inputJsonFile="input\011_08.json" name="08" outputJsonFile="output\011_08.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/safetyFactor/"
+        description="SafetyStock"
+        expectedJsonFile="expected\011_09.json"
+        inputJsonFile="input\011_09.json" name="09" outputJsonFile="output\011_09.json"/>	
+		       <!--
+	<test apiMethod="GET" apiUrl="/refreshActiveStores/"
+        description="refresh Active store"
+        expectedJsonFile="expected\011_10.json"
+        name="10" outputJsonFile="output\011_10.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="multiread with update mode"
+        expectedJsonFile="expected\011_11.json"
+        inputJsonFile="input\011_11.json" name="11" outputJsonFile="output\011_11.json"/>  -->
+	
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread: verify ATP"
+        expectedJsonFile="expected\011_12.json"
+        inputJsonFile="input\011_12.json" name="12" outputJsonFile="output\011_12.json"/>
+
+<test apiMethod="delay" delay="2000" description="Delay after Exclusion : 2000 ms" name="11"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="insert inventory : Add inventory such that ATP Less than 0"
+        expectedJsonFile="expected\011_13.json"
+        inputJsonFile="input\011_13.json" name="13" outputJsonFile="output\011_13.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread: verify Atp"
+        expectedJsonFile="expected\011_14.json"
+        inputJsonFile="input\011_14.json" name="14" outputJsonFile="output\011_14.json"/>
+	
+    
+</testsuite>

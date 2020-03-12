@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>		 
+<!-- Verify item delete :  when reservation is done against that item
+      
+
+ForceDelete Flag = Y
+-->
+
+<testsuite description="Verify item delete :  when reservation is done against that item
+
+ForceDelete Flag = Y"    name="016">
+
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item insert : 1 item"
+        expectedJsonFile="expected\016_01.json"
+        inputJsonFile="input\016_01.json" name="01" outputJsonFile="output\016_01.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2931/"
+        description="store1"
+        expectedJsonFile="expected\016_02.json"
+        inputJsonFile="input\016_02.json" name="02" outputJsonFile="output\016_02.json"/>
+		
+		
+		
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="create inventory"
+        expectedJsonFile="expected\016_04.json"
+        inputJsonFile="input\016_04.json" name="04" outputJsonFile="output\016_04.json"/>
+
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity: set valid capacity"
+        expectedJsonFile="expected\016_07.json"
+        inputJsonFile="input\016_07.json" name="07" outputJsonFile="output\016_07.json"/>
+		
+		
+    <test apiMethod="POST" apiUrl="/reserve/JCP/0/N/" 
+		description="Store level reservation"
+        expectedJsonFile="expected\016_05.json"
+        inputJsonFile="input\016_05.json" name="05" outputJsonFile="output\016_05.json"/>
+		
+	
+		
+		
+	<!-- jcp_item map GET-->
+	
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item/" 
+		description="Get map value : item1 "
+        expectedJsonFile="expected\016_20.json"
+         inputJsonFile="input\016_20.json" name="20" outputJsonFile="output\016_20.json"/>
+
+	<!-- jcp_item_inventory	map GET-->
+			
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/" 
+		description="Get map value : item1 "
+        expectedJsonFile="expected\016_26.json"
+        inputJsonFile="input\016_26.json" name="26" outputJsonFile="output\016_26.json"/>
+		
+	<!-- jcp_reservation_detail	map GET-->
+	
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_reservation_map/" 
+		description="Data"
+        expectedJsonFile="expected\016_60.json"
+        inputJsonFile="input\016_60.json" name="60" outputJsonFile="output\016_60.json"/>
+		
+	
+	
+		
+		
+		
+		
+
+	<test apiMethod="DELETE" apiUrl="/master/itemDetails/JCP/" 
+		description="Item delete : single item"
+        expectedJsonFile="expected\016_08.json"
+        inputJsonFile="input\016_08.json" name="08" outputJsonFile="output\016_08.json"/>
+
+		
+	
+	<!-- jcp_item map GET-->	
+	
+	
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item/" 
+		description="Get map value : item1 "
+        expectedJsonFile="expected\016_40.json"
+         inputJsonFile="input\016_40.json" name="40" outputJsonFile="output\016_40.json"/>
+		 
+	<!-- jcp_item_inventory	map GET-->
+			
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/" 
+		description="Get map value : item1 "
+        expectedJsonFile="expected\016_46.json"
+        inputJsonFile="input\016_46.json" name="46" outputJsonFile="output\016_46.json"/>
+		
+	<!-- jcp_reservation_detail	map GET-->
+	
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_reservation_map/" 
+		description="Data"
+        expectedJsonFile="expected\016_61.json"
+        inputJsonFile="input\016_61.json" name="61" outputJsonFile="output\016_61.json"/>
+		
+	
+	
+		
+		
+</testsuite>

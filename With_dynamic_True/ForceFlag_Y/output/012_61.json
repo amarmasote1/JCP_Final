@@ -1,0 +1,19 @@
+{
+    "warnings": null,
+    "message": "Success",
+    "nodeType": null,
+    "body": {
+        "exclusions": {
+            "55551112043": {
+                "pickLocations": [
+                    "ALL"
+                ],
+                "shipLocations": [
+                    "ALL"
+                ]
+            }
+        }
+    },
+    "key": "555",
+    "status": 200
+}

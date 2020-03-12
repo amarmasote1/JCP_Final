@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>		 
+<!-- Verify item delete :  ForceDelete = Y,  inventory not added
+      1. Single item
+      2. multiple items
+-->
+
+<testsuite description="Verify item delete :  ForceDelete = Y,  inventory not added
+      1. Single item
+      2. multiple items"
+	   name="004">
+
+    <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="Item insert : 3 items"
+        expectedJsonFile="expected\004_01.json"
+        inputJsonFile="input\004_01.json" name="01" outputJsonFile="output\004_01.json"/>
+
+		
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item/" 
+		description="Get map value : item1 "
+        expectedJsonFile="expected\004_10.json"
+         inputJsonFile="input\004_10.json" name="10" outputJsonFile="output\004_10.json"/>
+		 
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item/" 
+		description="Get map value : item2 "
+        expectedJsonFile="expected\004_11.json"
+        inputJsonFile="input\004_11.json" name="11" outputJsonFile="output\004_11.json"/>
+		 
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item/" 
+		description="Get map value : item3 "
+        expectedJsonFile="expected\004_12.json"
+        inputJsonFile="input\004_12.json" name="12" outputJsonFile="output\004_12.json"/>	
+		
+		
+    <test apiMethod="DELETE" apiUrl="/master/itemDetails/JCP/" 
+		description="Item delete : Single item"
+        expectedJsonFile="expected\004_02.json"
+        inputJsonFile="input\004_02.json" name="02" outputJsonFile="output\004_02.json"/>
+
+	<test apiMethod="DELETE" apiUrl="/master/itemDetails/JCP/" 
+		description="Item delete : multiple items"
+        expectedJsonFile="expected\004_03.json"
+        inputJsonFile="input\004_03.json" name="03" outputJsonFile="output\004_03.json"/>
+
+		
+		
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item/" 
+		description="Get map value : item1 "
+        expectedJsonFile="expected\004_14.json"
+         inputJsonFile="input\004_14.json" name="14" outputJsonFile="output\004_14.json"/>
+		 
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item/" 
+		description="Get map value : item2 "
+        expectedJsonFile="expected\004_15.json"
+        inputJsonFile="input\004_15.json" name="15" outputJsonFile="output\004_15.json"/>
+		 
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item/" 
+		description="Get map value : item3 "
+        expectedJsonFile="expected\004_16.json"
+        inputJsonFile="input\004_16.json" name="16" outputJsonFile="output\004_16.json"/>
+		
+</testsuite>

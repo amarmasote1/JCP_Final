@@ -1,0 +1,18 @@
+[{
+
+		"storeId": "1315",
+		"shutdownIndi": "P",
+		"storeShutdown": "Y",
+		"startDate": "<$yesterday>",
+		"endDate": "<$nextWeek>"
+
+	}, {
+
+		"storeId": "1315",
+		"shutdownIndi": "S",
+		"storeShutdown": "Y",
+		"startDate": "<$yesterday>",
+		"endDate": "<$nextWeek>"
+
+	}
+]

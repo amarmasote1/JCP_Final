@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>		 
+<!-- Verify
+	Validations : Boundary values
+
+     1.  0 standard  capacity   
+     2.  1 standard  capacity   
+     3.  10,000 standard capacity
+     4.  0 clearanceCapacityPercentage
+     5.  1 clearanceCapacityPercentage
+     6.  99 clearanceCapacityPercentage
+     7.  100 clearanceCapacityPercentage
+     8.  120 clearanceCapacityPercentage
+-->
+
+<testsuite description="Verify Validations, when mandatory parameter missing" name="003">
+
+    
+   <test apiMethod="POST" apiUrl="/master/node/JCP/1942/" 
+		description="Insert node 1"
+        expectedJsonFile="expected\003_01.json"
+        inputJsonFile="input\003_01.json" name="01" outputJsonFile="output\003_01.json"/>
+
+  <test apiMethod="POST" apiUrl="/master/node/JCP/1943/" 
+		description="Insert node 2"
+        expectedJsonFile="expected\003_02.json"
+        inputJsonFile="input\003_02.json" name="02" outputJsonFile="output\003_02.json"/>
+
+   <test apiMethod="POST" apiUrl="/master/node/JCP/1944/" 
+		description="Insert node 3"
+        expectedJsonFile="expected\003_03.json"
+        inputJsonFile="input\003_03.json" name="03" outputJsonFile="output\003_03.json"/>
+	
+	
+	<test apiMethod="POST" apiUrl="/master/node/JCP/1945/" 
+		description="Insert node 4"
+        expectedJsonFile="expected\003_04.json"
+        inputJsonFile="input\003_04.json" name="04" outputJsonFile="output\003_04.json"/>
+
+   <test apiMethod="POST" apiUrl="/master/node/JCP/1948/" 
+		description="Insert node 5"
+        expectedJsonFile="expected\003_05.json"
+        inputJsonFile="input\003_05.json" name="05" outputJsonFile="output\003_05.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/1950/" 
+		description="Insert node 6"
+        expectedJsonFile="expected\003_06.json"
+        inputJsonFile="input\003_06.json" name="06" outputJsonFile="output\003_06.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/1951/" 
+		description="Insert node 7"
+        expectedJsonFile="expected\003_07.json"
+        inputJsonFile="input\003_07.json" name="07" outputJsonFile="output\003_07.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/1953/" 
+		description="Insert node 8"
+        expectedJsonFile="expected\003_08.json"
+        inputJsonFile="input\003_08.json" name="08" outputJsonFile="output\003_08.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="Insert clearance capacity : 0 standard  capacity "
+        expectedJsonFile="expected\003_09.json"
+        inputJsonFile="input\003_09.json" name="09" outputJsonFile="output\003_09.json"/>
+		
+				<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+						description="Get Capacity "
+						expectedJsonFile="expected\003_21.json"
+						inputJsonFile="input\003_21.json" name="21" outputJsonFile="output\003_21.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="Insert clearance capacity : 1 standard  capacity"
+        expectedJsonFile="expected\003_10.json"
+        inputJsonFile="input\003_10.json" name="10" outputJsonFile="output\003_10.json"/>
+		
+				<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+						description="Get Capacity "
+						expectedJsonFile="expected\003_22.json"
+						inputJsonFile="input\003_22.json" name="22" outputJsonFile="output\003_22.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="Insert clearance capacity : 10,000 standard capacity"
+        expectedJsonFile="expected\003_11.json"
+        inputJsonFile="input\003_11.json" name="11" outputJsonFile="output\003_11.json"/>
+		
+				<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+						description="Get Capacity "
+						expectedJsonFile="expected\003_23.json"
+						inputJsonFile="input\003_23.json" name="23" outputJsonFile="output\003_23.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="Insert clearance capacity : 0 clearanceCapacityPercentage"
+        expectedJsonFile="expected\003_12.json"
+        inputJsonFile="input\003_12.json" name="12" outputJsonFile="output\003_12.json"/>
+		
+				<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+						description="Get Capacity "
+						expectedJsonFile="expected\003_24.json"
+						inputJsonFile="input\003_24.json" name="24" outputJsonFile="output\003_24.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="Insert clearance capacity : 1 clearanceCapacityPercentage"
+        expectedJsonFile="expected\003_13.json"
+        inputJsonFile="input\003_13.json" name="13" outputJsonFile="output\003_13.json"/>
+		
+				<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+						description="Get Capacity "
+						expectedJsonFile="expected\003_25.json"
+						inputJsonFile="input\003_25.json" name="25" outputJsonFile="output\003_25.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="Insert clearance capacity : 99 clearanceCapacityPercentage"
+        expectedJsonFile="expected\003_14.json"
+        inputJsonFile="input\003_14.json" name="14" outputJsonFile="output\003_14.json"/>
+		
+				<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+						description="Get Capacity "
+						expectedJsonFile="expected\003_26.json"
+						inputJsonFile="input\003_26.json" name="26" outputJsonFile="output\003_26.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="Insert clearance capacity : 100 clearanceCapacityPercentage"
+        expectedJsonFile="expected\003_15.json"
+        inputJsonFile="input\003_15.json" name="15" outputJsonFile="output\003_15.json"/>
+		
+				<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+						description="Get Capacity "
+						expectedJsonFile="expected\003_27.json"
+						inputJsonFile="input\003_27.json" name="27" outputJsonFile="output\003_27.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="Insert clearance capacity : 120 clearanceCapacityPercentage"
+        expectedJsonFile="expected\003_16.json"
+        inputJsonFile="input\003_16.json" name="16" outputJsonFile="output\003_16.json"/>
+		
+				<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+						description="Get Capacity "
+						expectedJsonFile="expected\003_28.json"
+						inputJsonFile="input\003_28.json" name="28" outputJsonFile="output\003_28.json"/>
+    
+
+ 
+</testsuite>

@@ -1,0 +1,11 @@
+{
+    "body": [
+        {
+            "clearanceCapacityEnabled": true,
+            "message": "feature flag value",
+            "status": 200
+        }
+    ],
+    "message": "Successful",
+    "status": 221
+}

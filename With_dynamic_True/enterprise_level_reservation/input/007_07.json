@@ -1,0 +1,5 @@
+[
+{"storeID" :"1134","standardCapacity" : "10","capacityUnitOfMeasure" : "RELEASE", "date" : "<$today>","availableCapacity" :"10" },
+{"storeID" :"1135","standardCapacity" : "10","capacityUnitOfMeasure" : "RELEASE", "date" : "<$today>","availableCapacity" :"10" },
+{"storeID" :"1140","standardCapacity" : "10","capacityUnitOfMeasure" : "RELEASE", "date" : "<$today>","availableCapacity" :"10" }
+]

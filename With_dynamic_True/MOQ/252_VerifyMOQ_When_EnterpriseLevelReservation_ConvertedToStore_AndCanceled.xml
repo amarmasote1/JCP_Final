@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verify MOQ when Enterprise level reservation is converted to store and canceled
+		item is present in 2 stores.  storeID      ATP
+										2349		4
+										2353		5
+										
+-->
+
+<!-- expected  
+				MOQ before reservation : 5
+			1.	MultiLine EnterReservation : qty = 2 and 2
+				MOQ after reservation  : 5
+			2.	1st line Convert to store Reservation at store 2 : qty = 2
+				MOQ after reservation  : 4
+			3.	2nd line convert to store reservation at store 1 : qty = 2
+				MOQ after reservation  : 3
+			4.  Cancel store1 reservation 
+				MOQ 				   : 4
+			5.  Cancel store2 reservation
+				MOQ					   : 5
+			
+-->
+
+<testsuite description="Verify MOQ when Enterprise level reservation is converted to store and canceled" name="252">
+		
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/"
+        description="items: 1 "
+        expectedJsonFile="expected\252_01.json"
+        inputJsonFile="input\252_01.json" name="01" outputJsonFile="output\252_01.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2349/"
+        description="store 1"
+        expectedJsonFile="expected\252_02.json"
+        inputJsonFile="input\252_02.json" name="02" outputJsonFile="output\252_02.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2353/"
+        description="store 1"
+        expectedJsonFile="expected\252_15.json"
+        inputJsonFile="input\252_15.json" name="15" outputJsonFile="output\252_15.json"/>
+		
+		
+		
+		
+		
+		
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/"
+        description="Create inventory in 2 stores"
+        expectedJsonFile="expected\252_03.json"
+        inputJsonFile="input\252_03.json" name="03" outputJsonFile="output\252_03.json"/>
+	
+
+	
+	
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/"
+        description="Node Capacity: Available Capacity = 8"
+        expectedJsonFile="expected\252_05.json"
+        inputJsonFile="input\252_05.json" name="05" outputJsonFile="output\252_05.json"/>
+		
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/"
+        description="Multiread: shipATP and BopusATP will 4 and 5"
+        expectedJsonFile="expected\252_06.json"
+        inputJsonFile="input\252_06.json" name="06" outputJsonFile="output\252_06.json"/>
+		
+
+
+	
+	<test apiMethod="POST" apiUrl="/master/qualitativeStatus/"
+        description="insert qual status : AL"
+        expectedJsonFile="expected\252_07.json"
+        inputJsonFile="input\252_07.json" name="07" outputJsonFile="output\252_07.json"/>
+		
+<test apiMethod="delay" delay="10000" description="Delay after Exclusion : 10000 ms" name="100"/>
+
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="get Qual status: check for MOQ"
+        expectedJsonFile="expected\252_08.json"
+        inputJsonFile="input\252_08.json" name="8" outputJsonFile="output\252_08.json"/>
+		
+		
+		
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="MultiLine Enterprise reservation for qty = 2 and 2"
+        expectedJsonFile="expected\252_09.json"
+        inputJsonFile="input\252_09.json" name="09" outputJsonFile="output\252_09.json"/>
+		
+<test apiMethod="delay" delay="5000" description="Delay after Exclusion : 5000 ms" name="100"/>
+
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="get Qual status: check for MOQ"
+        expectedJsonFile="expected\252_10.json"
+        inputJsonFile="input\252_10.json" name="10" outputJsonFile="output\252_10.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="1st line Convert to store 2: qty = 2"
+        expectedJsonFile="expected\252_11.json"
+        inputJsonFile="input\252_11.json" name="11" outputJsonFile="output\252_11.json"/>
+		
+<test apiMethod="delay" delay="5000" description="Delay after Exclusion : 5000 ms" name="100"/>
+
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="get Qual status: check for MOQ"
+        expectedJsonFile="expected\252_12.json"
+        inputJsonFile="input\252_12.json" name="12" outputJsonFile="output\252_12.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="2nd line Convert to store 1 : qty = 2"
+        expectedJsonFile="expected\252_13.json"
+        inputJsonFile="input\252_13.json" name="13" outputJsonFile="output\252_13.json"/>
+		
+<test apiMethod="delay" delay="5000" description="Delay after Exclusion : 5000 ms" name="100"/>
+
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="get Qual status: check for MOQ"
+        expectedJsonFile="expected\252_14.json"
+        inputJsonFile="input\252_14.json" name="14" outputJsonFile="output\252_14.json"/>
+		
+	
+	
+	
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Cancel 2nd reservation : store1"
+        expectedJsonFile="expected\252_17.json"
+        inputJsonFile="input\252_17.json" name="17" outputJsonFile="output\252_17.json"/>
+		
+<test apiMethod="delay" delay="5000" description="Delay after Exclusion : 5000 ms" name="100"/>
+
+		
+	<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/"
+        description="get Qual status: check for MOQ"
+        expectedJsonFile="expected\252_18.json"
+        inputJsonFile="input\252_18.json" name="18" outputJsonFile="output\252_18.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/"
+        description="Cancel 1st reservation : store2"
+        expectedJsonFile="expected\252_19.json"
+        inputJsonFile="input\252_19.json" name="19" outputJsonFile="output\252_19.json"/>
+		
+<test apiMethod="delay" delay="5000" description="Delay after Exclusion : 5000 ms" name="100"/>
+
+		
+	<test apiMethod="POST" apiUrl="//master/getqualitativeStatus/"
+        description="get Qual status: check for MOQ"
+        expectedJsonFile="expected\252_20.json"
+        inputJsonFile="input\252_20.json" name="20" outputJsonFile="output\252_20.json"/>
+		
+		
+		
+	
+</testsuite>
