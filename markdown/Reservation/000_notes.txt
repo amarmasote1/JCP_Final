@@ -1,0 +1,2 @@
+1. Keep dynamic safetyStock false and pick and ship = 0
+2. atparrayInitialise flags as true

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>		 
+<!-- Verify
+	positive flow : std capacity = 0 and capacity percentage = 100
+
+-->
+
+<testsuite description="positive flow : std capacity = 0 and capacity percentage = 100" name="004">
+
+    
+    <test apiMethod="POST" apiUrl="/master/node/JCP/1831/" 
+		description="Insert node 1"
+        expectedJsonFile="expected\004_01.json"
+        inputJsonFile="input\004_01.json" name="01" outputJsonFile="output\004_01.json"/>
+	
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="insert node capacity"
+        expectedJsonFile="expected\004_05.json"
+        inputJsonFile="input\004_05.json" name="05" outputJsonFile="output\004_05.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+		description="Get Capacity"
+        expectedJsonFile="expected\004_06.json"
+        inputJsonFile="input\004_06.json" name="06" outputJsonFile="output\004_06.json"/>
+		
+		
+<test apiMethod="delay" delay="15000" description="Delay : 15000 ms" name="100"/>				
+
+
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_store_attributes/" 
+		description="create inventory "
+        expectedJsonFile="expected\004_07.json"
+        inputJsonFile="input\004_07.json" name="07" outputJsonFile="output\004_07.json"/>
+
+
+			
+</testsuite>

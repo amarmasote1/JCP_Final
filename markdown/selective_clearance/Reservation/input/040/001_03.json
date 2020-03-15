@@ -1,0 +1,14 @@
+[
+  {
+    "storeID": "1313",
+    "itemID": "7003141516027",
+    "uom": "EACH",
+    "supplyData": {
+      "onhandsupply": 100
+    },
+	"markdown": {
+      "active":true
+    },
+ "timestamp": "2018-12-16 15:48:02.0959 CST"
+  }
+]

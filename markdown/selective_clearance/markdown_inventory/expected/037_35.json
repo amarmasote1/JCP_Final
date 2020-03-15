@@ -1,0 +1,24 @@
+{
+    "warnings": null,
+    "message": "Success",
+    "body": {
+        "dirty": false,
+
+        
+        
+       
+        "pickSafetyFactorSource": 0,
+        "unconfirmedDemand": 0,
+        
+        "shipSafetyFactorSource": 0,
+        "bopusSafetyFactor": 2,
+
+        "shipSafetyFactor": 1,
+        
+        
+        "onhandSupply": 200,
+        "reservedDemand": 3
+    },
+    "key": "JCP|2966|70630003057|EACH",
+    "status": 200
+}

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>		 
+<!-- Verify
+	Update scenario  : Item marked, Update qual status from Al to NA
+-->
+
+<testsuite description="Update scenario : Item marked, Update qual status from Al to NA" name="060">
+
+    
+    <test apiMethod="POST" apiUrl="/master/node/JCP/0870/" 
+		description="Insert node"
+        expectedJsonFile="expected\060\060_01.json"
+        inputJsonFile="input\060\060_01.json" name="01" outputJsonFile="output\060\060_01.json"/>
+	
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/" 
+		description="item insert"
+        expectedJsonFile="expected\060\060_02.json"
+        inputJsonFile="input\060\060_02.json" name="02" outputJsonFile="output\060\060_02.json"/>
+
+    <test apiMethod="POST" apiUrl="/inventory/JCP/absolute/" 
+		description="create inventory "
+        expectedJsonFile="expected\060\060_04.json"
+        inputJsonFile="input\060\060_04.json" name="04" outputJsonFile="output\060\060_04.json"/>
+
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="insert capacity "
+        expectedJsonFile="expected\060\060_05.json"
+        inputJsonFile="input\060\060_05.json" name="05" outputJsonFile="output\060\060_05.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/qualitativeStatus/" 
+		description="insert qual status : AL"
+        expectedJsonFile="expected\060\060_06.json"
+        inputJsonFile="input\060\060_06.json" name="06" outputJsonFile="output\060\060_06.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/" 
+		description="multiread"
+        expectedJsonFile="expected\060\060_07.json"
+        inputJsonFile="input\060\060_07.json" name="07" outputJsonFile="output\060\060_07.json"/>
+
+		
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/" 
+						description="location inventory for item 1"
+						expectedJsonFile="expected\060\060_21.json"
+						inputJsonFile="input\060\060_21.json" name="21" outputJsonFile="output\060\060_21.json"/>
+						          <!--
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/" 
+						description="item inventory for item 2"
+						expectedJsonFile="expected\060\060_22.json"
+						inputJsonFile="input\060\060_22.json" name="22" outputJsonFile="output\060\060_22.json"/>
+						   -->
+					<test apiMethod="GET" apiUrl="/items/58078781010/locations/0870/markdown/" 
+						description="Get Markdown for item 1"
+						expectedJsonFile="expected\060\060_23.json"
+						inputJsonFile="input\060\060_23.json" name="23" outputJsonFile="output\060\060_23.json"/>
+						          <!--
+					<test apiMethod="GET" apiUrl="/items/58078781010/locations/0870/markdown/" 
+						description="Get Markdown for item 2"
+						expectedJsonFile="expected\060\060_24.json"
+						inputJsonFile="input\060\060_24.json" name="24" outputJsonFile="output\060\060_24.json"/>
+						          -->
+								  
+		<test apiMethod="delay" delay="10000" description="Delay : 10000 ms" name="100"/>				
+		
+					<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/" 
+						description="get qual status for item 1"
+						expectedJsonFile="expected\060\060_25.json"
+						inputJsonFile="input\060\060_25.json" name="25" outputJsonFile="output\060\060_25.json"/> 
+                               <!--
+					<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/" 
+						description="get qual status for item 2"
+						expectedJsonFile="expected\060\060_26.json"
+						inputJsonFile="input\060\060_26.json" name="26" outputJsonFile="output\060\060_26.json"/> 
+						    
+					<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+						description="Get store capacity"
+						expectedJsonFile="expected\060\060_27.json"
+						inputJsonFile="input\060\060_27.json" name="27" outputJsonFile="output\060\060_27.json"/>  -->
+		
+		
+	<test apiMethod="POST" apiUrl="/master/qualitativeStatus/" 
+		description="Update qual status to NA"
+        expectedJsonFile="expected\060\060_08.json"
+        inputJsonFile="input\060\060_08.json" name="08" outputJsonFile="output\060\060_08.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/" 
+		description="multiread"
+        expectedJsonFile="expected\060\060_09.json"
+        inputJsonFile="input\060\060_09.json" name="09" outputJsonFile="output\060\060_09.json"/>
+		
+		
+		
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/" 
+						description="location inventory for item 1"
+						expectedJsonFile="expected\060\060_31.json"
+						inputJsonFile="input\060\060_31.json" name="21" outputJsonFile="output\060\060_31.json"/>
+						         <!--
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/" 
+						description="item inventory for item 2"
+						expectedJsonFile="expected\060\060_32.json"
+						inputJsonFile="input\060\060_32.json" name="22" outputJsonFile="output\060\060_32.json"/>
+						        -->
+					<test apiMethod="GET" apiUrl="/items/58078781010/locations/0870/markdown/" 
+						description="Get Markdown for item 1"
+						expectedJsonFile="expected\060\060_33.json"
+						inputJsonFile="input\060\060_33.json" name="23" outputJsonFile="output\060\060_33.json"/>
+						        <!--
+					<test apiMethod="GET" apiUrl="/items/58078781010/locations/0870/markdown/" 
+						description="Get Markdown for item 2"
+						expectedJsonFile="expected\060\060_34.json"
+						inputJsonFile="input\060\060_34.json" name="24" outputJsonFile="output\060\060_34.json"/>
+						     -->
+							 
+		<test apiMethod="delay" delay="10000" description="Delay : 10000 ms" name="100"/>				
+		
+		
+					<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/" 
+						description="get qual status for item 1"
+						expectedJsonFile="expected\060\060_35.json"
+						inputJsonFile="input\060\060_35.json" name="25" outputJsonFile="output\060\060_35.json"/> 
+                             <!--
+					<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/" 
+						description="get qual status for item 2"
+						expectedJsonFile="expected\060\060_36.json"
+						inputJsonFile="input\060\060_36.json" name="26" outputJsonFile="output\060\060_36.json"/> 
+						            
+					<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+						description="Get store capacity"
+						expectedJsonFile="expected\060\060_37.json"
+						inputJsonFile="input\060\060_37.json" name="27" outputJsonFile="output\060\060_37.json"/>  -->
+						
+	<test apiMethod="POST" apiUrl="/reservations/" 
+			description="Wrapper "
+			expectedJsonFile="expected\060\060_091.json"
+			inputJsonFile="input\060\060_091.json" name="91" outputJsonFile="output\060\060_091.json"/>
+			
+</testsuite>

@@ -1,0 +1,60 @@
+{
+	"body": [{
+		"status": 200,
+		"message": "Success",
+		"key": "JCP|2955|70630003054|EACH",
+		"body": {
+			"invall": {
+				"unconfirmeddemand": 0,
+				"standard_capacity": 10,
+				"isDirty": 0,
+				"bopusSafetyFactor": 2,
+				"shipSafetyFactor": 1,
+				"clearance_capacity_percentage": 0,
+				"reserveddemand": 3,
+				"isBopisMarkdownEligible": 1,
+				"onhandsupply": 200,
+				"isSFSMarkdownEligible": 1,
+				"shipATP": 196,
+				"pickSafetyFactorSource": 0,
+				"ship_active": 1,
+				"Available_capacity": 10,
+				"shipSafetyFactorSource": 0,
+				"isActiveMarkDown": 0,
+				"bopusATP": 195,
+				"bopus_active": 1
+			}
+		},
+		"warnings": null
+	},
+	{
+		"status": 200,
+		"message": "Success",
+		"key": "JCP|2954|70630003054|EACH",
+		"body": {
+			"invall": {
+				"unconfirmeddemand": 0,
+				"standard_capacity": 10,
+				"isDirty": 0,
+				"bopusSafetyFactor": 2,
+				"shipSafetyFactor": 1,
+				"clearance_capacity_percentage": 0,
+				"reserveddemand": 3,
+				"isBopisMarkdownEligible": 1,
+				"onhandsupply": 100,
+				"isSFSMarkdownEligible": 1,
+				"shipATP": 96,
+				"pickSafetyFactorSource": 0,
+				"ship_active": 1,
+				"Available_capacity": 10,
+				"shipSafetyFactorSource": 0,
+				"isActiveMarkDown": 0,
+				"bopusATP": 95,
+				"bopus_active": 1
+			}
+		},
+		"warnings": null
+	}],
+	"status": 221,
+	"message": "Successful"
+}

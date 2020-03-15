@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>		 
+<!-- Verify
+	
+update capacity array scenario : std capacity 0
+-->
+
+<testsuite description="update capacity array scenario : capacity to 1" name="020">
+
+    
+    <test apiMethod="POST" apiUrl="/master/node/JCP/1886/" 
+		description="Insert node 1"
+        expectedJsonFile="expected\020_01.json"
+        inputJsonFile="input\020_01.json" name="01" outputJsonFile="output\020_01.json"/>
+	
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="insert node capacity"
+        expectedJsonFile="expected\020_05.json"
+        inputJsonFile="input\020_05.json" name="05" outputJsonFile="output\020_05.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+		description="Get Capacity"
+        expectedJsonFile="expected\020_06.json"
+        inputJsonFile="input\020_06.json" name="06" outputJsonFile="output\020_06.json"/>
+		
+<test apiMethod="delay" delay="8000" description="Delay : 8000 ms" name="100"/>				
+
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_store_attributes/" 
+		description="store attributes "
+        expectedJsonFile="expected\020_07.json"
+        inputJsonFile="input\020_07.json" name="07" outputJsonFile="output\020_07.json"/>
+		
+		
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="insert node capacity"
+        expectedJsonFile="expected\020_08.json"
+        inputJsonFile="input\020_08.json" name="08" outputJsonFile="output\020_08.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+		description="Get Capacity"
+        expectedJsonFile="expected\020_09.json"
+        inputJsonFile="input\020_09.json" name="09" outputJsonFile="output\020_09.json"/>
+		
+<test apiMethod="delay" delay="15000" description="Delay : 15000 ms" name="100"/>				
+
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_store_attributes/" 
+		description="store attributes"
+        expectedJsonFile="expected\020_10.json"
+        inputJsonFile="input\020_10.json" name="10" outputJsonFile="output\020_10.json"/>
+
+
+			
+</testsuite>

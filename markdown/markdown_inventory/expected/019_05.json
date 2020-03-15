@@ -1,0 +1,30 @@
+{
+	"status": 200,
+	"message": "Success",
+	"body": [{
+		"itemID": "70630003029",
+		"uom": "EACH",
+		"storeID": "1529",
+		"supplyData": {
+			"onhandsupply": 20
+		},
+		"demandData": null,
+		
+		"markDown": {
+			"active": true
+		}
+	},
+	{
+		"itemID": "70630003030",
+		"uom": "EACH",
+		"storeID": "1529",
+		"supplyData": {
+			"onhandsupply": 20
+		},
+		"demandData": null,
+		
+		"markDown": {
+			"active": false
+		}
+	}]
+}

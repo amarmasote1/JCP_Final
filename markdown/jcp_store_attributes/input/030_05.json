@@ -1,0 +1,19 @@
+[
+  {
+    "storeID": "1927",
+    "capacityUnitOfMeasure": "RELEASE",
+    "standardCapacity": "100",
+    "clearanceCapacityPercentage": "20",
+    "date": "<$today>",
+    "capacityOrganizationCode": "JCP"
+  },
+  {
+    "storeID": "1935",
+    "capacityUnitOfMeasure": "RELEASE",
+    "standardCapacity": "100",
+    "clearanceCapacityPercentage": "20",
+    "date": "<$today>",
+    "capacityOrganizationCode": "JCP"
+  }
+]
+ 

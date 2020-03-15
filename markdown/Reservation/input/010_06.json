@@ -1,0 +1,14 @@
+{
+    "reservation": [
+        {
+            "storeID": "1419",
+            "itemID": "34530001010",
+            "uom": "EACH",
+            "shippable": "true",
+            "procurementAllowed": "false",
+            "qty": "5",
+            "lineID": "1",
+            "reservationID": "CR001-010"
+        }
+    ]
+}

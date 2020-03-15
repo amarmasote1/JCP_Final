@@ -1,0 +1,19 @@
+{
+    "message": "Success",
+    "body": [
+        {
+            "itemID": "70630003006",
+            "uom": "EACH",
+            "demandData": null,
+            "markDown": {
+                "active": true
+            },
+            "storeID": "1399",
+            "supplyData": {
+                "onhandsupply": 100
+            },
+            "timestamp": "2020-02-28 17:02:20.0000 IST"
+        }
+    ],
+    "status": 200
+}

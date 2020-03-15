@@ -1,0 +1,14 @@
+[
+  {
+    "storeID": "0916",
+    "itemID": "58078781021",
+    "uom": "EACH",
+    "supplyData": {
+      "onhandsupply": 5
+    },
+    "timestamp": "<$today>",
+    "markdown": {
+      "active":true
+    }
+  }
+]

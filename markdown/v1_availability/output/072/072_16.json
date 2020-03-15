@@ -1,0 +1,10 @@
+{
+    "warnings": null,
+    "message": "Data validation failed, resubmit with corrections",
+    "nodeType": null,
+    "body": {
+        "JCP|0911|20200302": "new clearance capacity cannot be less than the consumed clearance capacity "
+    },
+    "key": "JCP",
+    "status": 400
+}

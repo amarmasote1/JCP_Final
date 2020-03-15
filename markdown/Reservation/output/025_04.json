@@ -1,0 +1,32 @@
+{
+    "message": "Success",
+    "body": [
+        {
+            "itemID": "34530001035",
+            "uom": "EACH",
+            "demandData": null,
+            "markDown": {
+                "active": false
+            },
+            "storeID": "1503",
+            "supplyData": {
+                "onhandsupply": 10
+            },
+            "timestamp": "2020-03-04 12:06:22.0000 IST"
+        },
+        {
+            "itemID": "34530001036",
+            "uom": "EACH",
+            "demandData": null,
+            "markDown": {
+                "active": false
+            },
+            "storeID": "1503",
+            "supplyData": {
+                "onhandsupply": 10
+            },
+            "timestamp": "2020-03-04 12:06:22.0000 IST"
+        }
+    ],
+    "status": 200
+}

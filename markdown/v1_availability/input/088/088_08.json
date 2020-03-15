@@ -1,0 +1,14 @@
+{
+    "reservation": [
+        {
+            "storeID": "0993",
+            "itemID": "58078781031",
+            "uom": "EACH",
+            "bopus": "true",
+            "procurementAllowed": "false",
+            "qty": "1",
+            "lineID": "1",
+            "reservationID": "R-v1-R008"
+        }
+    ]
+}

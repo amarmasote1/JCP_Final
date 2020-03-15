@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>		 
+<!-- Verify
+	Complex scenario 1 : 
+	
+1. Have shipAtp = 5, Clearance Capacity = 1 (marked down)
+2. Store Reservation 
+3. Shutdown
+4. caancel reservation
+5. remove shutdown
+6. update clearance capacity = 0
+-->
+
+<testsuite description="Complex scenario : 
+1. Have shipAtp = 5, Clearance Capacity = 1 (marked down)
+2. Store Reservation 
+3. Shutdown
+4. caancel reservation
+5. remove shutdown
+6. update clearance capacity = 0" name="072">
+
+    
+    <test apiMethod="POST" apiUrl="/master/node/JCP/0911/" 
+		description="Insert node"
+        expectedJsonFile="expected\072\072_01.json"
+        inputJsonFile="input\072\072_01.json" name="01" outputJsonFile="output\072\072_01.json"/>
+	
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/" 
+		description="item insert"
+        expectedJsonFile="expected\072\072_02.json"
+        inputJsonFile="input\072\072_02.json" name="02" outputJsonFile="output\072\072_02.json"/>
+
+    <test apiMethod="POST" apiUrl="/inventory/JCP/absolute/" 
+		description="create inventory "
+        expectedJsonFile="expected\072\072_04.json"
+        inputJsonFile="input\072\072_04.json" name="04" outputJsonFile="output\072\072_04.json"/>
+
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="insert capacity "
+        expectedJsonFile="expected\072\072_05.json"
+        inputJsonFile="input\072\072_05.json" name="05" outputJsonFile="output\072\072_05.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/qualitativeStatus/" 
+		description="insert qual status : NA"
+        expectedJsonFile="expected\072\072_06.json"
+        inputJsonFile="input\072\072_06.json" name="06" outputJsonFile="output\072\072_06.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/" 
+		description="multiread"
+        expectedJsonFile="expected\072\072_07.json"
+        inputJsonFile="input\072\072_07.json" name="07" outputJsonFile="output\072\072_07.json"/>
+
+		
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/" 
+						description="location inventory for item 1"
+						expectedJsonFile="expected\072\072_21.json"
+						inputJsonFile="input\072\072_21.json" name="21" outputJsonFile="output\072\072_21.json"/>
+						          
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/" 
+						description="Get Markdown for item 1"
+						expectedJsonFile="expected\072\072_23.json"
+						inputJsonFile="input\072\072_23.json" name="23" outputJsonFile="output\072\072_23.json"/>
+								  
+				<test apiMethod="delay" delay="10000" description="Delay : 10000 ms" name="100"/>				
+		
+					<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/" 
+						description="get qual status for item 1"
+						expectedJsonFile="expected\072\072_25.json"
+						inputJsonFile="input\072\072_25.json" name="25" outputJsonFile="output\072\072_25.json"/> 
+                        
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/" 
+		description="store reservation"
+        expectedJsonFile="expected\072\072_08.json"
+        inputJsonFile="input\072\072_08.json" name="08" outputJsonFile="output\072\072_08.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/" 
+		description="multiread"
+        expectedJsonFile="expected\072\072_09.json"
+        inputJsonFile="input\072\072_09.json" name="09" outputJsonFile="output\072\072_09.json"/>
+		
+
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/" 
+						description="location inventory for item 1"
+						expectedJsonFile="expected\072\072_31.json"
+						inputJsonFile="input\072\072_31.json" name="21" outputJsonFile="output\072\072_31.json"/>
+						       
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/" 
+						description="Get Markdown for item 1"
+						expectedJsonFile="expected\072\072_33.json"
+						inputJsonFile="input\072\072_33.json" name="23" outputJsonFile="output\072\072_33.json"/>
+						       
+							 
+					<test apiMethod="delay" delay="10000" description="Delay : 10000 ms" name="100"/>				
+		
+		
+					<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/" 
+						description="get qual status for item 1"
+						expectedJsonFile="expected\072\072_35.json"
+						inputJsonFile="input\072\072_35.json" name="25" outputJsonFile="output\072\072_35.json"/> 
+                 
+
+	<test apiMethod="POST" apiUrl="/master/storeShutdown/" 
+		description="Apply shut down"
+        expectedJsonFile="expected\072\072_10.json"
+        inputJsonFile="input\072\072_10.json" name="10" outputJsonFile="output\072\072_10.json"/>
+
+<test apiMethod="delay" delay="10000" description="Delay : 10000 ms" name="100"/>						
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/" 
+		description="multiread"
+        expectedJsonFile="expected\072\072_11.json"
+        inputJsonFile="input\072\072_11.json" name="11" outputJsonFile="output\072\072_11.json"/>
+
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/" 
+						description="location inventory for item 1"
+						expectedJsonFile="expected\072\072_41.json"
+						inputJsonFile="input\072\072_41.json" name="21" outputJsonFile="output\072\072_41.json"/>
+						       
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/" 
+						description="Get Markdown for item 1"
+						expectedJsonFile="expected\072\072_43.json"
+						inputJsonFile="input\072\072_43.json" name="23" outputJsonFile="output\072\072_43.json"/>
+						       
+							 
+					<test apiMethod="delay" delay="10000" description="Delay : 10000 ms" name="100"/>
+					
+					<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/" 
+						description="get qual status for item 1"
+						expectedJsonFile="expected\072\072_45.json"
+						inputJsonFile="input\072\072_45.json" name="25" outputJsonFile="output\072\072_45.json"/>
+						
+						
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/" 
+		description="cancel store reservation"
+        expectedJsonFile="expected\072\072_12.json"
+        inputJsonFile="input\072\072_12.json" name="12" outputJsonFile="output\072\072_12.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/" 
+		description="multiread"
+        expectedJsonFile="expected\072\072_13.json"
+        inputJsonFile="input\072\072_13.json" name="13" outputJsonFile="output\072\072_13.json"/>
+		
+			
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/" 
+						description="location inventory for item 1"
+						expectedJsonFile="expected\072\072_51.json"
+						inputJsonFile="input\072\072_51.json" name="21" outputJsonFile="output\072\072_51.json"/>
+						       
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/" 
+						description="Get Markdown for item 1"
+						expectedJsonFile="expected\072\072_53.json"
+						inputJsonFile="input\072\072_53.json" name="23" outputJsonFile="output\072\072_53.json"/>
+						       
+							 
+					<test apiMethod="delay" delay="10000" description="Delay : 10000 ms" name="100"/>				
+		
+		
+					<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/" 
+						description="get qual status for item 1"
+						expectedJsonFile="expected\072\072_55.json"
+						inputJsonFile="input\072\072_55.json" name="25" outputJsonFile="output\072\072_55.json"/>
+						
+	<test apiMethod="POST" apiUrl="/master/storeShutdown/" 
+		description="remove shut down"
+        expectedJsonFile="expected\072\072_14.json"
+        inputJsonFile="input\072\072_14.json" name="14" outputJsonFile="output\072\072_14.json"/>
+		
+<test apiMethod="delay" delay="10000" description="Delay : 10000 ms" name="100"/>				
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/" 
+		description="multiread"
+        expectedJsonFile="expected\072\072_15.json"
+        inputJsonFile="input\072\072_15.json" name="15" outputJsonFile="output\072\072_15.json"/>
+		
+		
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/" 
+						description="location inventory for item 1"
+						expectedJsonFile="expected\072\072_61.json"
+						inputJsonFile="input\072\072_61.json" name="21" outputJsonFile="output\072\072_61.json"/>
+						       
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/" 
+						description="Get Markdown for item 1"
+						expectedJsonFile="expected\072\072_63.json"
+						inputJsonFile="input\072\072_63.json" name="23" outputJsonFile="output\072\072_63.json"/>
+						       
+							 
+				<test apiMethod="delay" delay="10000" description="Delay : 10000 ms" name="100"/>				
+		
+		
+					<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/" 
+						description="get qual status for item 1"
+						expectedJsonFile="expected\072\072_65.json"
+						inputJsonFile="input\072\072_65.json" name="25" outputJsonFile="output\072\072_65.json"/>
+						
+						
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="update clearance capacity = 0"
+        expectedJsonFile="expected\072\072_16.json"
+        inputJsonFile="input\072\072_16.json" name="16" outputJsonFile="output\072\072_16.json"/>	
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/" 
+		description="multiread"
+        expectedJsonFile="expected\072\072_17.json"
+        inputJsonFile="input\072\072_17.json" name="17" outputJsonFile="output\072\072_17.json"/>
+		
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/" 
+						description="location inventory for item 1"
+						expectedJsonFile="expected\072\072_71.json"
+						inputJsonFile="input\072\072_71.json" name="21" outputJsonFile="output\072\072_71.json"/>
+						       
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/" 
+						description="Get Markdown for item 1"
+						expectedJsonFile="expected\072\072_73.json"
+						inputJsonFile="input\072\072_73.json" name="23" outputJsonFile="output\072\072_73.json"/>
+						       
+							 
+					<test apiMethod="delay" delay="10000" description="Delay : 10000 ms" name="100"/>				
+		
+		
+					<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/" 
+						description="get qual status for item 1"
+						expectedJsonFile="expected\072\072_75.json"
+						inputJsonFile="input\072\072_75.json" name="25" outputJsonFile="output\072\072_75.json"/>
+		  <!--
+	<test apiMethod="POST" apiUrl="/items/58078781020/locations/0911/markdown/" 
+		description="markdown = true"
+        expectedJsonFile="expected\072\072_18.json"
+        inputJsonFile="input\072\072_18.json" name="18" outputJsonFile="output\072\072_18.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/" 
+		description="multiread"
+        expectedJsonFile="expected\072\072_19.json"
+        inputJsonFile="input\072\072_19.json" name="19" outputJsonFile="output\072\072_19.json"/>
+		
+		
+				<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/" 
+						description="location inventory for item 1"
+						expectedJsonFile="expected\072\072_81.json"
+						inputJsonFile="input\072\072_81.json" name="21" outputJsonFile="output\072\072_81.json"/>
+						       
+					<test apiMethod="GET" apiUrl="/items/58078781020/locations/0911/markdown/" 
+						description="Get Markdown for item 1"
+						expectedJsonFile="expected\072\072_83.json"
+						inputJsonFile="input\072\072_83.json" name="23" outputJsonFile="output\072\072_83.json"/>
+						       
+							 
+				<test apiMethod="delay" delay="10000" description="Delay : 10000 ms" name="100"/>				
+		
+		
+					<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/" 
+						description="get qual status for item 1"
+						expectedJsonFile="expected\072\072_85.json"
+						inputJsonFile="input\072\072_85.json" name="25" outputJsonFile="output\072\072_85.json"/>  -->
+
+</testsuite>

@@ -1,0 +1,27 @@
+[
+ 
+  {
+    "storeID": "1535",
+    "itemID": "34530001051",
+    "uom": "EACH",
+    "supplyData": {
+      "onhandsupply": 10
+    },
+	"markdown": {
+      "active":true
+    },
+    "timestamp": "<$today>"
+  },
+  {
+    "storeID": "1535",
+    "itemID": "34530001052",
+    "uom": "EACH",
+    "supplyData": {
+      "onhandsupply": 10
+    },
+	"markdown": {
+      "active":true
+    },
+    "timestamp": "<$today>"
+  }
+]

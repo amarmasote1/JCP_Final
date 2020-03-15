@@ -1,0 +1,29 @@
+{
+    "message": "Success",
+    "body": [
+        {
+            "partiallyReservedQty": 0,
+            "shortageQty": 0,
+            "orgCode": "JCP",
+            "reservedQty": 0,
+            "requestLine": {
+                "deliveryMethod": null,
+                "channel": null,
+                "lineID": "1",
+                "storeID": "1140",
+                "itemID": "3464000-1021",
+                "schedule": false,
+                "uom": "EACH",
+                "shippable": true,
+                "reservationID": "Rsvn-SC-0021",
+                "procurementAllowed": false,
+                "qty": 0,
+                "bopus": false,
+                "increaseCapacity": "Y",
+                "shutdown": false
+            },
+            "problemType": "SUCCESS"
+        }
+    ],
+    "status": 200
+}

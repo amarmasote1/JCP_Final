@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>		 
+<!-- Verify
+	Update Scenario : Update markdown and inventory multi item. multi store. update only 1 line
+
+-->
+
+<testsuite description="Update Scenario : Update markdown and inventory multi item. multi store. fupdate only 1 line" name="025">
+
+    
+    <test apiMethod="POST" apiUrl="/master/node/JCP/1590/" 
+		description="Insert node 1"
+        expectedJsonFile="expected\025_01.json"
+        inputJsonFile="input\025_01.json" name="01" outputJsonFile="output\025_01.json"/>
+		       
+	<test apiMethod="POST" apiUrl="/master/node/JCP/1591/" 
+		description="Insert node 2"
+          expectedJsonFile="expected\025_02.json"
+        inputJsonFile="input\025_02.json" name="02" outputJsonFile="output\025_02.json"/>  
+
+  <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/" 
+		description="Insert item"
+        expectedJsonFile="expected\025_03.json"
+        inputJsonFile="input\025_03.json" name="03" outputJsonFile="output\025_03.json"/>
+
+   <test apiMethod="POST" apiUrl="/inventory/JCP/absolute/" 
+		description="create inventory : "
+        expectedJsonFile="expected\025_04.json"
+        inputJsonFile="input\025_04.json" name="04" outputJsonFile="output\025_04.json"/>
+
+
+			<test apiMethod="GET" apiUrl="/items/70630003041/locations/1590/markdown" 
+				description="get markdown"
+				expectedJsonFile="expected\025_11.json"
+				inputJsonFile="input\025_11.json" name="11" outputJsonFile="output\025_11.json"/>
+				       
+			<test apiMethod="GET" apiUrl="/items/70630003042/locations/1591/markdown" 
+				description="get markdown"
+				expectedJsonFile="expected\025_12.json"
+				inputJsonFile="input\025_12.json" name="12" outputJsonFile="output\025_12.json"/>    
+				
+			<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/" 
+				description="multiread : "
+				expectedJsonFile="expected\025_31.json"
+				inputJsonFile="input\025_31.json" name="31" outputJsonFile="output\025_31.json"/>
+				
+			<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory" 
+				description="item_inventory : item"
+				expectedJsonFile="expected\025_32.json"
+				inputJsonFile="input\025_32.json" name="32" outputJsonFile="output\025_32.json"/>
+				
+			<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo" 
+				description="jcp_location_inventory : item1 - store1"
+				expectedJsonFile="expected\025_33.json"
+				inputJsonFile="input\025_33.json" name="33" outputJsonFile="output\025_33.json"/>
+				            
+			<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory" 
+				description="item_inventory : item2"
+				expectedJsonFile="expected\025_34.json"
+				inputJsonFile="input\025_34.json" name="34" outputJsonFile="output\025_34.json"/>    
+				
+			<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo" 
+				description="jcp_location_inventory : item2 - store1"
+				expectedJsonFile="expected\025_35.json"
+				inputJsonFile="input\025_35.json" name="35" outputJsonFile="output\025_35.json"/>    
+				
+				
+				
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/" 
+		description="create inventory : update markdonw to true"
+        expectedJsonFile="expected\025_05.json"
+        inputJsonFile="input\025_05.json" name="05" outputJsonFile="output\025_05.json"/>
+		
+			<test apiMethod="GET" apiUrl="/items/70630003041/locations/1590/markdown" 
+				description="get markdown"
+				expectedJsonFile="expected\025_13.json"
+				inputJsonFile="input\025_13.json" name="13" outputJsonFile="output\025_13.json"/>
+				
+			<test apiMethod="GET" apiUrl="/items/70630003042/locations/1591/markdown" 
+				description="get markdown"
+				expectedJsonFile="expected\025_14.json"
+				inputJsonFile="input\025_14.json" name="14" outputJsonFile="output\025_14.json"/>
+				
+			<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/" 
+				description="multiread : "
+				expectedJsonFile="expected\025_41.json"
+				inputJsonFile="input\025_41.json" name="41" outputJsonFile="output\025_41.json"/>
+				
+			<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory" 
+				description="item_inventory : item"
+				expectedJsonFile="expected\025_42.json"
+				inputJsonFile="input\025_42.json" name="42" outputJsonFile="output\025_42.json"/>
+				
+			<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo" 
+				description="jcp_location_inventory : item1 - store1"
+				expectedJsonFile="expected\025_43.json"
+				inputJsonFile="input\025_43.json" name="43" outputJsonFile="output\025_43.json"/>
+				
+			<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory" 
+				description="item_inventory : item2"
+				expectedJsonFile="expected\025_44.json"
+				inputJsonFile="input\025_44.json" name="44" outputJsonFile="output\025_44.json"/>   
+				
+			<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo" 
+				description="jcp_location_inventory : item1 - store2"
+				expectedJsonFile="expected\025_45.json"
+				inputJsonFile="input\025_45.json" name="45" outputJsonFile="output\025_45.json"/> 
+		
+	
+</testsuite>

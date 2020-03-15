@@ -1,0 +1,31 @@
+{
+    "body": [
+        {
+            "clearanceCapacityEnabled": true,
+            "message": "feature flag value",
+            "status": 200
+        },
+        {
+            "warnings": null,
+            "message": "Success",
+            "nodeType": null,
+            "body": {
+                "overallCapacity": [
+                    {
+                        "totalAvailableClearanceCapacity": 0,
+                        "totalStandardCapacity": 0,
+                        "totalClearanceCapacity": 0,
+                        "totalConsumedCapacity": 0,
+                        "capacityUnitOfMeasure": "RELEASE",
+                        "totalAvailableCapacity": 0,
+                        "totalConsumedClearanceCapacity": 0
+                    }
+                ]
+            },
+            
+            "status": 200
+        }
+    ],
+    "message": "Successful",
+    "status": 221
+}

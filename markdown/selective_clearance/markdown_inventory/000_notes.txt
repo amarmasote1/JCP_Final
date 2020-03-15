@@ -1,0 +1,45 @@
+1. When markdown = active and isSfsExcluded = false, and isBopusExcluded = false,
+		In multiread : 
+					"isActiveMarkdown" = 0; 
+					"isBopisMarkdownEligible": 1,
+					"isSFSMarkdownEligible": 1,
+					"ship_active": 1,
+					"bopus_active": 1,
+
+					
+		jcp_item_inventory : 
+					"ship_active": 1,
+					markdownStatus(Array) = null  
+					"bopusExclusionIndicator": { Array exists}
+					"sfsExclusionIndicator": { Array exists}
+
+2. When markdown = active and isSfsExcluded = true, and isBopusExcluded = true,
+		In multiread : 
+					"isActiveMarkdown" = 1; 
+					"isBopisMarkdownEligible": 0,
+					"isSFSMarkdownEligible": 0,
+					"ship_active": 0,
+					"bopus_active": 0,
+					
+		jcp_item_inventory : 
+					"ship_active": 1,
+					markdownStatus(Array) = { Array exists}
+					"bopusExclusionIndicator": { Array exists}
+					"sfsExclusionIndicator": { Array exists}
+					
+3.	When markdown = false and isSfsExcluded = true, and isBopusExcluded = true,
+		In multiread : 
+					"isActiveMarkdown" = 0; 
+					"isBopisMarkdownEligible": 1,
+					"isSFSMarkdownEligible": 1,
+					"ship_active": 1,
+					"bopus_active": 1,
+
+					
+		jcp_item_inventory : 
+					"ship_active": 1,
+					markdownStatus(Array) = null  
+					"bopusExclusionIndicator": { Array exists}
+					"sfsExclusionIndicator": { Array exists}
+					
+4. It is assumed all 3 entries are passed everytime. (ship_active,bopusExclusionIndicator and sfsExclusionIndicator)

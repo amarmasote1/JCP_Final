@@ -1,0 +1,47 @@
+{
+    "body": [
+        {
+            "clearanceCapacityEnabled": true,
+            "message": "feature flag value",
+            "status": 200
+        },
+        {
+            "warnings": null,
+            "message": "Success",
+            "nodeType": null,
+            "body": {
+                "availableCapacity": 49,
+                "clearanceCapacityPercentage": 10,
+                "consumedClearanceCapacity": 1,
+                "standardCapacity": 50,
+                "availableClearanceCapacity": 4,
+                "consumedTotalCapacity": 1,
+                "capacityUnitOfMeasure": "RELEASE"
+            },
+           
+            "status": 200
+        },
+        {
+            "warnings": null,
+            "message": "Success",
+            "nodeType": null,
+            "body": {
+                "overallCapacity": [
+                    {
+                        "totalAvailableClearanceCapacity": 4,
+                        "totalStandardCapacity": 50,
+                        "totalClearanceCapacity": 5,
+                        "totalConsumedCapacity": 1,
+                        "capacityUnitOfMeasure": "RELEASE",
+                        "totalAvailableCapacity": 49,
+                        "totalConsumedClearanceCapacity": 1
+                    }
+                ]
+            },
+            "key": "",
+            "status": 200
+        }
+    ],
+    "message": "Successful",
+    "status": 221
+}

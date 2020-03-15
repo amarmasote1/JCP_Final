@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>		 
+<!-- Verify
+	update scenario : std capacity = 10 and capacity percentage = 0
+
+-->
+
+<testsuite description="update scenario : std capacity = 10 and capacity percentage = 0" name="009">
+
+    
+    <test apiMethod="POST" apiUrl="/master/node/JCP/1847/" 
+		description="Insert node 1"
+        expectedJsonFile="expected\009_01.json"
+        inputJsonFile="input\009_01.json" name="01" outputJsonFile="output\009_01.json"/>
+	
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="insert node capacity"
+        expectedJsonFile="expected\009_05.json"
+        inputJsonFile="input\009_05.json" name="05" outputJsonFile="output\009_05.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+		description="Get Capacity"
+        expectedJsonFile="expected\009_06.json"
+        inputJsonFile="input\009_06.json" name="06" outputJsonFile="output\009_06.json"/>
+		
+		
+<test apiMethod="delay" delay="15000" description="Delay : 15000 ms" name="100"/>				
+
+
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_store_attributes/" 
+		description="store attributes "
+        expectedJsonFile="expected\009_07.json"
+        inputJsonFile="input\009_07.json" name="07" outputJsonFile="output\009_07.json"/>
+		
+		
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="insert node capacity"
+        expectedJsonFile="expected\009_08.json"
+        inputJsonFile="input\009_08.json" name="08" outputJsonFile="output\009_08.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+		description="Get Capacity"
+        expectedJsonFile="expected\009_09.json"
+        inputJsonFile="input\009_09.json" name="09" outputJsonFile="output\009_09.json"/>
+		
+<test apiMethod="delay" delay="10000" description="Delay : 10000 ms" name="100"/>				
+
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_store_attributes/" 
+		description="store attributes"
+        expectedJsonFile="expected\009_10.json"
+        inputJsonFile="input\009_10.json" name="10" outputJsonFile="output\009_10.json"/>
+
+
+			
+</testsuite>

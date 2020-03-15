@@ -1,0 +1,24 @@
+{
+    "warnings": null,
+    "message": "Success",
+    "body": {
+        "dirty": false,
+
+        
+        
+        
+        
+        
+        "pickSafetyFactorSource": 0,
+        "unconfirmedDemand": 0,
+        
+        "shipSafetyFactorSource": 0,
+        "bopusSafetyFactor": 2,
+
+        "shipSafetyFactor": 1,
+
+        "reservedDemand": 0
+    },
+    "key": "JCP|0910|58078781019|EACH",
+    "status": 200
+}

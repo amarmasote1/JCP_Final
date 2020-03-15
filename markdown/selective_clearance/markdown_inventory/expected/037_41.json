@@ -1,0 +1,76 @@
+{
+    "body": [
+        {
+            "warnings": null,
+            "message": "Success",
+            "body": {
+                "invall": {
+                    "unconfirmeddemand": 0,
+                    "standard_capacity": 10,
+                   
+                    
+                    "isDirty": 0,
+                    "bopusSafetyFactor": 2,
+                    "shipSafetyFactor": 1,
+                    "clearance_capacity_percentage": 100,
+                    "reserveddemand": 6,
+                    "isBopisMarkdownEligible": 0,
+                    "onhandsupply": 200,
+                   
+                    
+                    "isSFSMarkdownEligible": 1,
+                   
+                    "shipATP": 194,
+                    
+                    
+                    "pickSafetyFactorSource": 0,
+                    "ship_active": 1,
+                    "Available_capacity": 8,
+                    "shipSafetyFactorSource": 0,
+                    "isActiveMarkDown": 1,
+                    "bopusATP": 0,
+                    "bopus_active": 094
+                }
+            },
+            "key": "JCP|2966|70630003057|EACH",
+            "status": 200
+        },
+        {
+            "warnings": null,
+            "message": "Success",
+            "body": {
+                "invall": {
+                    "unconfirmeddemand": 0,
+                    "standard_capacity": 10,
+                   
+                    
+                    "isDirty": 0,
+                    "bopusSafetyFactor": 2,
+                    "shipSafetyFactor": 1,
+                    "clearance_capacity_percentage": 100,
+                    "reserveddemand": 3,
+                    "isBopisMarkdownEligible": 0,
+                    "onhandsupply": 100,
+                   
+                    
+                    "isSFSMarkdownEligible": 1,
+                   
+                    "shipATP": 97,
+                    
+                    
+                    "pickSafetyFactorSource": 0,
+                    "ship_active": 1,
+                    "Available_capacity": 9,
+                    "shipSafetyFactorSource": 0,
+                    "isActiveMarkDown": 1,
+                    "bopusATP": 0,
+                    "bopus_active": 0
+                }
+            },
+            "key": "JCP|2965|70630003057|EACH",
+            "status": 200
+        }
+    ],
+    "message": "Successful",
+    "status": 221
+}

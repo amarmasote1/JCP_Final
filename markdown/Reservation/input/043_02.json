@@ -1,0 +1,14 @@
+[  
+   {
+      "gtin" : "",
+      "uom" : "EACH",
+      "itemID" : "34530001063",
+      "bopus" : "true",
+      "lotNumber" : "3453000",
+      "shippable" : "true",
+      "productLine" : "345",
+      "purchaseType" : "Fashion",
+      "isSubstitutionAllowed" : "N",
+      "itemProcessingTime" : "10"
+   }
+]

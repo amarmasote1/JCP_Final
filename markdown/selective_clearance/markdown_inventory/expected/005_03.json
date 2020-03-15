@@ -1,0 +1,18 @@
+{
+	"body": [{
+		"status": 0,
+		"message": null,
+		"key": "JCP|70630003010|EACH",
+		"body": null,
+		"warnings": []
+	},
+	{
+		"status": 0,
+		"message": null,
+		"key": "JCP|70630003011|EACH",
+		"body": null,
+		"warnings": []
+	}],
+	"status": 221,
+	"message": "Successful"
+}

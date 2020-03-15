@@ -1,0 +1,11 @@
+{
+    "isBopusExcluded": null,
+    "active": false,
+    "isSFSExcluded": null,
+    "errors": [
+        {
+            "errorMessage": "Record not found",
+            "errorCode": "404"
+        }
+    ]
+}

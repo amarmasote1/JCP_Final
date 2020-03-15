@@ -1,0 +1,26 @@
+{
+    "body": [
+        {
+            "warnings": null,
+            "message": "Record not found",
+            "nodeType": "Store",
+            "body": {
+                "invall": {}
+            },
+            "key": "JCP|1352|34530001091|EACH",
+            "status": 404
+        },
+        {
+            "warnings": null,
+            "message": "Record not found",
+            "nodeType": "Store",
+            "body": {
+                "invall": {}
+            },
+            "key": "JCP|1360|34530001092|EACH",
+            "status": 404
+        }
+    ],
+    "message": "Partially Successful",
+    "status": 321
+}

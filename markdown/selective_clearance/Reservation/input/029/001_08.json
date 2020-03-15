@@ -1,0 +1,15 @@
+{
+    "reservation": [
+        {
+            "storeID": "1164",
+            "itemID": "34640001029",
+            "uom": "EACH",
+            "shippable": "true",
+            "procurementAllowed": "false",
+            "qty": "0",
+            "lineID": "1",
+			"reservationID": "Rsvn-SC-0029",
+			"increaseCapacity" :  "Y"
+        }
+    ]
+}

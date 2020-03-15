@@ -1,0 +1,6 @@
+1. Regular item consuming clearance capacity when regular capacity = 0.
+    When capacity percenatge = 100%. Both Available capacity and clearance Capacity are Same. Regular item and clearance item can consume the capacity. i.e reservation is allowed.
+	I.e regular item can consume regular capacity in above case
+	
+	-->Change capacity date in Reservation suite. 
+ 

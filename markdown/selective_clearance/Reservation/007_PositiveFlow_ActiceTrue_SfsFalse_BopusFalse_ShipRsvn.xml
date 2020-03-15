@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>		 
+<!-- Verify
+	Ship Reservation for Active = true, bopus = false, ship = false
+
+-->
+
+<testsuite description="Ship Reservation for Active = true, bopus = false, ship = false" name="007">
+
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/" 
+		description="item details"
+        expectedJsonFile="expected\007\001_01.json"
+        inputJsonFile="input\007\001_01.json" name="01" outputJsonFile="output\007\001_01.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/node/JCP/1052/" 
+		description="Insert node 1"
+        expectedJsonFile="expected\007\001_02.json"
+        inputJsonFile="input\007\001_02.json" name="02" outputJsonFile="output\007\001_02.json"/>
+
+	
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/" 
+		description="insert inventory"
+        expectedJsonFile="expected\007\001_04.json"
+        inputJsonFile="input\007\001_04.json" name="04" outputJsonFile="output\007\001_04.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="insert capacity"
+        expectedJsonFile="expected\007\001_05.json"
+        inputJsonFile="input\007\001_05.json" name="05" outputJsonFile="output\007\001_05.json"/>
+		
+	<test apiMethod="POST" apiUrl="/items/34640001007/locations/1052/markdown/" 
+		description="selective clearance"
+        expectedJsonFile="expected\007\001_91.json"
+        inputJsonFile="input\007\001_91.json" name="91" outputJsonFile="output\007\001_91.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/qualitativeStatus/" 
+		description="insert qual status"
+        expectedJsonFile="expected\007\001_96.json"
+        inputJsonFile="input\007\001_96.json" name="96" outputJsonFile="output\007\001_96.json"/>
+		
+<test apiMethod="delay" delay="10000" description="Delay : 10000 ms" name="100"/>	
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/" 
+		description="multiread"
+		expectedJsonFile="expected\007\001_11.json"
+		inputJsonFile="input\007\001_11.json" name="11" outputJsonFile="output\007\001_11.json"/>
+	
+
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/" 
+						description="location inventory"
+						expectedJsonFile="expected\007\001_21.json"
+						inputJsonFile="input\007\001_21.json" name="21" outputJsonFile="output\007\001_21.json"/>
+						
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/" 
+						description="item inventory"
+						expectedJsonFile="expected\007\001_22.json"
+						inputJsonFile="input\007\001_22.json" name="22" outputJsonFile="output\007\001_22.json"/>
+						
+					<test apiMethod="GET" apiUrl="/items/34640001007/locations/1052/markdown/" 
+						description="Get Markdown"
+						expectedJsonFile="expected\007\001_23.json"
+						inputJsonFile="input\007\001_23.json" name="23" outputJsonFile="output\007\001_23.json"/>
+						       
+					<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/" 
+						description="get Qual status"
+						expectedJsonFile="expected\007\001_24.json"
+						inputJsonFile="input\007\001_24.json" name="24" outputJsonFile="output\007\001_24.json"/>
+						
+						
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/" 
+		description="Ship Reservation"
+		expectedJsonFile="expected\007\001_06.json"
+		inputJsonFile="input\007\001_06.json" name="06" outputJsonFile="output\007\001_06.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reservations/" 
+		description="Wrapper rsvn"
+		expectedJsonFile="expected\007\001_81.json"
+		inputJsonFile="input\007\001_81.json" name="81" outputJsonFile="output\007\001_81.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/" 
+		description="multiread"
+		expectedJsonFile="expected\007\001_12.json"
+		inputJsonFile="input\007\001_12.json" name="12" outputJsonFile="output\007\001_12.json"/>
+		
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/" 
+						description="location inventory"
+						expectedJsonFile="expected\007\001_31.json"
+						inputJsonFile="input\007\001_31.json" name="31" outputJsonFile="output\007\001_31.json"/>
+						
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/" 
+						description="item inventory"
+						expectedJsonFile="expected\007\001_32.json"
+						inputJsonFile="input\007\001_32.json" name="32" outputJsonFile="output\007\001_32.json"/>
+						
+					<test apiMethod="GET" apiUrl="/items/34640001007/locations/1052/markdown/" 
+						description="Get Markdown"
+						expectedJsonFile="expected\007\001_33.json"
+						inputJsonFile="input\007\001_33.json" name="33" outputJsonFile="output\007\001_33.json"/>
+						  
+					<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/" 
+						description="Get Qual status"
+						expectedJsonFile="expected\007\001_34.json"
+						inputJsonFile="input\007\001_34.json" name="34" outputJsonFile="output\007\001_34.json"/>
+						
+					
+						
+	<test apiMethod="POST" apiUrl="/items/34640001007/locations/1052/markdown/" 
+		description="remove selective clearance"
+        expectedJsonFile="expected\007\001_92.json"
+        inputJsonFile="input\007\001_92.json" name="92" outputJsonFile="output\007\001_92.json"/>
+
+<test apiMethod="delay" delay="10000" description="Delay : 10000 ms" name="100"/>	
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/" 
+		description="multiread"
+		expectedJsonFile="expected\007\001_13.json"
+		inputJsonFile="input\007\001_13.json" name="13" outputJsonFile="output\007\001_13.json"/>
+			
+			
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/" 
+						description="location inventory"
+						expectedJsonFile="expected\007\001_41.json"
+						inputJsonFile="input\007\001_41.json" name="41" outputJsonFile="output\007\001_41.json"/>
+						
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/" 
+						description="item inventory"
+						expectedJsonFile="expected\007\001_42.json"
+						inputJsonFile="input\007\001_42.json" name="42" outputJsonFile="output\007\001_42.json"/>
+						
+					<test apiMethod="GET" apiUrl="/items/34640001007/locations/1052/markdown/" 
+						description="Get Markdown"
+						expectedJsonFile="expected\007\001_43.json"
+						inputJsonFile="input\007\001_43.json" name="43" outputJsonFile="output\007\001_43.json"/>
+						             
+					<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/" 
+						description="get Qual status"
+						expectedJsonFile="expected\007\001_44.json"
+						inputJsonFile="input\007\001_44.json" name="44" outputJsonFile="output\007\001_44.json"/>
+						
+			
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/" 
+		description="Ship Reservation"
+		expectedJsonFile="expected\007\001_08.json"
+		inputJsonFile="input\007\001_08.json" name="08" outputJsonFile="output\007\001_08.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reservations/" 
+		description="Wrapper rsvn"
+		expectedJsonFile="expected\007\001_82.json"
+		inputJsonFile="input\007\001_82.json" name="82" outputJsonFile="output\007\001_82.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/" 
+		description="multiread"
+		expectedJsonFile="expected\007\001_14.json"
+		inputJsonFile="input\007\001_14.json" name="14" outputJsonFile="output\007\001_14.json"/>	
+		
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/" 
+						description="location inventory"
+						expectedJsonFile="expected\007\001_51.json"
+						inputJsonFile="input\007\001_51.json" name="41" outputJsonFile="output\007\001_51.json"/>
+						
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/" 
+						description="item inventory"
+						expectedJsonFile="expected\007\001_52.json"
+						inputJsonFile="input\007\001_52.json" name="42" outputJsonFile="output\007\001_52.json"/>
+						
+					<test apiMethod="GET" apiUrl="/items/34640001007/locations/1052/markdown/" 
+						description="Get Markdown"
+						expectedJsonFile="expected\007\001_53.json"
+						inputJsonFile="input\007\001_53.json" name="43" outputJsonFile="output\007\001_53.json"/>
+						             
+					<test apiMethod="POST" apiUrl="/master/getqualitativeStatus/" 
+						description="get Qual status"
+						expectedJsonFile="expected\007\001_54.json"
+						inputJsonFile="input\007\001_54.json" name="44" outputJsonFile="output\007\001_54.json"/>
+</testsuite>

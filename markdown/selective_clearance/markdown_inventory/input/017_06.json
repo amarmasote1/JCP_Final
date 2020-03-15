@@ -1,0 +1,13 @@
+{
+    "reservation": [
+        {
+            "storeID": "2925",
+            "itemID": "70630003027",
+            "uom": "EACH",
+            "shippable": "true",
+            "procurementAllowed": "false",
+            "qty": "3",
+            "lineID": "1"
+        }
+    ]
+}

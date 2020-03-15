@@ -1,0 +1,24 @@
+{
+    "reservation": [
+        {
+            "storeID": "1510",
+            "itemID": "34530001041",
+            "uom": "EACH",
+            "shippable": "true",
+            "procurementAllowed": "false",
+            "qty": "1",
+            "lineID": "1",
+            "reservationID": "CR001-039"
+        },
+		{
+            "storeID": "1510",
+            "itemID": "34530001042",
+            "uom": "EACH",
+            "shippable": "true",
+            "procurementAllowed": "false",
+            "qty": "2",
+            "lineID": "1",
+            "reservationID": "CR001-040"
+        }
+    ]
+}

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>		 
+<!-- Verify
+	Negative Scenario : same timestamp but update markdown value, same call
+
+-->
+
+<testsuite description="Negative Scenario : same timestamp but update markdown value, same call" name="030">
+
+    
+    <test apiMethod="POST" apiUrl="/master/node/JCP/1693/" 
+		description="Insert node 1"
+        expectedJsonFile="expected\030_01.json"
+        inputJsonFile="input\030_01.json" name="01" outputJsonFile="output\030_01.json"/>
+		         <!--
+	<test apiMethod="POST" apiUrl="/master/node/JCP/1650/" 
+		description="Insert node 2"
+          expectedJsonFile="expected\030_02.json"
+        inputJsonFile="input\030_02.json" name="02" outputJsonFile="output\030_02.json"/>   -->
+
+  <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/" 
+		description="Insert item"
+        expectedJsonFile="expected\030_03.json"
+        inputJsonFile="input\030_03.json" name="03" outputJsonFile="output\030_03.json"/>
+
+   <test apiMethod="POST" apiUrl="/inventory/JCP/absolute/" 
+		description="create inventory : "
+        expectedJsonFile="expected\030_04.json"
+        inputJsonFile="input\030_04.json" name="04" outputJsonFile="output\030_04.json"/>
+
+
+			<test apiMethod="GET" apiUrl="/items/70630003047/locations/1693/markdown" 
+				description="get markdown"
+				expectedJsonFile="expected\030_11.json"
+				inputJsonFile="input\030_11.json" name="11" outputJsonFile="output\030_11.json"/>
+				         <!--
+			<test apiMethod="GET" apiUrl="/items/70630003047/locations/1650/markdown" 
+				description="get markdown"
+				expectedJsonFile="expected\030_12.json"
+				inputJsonFile="input\030_12.json" name="12" outputJsonFile="output\030_12.json"/>      -->
+				
+			<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/" 
+				description="multiread : "
+				expectedJsonFile="expected\030_31.json"
+				inputJsonFile="input\030_31.json" name="31" outputJsonFile="output\030_31.json"/>
+				
+			<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory" 
+				description="item_inventory : item"
+				expectedJsonFile="expected\030_32.json"
+				inputJsonFile="input\030_32.json" name="32" outputJsonFile="output\030_32.json"/>
+				
+			<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo" 
+				description="jcp_location_inventory : item1 - store1"
+				expectedJsonFile="expected\030_33.json"
+				inputJsonFile="input\030_33.json" name="33" outputJsonFile="output\030_33.json"/>
+				            
+			       <!--
+			<test apiMethod="GET" apiUrl="/master/mapValue/jcp_location_inventory_pojo" 
+				description="jcp_location_inventory : item2 - store1"
+				expectedJsonFile="expected\030_35.json"
+				inputJsonFile="input\030_35.json" name="35" outputJsonFile="output\030_35.json"/>      -->
+				
+				
+				
+	
+	
+</testsuite>

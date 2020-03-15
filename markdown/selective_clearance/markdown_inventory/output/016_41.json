@@ -1,0 +1,45 @@
+{
+    "body": [
+        {
+            "warnings": null,
+            "message": "Success",
+            "nodeType": "Store",
+            "body": {
+                "invall": {
+                    "isSubLotSFSExclusion": 0,
+                    "isPerformanceSFSExclusion": 0,
+                    "isSublotBOPUSExclusion": 0,
+                    "isBelowAur": 0,
+                    "unconfirmeddemand": 0,
+                    "standard_capacity": 10,
+                    "inventory_timestamp_low": -667165224,
+                    "isDirty": 0,
+                    "bopusSafetyFactor": 2,
+                    "shipSafetyFactor": 1,
+                    "isOnClearance": 0,
+                    "clearance_capacity_percentage": 100,
+                    "reserveddemand": 6,
+                    "isBopisMarkdownEligible": 1,
+                    "onhandsupply": 20,
+                    "inventory_timestamp_high": 368,
+                    "isSFSMarkdownEligible": 1,
+                    "shipATP": 13,
+                    "isPerformanceBopusExclusion": 0,
+                    "pickSafetyFactorSource": 0,
+                    "ship_active": 1,
+                    "Available_capacity": 8,
+                    "shipSafetyFactorSource": 0,
+                    "isActiveMarkDown": 1,
+                    "bopusATP": 12,
+                    "grossShipAtp": 13,
+                    "bopus_active": 1,
+                    "grossBopusAtp": 12
+                }
+            },
+            "key": "JCP|2922|70630003026|EACH",
+            "status": 200
+        }
+    ],
+    "message": "Successful",
+    "status": 221
+}

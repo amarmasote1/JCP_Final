@@ -1,0 +1,41 @@
+{
+    "body": [
+        {
+            "warnings": [],
+            "message": null,
+            "body": null,
+            "key": "JCP|70630003001|EACH",
+            "status": 0
+        },
+        {
+            "warnings": [],
+            "message": null,
+            "body": null,
+            "key": "JCP|70630003002|EACH",
+            "status": 0
+        },
+        {
+            "warnings": [],
+            "message": null,
+            "body": null,
+            "key": "JCP|70630003003|EACH",
+            "status": 0
+        },
+        {
+            "warnings": [],
+            "message": null,
+            "body": null,
+            "key": "JCP|70630003004|EACH",
+            "status": 0
+        },
+        {
+            "warnings": [],
+            "message": null,
+            "body": null,
+            "key": "JCP|70630003005|EACH",
+            "status": 0
+        }
+    ],
+    "message": "Successful",
+    "status": 221
+}

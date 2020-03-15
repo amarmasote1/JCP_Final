@@ -1,0 +1,31 @@
+{
+	"status": 350,
+	"message": "Problems Found",
+	"body": {
+		"allocationRuleID": "RES_INTRV",
+		"enterpriseCode": "00001",
+		"reservation": [{
+			"problemType": "NO_AVAILABILITY",
+			"reservedQty": 0,
+			"bundleParentLineId": "",
+			"kitQty": "",
+			"itemReservationStatus": "NA",
+			"priorityNode": "",
+			
+			"requestLine": {
+				"lineID": "1",
+				"itemID": "5807878-1013",
+				"uom": "EACH",
+				"deliveryMethod": "",
+				"increaseCapacity": false,
+				"qty": "1",
+				"storeId": null,
+				"nodeType": "",
+				"channel": "",
+				"reservationID": "",
+				"procurementAllowed": ""
+			},
+			"error": null
+		}]
+	}
+}

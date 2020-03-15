@@ -1,0 +1,52 @@
+{
+    "warnings": null,
+    "message": "Success",
+    "nodeType": null,
+    "body": {
+        "bopusExclusionIndicator": null,
+        "activeStoresATP": {
+            "1413": 0,
+            "1399": 0,
+            "1419": 9,
+            "1417": 0,
+            "1405": 0
+        },
+        "subLotBopusExclusion": false,
+        "belowaur": false,
+        "unconfirmedDemand": 0,
+        "moq": null,
+        "itemID": "70630003012",
+        "futureAvlQty": 0,
+        "networkQualStatus": 1,
+        "shipActive": 1,
+        "factoryShipInventoryIndicator": false,
+        "nonStoreOnhandQty": 0,
+        "performanceSFSExclusion": false,
+        "factoryShipLeadTimeQty": 0,
+        "reservedDemand": 0,
+        "onhandsupply": 10,
+        "nonStoreQualStatus": 0,
+        "onclearance": false,
+        "shipATP": 9,
+        "markDownStatus": {
+            "1413": false,
+            "1399": false,
+            "1419": true,
+            "1417": false,
+            "1405": false
+        },
+        "firstFutureAvailableDate": 0,
+        "subLotSFSExclusion": false,
+        "whseClass": 3,
+        "purifyATPDone": false,
+        "inventoryTS": 0,
+        "sfsExclusionIndicator": null,
+        "bopusATP": 8,
+        "bopusActive": 1,
+        "factoryShipLeadTimeUOM": 0,
+        "performancebopusexclusion": false,
+        "whseAtp": 0
+    },
+    "key": "ItemInventoryKey(itemID=70630003012)",
+    "status": 200
+}

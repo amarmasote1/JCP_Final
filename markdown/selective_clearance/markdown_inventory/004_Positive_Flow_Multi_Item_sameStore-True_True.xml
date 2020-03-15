@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>		 
+<!-- Verify
+	positive flow : multi Item and same store
+
+-->
+
+<testsuite description="positive flow :multi Item and same store" name="004">
+
+    
+    <test apiMethod="POST" apiUrl="/master/node/JCP/2903/" 
+		description="Insert node 1"
+        expectedJsonFile="expected\004_01.json"
+        inputJsonFile="input\004_01.json" name="01" outputJsonFile="output\004_01.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="Insert capacity"
+        expectedJsonFile="expected\000_04.json"
+        inputJsonFile="input\000_04.json" name="04" outputJsonFile="output\000_04.json"/>
+		    <!--
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2901/" 
+		description="Insert node 2"
+          expectedJsonFile="expected\004_02.json"
+        inputJsonFile="input\004_02.json" name="02" outputJsonFile="output\004_02.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/2902/" 
+		description="Insert node 3"
+        expectedJsonFile="expected\004_01.json"
+        inputJsonFile="input\004_01.json" name="01" outputJsonFile="output\004_01.json"/>  -->
+
+  <test apiMethod="POST" apiUrl="/master/itemDetails/JCP/" 
+		description="Insert item"
+        expectedJsonFile="expected\004_03.json"
+        inputJsonFile="input\004_03.json" name="03" outputJsonFile="output\004_03.json"/>
+
+   <test apiMethod="POST" apiUrl="/inventory/JCP/absolute/" 
+		description="create inventory "
+        expectedJsonFile="expected\004_04.json"
+        inputJsonFile="input\004_04.json" name="04" outputJsonFile="output\004_04.json"/>
+
+
+			<test apiMethod="GET" apiUrl="/items/70630003008/locations/2903/markdown" 
+				description="get markdown"
+				expectedJsonFile="expected\004_11.json"
+				inputJsonFile="input\004_11.json" name="11" outputJsonFile="output\004_11.json"/>
+				
+			<test apiMethod="GET" apiUrl="/items/70630003009/locations/2903/markdown" 
+				description="get markdown"
+				expectedJsonFile="expected\004_12.json"
+				inputJsonFile="input\004_12.json" name="12" outputJsonFile="output\004_12.json"/>
+				
+			<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/" 
+				description="multiread : both items"
+				expectedJsonFile="expected\004_31.json"
+				inputJsonFile="input\004_31.json" name="31" outputJsonFile="output\004_31.json"/>
+				
+			<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory" 
+				description="item_inventory : item1"
+				expectedJsonFile="expected\004_32.json"
+				inputJsonFile="input\004_32.json" name="32" outputJsonFile="output\004_32.json"/>
+				
+			<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo" 
+				description="jcp_location_inventory : item1 - store1"
+				expectedJsonFile="expected\004_33.json"
+				inputJsonFile="input\004_33.json" name="33" outputJsonFile="output\004_33.json"/>
+				
+				
+			<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory" 
+				description="item_inventory : item2"
+				expectedJsonFile="expected\004_34.json"
+				inputJsonFile="input\004_34.json" name="34" outputJsonFile="output\004_34.json"/>
+				
+			<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo" 
+				description="jcp_location_inventory : item2 - store1"
+				expectedJsonFile="expected\004_35.json"
+				inputJsonFile="input\004_35.json" name="35" outputJsonFile="output\004_35.json"/>
+				
+	<test apiMethod="POST" apiUrl="/items/70630003008/locations/2903/markdown/" 
+		description="selective clearance"
+        expectedJsonFile="expected\004_91.json"
+        inputJsonFile="input\004_91.json" name="91" outputJsonFile="output\004_91.json"/>
+		
+	<test apiMethod="POST" apiUrl="/items/70630003009/locations/2903/markdown/" 
+		description="selective clearance"
+        expectedJsonFile="expected\004_92.json"
+        inputJsonFile="input\004_92.json" name="92" outputJsonFile="output\004_92.json"/>
+		
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/" 
+		description="Ship Reservation"
+		expectedJsonFile="expected\004_06.json"
+		inputJsonFile="input\004_06.json" name="06" outputJsonFile="output\004_06.json"/>
+		
+			<test apiMethod="GET" apiUrl="/items/70630003008/locations/2903/markdown" 
+				description="get markdown"
+				expectedJsonFile="expected\004_13.json"
+				inputJsonFile="input\004_13.json" name="13" outputJsonFile="output\004_13.json"/>
+				
+			<test apiMethod="GET" apiUrl="/items/70630003009/locations/2903/markdown" 
+				description="get markdown"
+				expectedJsonFile="expected\004_14.json"
+				inputJsonFile="input\004_14.json" name="14" outputJsonFile="output\004_14.json"/>
+				
+			<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/" 
+				description="multiread : both items"
+				expectedJsonFile="expected\004_41.json"
+				inputJsonFile="input\004_41.json" name="31" outputJsonFile="output\004_41.json"/>
+				
+			<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory" 
+				description="item_inventory : item1"
+				expectedJsonFile="expected\004_42.json"
+				inputJsonFile="input\004_42.json" name="32" outputJsonFile="output\004_42.json"/>
+				
+			<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo" 
+				description="jcp_location_inventory : item1 - store1"
+				expectedJsonFile="expected\004_43.json"
+				inputJsonFile="input\004_43.json" name="33" outputJsonFile="output\004_43.json"/>
+				
+				
+			<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory" 
+				description="item_inventory : item2"
+				expectedJsonFile="expected\004_44.json"
+				inputJsonFile="input\004_44.json" name="34" outputJsonFile="output\004_44.json"/>
+				
+			<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo" 
+				description="jcp_location_inventory : item2 - store1"
+				expectedJsonFile="expected\004_45.json"
+				inputJsonFile="input\004_45.json" name="35" outputJsonFile="output\004_45.json"/>
+</testsuite>

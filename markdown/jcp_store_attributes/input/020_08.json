@@ -1,0 +1,10 @@
+[
+{
+"storeID":"1886",
+"capacityUnitOfMeasure":"RELEASE",
+"fromDate":"<$today>",
+"toDate":"<$sixDayAhead>",
+"dayOfTheWeek":[0,0,0,0,0,0,0],
+"clearanceCapacityOfTheWeek":[10.0,10.0,10.0,10.0,10.0,10.0,10.0]
+}
+]

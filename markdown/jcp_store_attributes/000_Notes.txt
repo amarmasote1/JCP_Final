@@ -1,0 +1,1 @@
+Change the date to current date in get capacity Apis.

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>		 
+<!-- Verify
+	
+update capacity multi store : capacity to 0, in both stores
+-->
+
+<testsuite description="update capacity multi store : capacity to 0, in both stores" name="031">
+
+    
+    <test apiMethod="POST" apiUrl="/master/node/JCP/1928/" 
+		description="Insert node 1"
+        expectedJsonFile="expected\031_01.json"
+        inputJsonFile="input\031_01.json" name="01" outputJsonFile="output\031_01.json"/>
+		
+	<test apiMethod="POST" apiUrl="/master/node/JCP/1936/" 
+		description="Insert node 2"
+        expectedJsonFile="expected\031_02.json"
+        inputJsonFile="input\031_02.json" name="02" outputJsonFile="output\031_02.json"/>
+	
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="insert node capacity"
+        expectedJsonFile="expected\031_05.json"
+        inputJsonFile="input\031_05.json" name="05" outputJsonFile="output\031_05.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+		description="Get Capacity"
+        expectedJsonFile="expected\031_06.json"
+        inputJsonFile="input\031_06.json" name="06" outputJsonFile="output\031_06.json"/>
+
+<test apiMethod="delay" delay="15000" description="Delay : 15000 ms" name="100"/>						
+		
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_store_attributes/" 
+		description="store attributes "
+        expectedJsonFile="expected\031_07.json"
+        inputJsonFile="input\031_07.json" name="07" outputJsonFile="output\031_07.json"/>
+		
+		
+		
+	<test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="insert node capacity"
+        expectedJsonFile="expected\031_08.json"
+        inputJsonFile="input\031_08.json" name="08" outputJsonFile="output\031_08.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+		description="Get Capacity"
+        expectedJsonFile="expected\031_09.json"
+        inputJsonFile="input\031_09.json" name="09" outputJsonFile="output\031_09.json"/>
+
+<test apiMethod="delay" delay="15000" description="Delay : 15000 ms" name="100"/>						
+		
+	<test apiMethod="POST" apiUrl="/master/mapValue/jcp_store_attributes/" 
+		description="store attributes"
+        expectedJsonFile="expected\031_10.json"
+        inputJsonFile="input\031_10.json" name="10" outputJsonFile="output\031_10.json"/>
+
+
+			
+</testsuite>

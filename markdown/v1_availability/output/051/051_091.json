@@ -1,0 +1,34 @@
+{
+    "message": "Problems Found",
+    "body": {
+        "enterpriseCode": "00001",
+        "reservation": [
+            {
+                "bundleParentLineId": "",
+                "kitQty": "",
+                "priorityNode": "",
+                "itemReservationStatus": "NA",
+                "expectedFulfillmentDate": "2020-03-02",
+                "reservedQty": 0,
+                "requestLine": {
+                    "itemID": "5807878-1001",
+                    "uom": "EACH",
+                    "reservationID": "",
+                    "deliveryMethod": "",
+                    "procurementAllowed": "",
+                    "qty": "1",
+                    "increaseCapacity": false,
+                    "channel": "",
+                    "lineID": "1",
+                    "storeId": null,
+                    "nodeType": ""
+                },
+                "shipDate": "2020-03-02",
+                "error": null,
+                "problemType": "NO_AVAILABILITY"
+            }
+        ],
+        "allocationRuleID": "RES_INTRV"
+    },
+    "status": 350
+}

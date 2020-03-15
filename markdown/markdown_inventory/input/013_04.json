@@ -1,0 +1,16 @@
+
+[
+  
+  {
+    "storeID": "1503",
+    "itemID": "70630003023",
+    "uom": "EACH",
+	"supplyData": {
+      "onhandsupply": 20
+    },
+    "timestamp": "2019-12-19 17:41:21.0006 IST",
+    "markdown": {
+      "active":true
+    }
+  }
+]

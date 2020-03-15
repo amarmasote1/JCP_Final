@@ -1,0 +1,47 @@
+{
+    "body": [
+        {
+            "clearanceCapacityEnabled": true,
+            "message": "feature flag value",
+            "status": 200
+        },
+        {
+            "warnings": null,
+            "message": "Success",
+            "nodeType": null,
+            "body": {
+                "availableCapacity": 1,
+                "clearanceCapacityPercentage": 50,
+                "consumedClearanceCapacity": 0,
+                "standardCapacity": 2,
+                "availableClearanceCapacity": 1,
+                "consumedTotalCapacity": 1,
+                "capacityUnitOfMeasure": "RELEASE"
+            },
+            "key": "JCP|1480|20200305",
+            "status": 200
+        },
+        {
+            "warnings": null,
+            "message": "Success",
+            "nodeType": null,
+            "body": {
+                "overallCapacity": [
+                    {
+                        "totalAvailableClearanceCapacity": 1,
+                        "totalStandardCapacity": 2,
+                        "totalClearanceCapacity": 1,
+                        "totalConsumedCapacity": 1,
+                        "capacityUnitOfMeasure": "RELEASE",
+                        "totalAvailableCapacity": 1,
+                        "totalConsumedClearanceCapacity": 0
+                    }
+                ]
+            },
+            "key": "",
+            "status": 200
+        }
+    ],
+    "message": "Successful",
+    "status": 221
+}

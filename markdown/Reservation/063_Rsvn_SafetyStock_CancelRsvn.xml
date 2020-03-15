@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>		 
+<!-- Verify
+	shut down scenario : Reservation SafetyStock cancel Reservation
+
+-->
+
+<testsuite description="shut down scenario : Reservation SafetyStock cancel Reservation" name="063">
+
+	<test apiMethod="POST" apiUrl="/master/node/JCP/1330/" 
+		description="Insert node 1"
+        expectedJsonFile="expected\063_01.json"
+        inputJsonFile="input\063_01.json" name="01" outputJsonFile="output\063_01.json"/>
+
+	<test apiMethod="POST" apiUrl="/master/itemDetails/JCP/" 
+		description="item details"
+        expectedJsonFile="expected\063_02.json"
+        inputJsonFile="input\063_02.json" name="02" outputJsonFile="output\063_02.json"/>
+
+	
+	<test apiMethod="POST" apiUrl="/inventory/JCP/absolute/" 
+		description="insert inventory"
+        expectedJsonFile="expected\063_04.json"
+        inputJsonFile="input\063_04.json" name="04" outputJsonFile="output\063_04.json"/>
+
+    <test apiMethod="POST" apiUrl="/master/masterdata/insert/nodeCapacityDetails/JCP/" 
+		description="insert capacity"
+        expectedJsonFile="expected\063_05.json"
+        inputJsonFile="input\063_05.json" name="05" outputJsonFile="output\063_05.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/" 
+		description="multiread"
+		expectedJsonFile="expected\063_11.json"
+		inputJsonFile="input\063_11.json" name="11" outputJsonFile="output\063_11.json"/>
+	
+
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/" 
+						description="location inventory"
+						expectedJsonFile="expected\063_21.json"
+						inputJsonFile="input\063_21.json" name="21" outputJsonFile="output\063_21.json"/>
+						       <!--
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/" 
+						description="location inventory"
+						expectedJsonFile="expected\063_22.json"
+						inputJsonFile="input\063_22.json" name="22" outputJsonFile="output\063_22.json"/>  -->
+						
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/" 
+						description="item inventory 1"
+						expectedJsonFile="expected\063_23.json"
+						inputJsonFile="input\063_23.json" name="23" outputJsonFile="output\063_23.json"/>
+						        <!--
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/" 
+						description="item inventory 2"
+						expectedJsonFile="expected\063_24.json"
+						inputJsonFile="input\063_24.json" name="24" outputJsonFile="output\063_24.json"/>  -->
+						      
+					<test apiMethod="GET" apiUrl="/items/34530001086/locations/1330/markdown/" 
+						description="Get Markdown 1"
+						expectedJsonFile="expected\063_25.json"
+						inputJsonFile="input\063_25.json" name="25" outputJsonFile="output\063_25.json"/>  
+						        <!--
+					<test apiMethod="GET" apiUrl="/items/34530001086/locations/1330/markdown/" 
+						description="Get Markdown 2"
+						expectedJsonFile="expected\063_26.json"
+						inputJsonFile="input\063_26.json" name="26" outputJsonFile="output\063_26.json"/>  -->
+
+<test apiMethod="delay" delay="15000" description="Delay : 15000 ms" name="100"/>	
+
+						
+					<test apiMethod="GET" apiUrl="/master/getActiveStores/" 
+						description="get store active"
+						expectedJsonFile="expected\063_27.json"
+						inputJsonFile="input\063_27.json" name="27" outputJsonFile="output\063_27.json"/>  
+				           
+						
+					<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+						description="Get store capacity"
+						expectedJsonFile="expected\063_29.json"
+						inputJsonFile="input\063_29.json" name="29" outputJsonFile="output\063_29.json"/>   
+						
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/" 
+		description="store  Reservation"
+		expectedJsonFile="expected\063_06.json"
+		inputJsonFile="input\063_06.json" name="06" outputJsonFile="output\063_06.json"/>
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/" 
+		description="multiread"
+		expectedJsonFile="expected\063_12.json"
+		inputJsonFile="input\063_12.json" name="12" outputJsonFile="output\063_12.json"/>
+		
+	
+	
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/" 
+						description="location inventory"
+						expectedJsonFile="expected\063_31.json"
+						inputJsonFile="input\063_31.json" name="31" outputJsonFile="output\063_31.json"/>
+						          <!--
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/" 
+						description="location inventory"
+						expectedJsonFile="expected\063_32.json"
+						inputJsonFile="input\063_32.json" name="32" outputJsonFile="output\063_32.json"/> -->  
+						   
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/" 
+						description="item inventory 1"
+						expectedJsonFile="expected\063_33.json"
+						inputJsonFile="input\063_33.json" name="33" outputJsonFile="output\063_33.json"/>
+						         <!--
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/" 
+						description="item inventory 2"
+						expectedJsonFile="expected\063_34.json"
+						inputJsonFile="input\063_34.json" name="34" outputJsonFile="output\063_34.json"/>  -->
+						      
+					<test apiMethod="GET" apiUrl="/items/34530001086/locations/1330/markdown/" 
+						description="Get Markdown 1"
+						expectedJsonFile="expected\063_35.json"
+						inputJsonFile="input\063_35.json" name="35" outputJsonFile="output\063_35.json"/>  
+						       <!--
+					<test apiMethod="GET" apiUrl="/items/34530001086/locations/1330/markdown/" 
+						description="Get Markdown 2"
+						expectedJsonFile="expected\063_36.json"
+						inputJsonFile="input\063_36.json" name="36" outputJsonFile="output\063_36.json"/>  -->
+	
+<test apiMethod="delay" delay="15000" description="Delay : 15000 ms" name="100"/>	
+
+	
+					<test apiMethod="GET" apiUrl="/master/getActiveStores/" 
+						description="get store active"
+						expectedJsonFile="expected\063_37.json"
+						inputJsonFile="input\063_37.json" name="37" outputJsonFile="output\063_37.json"/>  
+				           			
+				
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_store_attributes/" 
+						description="get store active"
+						expectedJsonFile="expected\063_38.json"
+						inputJsonFile="input\063_38.json" name="38" outputJsonFile="output\063_38.json"/>	 
+						
+					<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+						description="Get store capacity"
+						expectedJsonFile="expected\063_39.json"
+						inputJsonFile="input\063_39.json" name="39" outputJsonFile="output\063_39.json"/>   
+						 
+	<test apiMethod="POST" apiUrl="/master/sfsInsert/" 
+		description="SafetyStock"				 
+		expectedJsonFile="expected\063_07.json"
+		inputJsonFile="input\063_07.json" name="07" outputJsonFile="output\063_07.json"/>  
+		
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/" 
+		description="multiread"
+		expectedJsonFile="expected\063_13.json"
+		inputJsonFile="input\063_13.json" name="13" outputJsonFile="output\063_13.json"/>
+			
+			
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/" 
+						description="location inventory"
+						expectedJsonFile="expected\063_41.json"
+						inputJsonFile="input\063_41.json" name="41" outputJsonFile="output\063_41.json"/>
+						         <!--
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/" 
+						description="location inventory"
+						expectedJsonFile="expected\063_42.json"
+						inputJsonFile="input\063_42.json" name="42" outputJsonFile="output\063_42.json"/>    --> 
+						
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/" 
+						description="item inventory 1"
+						expectedJsonFile="expected\063_43.json"
+						inputJsonFile="input\063_43.json" name="43" outputJsonFile="output\063_43.json"/>
+						                  <!--
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/" 
+						description="item inventory 2"
+						expectedJsonFile="expected\063_44.json"
+						inputJsonFile="input\063_44.json" name="44" outputJsonFile="output\063_44.json"/>  -->
+						   
+					<test apiMethod="GET" apiUrl="/items/34530001086/locations/1330/markdown/" 
+						description="Get Markdown 1"
+						expectedJsonFile="expected\063_45.json"
+						inputJsonFile="input\063_45.json" name="45" outputJsonFile="output\063_45.json"/>  
+						        <!--
+					<test apiMethod="GET" apiUrl="/items/34530001086/locations/1330/markdown/" 
+						description="Get Markdown 2"
+						expectedJsonFile="expected\063_46.json"
+						inputJsonFile="input\063_46.json" name="46" outputJsonFile="output\063_46.json"/>   -->
+					       
+<test apiMethod="delay" delay="15000" description="Delay : 15000 ms" name="100"/>	
+						   
+						   
+					<test apiMethod="GET" apiUrl="/master/getActiveStores/" 
+						description="get store active"
+						expectedJsonFile="expected\063_47.json"
+						inputJsonFile="input\063_47.json" name="47" outputJsonFile="output\063_47.json"/>
+				          				
+				
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_store_attributes/" 
+						description="get store active"
+						expectedJsonFile="expected\063_48.json"
+						inputJsonFile="input\063_48.json" name="48" outputJsonFile="output\063_48.json"/>    -->
+						
+					<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+						description="Get store capacity"
+						expectedJsonFile="expected\063_49.json"
+						inputJsonFile="input\063_49.json" name="49" outputJsonFile="output\063_49.json"/>   
+						  
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/" 
+		description="2nd store Reservation "	
+		expectedJsonFile="expected\063_08.json"
+		inputJsonFile="input\063_08.json" name="08" outputJsonFile="output\063_08.json"/>  
+		
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/" 
+		description="multiread"
+		expectedJsonFile="expected\063_14.json"
+		inputJsonFile="input\063_14.json" name="14" outputJsonFile="output\063_14.json"/>
+		
+		
+		
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/" 
+						description="location inventory"
+						expectedJsonFile="expected\063_51.json"
+						inputJsonFile="input\063_51.json" name="51" outputJsonFile="output\063_51.json"/>
+						      <!--
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/" 
+						description="location inventory"
+						expectedJsonFile="expected\063_52.json"
+						inputJsonFile="input\063_52.json" name="52" outputJsonFile="output\063_52.json"/>  -->
+						
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/" 
+						description="item inventory 1"
+						expectedJsonFile="expected\063_53.json"
+						inputJsonFile="input\063_53.json" name="53" outputJsonFile="output\063_53.json"/>
+						      <!--
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/" 
+						description="item inventory 2"
+						expectedJsonFile="expected\063_54.json"
+						inputJsonFile="input\063_54.json" name="54" outputJsonFile="output\063_54.json"/>  -->
+						   <!--
+					<test apiMethod="GET" apiUrl="/items/34530001086/locations/1330/markdown/" 
+						description="Get Markdown 1"
+						expectedJsonFile="expected\063_55.json"
+						inputJsonFile="input\063_55.json" name="55" outputJsonFile="output\063_55.json"/> -->
+						   
+					<test apiMethod="GET" apiUrl="/items/34530001086/locations/1330/markdown/" 
+						description="Get Markdown 2"
+						expectedJsonFile="expected\063_56.json"
+						inputJsonFile="input\063_56.json" name="56" outputJsonFile="output\063_56.json"/>  
+					            
+<test apiMethod="delay" delay="15000" description="Delay : 15000 ms" name="100"/>	
+								
+								
+					<test apiMethod="GET" apiUrl="/master/getActiveStores/" 
+						description="get store active"
+						expectedJsonFile="expected\063_57.json"
+						inputJsonFile="input\063_57.json" name="57" outputJsonFile="output\063_57.json"/>
+				           				
+				                 
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_store_attributes/" 
+						description="get store active"
+						expectedJsonFile="expected\063_58.json"
+						inputJsonFile="input\063_58.json" name="58" outputJsonFile="output\063_58.json"/>	  
+						
+					<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+						description="Get store capacity"
+						expectedJsonFile="expected\063_59.json"
+						inputJsonFile="input\063_59.json" name="59" outputJsonFile="output\063_59.json"/>  
+						
+			<!--			
+						
+	<test apiMethod="POST" apiUrl="/reserve/JCP/0/N/" 
+		description=" store Reservation"
+		expectedJsonFile="expected\063_09.json"
+		inputJsonFile="input\063_09.json" name="09" outputJsonFile="output\063_09.json"/>  
+		
+		
+	<test apiMethod="POST" apiUrl="/inventory/multiread/JCP/" 
+		description="multiread"
+		expectedJsonFile="expected\063_15.json"
+		inputJsonFile="input\063_15.json" name="15" outputJsonFile="output\063_15.json"/>
+		
+		
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/" 
+						description="location inventory"
+						expectedJsonFile="expected\063_61.json"
+						inputJsonFile="input\063_61.json" name="61" outputJsonFile="output\063_61.json"/>
+						    
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_location_inventory_pojo/" 
+						description="location inventory"
+						expectedJsonFile="expected\063_62.json"
+						inputJsonFile="input\063_62.json" name="62" outputJsonFile="output\063_62.json"/>  
+						
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/" 
+						description="item inventory 1"
+						expectedJsonFile="expected\063_63.json"
+						inputJsonFile="input\063_63.json" name="53" outputJsonFile="output\063_62.json"/>
+						  
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_item_inventory/" 
+						description="item inventory 2"
+						expectedJsonFile="expected\063_64.json"
+						inputJsonFile="input\063_64.json" name="54" outputJsonFile="output\063_64.json
+						
+					<test apiMethod="GET" apiUrl="/items/34530001086/locations/1330/markdown/" 
+						description="Get Markdown 1"
+						expectedJsonFile="expected\063_65.json"
+						inputJsonFile="input\063_65.json" name="65" outputJsonFile="output\063_65.json"/>
+						   
+					<test apiMethod="GET" apiUrl="/items/34530001086/locations/1330/markdown/" 
+						description="Get Markdown 2"
+						expectedJsonFile="expected\063_66.json"
+						inputJsonFile="input\063_66.json" name="66" outputJsonFile="output\063_66.json"/>
+					
+					<test apiMethod="GET" apiUrl="/master/getActiveStores/" 
+						description="get store active"
+						expectedJsonFile="expected\063_67.json"
+						inputJsonFile="input\063_67.json" name="67" outputJsonFile="output\063_67.json"/>
+				          
+<test apiMethod="delay" delay="8000" description="Delay : 8000 ms" name="100"/>				
+				
+					<test apiMethod="POST" apiUrl="/master/mapValue/jcp_store_attributes/" 
+						description="get store active"
+						expectedJsonFile="expected\063_68.json"
+						inputJsonFile="input\063_68.json" name="68" outputJsonFile="output\063_68.json"/>	
+						 
+					<test apiMethod="POST" apiUrl="/master/storeCapacity/JCP/" 
+						description="Get store capacity"
+						expectedJsonFile="expected\063_69.json"
+						inputJsonFile="input\063_69.json" name="69" outputJsonFile="output\063_69.json"/>    --> 
+						
+		
+</testsuite>

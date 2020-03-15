@@ -1,0 +1,20 @@
+{
+    "body": [
+        {
+            "warnings": null,
+            "message": "Data Write Successful",
+            "body": null,
+            "key": "0911|S",
+            "status": 212
+        },
+        {
+            "warnings": null,
+            "message": "Data Write Successful",
+            "body": null,
+            "key": "0911|P",
+            "status": 212
+        }
+    ],
+    "message": "Successful",
+    "status": 221
+}

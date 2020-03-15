@@ -1,0 +1,22 @@
+{
+    "reservation": [
+        {
+            "storeID": "2952",
+            "itemID": "70630003053",
+            "uom": "EACH",
+            "shippable": "true",
+            "procurementAllowed": "false",
+            "qty": "3",
+            "lineID": "1"
+        },
+		{
+            "storeID": "2953",
+            "itemID": "70630003053",
+            "uom": "EACH",
+            "shippable": "true",
+            "procurementAllowed": "false",
+            "qty": "3",
+            "lineID": "2"
+        }
+    ]
+}
